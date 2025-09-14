@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,34 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSpecialitiesOpen, setIsSpecialitiesOpen] = useState(false);
   const location = useLocation();
+
+  // Timers to avoid flicker when moving from trigger to dropdown
+  const servicesCloseTimer = useRef<number | null>(null);
+  const specialitiesCloseTimer = useRef<number | null>(null);
+
+  const openServices = () => {
+    if (servicesCloseTimer.current) {
+      window.clearTimeout(servicesCloseTimer.current);
+      servicesCloseTimer.current = null;
+    }
+    setIsServicesOpen(true);
+  };
+  const closeServicesDelayed = () => {
+    if (servicesCloseTimer.current) window.clearTimeout(servicesCloseTimer.current);
+    servicesCloseTimer.current = window.setTimeout(() => setIsServicesOpen(false), 150);
+  };
+
+  const openSpecialities = () => {
+    if (specialitiesCloseTimer.current) {
+      window.clearTimeout(specialitiesCloseTimer.current);
+      specialitiesCloseTimer.current = null;
+    }
+    setIsSpecialitiesOpen(true);
+  };
+  const closeSpecialitiesDelayed = () => {
+    if (specialitiesCloseTimer.current) window.clearTimeout(specialitiesCloseTimer.current);
+    specialitiesCloseTimer.current = window.setTimeout(() => setIsSpecialitiesOpen(false), 150);
+  };
 
   const services = [
     { name: 'Medical SEO', path: '/services/medical-seo' },
@@ -52,19 +80,27 @@ const Header = () => {
               Home
             </Link>
 
-            {/* Services Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={openServices}
+              onMouseLeave={closeServicesDelayed}
             >
-              <button className="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button
+                className="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsServicesOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={isServicesOpen}
+              >
                 <span>Services</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-popover border border-border rounded-lg shadow-dropdown z-50">
+                <div
+                  className="absolute top-full left-0 mt-2 w-64 bg-popover border border-border rounded-lg shadow-dropdown z-50"
+                  onMouseEnter={openServices}
+                  onMouseLeave={closeServicesDelayed}
+                >
                   <div className="py-2">
                     {services.map((service) => (
                       <Link
@@ -83,16 +119,25 @@ const Header = () => {
             {/* Specialities Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsSpecialitiesOpen(true)}
-              onMouseLeave={() => setIsSpecialitiesOpen(false)}
+              onMouseEnter={openSpecialities}
+              onMouseLeave={closeSpecialitiesDelayed}
             >
-              <button className="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button
+                className="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                onClick={() => setIsSpecialitiesOpen((v) => !v)}
+                aria-haspopup="menu"
+                aria-expanded={isSpecialitiesOpen}
+              >
                 <span>Specialities</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               
               {isSpecialitiesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-popover border border-border rounded-lg shadow-dropdown z-50">
+                <div
+                  className="absolute top-full left-0 mt-2 w-64 bg-popover border border-border rounded-lg shadow-dropdown z-50"
+                  onMouseEnter={openSpecialities}
+                  onMouseLeave={closeSpecialitiesDelayed}
+                >
                   <div className="py-2">
                     {specialities.map((speciality) => (
                       <Link
