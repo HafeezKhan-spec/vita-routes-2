@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Plus, CheckCircle, Smartphone, User, MapPin, TrendingUp, Briefcase, FileText, BarChart2, Shield, Search, BookOpen } from 'lucide-react';
 import Image_1 from "../../assets/Image_1.webp";
 import Image_2 from "../../assets/Image_2.webp";
@@ -9,12 +9,69 @@ import Image_6 from "../../assets/Image_6.webp";
 import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
+import Background from "../../assets/Background.jpg";
 
 // --- Color Constants ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
 const PRIMARY_TEAL = '#0e7490'; // Dark Teal/Cyan for main CTA
 const BLANK_IMAGE_URL = 'https://placehold.co/800x600/f3f4f6/555555?text=ADD+YOUR+IMAGE+URL+HERE';
 const ACCENT_RED = '#dc2626'; // Used for the vertical bar next to active tab
+
+// --- SCROLL ANIMATION LOGIC (Custom Hook and Wrapper) ---
+
+/**
+ * Custom hook to use the Intersection Observer API.
+ * @param options Observer options (root, rootMargin, threshold).
+ * @returns [ref, isIntersecting]
+ */
+const useIntersectionObserver = (options: IntersectionObserverInit = { threshold: 0.1 }): [React.RefObject<HTMLDivElement>, boolean] => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      // Only set to true once to trigger the animation only on entry
+      if (entry.isIntersecting && !isIntersecting) {
+        setIsIntersecting(true);
+      }
+    }, options);
+
+    const currentRef = ref.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [options, isIntersecting]);
+
+  return [ref, isIntersecting];
+};
+
+/**
+ * Wrapper component to apply a soft fade-in and subtle slide-up animation on scroll.
+ */
+const AnimatedSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
+    const transitionClass = isVisible
+        ? 'opacity-100 translate-y-0'
+        : 'opacity-0 translate-y-4'; // Reduced translation for a 'fade-in' focus
+
+    return (
+        <div
+            ref={ref}
+            // Increased duration for a delayed and softer animation effect
+            className={`transition-all duration-1000 ease-out ${transitionClass}`}
+        >
+            {children}
+        </div>
+    );
+};
 
 // --- Hero Section Component ---
 
@@ -23,17 +80,21 @@ const HeroSection: React.FC = () => {
 
   return (
     // Updated background to a gentle gradient and increased vertical padding for visual appeal
-    <div className="bg-gradient-to-br from-blue-50 to-white py-20 sm:py-28 lg:py-36">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      className="relative py-20 sm:py-28 lg:py-36 bg-cover bg-center"
+      style={{ backgroundImage: `url(${Background})` }}
+    >
+      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centering container for the content */}
         <div className="flex flex-col items-center text-center">
 
           {/* Content Area (Text and Button) - Updated to match the structure of PaidMarketing.tsx (removed small header text) */}
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: PRIMARY_BLUE }}>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
               Healthcare Reputation Management Services in the USA
             </h1>
-            <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
               {heroText}
             </p>
 
@@ -92,13 +153,13 @@ const BenefitsSection: React.FC = () => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-start mt-12">
 
           {/* Left Column - Image and Description - Added subtle lift/shadow on hover */}
-          <div className="relative p-6 sm:p-8 bg-gray-50 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl hover:scale-[1.005]">
+          <div className="relative p-6 sm:p-8 bg-gray-50 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl hover:scale-[1.005] group">
             <div className="w-full h-72 rounded-xl overflow-hidden mb-6">
               <img
                 // Using BLANK_IMAGE_URL as the source
                 src={Image_1}
                 alt="Two professionals reviewing a document, symbolizing collaboration and strategy."
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full transform transition duration-500 group-hover:scale-105"
                 onError={(e) => {
                   (e.target as HTMLImageElement).onerror = null;
                   (e.target as HTMLImageElement).src = BLANK_IMAGE_URL;
@@ -119,7 +180,7 @@ const BenefitsSection: React.FC = () => {
                 {col1.map((benefit, index) => (
                   <li
                     key={index}
-                    className="flex items-start p-2 rounded-xl transition duration-300 hover:bg-blue-50/70 hover:shadow-sm cursor-pointer"
+                    className="flex items-start p-3 rounded-xl transition duration-300 hover:bg-blue-50/70 hover:shadow-md hover:translate-x-1 cursor-pointer"
                   >
                     <CheckCircle className="flex-shrink-0 w-6 h-6 mr-3 mt-1 text-blue-600" />
                     <p className="text-base text-gray-700 font-medium">{benefit}</p>
@@ -132,7 +193,7 @@ const BenefitsSection: React.FC = () => {
                 {col2.map((benefit, index) => (
                   <li
                     key={index}
-                    className="flex items-start p-2 rounded-xl transition duration-300 hover:bg-blue-50/70 hover:shadow-sm cursor-pointer"
+                    className="flex items-start p-3 rounded-xl transition duration-300 hover:bg-blue-50/70 hover:shadow-md hover:translate-x-1 cursor-pointer"
                   >
                     <CheckCircle className="flex-shrink-0 w-6 h-6 mr-3 mt-1 text-blue-600" />
                     <p className="text-base text-gray-700 font-medium">{benefit}</p>
@@ -273,7 +334,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
         <div className="flex items-start mb-3">
           {/* Icon and Title */}
           {/* Icon Hover: Changes background color slightly on group hover */}
-          <div className={`p-3 rounded-full bg-blue-50/70 mr-4 flex-shrink-0 ${service.color} transition duration-300 group-hover:bg-blue-100/90`}>
+          <div className={`p-3 rounded-full bg-blue-50/70 mr-4 flex-shrink-0 ${service.color} transition duration-300 group-hover:bg-blue-100/90 group-hover:shadow-lg group-hover:scale-110`}>
             <Icon className="w-6 h-6" />
           </div>
           <h3 className="text-xl font-bold pt-1" style={{ color: PRIMARY_BLUE }}>
@@ -317,7 +378,7 @@ const ServicesSection: React.FC = () => {
 
 
         {/* Section Footer - Years of Expertise (Added subtle shadow/lift) */}
-        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005]" style={{ backgroundColor: PRIMARY_TEAL }}>
+        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
           {/* Note: Updated text to reflect the Reputation Management context better */}
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
             10+ Years of Medical Marketing Expertise, 100% Commitment to Your Success
@@ -410,13 +471,12 @@ const WhyChooseSection: React.FC = () => {
   const TabLink: React.FC<{ id: keyof typeof tabData, label: string }> = ({ id, label }) => {
     const isActive = activeTab === id;
     const colorClass = isActive ? `text-gray-900 font-bold` : `text-gray-500 font-medium hover:text-gray-700`;
-    const borderClass = isActive ? `bg-red-600` : `bg-gray-200 group-hover:bg-gray-400`;
+    const borderClass = isActive ? `bg-red-600` : `bg-gray-200 group-hover:bg-red-300`;
 
     return (
-      // Tab Link Hover: Added hover background and rounded corners for a softer visual effect.
       <button
         onClick={() => setActiveTab(id)}
-        className="group relative w-full text-left py-3 px-4 transition duration-300 focus:outline-none hover:bg-gray-100/50 rounded-lg"
+        className="group relative w-full text-left py-3 px-4 transition duration-300 focus:outline-none hover:bg-gray-100/50 rounded-lg transform hover:translate-x-1"
       >
         {/* Vertical Accent Bar */}
         <div
@@ -455,7 +515,7 @@ const WhyChooseSection: React.FC = () => {
           </div>
 
           {/* Right Column - Active Content */}
-          <div key={activeTab} className="lg:col-span-8 mt-8 lg:mt-0 p-6 sm:p-8 bg-gray-50 rounded-2xl shadow-xl transition-all duration-500">
+          <div key={activeTab} className="lg:col-span-8 mt-8 lg:mt-0 p-6 sm:p-8 bg-gray-50 rounded-2xl shadow-xl transition-all duration-500 animate-fadeInUp group">
 
             <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
               {content.title}
@@ -469,8 +529,7 @@ const WhyChooseSection: React.FC = () => {
               <div>
                 <ul className="space-y-4">
                   {content.details.map((detail, index) => (
-                    // Added subtle hover effect to list items
-                    <li key={index} className="flex items-start p-1 rounded-lg transition duration-200 hover:bg-gray-100/50 cursor-pointer">
+                    <li key={index} className="flex items-start p-2 rounded-lg transition duration-200 hover:bg-gray-100/50 cursor-pointer transform hover:scale-[1.01] hover:shadow-sm">
                       <CheckCircle className="flex-shrink-0 w-6 h-6 mr-3 mt-1 text-blue-600" />
                       <p className="text-base text-gray-700 font-medium">{detail}</p>
                     </li>
@@ -486,7 +545,7 @@ const WhyChooseSection: React.FC = () => {
                     // Using BLANK_IMAGE_URL as the source
                     src={content.imageSrc}
                     alt={content.imageAlt}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full transition duration-500 group-hover:scale-105"
                     onError={(e) => {
                       (e.target as HTMLImageElement).onerror = null;
                       (e.target as HTMLImageElement).src = BLANK_IMAGE_URL;
@@ -523,109 +582,136 @@ export default function App() {
       {/* Load Inter font only */}
       <style>
         {`
-          @import url('https://cdn.tailwindcss.com');
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
           body { font-family: 'Inter', sans-serif; }
+          
+          /* Custom Keyframes for smooth fade-in and slight slide up transition */
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          /* Apply the animation */
+          .animate-fadeInUp {
+            animation: fadeInUp 0.4s ease-out forwards;
+          }
         `}
       </style>
 
       <main>
         <HeroSection />
-        <BenefitsSection />
-        <ServicesSection />
-        <WhyChooseSection />
+        
+        <AnimatedSection>
+            <BenefitsSection />
+        </AnimatedSection>
+
+        <AnimatedSection>
+            <ServicesSection />
+        </AnimatedSection>
+        
+        <AnimatedSection>
+            <WhyChooseSection />
+        </AnimatedSection>
       </main>
 
       {/* Footer (Matches PaidMarketing.tsx) */}
-      <footer className="bg-gray-800 text-white">
-        <div className="container mx-auto px-8 py-16">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Digital Future?
-            </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
-            </p>
-          </div>
-
-          <div className="border-t border-gray-700 pt-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {/* Company Info */}
-              <div>
-                <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
+      <AnimatedSection>
+          <footer className="bg-gray-800 text-white">
+            <div className="container mx-auto px-8 py-16">
+              <div className="text-center mb-16">
+                <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                  Ready to Transform Your Digital Future?
+                </h3>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
                 </p>
-                {/* Social Links: Updated to use consistent emojis */}
-                <div className="flex space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📘</a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">🐦</a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📷</a>
+              </div>
+
+              <div className="border-t border-gray-700 pt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                  {/* Company Info */}
+                  <div>
+                    <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
+                    </p>
+                    {/* Social Links: Updated to use consistent emojis */}
+                    <div className="flex space-x-4">
+                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📘</a>
+                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">🐦</a>
+                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📷</a>
+                    </div>
+                  </div>
+
+                  {/* Quick Links */}
+                  <div>
+                    <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul className="space-y-4">
+                      <li><a href="#hero" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Home</a></li>
+                      <li><a href="#about" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">About</a></li>
+                      <li><a href="#services" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Services</a></li>
+                      <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Portfolio</a></li>
+                      <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Testimonials</a></li>
+                      <li><a href="#contact" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Contact</a></li>
+                    </ul>
+                  </div>
+
+                  {/* Contact Info */}
+                  <div>
+                    <h4 className="text-xl font-bold mb-6">Contact Info</h4>
+                    <div className="space-y-4 text-gray-300">
+                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
+                        <span className="text-blue-400">📞</span>
+                        <span className="hover:text-white transition-colors cursor-pointer">(555) 123-4567</span>
+                      </div>
+                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
+                        <span className="text-blue-400">✉️</span>
+                        <span className="hover:text-white transition-colors cursor-pointer">info@advanceedgedigital.com</span>
+                      </div>
+                      <div className="flex items-start space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
+                        <span className="text-blue-400">📍</span>
+                        <span>
+                          456 Innovation Drive<br />
+                          Tech District<br />
+                          San Francisco, CA 94105
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Office Hours */}
+                  <div>
+                    <h4 className="text-xl font-bold mb-6">Office Hours</h4>
+                    <div className="space-y-3 text-gray-300">
+                      <div>
+                        <div className="font-medium">Monday - Friday</div>
+                        <div>8:00 AM - 6:00 PM EST</div>
+                      </div>
+                      <div>
+                        <div className="font-medium">Saturday</div>
+                        <div>9:00 AM - 2:00 PM EST</div>
+                      </div>
+                      <div>
+                        <div className="font-medium">Sunday</div>
+                        <div>Emergency Support Only</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Quick Links */}
-              <div>
-                <h4 className="text-xl font-bold mb-6">Quick Links</h4>
-                <ul className="space-y-4">
-                  <li><a href="#hero" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                  <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
-                  <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-                  <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
-                  <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
-                  <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-                </ul>
-              </div>
-
-              {/* Contact Info */}
-              <div>
-                <h4 className="text-xl font-bold mb-6">Contact Info</h4>
-                <div className="space-y-4 text-gray-300">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-blue-400">📞</span>
-                    <span className="hover:text-white transition-colors cursor-pointer">(555) 123-4567</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-blue-400">✉️</span>
-                    <span className="hover:text-white transition-colors cursor-pointer">info@advanceedgedigital.com</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <span className="text-blue-400">📍</span>
-                    <span>
-                      456 Innovation Drive<br />
-                      Tech District<br />
-                      San Francisco, CA 94105
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Office Hours */}
-              <div>
-                <h4 className="text-xl font-bold mb-6">Office Hours</h4>
-                <div className="space-y-3 text-gray-300">
-                  <div>
-                    <div className="font-medium">Monday - Friday</div>
-                    <div>8:00 AM - 6:00 PM EST</div>
-                  </div>
-                  <div>
-                    <div className="font-medium">Saturday</div>
-                    <div>9:00 AM - 2:00 PM EST</div>
-                  </div>
-                  <div>
-                    <div className="font-medium">Sunday</div>
-                    <div>Emergency Support Only</div>
-                  </div>
+                <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                  <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
                 </div>
               </div>
             </div>
-
-            <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-              <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+          </footer>
+      </AnimatedSection>
     </div>
   );
 }

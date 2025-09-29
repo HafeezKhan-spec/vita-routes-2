@@ -152,21 +152,21 @@ const Home = () => {
     <div className="min-h-screen bg-white text-gray-900">
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-500 to-blue-800 bg-[url('/src/assets/image.jpg')] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-black/40"></div>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-500 via-orange-600 to-blue-800 bg-[url('/src/assets/image.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50"></div>
         <div className="relative z-10 container mx-auto px-8 text-center">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight animate-in fade-in slide-in-from-bottom-8 duration-1000">
               Top Healthcare Marketing Agency
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
               From Click to Appointment, HIPAA-Aware Patient Growth for Clinics and Hospitals. 
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-white text-orange-500 hover:bg-gray-100 transition-colors duration-200 px-8 py-4 text-lg font-semibold rounded-lg">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+              <button className="bg-white text-orange-500 hover:bg-gray-50 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out px-8 py-4 text-lg font-semibold rounded-xl hover:-translate-y-1">
                 Explore Services
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-orange-500 transition-colors duration-200 px-8 py-4 text-lg font-semibold rounded-lg">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-orange-500 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out px-8 py-4 text-lg font-semibold rounded-xl hover:-translate-y-1">
                 Get Started
               </button>
             </div>
@@ -182,7 +182,7 @@ const Home = () => {
               <img
                 src="https://c.animaapp.com/mfjwb3u5cixZOs/img/ai_2.png"
                 alt="Digital innovation team"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -195,7 +195,7 @@ const Home = () => {
               <p className="text-lg text-gray-600 mb-12 leading-relaxed">
                 From web development and mobile applications to digital marketing and cloud solutions, we're your trusted partner in navigating the digital landscape and achieving sustainable success.
               </p>
-              <button className="bg-orange-500 text-white hover:bg-orange-600 transition-colors duration-200 px-8 py-3 rounded-lg font-semibold">
+              <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 hover:scale-105 hover:shadow-xl transition-all duration-300 ease-out px-8 py-3 rounded-xl font-semibold hover:-translate-y-1">
                 Discover Our Solutions
               </button>
             </div>
@@ -219,11 +219,11 @@ const Home = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group"
+                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-105 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer group hover:border-orange-200"
               >
                 <div className="text-center">
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-orange-500 transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -252,22 +252,22 @@ const Home = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group"
+                className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-105 hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer group hover:border-orange-200"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-200">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-500 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
@@ -277,7 +277,7 @@ const Home = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
+                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded-lg text-xs font-medium hover:bg-orange-100 hover:text-orange-700 transition-colors duration-200"
                       >
                         {tech}
                       </span>
@@ -291,7 +291,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 bg-gradient-to-br from-blue-800 to-blue-600">
+      <section id="testimonials" className="py-24 bg-gradient-to-br from-blue-800 via-blue-700 to-blue-600">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -303,9 +303,9 @@ const Home = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl p-12 shadow-xl">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-12 shadow-2xl shadow-blue-900/30 hover:shadow-3xl transition-shadow duration-500">
               <div className="text-center mb-8">
-                <div className="text-5xl text-orange-500 mb-6">"</div>
+                <div className="text-5xl text-orange-500 mb-6 animate-pulse">"</div>
                 <blockquote className="text-2xl text-gray-900 leading-relaxed mb-8 italic">
                   {testimonials[currentTestimonial].quote}
                 </blockquote>
@@ -315,7 +315,7 @@ const Home = () => {
                 <img
                   src={testimonials[currentTestimonial].image}
                   alt={`${testimonials[currentTestimonial].name} portrait`}
-                  className="w-16 h-16 rounded-full object-cover"
+                  className="w-16 h-16 rounded-full object-cover shadow-lg hover:scale-110 transition-transform duration-300"
                 />
                 <div className="text-left">
                   <div className="font-bold text-lg text-gray-900">
@@ -334,7 +334,7 @@ const Home = () => {
             <div className="flex justify-center items-center space-x-4 mt-8">
               <button
                 onClick={prevTestimonial}
-                className="bg-white/20 text-white border border-white/30 hover:bg-white/30 transition-colors duration-200 p-2 rounded-lg"
+                className="bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 p-3 rounded-xl backdrop-blur-sm"
               >
                 ←
               </button>
@@ -345,8 +345,8 @@ const Home = () => {
                     title={`Testimonial ${index + 1}`}
                     key={index}
                     onClick={() => setCurrentTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                      index === currentTestimonial ? 'bg-white' : 'bg-white/40'
+                    className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                      index === currentTestimonial ? 'bg-white shadow-lg' : 'bg-white/40 hover:bg-white/60'
                     }`}
                   />
                 ))}
@@ -354,7 +354,7 @@ const Home = () => {
 
               <button
                 onClick={nextTestimonial}
-                className="bg-white/20 text-white border border-white/30 hover:bg-white/30 transition-colors duration-200 p-2 rounded-lg"
+                className="bg-white/20 text-white border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 p-3 rounded-xl backdrop-blur-sm"
               >
                 →
               </button>
@@ -392,7 +392,7 @@ const Home = () => {
                   'Ongoing support and maintenance included',
                 ].map((commitment, index) => (
                   <li key={index} className="flex items-start space-x-4">
-                    <span className="text-green-500 text-2xl">✓</span>
+                    <span className="text-green-500 text-2xl hover:scale-125 transition-transform duration-200">✓</span>
                     <span className="text-lg text-gray-900 leading-relaxed">{commitment}</span>
                   </li>
                 ))}
@@ -400,7 +400,7 @@ const Home = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg">
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-2xl shadow-blue-500/10 hover:shadow-3xl transition-shadow duration-500">
               <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
                 Get Started Today
               </h3>
@@ -416,7 +416,7 @@ const Home = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400 hover:shadow-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -432,7 +432,7 @@ const Home = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400 hover:shadow-sm"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -447,7 +447,7 @@ const Home = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400 hover:shadow-sm"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -462,14 +462,14 @@ const Home = () => {
                     required
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors min-h-32 resize-vertical"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400 hover:shadow-sm min-h-32 resize-vertical"
                     placeholder="Tell us about your business goals and how we can help you achieve them..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 text-white hover:bg-orange-600 transition-colors duration-200 py-3 rounded-lg font-semibold"
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 hover:scale-[1.02] hover:shadow-xl transition-all duration-300 ease-out py-3 rounded-xl font-semibold"
                 >
                   Send Message
                 </button>
@@ -480,7 +480,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white">
+      <footer className="bg-gradient-to-b from-gray-800 to-gray-900 text-white">
         <div className="container mx-auto px-8 py-16">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
@@ -500,9 +500,9 @@ const Home = () => {
                   Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">📘</a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">🐦</a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">📷</a>
+                  <a href="#" className="text-gray-400 hover:text-white hover:scale-125 transition-all duration-200">📘</a>
+                  <a href="#" className="text-gray-400 hover:text-white hover:scale-125 transition-all duration-200">🐦</a>
+                  <a href="#" className="text-gray-400 hover:text-white hover:scale-125 transition-all duration-200">📷</a>
                 </div>
               </div>
 
@@ -510,12 +510,12 @@ const Home = () => {
               <div>
                 <h4 className="text-xl font-bold mb-6">Quick Links</h4>
                 <ul className="space-y-4">
-                  <li><a href="#hero" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                  <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
-                  <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-                  <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
-                  <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
-                  <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                  <li><a href="#hero" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-200">Home</a></li>
+                  <li><a href="#about" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-200">About</a></li>
+                  <li><a href="#services" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-200">Services</a></li>
+                  <li><a href="#portfolio" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-200">Portfolio</a></li>
+                  <li><a href="#testimonials" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-200">Testimonials</a></li>
+                  <li><a href="#contact" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-200">Contact</a></li>
                 </ul>
               </div>
 
@@ -523,15 +523,15 @@ const Home = () => {
               <div>
                 <h4 className="text-xl font-bold mb-6">Contact Info</h4>
                 <div className="space-y-4 text-gray-300">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 hover:text-white transition-colors duration-200">
                     <span>📞</span>
                     <span>(555) 123-4567</span>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 hover:text-white transition-colors duration-200">
                     <span>✉️</span>
                     <span>info@advanceedgedigital.com</span>
                   </div>
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-3 hover:text-white transition-colors duration-200">
                     <span>📍</span>
                     <span>
                       456 Innovation Drive<br />
