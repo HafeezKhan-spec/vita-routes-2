@@ -85,7 +85,7 @@ const Header = () => {
       className={`sticky top-0 z-50 transition-all duration-500 relative ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg'
-          : 'bg-white'
+          : 'bg-gradient-to-r from-blue-50 to-orange-50 border-b border-orange-200'
       }`}
     >
 
@@ -101,6 +101,13 @@ const Header = () => {
               } translate-x-[100px]`}
             />
           </Link>
+
+          {/* Horizontal Line */}
+          <div className="hidden md:block w-px h-16 bg-foreground/60 absolute left-[calc(50%-300px)]"></div>
+          {/* Horizontal Line */}
+          <div className="hidden md:block w-80 h-px bg-foreground/60 absolute left-[calc(50%-620px)] top-[100px]"></div>
+
+
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -220,7 +227,8 @@ const Header = () => {
             className="hidden md:inline-flex bg-black text-white font-semibold border-2 border-orange-500 
                        px-6 py-3 rounded-md 
                        transition-all duration-300 
-                       hover:text-orange-500 bg-black hover:shadow-[0_0_15px_3px_rgba(249,115,22,0.7)] 
+                       hover:text-orange-500 hover:scale-110 hover:bg-black hover:shadow-[0_0_15px_3px_rgba(249,115,22,0.7)] 
+                       focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0
                        -ml-[100px]"
           >
             BOOK A CALL

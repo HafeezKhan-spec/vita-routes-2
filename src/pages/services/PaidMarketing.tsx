@@ -1,56 +1,633 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Plus, CheckCircle, Search, Zap, Phone, ShoppingBag, TrendingUp, Users, Youtube, MapPin } from 'lucide-react';
+import Image_1 from "../../assets/Image_1.webp";
+import Image_2 from "../../assets/Image_2.webp";
+import Image_3 from "../../assets/Image_3.webp";
+import Image_4 from "../../assets/Image_4.webp";
+import Image_5 from "../../assets/Image_5.webp";
+import Image_6 from "../../assets/Image_6.webp";
+import Image_7 from "../../assets/Image_7.webp";
+import Image_8 from "../../assets/Image_8.webp";
+import Image_9 from "../../assets/Image_9.webp";
 
-const PaidMarketing = () => {
+// --- Color Constants ---
+const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
+const PRIMARY_TEAL = '#0e7490'; // Dark Teal/Cyan for main CTA
+// UPDATED: Using a generic placeholder URL that explicitly tells the user where to add their image.
+const BLANK_IMAGE_URL = 'https://placehold.co/800x600/f3f4f6/555555?text=ADD+YOUR+IMAGE+URL+HERE'; 
+const ACCENT_RED = '#dc2626'; // Used for the vertical bar next to active tab
+// Removed FOOTER_BACKGROUND and FONT_GRAY constants
+
+// --- Hero Section Component ---
+
+const HeroSection: React.FC = () => {
+  const heroText = "Turn search intent into qualified inquiries with healthcare PPC and healthcare Google Ads—optimized, built, and planned by industry experts at AdvanceEdge. We deploy precise geo/service-line targeting, robust negatives, compliant tracking, and conversion-focused landing pages to drive measurable calls, forms, and chats for hospitals, clinics, and multi-location groups.";
+
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-foreground mb-8">Paid Marketing</h1>
+    // Updated background to a gentle gradient and increased vertical padding for visual appeal
+    <div className="bg-gradient-to-br from-blue-50 to-white py-20 sm:py-28 lg:py-36">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Centering container for the content */}
+        <div className="flex flex-col items-center text-center">
           
-          <Card className="shadow-soft mb-8">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">
-                Drive Immediate Results with Targeted Medical Advertising
-              </h2>
-              <p className="text-medical-gray leading-relaxed mb-6">
-                Our healthcare paid marketing services deliver immediate results through strategic 
-                advertising campaigns that target qualified patients and drive appointment bookings.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Ad Platforms:</h3>
-                  <ul className="text-medical-gray space-y-2">
-                    <li>• Google Ads</li>
-                    <li>• Facebook Ads</li>
-                    <li>• Instagram Ads</li>
-                    <li>• LinkedIn Ads</li>
-                    <li>• YouTube Ads</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Campaign Types:</h3>
-                  <ul className="text-medical-gray space-y-2">
-                    <li>• Search campaigns</li>
-                    <li>• Display advertising</li>
-                    <li>• Video campaigns</li>
-                    <li>• Remarketing</li>
-                    <li>• Local campaigns</li>
-                  </ul>
-                </div>
-              </div>
+          {/* Content Area (Text and Button) - Removed grid classes and added a max-width for better readability */}
+          <div className="max-w-4xl">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: PRIMARY_BLUE }}>
+              Healthcare PPC and Google Ads in the USA
+            </h1>
+            {/* Added mx-auto to center the max-width paragraph */}
+            <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+              {heroText}
+            </p>
 
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Launch Ad Campaign
-              </Button>
-            </CardContent>
-          </Card>
+            {/* Main CTA Button - Added justify-center to center the flex items */}
+            <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
+              <button
+                // Standardized shadow to hover:shadow-2xl for strict Tailwind compliance
+                className={`flex items-center justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
+                style={{ backgroundColor: PRIMARY_TEAL }}
+                onClick={() => console.log('Book a Call clicked from Hero')}
+              >
+                <Plus className="w-5 h-5 mr-2" />
+                BOOK A CALL
+              </button>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
   );
 };
 
-export default PaidMarketing;
+// --- Benefits of Medical Content Marketing Section ---
+
+const BenefitsSection: React.FC = () => {
+  const benefits = [
+    "Reach high-intent patients instantly at search.",
+    "Precise geo/dayparting and intent segments for patient acquisition ads.",
+    "Pay only for clicks: daily/monthly budget caps for control.",
+    "Clear ROI by campaign, keyword, conversion.",
+    "Build brand visibility and trust fast.",
+    "Competitive edge even before SEO matures.",
+    "Promote specialized services by service line.",
+    "Adapt messaging quickly to market shifts.",
+    "Complement SEO: healthcare google ads share winning data.",
+    "Capture urgent demand with call-only ads.",
+    "Improve conversions with focused landing pages.",
+    "HIPAA-safe tracking: no PHI in platforms.",
+  ];
+
+  const col1 = benefits.slice(0, 6);
+  const col2 = benefits.slice(6, 12);
+
+  return (
+    <div className="py-16 sm:py-24 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header Block */}
+        <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+                Proven Filtered Patient Acquisition Formula
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
+                Benefits of Medical Content Marketing
+            </h2>
+        </div>
+
+        {/* Content Grid */}
+        <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-start mt-12">
+          
+          {/* Left Column - Image and Description - Added subtle lift/shadow on hover */}
+          <div className="relative p-6 sm:p-8 bg-gray-50 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl hover:scale-[1.005]">
+            <div className="w-full h-72 rounded-xl overflow-hidden mb-6">
+                <img
+                    // Placeholder image URL, ready for replacement
+                    src={Image_1}
+                    alt="Two people discussing a document"
+                    className="object-cover w-full h-full"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).onerror = null;
+                      (e.target as HTMLImageElement).src = BLANK_IMAGE_URL;
+                    }}
+                />
+            </div>
+            <p className="text-lg text-gray-600">
+                Our healthcare paid media agency in the USA runs medical PPC and healthcare PPC ads with tight targeting, rigorous negatives, HIPAA-safe tracking and conversion-focused pages, all built for **measurable outcomes**.
+            </p>
+          </div>
+
+          {/* Right Column - Benefits List */}
+          <div className="mt-10 lg:mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+              
+              {/* Column 1 */}
+              <ul className="space-y-2">
+                {col1.map((benefit, index) => (
+                  <li 
+                    key={index} 
+                    className="flex items-start p-2 rounded-xl transition duration-300 hover:bg-blue-50/70 hover:shadow-sm cursor-pointer" // Added hover
+                  >
+                    <CheckCircle className="flex-shrink-0 w-6 h-6 mr-3 mt-1 text-blue-600" />
+                    <p className="text-base text-gray-700 font-medium">{benefit}</p>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Column 2 */}
+              <ul className="space-y-2">
+                {col2.map((benefit, index) => (
+                  <li 
+                    key={index} 
+                    className="flex items-start p-2 rounded-xl transition duration-300 hover:bg-blue-50/70 hover:shadow-sm cursor-pointer" // Added hover
+                  >
+                    <CheckCircle className="flex-shrink-0 w-6 h-6 mr-3 mt-1 text-blue-600" />
+                    <p className="text-base text-gray-700 font-medium">{benefit}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Footnote/Disclaimer */}
+        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
+            From Washington to West Virginia, including Oregon, Idaho, Montana, Wyoming, Vermont, New Hampshire, Maine, Rhode Island, and Delaware, our healthcare PPC / healthcare Google Ads programs—Search, Performance Max, YouTube, Microsoft Ads (Bing), call-only, and remarketing patient acquisition ads, localize targeting, copy, and scheduling, then scale state by state.
+        </p>
+
+        {/* Final CTA Button */}
+        <div className="mt-12 text-center">
+            <button
+                // Standardized shadow to hover:shadow-2xl for strict Tailwind compliance
+                className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
+                style={{ backgroundColor: PRIMARY_TEAL }}
+                onClick={() => console.log('Book a Call clicked from Benefits')}
+            >
+                <Plus className="w-5 h-5 mr-2" />
+                BOOK A CALL
+            </button>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+// --- Services Data ---
+interface Service {
+    title: string;
+    subtitle: string;
+    description: string;
+    icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    color: string;
+    imagePlaceholder: string; // Used for the image source in the alternating block style
+}
+
+const servicesData: Service[] = [
+    {
+        title: "Google Ads Search (Healthcare PPC)",
+        subtitle: "Brand protection; high-intent nonbrand...",
+        description: "Brand protection; high-intent nonbrand (“near me,” symptom, condition, treatment); service-line terms (e.g. bariatric surgery, IVF); emergency/urgent-care queries; optional competitor contexts (policy-safe). Structured with exact/phrase themes and robust negatives.",
+        icon: Search,
+        color: 'text-blue-600',
+        imagePlaceholder: Image_2,
+    },
+    {
+        title: "Demand Gen (Formerly Discovery)",
+        subtitle: "Visual placements for warm audiences...",
+        description: "Visual placements for warm audiences and cart-abandon-style journeys (policy-safe). Used sparingly for retargeting and content promotion; frequency-capped.",
+        icon: Zap,
+        color: 'text-purple-600',
+        imagePlaceholder: Image_3,
+    },
+    {
+        title: "Patient Acquisition Ads (Call-Only & Call-Extension)",
+        subtitle: "Phone-first ads for urgent lines...",
+        description: "Phone-first ads for urgent lines (ER/urgent care, same-day, after-hours). Dayparted to operating hours; call reporting and recordings (where allowed) for quality checks.",
+        icon: Phone,
+        color: 'text-red-600',
+        imagePlaceholder: Image_4,
+    },
+    {
+        title: "Microsoft Ads (Bing) Search",
+        subtitle: "Mirror top search campaigns...",
+        description: "Mirror top search campaigns for additional coverage; call extensions; location targeting; negatives and sitelinks matched to Google winners.",
+        icon: ShoppingBag,
+        color: 'text-green-600',
+        imagePlaceholder: Image_3,
+    },
+    {
+        title: "Performance Max (P-Max Ads)",
+        subtitle: "Asset groups per service line and location...",
+        description: "Asset groups per service line and location, brand exclusions, page feeds (service-line URLs), and linked Google Business Profile. Used for incremental reach + local signals; weekly asset and audience tests.",
+        icon: TrendingUp,
+        color: 'text-yellow-600',
+        imagePlaceholder: Image_2,
+    },
+    {
+        title: "Remarketing and Audiences",
+        subtitle: "RLSA (site visitors), YouTube viewers...",
+        description: "RLSA (site visitors), YouTube viewers, Customer Match (consented lists only). No sensitive interest targeting. Sequenced creatives by funnel stage with strict frequency controls.",
+        icon: Users,
+        color: 'text-pink-600',
+        imagePlaceholder: Image_3,
+    },
+    {
+        title: "YouTube Ads (Medical Google Ads)",
+        subtitle: "Skippable In-Stream and In-Feed...",
+        description: "Skippable In-Stream and In-Feed around high-intent topics and geos; sequence awareness → consideration → action. Viewer and site-based remarketing where policy permits; clear disclaimers.",
+        icon: Youtube,
+        color: 'text-red-700',
+        imagePlaceholder: Image_4,
+    },
+    {
+        title: "Local Ads Elements",
+        subtitle: "Location extensions, directions...",
+        description: "Location extensions, directions, and local copy variants; radius/city/state targeting; ad schedules tuned to staffing. Supports hospital advertising across multi-location networks.",
+        icon: MapPin,
+        color: 'text-orange-600',
+        imagePlaceholder: Image_3,
+    },
+];
+
+// --- New Service Card Component for Integrated Image and Text ---
+
+const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
+    const Icon = service.icon;
+    return (
+        // Enhanced Card Hover: Adds a slight upward translate for a 'lift' effect.
+        <div className="relative overflow-hidden rounded-2xl shadow-xl bg-white transition duration-300 hover:shadow-2xl group border border-gray-100 transform hover:-translate-y-1">
+            {/* Image (Full-looking top section - increased height from h-48 to h-64) */}
+            <div className="h-64 w-full overflow-hidden">
+                <img
+                    src={service.imagePlaceholder}
+                    alt={service.title}
+                    // Image Hover: Scales the image inside the container on hover.
+                    className="object-cover w-full h-full transform transition duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).onerror = null;
+                      (e.target as HTMLImageElement).src = BLANK_IMAGE_URL;
+                    }}
+                />
+            </div>
+            {/* Text Content */}
+            <div className="p-6">
+                <div className="flex items-start mb-3">
+                    {/* Icon and Title */}
+                    {/* Icon Hover: Changes background color slightly on group hover */}
+                    <div className={`p-3 rounded-full bg-blue-50/70 mr-4 flex-shrink-0 ${service.color} transition duration-300 group-hover:bg-blue-100/90`}>
+                        <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold pt-1" style={{ color: PRIMARY_BLUE }}>
+                        {service.title}
+                    </h3>
+                </div>
+                <p className="text-base text-gray-700 leading-relaxed mt-4">
+                    {service.description}
+                </p>
+            </div>
+        </div>
+    );
+};
+
+
+// --- Services We Offer Section ---
+
+const ServicesSection: React.FC = () => {
+    
+    return (
+        <div className="py-16 sm:py-24 lg:py-32 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                {/* Header Block */}
+                <div className="max-w-3xl mb-16">
+                    <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+                        SERVICES WE OFFER
+                    </p>
+                    <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+                        Healthcare Google Ads & Medical PPC
+                    </h2>
+                </div>
+
+                {/* Service Cards Grid (Replaced alternating layout with integrated cards) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {servicesData.map((service, index) => (
+                        <ServiceCard key={index} service={service} />
+                    ))}
+                </div>
+
+
+                {/* Section Footer - Years of Expertise (Added subtle shadow/lift) */}
+                <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005]" style={{ backgroundColor: PRIMARY_TEAL }}>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
+                        10+ Years of Medical Marketing Expertise, 100% Commitment to Your Success
+                    </h3>
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+// --- Why Choose Advance Edge Section ---
+
+interface TabContent {
+    title: string;
+    description: string;
+    imageAlt: string;
+    imageSrc: string;
+    details: string[];
+}
+
+const tabData: Record<string, TabContent> = {
+    inquiries: {
+        title: "Pre-Qualified Patient Inquiries",
+        description: "We focus on high-intent audiences and filter out noise. Campaigns are targeted by service line, location, and keywords, then validated with event-level tracking and quality controls.",
+        imageAlt: "Hand holding stars representing quality and reviews",
+        imageSrc: Image_5, 
+        details: [
+            "Targeted & Verified Intent", 
+            "Location/Service-Line Targeting", 
+            "Spam & Bot Filtering", 
+            "Call/Form/Chat Tracking"
+        ],
+    },
+    performance: {
+        title: "Performance-Driven Models",
+        description: "Plans start with KPIs (CPL, qualified rate) and acceptance criteria. We test weekly, shift budget to winners, and report what to do next, plainly.",
+        imageAlt: "Laptop displaying charts and performance graphs",
+        imageSrc: Image_6, 
+        details: [
+            "KPI-Led Planning", 
+            "Weekly Experiments", 
+            "Budget To Winners", 
+            "Transparent Dashboards"
+        ],
+    },
+    custom: {
+        title: "Custom Acquisition Programs",
+        description: "Your mix is built for your market: SEO, PPC, website design, reputation management, social, content, and automation, tuned by state rules, payer mix, and goals.",
+        imageAlt: "Hand pointing at a screen with charts/diagrams",
+        imageSrc: Image_7, 
+        details: [
+            "State-By-State Playbooks", 
+            "Service-Line Messaging", 
+            "Channel Mix By Objective"
+        ],
+    },
+    compliance: {
+        title: "Compliance & Security",
+        description: "Healthcare first. HIPAA-aware workflows, BAA available, data minimization, and no PHI in ad platforms. ADA-conscious experiences and brands safe.",
+        imageAlt: "Clipboard checklist representing compliance",
+        imageSrc: Image_8, 
+        details: [
+            "HIPAA/BAA by Default", 
+            "Data Minimization", 
+            "ADA Best Practices", 
+            "Secure Approvals/Audits"
+        ],
+    },
+    scale: {
+        title: "Built to Scale",
+        description: "From single clinics to health systems, our frameworks standardize launches, approvals, and reporting, so you can expand confidently.",
+        imageAlt: "Digital calendar/board with dates and numbers",
+        imageSrc: Image_9, 
+        details: [
+            "Multi-Location Rollups", 
+            "Role-Based Governance", 
+            "Reusable Templates", 
+            "Fast, Predictable Launches",
+            "Creative & Landing Pages"
+        ],
+    },
+};
+
+const WhyChooseSection: React.FC = () => {
+    const [activeTab, setActiveTab] = useState<keyof typeof tabData>('inquiries');
+    const content = tabData[activeTab];
+
+    // Helper component for the Tab link
+    const TabLink: React.FC<{ id: keyof typeof tabData, label: string }> = ({ id, label }) => {
+        const isActive = activeTab === id;
+        const colorClass = isActive ? `text-gray-900 font-bold` : `text-gray-500 font-medium hover:text-gray-700`;
+        const borderClass = isActive ? `bg-red-600` : `bg-gray-200 group-hover:bg-gray-400`;
+
+        return (
+            // Tab Link Hover: Added hover background and rounded corners for a softer visual effect.
+            <button
+                onClick={() => setActiveTab(id)}
+                className="group relative w-full text-left py-3 px-4 transition duration-300 focus:outline-none hover:bg-gray-100/50 rounded-lg"
+            >
+                {/* Vertical Accent Bar */}
+                <div 
+                    className={`absolute left-0 top-0 bottom-0 w-1 rounded-r-lg transition-all duration-300 ${borderClass}`} 
+                    style={{ backgroundColor: isActive ? ACCENT_RED : undefined }}
+                ></div>
+                <span className={`pl-3 text-lg transition-colors duration-300 ${colorClass}`}>{label}</span>
+            </button>
+        );
+    };
+
+    return (
+        <div className="py-16 sm:py-24 lg:py-32 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+                        Why Choose Advance Edge?
+                    </h2>
+                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                        We go beyond basic lead generation. Our data-driven approach ensures you receive verified, high-intent claimants that match the specific requirements of mass tort and personal injury cases.
+                    </p>
+                </div>
+
+                {/* Content Grid (Tabs and Active Content) */}
+                <div className="lg:grid lg:grid-cols-12 lg:gap-12 mt-12">
+                    
+                    {/* Left Column - Tab Navigation */}
+                    <div className="lg:col-span-4 rounded-2xl p-4 lg:p-0 border lg:border-none border-gray-200">
+                        <div className="space-y-1 lg:sticky lg:top-8">
+                            {Object.entries(tabData).map(([key, data]) => (
+                                <TabLink key={key} id={key as keyof typeof tabData} label={data.title} />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Right Column - Active Content */}
+                    {/* Removed 'animate-fadeIn' class to adhere strictly to Tailwind utilities */}
+                    <div key={activeTab} className="lg:col-span-8 mt-8 lg:mt-0 p-6 sm:p-8 bg-gray-50 rounded-2xl shadow-xl transition-all duration-500">
+                        
+                        <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
+                            {content.title}
+                        </h3>
+                        <p className="text-lg text-gray-600 mb-8">
+                            {content.description}
+                        </p>
+
+                        <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            {/* Details List */}
+                            <div>
+                                <ul className="space-y-4">
+                                    {content.details.map((detail, index) => (
+                                        // Added subtle hover effect to list items
+                                        <li key={index} className="flex items-start p-1 rounded-lg transition duration-200 hover:bg-gray-100/50 cursor-pointer">
+                                            <CheckCircle className="flex-shrink-0 w-6 h-6 mr-3 mt-1 text-blue-600" />
+                                            <p className="text-base text-gray-700 font-medium">{detail}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            
+                            {/* Image (Right side) */}
+                            <div className="mt-8 md:mt-0">
+                                {/* Using the generic MockImageCard for the Why Choose section tab content */}
+                                <div className="w-full h-80 rounded-2xl overflow-hidden shadow-xl border border-gray-200 flex items-center justify-center bg-gray-100">
+                                    <img
+                                        src={content.imageSrc}
+                                        alt={content.imageAlt}
+                                        className="object-cover w-full h-full"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).onerror = null;
+                                            (e.target as HTMLImageElement).src = BLANK_IMAGE_URL;
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Final CTA Button */}
+                <div className="mt-20 text-center">
+                    <button
+                        // Standardized shadow to hover:shadow-2xl for strict Tailwind compliance
+                        className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
+                        style={{ backgroundColor: PRIMARY_TEAL }}
+                        onClick={() => console.log('Book a Call clicked from Why Choose Section')}
+                    >
+                        <Plus className="w-5 h-5 mr-2" />
+                        BOOK A CALL
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+// --- Main App Component ---
+
+export default function App() {
+  return (
+    <div className="min-h-screen font-sans antialiased bg-white">
+      {/* Load Inter font only - Removed custom animation CSS to adhere to Tailwind-only rule */}
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+          body { font-family: 'Inter', sans-serif; }
+        `}
+      </style>
+
+      <main>
+        <HeroSection />
+        <BenefitsSection />
+        <ServicesSection />
+        <WhyChooseSection />
+      </main>
+      
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white">
+        <div className="container mx-auto px-8 py-16">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Transform Your Digital Future?
+            </h3>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
+            </p>
+          </div>
+
+          <div className="border-t border-gray-700 pt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+              {/* Company Info */}
+              <div>
+                <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
+                </p>
+                {/* Social Links: Added transform/scale on hover */}
+                <div className="flex space-x-4">
+                  <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📘</a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">🐦</a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📷</a>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+                <ul className="space-y-4">
+                  <li><a href="#hero" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                  <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
+                  <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                  <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
+                  <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
+                  <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div>
+                <h4 className="text-xl font-bold mb-6">Contact Info</h4>
+                <div className="space-y-4 text-gray-300">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-blue-400">📞</span>
+                    <span className="hover:text-white transition-colors cursor-pointer">(555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-blue-400">✉️</span>
+                    <span className="hover:text-white transition-colors cursor-pointer">info@advanceedgedigital.com</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <span className="text-blue-400">📍</span>
+                    <span>
+                      456 Innovation Drive<br />
+                      Tech District<br />
+                      San Francisco, CA 94105
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Office Hours */}
+              <div>
+                <h4 className="text-xl font-bold mb-6">Office Hours</h4>
+                <div className="space-y-3 text-gray-300">
+                  <div>
+                    <div className="font-medium">Monday - Friday</div>
+                    <div>8:00 AM - 6:00 PM EST</div>
+                  </div>
+                  <div>
+                    <div className="font-medium">Saturday</div>
+                    <div>9:00 AM - 2:00 PM EST</div>
+                  </div>
+                  <div>
+                    <div className="font-medium">Sunday</div>
+                    <div>Emergency Support Only</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+              <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
