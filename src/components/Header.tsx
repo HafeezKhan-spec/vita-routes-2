@@ -84,20 +84,20 @@ const Header = () => {
     <header
       className={`sticky top-0 z-50 transition-all duration-500 relative ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-lg'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl shadow-blue-500/10'
           : 'bg-white'
       }`}
     >
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex items-center justify-between h-28 transition-all duration-500">
+        <div className="flex items-center justify-between h-28 transition-all duration-700 ease-out">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
               src={logo}
               alt="Advance Edge"
-              className={`h-20 w-auto transition-transform duration-500 ${
-                isScrolled ? 'scale-120' : 'scale-110'
+              className={`h-20 w-auto transition-all duration-700 ease-out hover:scale-105 ${
+                isScrolled ? 'scale-110 drop-shadow-lg' : 'scale-100'
               } translate-x-[100px]`}
             />
           </Link>
@@ -106,8 +106,8 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`relative text-xl font-semibold transition-all duration-300 hover:text-primary hover:scale-105
-                after:content-[''] after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-500 hover:after:w-full
+              className={`relative text-xl font-semibold transition-all duration-300 hover:text-primary hover:scale-105 hover:drop-shadow-sm
+                after:content-[''] after:block after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-500 after:ease-out hover:after:w-full
                 ${isActive('/') ? 'text-primary' : 'text-foreground'} -translate-x-[10px]`}
             >
               Home
@@ -120,31 +120,31 @@ const Header = () => {
               onMouseLeave={closeServicesDelayed}
             >
               <button
-                className={`flex items-center space-x-1 text-lg font-semibold text-foreground hover:text-primary transition-all duration-300 hover:scale-105`}
+                className={`flex items-center space-x-1 text-lg font-semibold text-foreground hover:text-primary transition-all duration-300 hover:scale-105 hover:drop-shadow-sm`}
                 onClick={() => setIsServicesOpen((v) => !v)}
                 aria-haspopup="menu"
                 aria-expanded={isServicesOpen}
               >
                 <span>Services</span>
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-300 ${
-                    isServicesOpen ? 'rotate-180 text-primary' : ''
+                  className={`h-4 w-4 transition-all duration-300 ease-out ${
+                    isServicesOpen ? 'rotate-180 text-primary scale-110' : ''
                   }`}
                 />
               </button>
 
               {isServicesOpen && (
                 <div
-                  className="absolute top-full left-0 mt-3 w-64 bg-white border border-border rounded-lg shadow-xl transform origin-top animate-dropdown z-50"
+                  className="absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-2xl shadow-blue-500/20 transform origin-top animate-dropdown z-50"
                   onMouseEnter={openServices}
                   onMouseLeave={closeServicesDelayed}
                 >
-                  <div className="py-2">
+                  <div className="py-3">
                     {services.map((service) => (
                       <Link
                         key={service.path}
                         to={service.path}
-                        className="block px-4 py-3 text-base font-medium text-gray-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:pl-6 hover:scale-[1.02]"
+                        className="block px-5 py-3 text-base font-medium text-gray-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:text-primary hover:pl-7 hover:scale-[1.02] hover:shadow-sm rounded-lg mx-2"
                       >
                         {service.name}
                       </Link>
@@ -161,31 +161,31 @@ const Header = () => {
               onMouseLeave={closeSpecialitiesDelayed}
             >
               <button
-                className={`flex items-center space-x-1 text-lg font-semibold text-foreground hover:text-primary transition-all duration-300 hover:scale-105`}
+                className={`flex items-center space-x-1 text-lg font-semibold text-foreground hover:text-primary transition-all duration-300 hover:scale-105 hover:drop-shadow-sm`}
                 onClick={() => setIsSpecialitiesOpen((v) => !v)}
                 aria-haspopup="menu"
                 aria-expanded={isSpecialitiesOpen}
               >
                 <span>Specialities</span>
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-300 ${
-                    isSpecialitiesOpen ? 'rotate-180 text-primary' : ''
+                  className={`h-4 w-4 transition-all duration-300 ease-out ${
+                    isSpecialitiesOpen ? 'rotate-180 text-primary scale-110' : ''
                   }`}
                 />
               </button>
 
               {isSpecialitiesOpen && (
                 <div
-                  className="absolute top-full left-0 mt-3 w-64 bg-white border border-border rounded-lg shadow-xl transform origin-top animate-dropdown z-50"
+                  className="absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-2xl shadow-blue-500/20 transform origin-top animate-dropdown z-50"
                   onMouseEnter={openSpecialities}
                   onMouseLeave={closeSpecialitiesDelayed}
                 >
-                  <div className="py-2">
+                  <div className="py-3">
                     {specialities.map((speciality) => (
                       <Link
                         key={speciality.path}
                         to={speciality.path}
-                        className="block px-4 py-3 text-base font-medium text-gray-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:pl-6 hover:scale-[1.02]"
+                        className="block px-5 py-3 text-base font-medium text-gray-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:text-primary hover:pl-7 hover:scale-[1.02] hover:shadow-sm rounded-lg mx-2"
                       >
                         {speciality.name}
                       </Link>
@@ -197,8 +197,8 @@ const Header = () => {
 
             <Link
               to="/about"
-              className={`relative text-lg font-semibold transition-all duration-300 hover:text-primary hover:scale-105
-                after:content-[''] after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-500 hover:after:w-full
+              className={`relative text-lg font-semibold transition-all duration-300 hover:text-primary hover:scale-105 hover:drop-shadow-sm
+                after:content-[''] after:block after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-500 after:ease-out hover:after:w-full
                 ${isActive('/about') ? 'text-primary' : 'text-foreground'}`}
             >
               About
@@ -206,8 +206,8 @@ const Header = () => {
 
             <Link
               to="/contact"
-              className={`relative text-lg font-semibold transition-all duration-300 hover:text-primary hover:scale-105
-                after:content-[''] after:block after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-500 hover:after:w-full
+              className={`relative text-lg font-semibold transition-all duration-300 hover:text-primary hover:scale-105 hover:drop-shadow-sm
+                after:content-[''] after:block after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-accent after:transition-all after:duration-500 after:ease-out hover:after:w-full
                 ${isActive('/contact') ? 'text-primary' : 'text-foreground'}`}
             >
               Contact
@@ -217,10 +217,10 @@ const Header = () => {
           {/* CTA Button */}
           <Button
             onClick={() => setIsContactModalOpen(true)}
-            className="hidden md:inline-flex bg-black text-white font-semibold border-2 border-orange-500 
-                       px-6 py-3 rounded-md 
-                       transition-all duration-300 
-                       hover:text-orange-500 bg-black hover:shadow-[0_0_15px_3px_rgba(249,115,22,0.7)] 
+            className="hidden md:inline-flex bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 
+                       px-6 py-3 rounded-xl 
+                       transition-all duration-300 ease-out
+                       hover:text-orange-500 hover:bg-gradient-to-r hover:from-gray-900 hover:to-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.4)] hover:scale-105 hover:-translate-y-0.5
                        -ml-[100px]"
           >
             BOOK A CALL
@@ -228,9 +228,9 @@ const Header = () => {
 
 
           {/* Mobile menu button */}
-          <button className="md:hidden" title="Open mobile menu" aria-label="Open mobile menu">
+          <button className="md:hidden hover:scale-110 transition-transform duration-200" title="Open mobile menu" aria-label="Open mobile menu">
             <svg
-              className={`h-6 w-6 text-foreground transition-transform duration-300 hover:rotate-90`}
+              className={`h-6 w-6 text-foreground transition-all duration-300 hover:rotate-90 hover:text-primary`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -243,14 +243,14 @@ const Header = () => {
 
       {/* Contact Modal */}
         {isContactModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto">
-            <div className="bg-white rounded-lg max-w-md w-full mx-4 relative my-8 max-h-[90vh] overflow-y-auto">
-              <div className="p-6">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 overflow-y-auto animate-in fade-in duration-300">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl max-w-md w-full mx-4 relative my-8 max-h-[90vh] overflow-y-auto shadow-2xl shadow-blue-500/20 animate-in zoom-in-95 duration-300">
+              <div className="p-8">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">CONTACT US</h2>
                 <button
                   onClick={() => setIsContactModalOpen(false)}
-                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                  className="text-gray-500 hover:text-gray-700 hover:scale-110 transition-all duration-200 rounded-full p-1 hover:bg-gray-100"
                 >
                   <X className="h-6 w-6" />
                 </button>
@@ -273,7 +273,7 @@ const Header = () => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400"
                     placeholder="Name"
                   />
                 </div>
@@ -288,7 +288,7 @@ const Header = () => {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400"
                     placeholder="Email"
                   />
                 </div>
@@ -302,7 +302,7 @@ const Header = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400"
                     placeholder="Phone"
                   />
                 </div>
@@ -316,7 +316,7 @@ const Header = () => {
                     required
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-vertical"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-vertical transition-all duration-200 hover:border-gray-400"
                     rows={4}
                     placeholder="Message"
                   />
@@ -324,7 +324,7 @@ const Header = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors font-medium"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium hover:scale-[1.02] hover:shadow-lg"
                 >
                   SUBMIT
                 </button>
