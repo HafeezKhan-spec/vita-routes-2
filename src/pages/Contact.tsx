@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import contact from "../assets/contact_bg.jpg";
+
 // Helper component for SVG icons to keep the main component cleaner
 const Icon = ({ path, className = "w-6 h-6" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -9,14 +10,36 @@ const Icon = ({ path, className = "w-6 h-6" }) => (
 
 // Main App Component
 const App = () => {
-    // Data for navigation links
+    // State to show the success message after the form has been submitted
+    const [submitted, setSubmitted] = useState(false);
+    
+    // Handler for a successful submission. Netlify will redirect to a success page
+    // but in a single-page React app, we often use a hidden input and history push.
+    // However, the simplest Netlify integration is to monitor URL query params.
+    // For this example, we'll use a simple onSubmit handler that will be overridden by Netlify.
+    // Note: Netlify's standard redirect handles the submission, 
+    // so this is a simplified approach for demonstration.
+    const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+        // We let Netlify handle the submission first, 
+        // but can update local state for a better UX after a successful redirect.
+        // For simple integration, Netlify's built-in redirect is often used.
+        // In a complex React setup, you'd use Netlify's AJAX submission.
+        // For the easiest setup, we rely on the attributes.
+        setSubmitted(true);
+    }, []);
+
+
+    // Data for navigation links (kept for original component structure)
     const navLinks = ["HOME", "SERVICES", "SPECIALITIES", "ABOUT", "CONTACT"];
 
     return (
         <div className="bg-white font-sans text-gray-800">
             <main>
                 {/* Hero Section */}
-                <section className="py-16 px-4 sm:px-8 lg:px-16" style={{ backgroundImage: `url(${contact})` }}>
+                <section 
+                    className="py-16 px-4 sm:px-8 lg:px-16 bg-cover bg-center" 
+                    style={{ backgroundImage: `url(${contact})` }}
+                >
                     <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Side: Contact Info */}
                         <div>
@@ -46,14 +69,64 @@ const App = () => {
                             <img src="src/assets/Businessman_small.png" alt="Business Professional" className="rounded-lg object-cover w-full h-full" style={{minHeight: '500px'}}/>
                             <div className="absolute -bottom-8 right-0 lg:-right-8 bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
                                 <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
-                                <form className="space-y-4">
-                                    <input type="text" placeholder="Name" className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"/>
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <input type="email" placeholder="Email" className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"/>
-                                        <input type="tel" placeholder="Phone" className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"/>
+                                
+                                {/* NETLIFY FORM INTEGRATION HERE */}
+                                <form 
+                                    name="contact" 
+                                    method="POST" 
+                                    data-netlify="true" // REQUIRED: Tells Netlify to process the form
+                                    netlify-honeypot="bot-field" // OPTIONAL: Anti-spam
+                                    onSubmit={handleSubmit} // This is for local UX update only
+                                    className="space-y-4"
+                                >
+                                    {/* REQUIRED: Hidden field for Netlify to identify the form */}
+                                    <input type="hidden" name="form-name" value="contact" />
+                                    {/* OPTIONAL: Anti-spam field (must be hidden with CSS/Tailwind if used) */}
+                                    <div hidden>
+                                        <label>Don’t fill this out: <input name="bot-field" /></label>
                                     </div>
-                                    <textarea placeholder="Message" rows={4} className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"></textarea>
-                                    <button type="submit" className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md hover:bg-blue-700 transition-colors">SEND NOW</button>
+                                    
+                                    <input 
+                                        type="text" 
+                                        name="name" // REQUIRED: Name attribute
+                                        placeholder="Name" 
+                                        required
+                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
+                                    />
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <input 
+                                            type="email" 
+                                            name="email" // REQUIRED: Name attribute
+                                            placeholder="Email" 
+                                            required
+                                            className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
+                                        />
+                                        <input 
+                                            type="tel" 
+                                            name="phone" // REQUIRED: Name attribute
+                                            placeholder="Phone" 
+                                            className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
+                                        />
+                                    </div>
+                                    <textarea 
+                                        name="message" // REQUIRED: Name attribute
+                                        placeholder="Message" 
+                                        rows={4} 
+                                        required
+                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
+                                    ></textarea>
+                                    
+                                    <button 
+                                        type="submit" 
+                                        className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md hover:bg-blue-700 transition-colors"
+                                    >
+                                        SEND NOW
+                                    </button>
+
+                                    {/* Submission Success Message (Client-side) */}
+                                    {submitted && (
+                                        <p className="text-green-600 font-bold mt-2">Message submitted! Netlify will send you an email confirmation.</p>
+                                    )}
                                 </form>
                             </div>
                         </div>
@@ -65,7 +138,7 @@ const App = () => {
                     <div className="container mx-auto flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-16 text-center sm:text-left">
                         <Icon path="M21.3,9.55a1,1,0,0,0-1,0L13,13.29V3a1,1,0,0,0-2,0V13.29L3.73,9.55a1,1,0,0,0-1.46,1.37l9,5.14a1,1,0,0,0,1.46,0l9-5.14A1,1,0,0,0,21.3,9.55ZM12,18.5,4.28,14,12,9.3l7.72,4.7Z M22,19H2a1,1,0,0,0,0,2H22a1,1,0,0,0,0-2Z" className="w-12 h-12 text-gray-400" />
                         <div className="flex items-center gap-8">
-                            <span className="text-5xl font-bold text-blue-500 -ml-100">5+</span>
+                            <span className="text-5xl font-bold text-blue-500">5+</span>
                             <p className="max-w-[150px]">Healthcare Marketing Services Delivered</p>
                         </div>
                         <div className="flex items-center gap-4">
@@ -112,7 +185,7 @@ const App = () => {
                     </div>
                      <div>
                         <h4 className="font-bold text-lg text-[#0a101e] mb-4">Connect with us</h4>
-                        <a href="mailto:info@advancedgellc.com" className="block text-sm hover:text-blue-600">info@advancedgellc.com</a>
+                        <a href="mailto:info@advancedgellc.com" className="block text-sm hover:text-blue-600" id='email'>info@advancedgellc.com</a>
                         <a href="tel:8329377738" className="block text-sm hover:text-blue-600">832-937-7738</a>
                     </div>
                     <div>
@@ -135,4 +208,3 @@ const App = () => {
 };
 
 export default App;
-
