@@ -1,4 +1,5 @@
 import React , {useState, useRef, useEffect} from 'react';
+import { Link } from "react-router-dom";
 import { Plus, Check, MapPin, Target, Shield, Truck, Clock, Calendar, ChevronDown, List, Users, Briefcase, FileText, CheckCircle, Mail, Globe, Phone, BookOpen, Cpu } from 'lucide-react';
 import Image_1 from "../../assets/Image_1.webp";
 import Image_2 from "../../assets/Image_2.webp";
@@ -256,15 +257,16 @@ const contentData: ContentBlock[] = [
 /**
  * Custom CTA Button component with consistent styling from PaidMarketing.tsx.
  */
-const PrimaryButton: React.FC<{ children: React.ReactNode, onClick?: () => void }> = ({ children, onClick = () => {} }) => (
-    <button
+const PrimaryButton: React.FC<{ children: React.ReactNode, onClick?: () => void }> = ({ children, onClick }) => (
+    <Link
+        to="/contact"
+        onClick={onClick}
         className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
         style={{ backgroundColor: PRIMARY_TEAL }}
-        onClick={onClick}
     >
         <Plus className="w-5 h-5 mr-2" />
         {children}
-    </button>
+    </Link>
 );
 
 

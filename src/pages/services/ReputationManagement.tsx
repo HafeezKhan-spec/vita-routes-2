@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { Plus, CheckCircle, Smartphone, User, MapPin, TrendingUp, Briefcase, FileText, BarChart2, Shield, Search, BookOpen } from 'lucide-react';
 import Image_1 from "../../assets/Image_1.webp";
 import Image_2 from "../../assets/Image_2.webp";
@@ -100,14 +101,14 @@ const HeroSection: React.FC = () => {
 
             {/* Main CTA Button */}
             <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
-              <button
+              <Link
+                to="/contact"
                 className={`flex items-center justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
                 style={{ backgroundColor: PRIMARY_TEAL }}
-                onClick={() => console.log('Book a Call clicked from Hero')}
               >
                 <Plus className="w-5 h-5 mr-2" />
                 BOOK A CALL
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -211,14 +212,14 @@ const BenefitsSection: React.FC = () => {
 
         {/* Final CTA Button */}
         <div className="mt-12 text-center">
-          <button
+          <Link
+            to="/contact"
             className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
             style={{ backgroundColor: PRIMARY_TEAL }}
-            onClick={() => console.log('Book a Call clicked from Benefits')}
           >
             <Plus className="w-5 h-5 mr-2" />
             BOOK A CALL
-          </button>
+          </Link>
         </div>
 
       </div>
@@ -559,14 +560,14 @@ const WhyChooseSection: React.FC = () => {
 
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
-          <button
+          <Link
+            to="/contact"
             className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
             style={{ backgroundColor: PRIMARY_TEAL }}
-            onClick={() => console.log('Book a Call clicked from Why Choose Section')}
           >
             <Plus className="w-5 h-5 mr-2" />
             BOOK A CALL
-          </button>
+          </Link>
         </div>
 
       </div>

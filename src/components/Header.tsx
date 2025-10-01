@@ -9,6 +9,7 @@ const Header = () => {
   const [isSpecialitiesOpen, setIsSpecialitiesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -102,11 +103,10 @@ const Header = () => {
             />
           </Link>
 
-          {/* Horizontal Line */}
+           {/* Horizontal Line */}
           <div className="hidden md:block w-px h-16 bg-foreground/60 absolute left-[calc(50%-300px)]"></div>
           {/* Horizontal Line */}
           <div className="hidden md:block w-80 h-px bg-foreground/60 absolute left-[calc(50%-620px)] top-[100px]"></div>
-
 
 
           {/* Navigation */}
@@ -130,13 +130,16 @@ const Header = () => {
                 className={`flex items-center space-x-1 text-lg font-semibold text-foreground hover:text-primary transition-all duration-300 hover:scale-105 hover:drop-shadow-sm`}
                 onClick={() => setIsServicesOpen((v) => !v)}
                 aria-haspopup="menu"
-                aria-expanded={isServicesOpen}
+                aria-expanded={isServicesOpen ? 'true' : 'false'}
+                aria-controls="services-menu"
+                id="services-trigger"
               >
                 <span>Services</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-all duration-300 ease-out ${
                     isServicesOpen ? 'rotate-180 text-primary scale-110' : ''
                   }`}
+                  aria-hidden="true"
                 />
               </button>
 
@@ -145,6 +148,9 @@ const Header = () => {
                   className="absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-2xl shadow-blue-500/20 transform origin-top animate-dropdown z-50"
                   onMouseEnter={openServices}
                   onMouseLeave={closeServicesDelayed}
+                  role="menu"
+                  id="services-menu"
+                  aria-labelledby="services-trigger"
                 >
                   <div className="py-3">
                     {services.map((service) => (
@@ -152,6 +158,7 @@ const Header = () => {
                         key={service.path}
                         to={service.path}
                         className="block px-5 py-3 text-base font-medium text-gray-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:text-primary hover:pl-7 hover:scale-[1.02] hover:shadow-sm rounded-lg mx-2"
+                        role="menuitem"
                       >
                         {service.name}
                       </Link>
@@ -171,13 +178,16 @@ const Header = () => {
                 className={`flex items-center space-x-1 text-lg font-semibold text-foreground hover:text-primary transition-all duration-300 hover:scale-105 hover:drop-shadow-sm`}
                 onClick={() => setIsSpecialitiesOpen((v) => !v)}
                 aria-haspopup="menu"
-                aria-expanded={isSpecialitiesOpen}
+                aria-expanded={isSpecialitiesOpen ? 'true' : 'false'}
+                aria-controls="specialities-menu"
+                id="specialities-trigger"
               >
                 <span>Specialities</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-all duration-300 ease-out ${
                     isSpecialitiesOpen ? 'rotate-180 text-primary scale-110' : ''
                   }`}
+                  aria-hidden="true"
                 />
               </button>
 
@@ -186,6 +196,9 @@ const Header = () => {
                   className="absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-2xl shadow-blue-500/20 transform origin-top animate-dropdown z-50"
                   onMouseEnter={openSpecialities}
                   onMouseLeave={closeSpecialitiesDelayed}
+                  role="menu"
+                  id="specialities-menu"
+                  aria-labelledby="specialities-trigger"
                 >
                   <div className="py-3">
                     {specialities.map((speciality) => (
@@ -193,6 +206,7 @@ const Header = () => {
                         key={speciality.path}
                         to={speciality.path}
                         className="block px-5 py-3 text-base font-medium text-gray-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:text-primary hover:pl-7 hover:scale-[1.02] hover:shadow-sm rounded-lg mx-2"
+                        role="menuitem"
                       >
                         {speciality.name}
                       </Link>
@@ -222,8 +236,8 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <Button
-            onClick={() => setIsContactModalOpen(true)}
+          <Link
+            to="/contact"
             className="hidden md:inline-flex bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 
                        px-6 py-3 rounded-xl 
                        transition-all duration-300 ease-out
@@ -231,11 +245,18 @@ const Header = () => {
                        -ml-[100px]"
           >
             BOOK A CALL
-          </Button>
+          </Link>
 
 
           {/* Mobile menu button */}
-          <button className="md:hidden hover:scale-110 transition-transform duration-200" title="Open mobile menu" aria-label="Open mobile menu">
+          <button
+            className="md:hidden hover:scale-110 transition-transform duration-200"
+            title="Open mobile menu"
+            aria-label="Open mobile menu"
+            aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
+            aria-controls="mobile-menu"
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
+          >
             <svg
               className={`h-6 w-6 text-foreground transition-all duration-300 hover:rotate-90 hover:text-primary`}
               fill="none"
@@ -245,6 +266,26 @@ const Header = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
+
+          {/* Mobile Menu Panel (controlled by the button above) */}
+          <nav
+            id="mobile-menu"
+            aria-label="Mobile navigation"
+            className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-border/50 shadow-lg"
+            hidden={!isMobileMenuOpen}
+          >
+            <ul className="p-4 space-y-2">
+              <li>
+                <Link to="/" className="block px-3 py-2 text-foreground hover:text-primary">Home</Link>
+              </li>
+              <li>
+                <Link to="/about" className="block px-3 py-2 text-foreground hover:text-primary">About</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="block px-3 py-2 text-foreground hover:text-primary">Contact</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
 
@@ -258,6 +299,7 @@ const Header = () => {
                 <button
                   onClick={() => setIsContactModalOpen(false)}
                   className="text-gray-500 hover:text-gray-700 hover:scale-110 transition-all duration-200 rounded-full p-1 hover:bg-gray-100"
+                  aria-label="Close contact modal"
                 >
                   <X className="h-6 w-6" />
                 </button>

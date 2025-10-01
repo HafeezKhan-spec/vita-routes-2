@@ -1,56 +1,521 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
 
-const SkinClinics = () => {
+import BACKGROUND_IMAGE_URL from '../../assets/Background.jpg'
+import CONTENT_IMAGE_URL from '../../assets/Image_10.webp'
+
+// --- Animation Variants (Consistent with AddictionCenters.tsx) ---
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+// --- Reusable Button Component (Consistent with AddictionCenters.tsx) ---
+const BookACallButton = ({ className = "" }) => (
+    <Link to="/contact" className={`bg-indigo-600 text-white px-8 py-3 rounded-xl shadow-md 
+                        hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 
+                        flex items-center justify-center gap-2 ${className}`}>
+      <Plus className="w-4 h-4" />
+      BOOK A CALL
+    </Link>
+);
+
+// --- Component 1: Header/Hero Section (Preserves original animation logic) ---
+const HeaderSection = () => {
+    const animatedWords = ["SEO", "PPC", "Social"];
+    const [currentWord, setCurrentWord] = useState(animatedWords[0]);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentWord(prevWord => {
+                const currentIndex = animatedWords.indexOf(prevWord);
+                const nextIndex = (currentIndex + 1) % animatedWords.length;
+                return animatedWords[nextIndex];
+            });
+        }, 2000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    return (
+        <header>
+            <div
+                className="relative py-20 sm:py-28 lg:py-36 bg-cover bg-center"
+                style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
+            >
+                {/* Dark overlay consistent with AddictionCenters.tsx */}
+                <div className="absolute inset-0 bg-blue-950 bg-opacity-80"></div>
+
+                {/* Content */}
+                <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+                        Result-Driven Dermatology Marketing for U.S Skin Clinics & Dermatologists
+                        <span className="text-indigo-400 ml-2">{currentWord}</span>
+                    </h1>
+                    <p className="mt-4 text-2xl font-bold text-white-400">
+                       Searches to Booked Appointments
+                    </p>
+                    <div className="mt-8 flex justify-center">
+                        <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
+                            <BookACallButton />
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    );
+};
+
+// --- Component 2: Who Benefits Section (Consistent with AddictionCenters.tsx) ---
+const WhoBenefitsSection = () => {
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-foreground mb-8">Marketing for Skin Clinics</h1>
-          
-          <Card className="shadow-soft mb-8">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">
-                Beautiful Marketing for Dermatology and Aesthetic Practices
-              </h2>
-              <p className="text-medical-gray leading-relaxed mb-6">
-                We help dermatology and aesthetic practices showcase their expertise in both medical 
-                skin care and cosmetic procedures, attracting patients seeking healthy, beautiful skin.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Treatment Areas:</h3>
-                  <ul className="text-medical-gray space-y-2">
-                    <li>• Medical dermatology</li>
-                    <li>• Cosmetic procedures</li>
-                    <li>• Acne treatment</li>
-                    <li>• Anti-aging solutions</li>
-                    <li>• Skin cancer screening</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Visual Marketing:</h3>
-                  <ul className="text-medical-gray space-y-2">
-                    <li>• Before/after photography</li>
-                    <li>• Treatment videos</li>
-                    <li>• Skin care education</li>
-                    <li>• Product recommendations</li>
-                    <li>• Seasonal skin tips</li>
-                  </ul>
-                </div>
-              </div>
-
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Enhance Beauty Marketing
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+    <motion.section
+        className="py-16 bg-[#f8f9fc]"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
+        <motion.div className="lg:w-1/2" variants={fadeInUp}>
+            <img 
+            src={CONTENT_IMAGE_URL} 
+            alt="Dermatology marketing team discussion" 
+            className="rounded-xl shadow-2xl w-full object-cover transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-2xl"/>
+        </motion.div>
+        <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
+            <motion.h3 className="text-3xl font-extrabold text-gray-900 mb-6" variants={fadeInUp}>
+                Who Benefits from Dermatology Marketing in the USA?
+            </motion.h3>
+            <div className="space-y-6">
+              {/* Benefit 1: Medical Dermatology */}
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Medical Dermatology</h3>
+                <p className="text-gray-600">Acne treatment, eczema/dermatitis, psoriasis, rosacea, rashes/allergies, fungal infections, warts, pediatric dermatology, trichology/hair-loss, nail disorders, phototherapy, biologics.</p>
+              </motion.div>
+              {/* Benefit 2: Cosmetic & Aesthetic */}
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Cosmetic & Aesthetic</h3>
+                <p className="text-gray-600">Botox, fillers, chemical peels, microneedling/RF, PRP/PRF, laser resurfacing/laser treatments, IPL, hair removal, skin tightening, pigmentation/melasma, acne scar revision, anti-aging skin care.</p>
+              </motion.div>
+              {/* Benefit 3: Mohs & Skin Cancer */}
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Mohs & Skin Cancer</h3>
+                <p className="text-gray-600">Full-body skin exams, dermoscopy, biopsies, Mohs micrographic surgery, excisions, reconstruction, melanoma management, actinic keratoses, post-operative care.</p>
+              </motion.div>
+              {/* Benefit 4: Teledermatology */}
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Teledermatology</h3>
+                <p className="text-gray-600">Virtual consults, asynchronous photo visits, second opinions, follow-ups, prescription refills, pre/post-procedure guidance, urgent triage workflows.</p>
+              </motion.div>
+            </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
-export default SkinClinics;
+// --- Component 3: Our Marketing Process (Consistent with AddictionCenters.tsx) ---
+const ProcessSection = () => {
+    const processSteps = [
+        {
+            step: "01.",
+            title: "Discover & Plan",
+            desc: "Market research, competitor analysis, and keyword research for dermatology marketing/skin clinic marketing. Define audiences (demographics, geographic targeting), KPIs, budgeting, and compliance. Roadmap covers dermatology SEO, dermatology advertising (PPC), and dermatology social media marketing.",
+            icon: <ClipboardCheck className="w-5 h-5 text-indigo-600" />,
+        },
+        {
+            step: "02.",
+            title: "Build & QA",
+            desc: "Pages and landing pages (UX, mobile optimization, clear call to action); tracking (Google Analytics, UTMs, call tracking); CRM hooks. Local SEO setup: Google My Business + local listings. Ad accounts/creatives for Google Ads, Facebook Ads, Instagram/TikTok/YouTube. Accessibility, policy, and data checks.",
+            icon: <FileText className="w-5 h-5 text-indigo-600" />,
+        },
+        {
+            step: "03.",
+            title: "Launch & Learn",
+            desc: "Activate SEO tasks (blogging, schema, backlinks), paid search/paid ads (Search, PMAX, video), and social campaigns. Verify events, pacing, and funnel integrity. Monitor traffic, engagement, and early conversion rate signals; tighten negatives and audiences.",
+            icon: <MessageSquare className="w-5 h-5 text-indigo-600" />,
+        },
+        {
+            step: "04.",
+            title: "Optimize & Scale",
+            desc: "Shift budget to winners; expand locations/service lines (acne, Botox, laser treatments, skin cancer). Improve copy, creative, and automation. Iterate offers/promotions. Strengthen organic search and reputation (reviews). Roll up, compliant growth across the USA, appointment revenue reporting to prove ROI and guide strategy.",
+            icon: <BarChart3 className="w-5 h-5 text-indigo-600" />,
+        },
+    ];
+
+    return (
+        <motion.section
+            className="bg-gray-900 text-white py-20 relative overflow-hidden"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+        >
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
+                {/* Title */}
+                <motion.div className="text-center mb-14" variants={fadeInUp}>
+                    <h2 className="text-4xl font-extrabold tracking-wide">
+                        Our Dermatologist Marketing Process
+                    </h2>
+                    <p className="text-2xl text-indigo-400 mt-3">
+                        Discover &rarr; Build &rarr; Launch &rarr; Optimize
+                    </p>
+                </motion.div>
+
+                {/* Cards */}
+                <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                    {processSteps.map((item, idx) => (
+                        <motion.div
+                            key={idx}
+                            className="relative bg-white text-gray-900 rounded-2xl p-8 
+                     shadow-lg hover:shadow-2xl transition-all duration-300"
+                            variants={fadeInUp}
+                            whileHover={{ y: -10, scale: 1.03 }}
+                        >
+                            {/* Glowing Aura */}
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-400 to-blue-500 opacity-20 blur-2xl -z-10"></div>
+
+                            {/* Step + Icon */}
+                            <div className="flex items-start justify-between">
+                                <h4 className="text-3xl font-bold text-indigo-500">{item.step}</h4>
+                                <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-3 rounded-lg shadow-inner">
+                                    {item.icon}
+                                </div>
+                            </div>
+
+                            {/* Title + Desc */}
+                            <h5 className="text-xl font-semibold mt-5">{item.title}</h5>
+                            <p className="mt-4 text-sm leading-relaxed">{item.desc}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </motion.section>
+    );
+};
+
+// --- Component 4: Challenges Section (Consistent with AddictionCenters.tsx) ---
+const ChallengesSection = () => {
+    const challenges = [
+        "Community Gaps: Limited patient engagement, weak community building, no creator or influencers strategy.",
+        "Low SERP Visibility: Not ranking in the top 10 SERP Results.",
+        "Local Visibility Gaps: Weak Local SEO, Incomplete Google My Business (GMB) Profile, Inconsistent Local Listings.",
+        "Leaky Conversion Paths: Slow Mobile Website Design, Unclear Call-to-Action, Complex Appointment Booking, Poor User Experience.",
+        "Paid Waste Spend: Broad PPC in Google Ads/Facebook Ads without Targeting Research, Negatives, or Geographic Targeting.",
+        "Reputation Volatility: Few Online Reviews, Slow Responses, No Reputation Management Playbook.",
+        "Content Gaps: Least or No Patient Education, Thin Blogging, No Video Marketing, Weak Brand Awareness.",
+        "Measurement Issues: Traffic But No Clarity, Missing Analytics, Call Tracking, Conversion Mapping to Booked Visits.",
+    ];
+
+    return (
+        <motion.section
+            className="py-16 bg-[#f8f9fc]"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+        >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 items-start">
+                <motion.div className="lg:w-1/2 order-2 lg:order-1 space-y-6" variants={fadeInUp}>
+                    <h3 className="text-3xl font-extrabold text-gray-900">
+                        Dermatology Growth Challenges We Solve
+                    </h3>
+                    <p className="mt-4 text-lg text-gray-600">US-Focused Skin Clinic Marketing to Accelerate Patient Acquisition.</p>
+                    <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
+                        {challenges.map((challenge, index) => {
+                             const parts = challenge.split(':');
+                             const boldPart = parts[0];
+                             const restPart = parts.length > 1 ? parts.slice(1).join(':') : '';
+                            return (
+                                <li key={index}>
+                                    <strong>{boldPart}</strong>:{restPart}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                     <p className="text-sm text-gray-500 italic">
+                        Our healthcare marketing experts build scalable, multi-location programs, focused on patient acquisition and Local SEO, for clinics across California, Texas, New York, Florida, Illinois, New Jersey, and every other U.S. state.
+                    </p>
+                </motion.div>
+                {/* Image */}
+                <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInUp}>
+                    <img
+                        src={CONTENT_IMAGE_URL}
+                        alt="Dermatology marketing team working"
+                        className="rounded-xl shadow-2xl w-full object-cover transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-2xl"
+                    />
+                </motion.div>
+            </div>
+            {/* CTA Button */}
+            <motion.div
+                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+            >
+                <BookACallButton />
+            </motion.div>
+        </motion.section>
+    );
+};
+
+// --- Component 5: Approach Section (Consistent with AddictionCenters.tsx) ---
+const ApproachSection = () => {
+  return (
+    <motion.section
+        className="approach text-center py-20 relative bg-gradient-to-r from-indigo-50 via-white to-indigo-100 overflow-hidden"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+    >
+        {/* Decorative background pattern */}
+        <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-200 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-200 rounded-full blur-3xl"></div>
+        </div>
+      <div className="relative container mx-auto px-4">
+        <motion.h2
+            className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
+            variants={fadeInUp}
+        >
+            Our Dermatology Marketing Approach
+        </motion.h2>
+        <motion.p
+            className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
+            variants={fadeInUp}
+        >
+            AdvanceEdge unites data, creative and compliance to scale patient acquisition for dermatology marketing or skin clinic marketing in the USA.
+        </motion.p>
+        <div className="row mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Column 1: Attract */}
+            <motion.div
+                className="bg-white shadow-xl rounded-2xl p-8 text-left hover:shadow-2xl hover:shadow-indigo-300 transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.25 }}
+            >
+                <h3 className="flex items-center text-2xl font-semibold mb-4 text-gray-800">
+                    <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
+                    Attract
+                </h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+                    <li><strong>Dermatology SEO:</strong> Keyword research, Local SEO, Google My Business, blogging, backlinks; own local SERP.</li>
+                    <li><strong>Paid Search:</strong> Google Ads with tight PPC controls; compliant dermatology advertising on Facebook Ads or Meta Ads, video ads on YouTube/Shorts.</li>
+                    <li><strong>Social Media:</strong> Instagram Marketing, TikTok Marketing, Youtube; Creators/Influencers, Hashtags, User Generated Content; Strong Storytelling & Visual Content.</li>
+                    <li><strong>Outcomes:</strong> Qualified organic traffic and paid traffic to priority service lines.</li>
+                </ul>
+            </motion.div>
+            {/* Column 2: Convert */}
+             <motion.div
+                className="bg-white shadow-xl rounded-2xl p-8 text-left hover:shadow-2xl hover:shadow-indigo-300 transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.25 }}
+            >
+                <h3 className="flex items-center text-2xl font-semibold mb-4 text-gray-800">
+                    <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
+                    Convert
+                </h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+                    <li><strong>Website Design:</strong> Fast, ADA-conscious mobile optimization and UX.</li>
+                    <li><strong>Landing Pages:</strong> Focused layouts with clear call to action, FAQ section and Financing Details.</li>
+                    <li><strong>Proof & Access:</strong> Pricing clarity, offers/promotions, chatbots, call tracking.</li>
+                    <li><strong>Outcome:</strong> Higher conversion rate from every channel.</li>
+                </ul>
+            </motion.div>
+            {/* Column 3: Retain */}
+             <motion.div
+                className="bg-white shadow-xl rounded-2xl p-8 text-left hover:shadow-2xl hover:shadow-indigo-300 transition-all duration-300"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.25 }}
+            >
+                <h3 className="flex items-center text-2xl font-semibold mb-4 text-gray-800">
+                    <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
+                    Retain
+                </h3>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+                    <li><strong>Lifecycle Programs:</strong> Email marketing, SMS marketing, newsletters, and CRM automation.</li>
+                    <li><strong>Advocacy:</strong> Reviews, referrals, and ongoing patient education content.</li>
+                    <li><strong>Measurement:</strong> Continuous analytics and optimization proving ROI across locations.</li>
+                    <li><strong>Outcome:</strong> Stronger loyalty and repeat visits, with clear revenue impact.</li>
+                </ul>
+            </motion.div>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+// --- Component 6: Why Choose Section (Consistent with AddictionCenters.tsx) ---
+const WhyChooseSection = () => {
+    const features = [
+        "Dermatology SEO for acne, Mohs, cosmetics.",
+        "Brand consistency with branding and logo design standards.",
+        "Google Ads for Botox, lasers and other skin treatments.",
+        "Local SEO: GBP, reviews, map-pack wins.",
+        "Instagram/TikTok education: procedures and aftercare.",
+        "Conversion landing pages with call tracking.",
+        "Facebook and Instagram Insights for Strategy Updations.",
+        "HIPAA/BAA workflows for galleries, testimonials."
+    ];
+
+    return (
+        <motion.section
+            className="choose text-center py-20 relative bg-gray-50 overflow-hidden"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+        >
+            <div className="relative container mx-auto px-4">
+                <motion.h2
+                    className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
+                    variants={fadeInUp}
+                >
+                    Why Choose AdvanceEdge for Dermatology Marketing?
+                </motion.h2>
+                <motion.p
+                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
+                    variants={fadeInUp}
+                >
+                    Providing scalable dermatology marketing solutions for U.S. skin clinics, partner with us for measurable digital growth.
+                </motion.p>
+
+                <div className="row mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    {features.map((item, idx) => (
+                        <motion.div
+                            key={idx}
+                            className="bg-white shadow-lg rounded-xl p-6 flex items-center hover:shadow-2xl hover:shadow-indigo-200 transition-all duration-300"
+                            variants={fadeInUp}
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.25 }}
+                        >
+                            <CheckCircle className="text-indigo-600 mr-4 text-2xl hover:text-indigo-700 transition-colors duration-300" />
+                            <p className="text-gray-700">{item}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </motion.section>
+    );
+};
+
+// --- Component 7: Footer Section (Consistent with AddictionCenters.tsx) ---
+const FooterSection = () => (
+    <footer className="bg-gray-800 text-white">
+        <div className="container mx-auto px-8 py-16">
+            <div className="text-center mb-16">
+                <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                    Ready to Transform Your Digital Future?
+                </h3>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
+                </p>
+            </div>
+
+            <div className="border-t border-gray-700 pt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    {/* Company Info */}
+                    <div>
+                        <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                            Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
+                        </p>
+                        <div className="flex space-x-4">
+                            <a href="#" className="text-gray-400 hover:text-white transition-colors">📘</a>
+                            <a href="#" className="text-gray-400 hover:text-white transition-colors">🐦</a>
+                            <a href="#" className="text-gray-400 hover:text-white transition-colors">📷</a>
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h4 className="text-xl font-bold mb-6">Quick Links</h4>
+                        <ul className="space-y-4">
+                            <li><a href="#hero" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
+                            <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                            <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
+                            <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
+                            <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <h4 className="text-xl font-bold mb-6">Contact Info</h4>
+                        <div className="space-y-4 text-gray-300">
+                            <div className="flex items-center space-x-3">
+                                <span>📞</span>
+                                <span>(555) 123-4567</span>
+                            </div>
+                            <div className="flex items-center space-x-3">
+                                <span>✉️</span>
+                                <span>info@advanceedgedigital.com</span>
+                            </div>
+                            <div className="flex items-start space-x-3">
+                                <span>📍</span>
+                                <span>
+                                    456 Innovation Drive<br />
+                                    Tech District<br />
+                                    San Francisco, CA 94105
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Office Hours */}
+                    <div>
+                        <h4 className="text-xl font-bold mb-6">Office Hours</h4>
+                        <div className="space-y-3 text-gray-300">
+                            <div>
+                                <div className="font-medium">Monday - Friday</div>
+                                <div>8:00 AM - 6:00 PM EST</div>
+                            </div>
+                            <div>
+                                <div className="font-medium">Saturday</div>
+                                <div>9:00 AM - 2:00 PM EST</div>
+                            </div>
+                            <div>
+                                <div className="font-medium">Sunday</div>
+                                <div>Emergency Support Only</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                    <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+);
+
+
+// --- Main App Component --- //
+export default function SkinClinics() {
+  return (
+    <div className="font-sans bg-[#f8f9fc] text-[#111]">
+      <HeaderSection />
+      <WhoBenefitsSection />
+      <ProcessSection />
+      <ChallengesSection />
+      <ApproachSection />
+      <WhyChooseSection />
+      <FooterSection />
+    </div>
+  )
+}
