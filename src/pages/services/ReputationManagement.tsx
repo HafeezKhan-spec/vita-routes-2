@@ -560,13 +560,8 @@ const WhyChooseSection: React.FC = () => {
 
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
-          <Link
-            to="/contact"
-            className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-            style={{ backgroundColor: PRIMARY_TEAL }}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
+          <Link to="/contact" className="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 px-6 rounded-md shadow transition-transform transform hover:scale-105">
+            Book a Call
           </Link>
         </div>
 

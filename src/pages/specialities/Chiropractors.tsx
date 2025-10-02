@@ -42,7 +42,7 @@ const HeaderSection = () => (
 
             {/* Content (Original text preserved, centering applied for consistent UI) */}
             <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
-                <h1 className="text-3xl md:text-4xl font-bold leading-sung">
+                <h1 className="text-3xl sm:text-5xl font-bold leading-sung">
                     Proven Strategic Growth for <br />
                     <span className="block">Chiropractic Practices</span>
                 </h1>

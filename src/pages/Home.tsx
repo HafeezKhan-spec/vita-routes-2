@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import home from '@/assets/Home.webp';
+import image_12 from '@/assets/image_12.webp';
+import stepImg from '@/assets/step.webp';
+import homeImage from '@/assets/home_image.png';
+import home_1 from '@/assets/home_1.webp';
+import home_2 from '@/assets/home_2.webp';
+import home_3 from '@/assets/home_3.webp';
 // --- SVG Icon Components ---
 // Using inline SVGs to keep everything in one file and avoid external dependencies.
 
@@ -63,42 +69,49 @@ const MentalHealthIcon = ({ className }) => (
 );
 
 // --- Data for Service Cards ---
+import Image_1 from "@/assets/Image_1.webp";
+import Image_2 from "@/assets/Image_2.webp";
+import Image_3 from "@/assets/Image_3.webp";
+import Image_4 from "@/assets/Image_4.webp";
+import Image_5 from "@/assets/Image_5.webp";
+import Image_6 from "@/assets/Image_6.webp";
+
 const services = [
     {
         icon: DentalIcon,
         title: 'Dental Clinics / DSOs',
         description: 'General dentistry, DSOs/MSOs, orthodontics, periodontics, oral surgery, endodontics, pediatric dentistry, and implant centers.',
-        imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ff208a3def7?q=80&w=1974&auto=format&fit=crop',
+        imageUrl: Image_1,
     },
     {
         icon: HospitalIcon,
         title: 'Multispecialty Hospitals',
         description: 'Community hospitals, health systems, and outpatient centers. Service lines: cardiology, orthopedics, oncology, women\'s health, primary care.',
-        imageUrl: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=2070&auto=format&fit=crop',
+        imageUrl: Image_2,
     },
     {
         icon: IvfIcon,
         title: 'IVF / Fertility Clinics',
         description: 'IVF centers, reproductive endocrinologists (REI), egg-freezing, donor/gestational carrier programs, and male fertility partnerships.',
-        imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop',
+        imageUrl: Image_3,
     },
     {
         icon: EyeIcon,
         title: 'Eye Clinics / Ophthalmology',
         description: 'Ophthalmology groups, refractive/LASIK, cataract surgery, retina/cornea subspecialists, pediatric ophthalmology, and OD co-management.',
-        imageUrl: 'https://images.unsplash.com/photo-1596541223933-f50f26213580?q=80&w=2070&auto=format&fit=crop',
+        imageUrl: Image_4,
     },
     {
         icon: ChiropracticIcon,
         title: 'Chiropractors',
         description: 'Solo and multi-location clinics, sports chiropractic, prenatal/pediatric care, and integrated pain/rehab practices.',
-        imageUrl: 'https://images.unsplash.com/photo-1555815495-508b5f6e865f?q=80&w=1964&auto=format&fit=crop',
+        imageUrl: Image_5,
     },
     {
         icon: MentalHealthIcon,
         title: 'Mental Health / Addiction',
         description: 'Outpatient psychiatry, IOP/PHP programs, residential rehab/detox, MAT clinics, and tele-mental-health platforms.',
-        imageUrl: 'https://images.unsplash.com/photo-1598214886806-c87b84b7078b?q=80&w=1925&auto=format&fit=crop',
+        imageUrl: Image_6,
     },
 ];
 
@@ -166,6 +179,7 @@ const HeroSection = ({ onBookCallClick }) => {
       className="relative py-20 sm:py-28 lg:py-36 bg-cover bg-center"
       style={{ backgroundImage: `url(${home})`, minHeight: '480px' }}
       >
+       <div className="absolute inset-0 bg-black/10"></div>
        <div className="relative z-10 container mx-auto px-8 text-center">
          <div className="max-w-5xl mx-auto">
            <h1 className="text-5xl md:text-5xl font-bold text-black mb-8 leading-tight -ml-80">
@@ -174,11 +188,11 @@ const HeroSection = ({ onBookCallClick }) => {
            <p className="text-xl md:text-2xl text-black mb-12 leading-relaxed max-w-4xl mx-auto -ml-20">
              From Click to Appointment, HIPAA-Aware Patient Growth for Clinics and Hospitals.
            </p>
-           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-             <a href="#" className="bg-black text-white px-8 py-3 rounded-md font-bold text-lg hover:bg-gray-800 transition-colors -ml-60">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#" className="bg-black text-white px-8 py-3 rounded-md font-bold text-lg transition-all duration-300 transform hover:scale-[1.05] hover:shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black -ml-60">
                BOOK A CALL
              </a>
-           </div>
+            </div>
          </div>
        </div>
      </div>
@@ -190,7 +204,7 @@ const AboutSection = () => (
         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/2">
-                    <img src="src/assets/image_12.webp" alt="Doctor" className="rounded-2xl shadow-2xl" />
+                    <img src={image_12} alt="Doctor" className="rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-[1.03]" />
                 </div>
                 <div className="md:w-1/2">
                     <p className="text-red-500 font-semibold tracking-widest mb-2">ABOUT ADVANCEEDGE</p>
@@ -221,7 +235,7 @@ const ServicesSection = () => {
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {servicesList.slice(0, 2).map((service, index) => (
-                        <div key={index} className="border border-blue-800/50 rounded-lg p-8 bg-slate-900/30 flex flex-col gap-4">
+                        <div key={index} className="border border-blue-800/50 rounded-lg p-8 bg-slate-900/30 flex flex-col gap-4 transition-all duration-300 hover:border-blue-400/70 hover:bg-slate-800/40 hover:shadow-lg transform hover:-translate-y-1">
                             <h3 className="text-2xl font-semibold">{service.title}</h3>
                             <p className="text-gray-400">{service.description}</p>
                         </div>
@@ -234,7 +248,7 @@ const ServicesSection = () => {
                          </p>
                      </div>
                       {servicesList.slice(2).map((service, index) => (
-                         <div key={index + 2} className="border border-blue-800/50 rounded-lg p-8 bg-slate-900/30 flex flex-col gap-4">
+                         <div key={index + 2} className="border border-blue-800/50 rounded-lg p-8 bg-slate-900/30 flex flex-col gap-4 transition-all duration-300 hover:border-blue-400/70 hover:bg-slate-800/40 hover:shadow-lg transform hover:-translate-y-1">
                              <h3 className="text-2xl font-semibold">{service.title}</h3>
                              <p className="text-gray-400">{service.description}</p>
                          </div>
@@ -388,7 +402,7 @@ const MainView = () => (
       </div>
       <div className="group relative overflow-hidden rounded-2xl shadow-xl">
         <img
-          src="src/assets/step.webp"
+          src={stepImg}
           alt="Healthcare marketing"
           className="w-full h-full object-cover transform transition-transform duration-900 ease-out group-hover:scale-[1.15]"
         />
@@ -409,7 +423,7 @@ const WhyChooseUsSection = () => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     <div className="lg:w-1/3">
-                        <img src="src/assets/home_image.png" alt="Professional man" className="rounded-2xl shadow-xl"/>
+                        <img src={homeImage} alt="Professional man" className="rounded-2xl shadow-xl"/>
                     </div>
                     <div className="lg:w-2/3 flex flex-col xl:flex-row gap-8">
                         <div className="bg-slate-800 text-white p-8 rounded-2xl shadow-2xl space-y-6 flex-1">
@@ -454,7 +468,7 @@ const OurApproachSection = () => {
                 <p className="max-w-3xl mx-auto text-gray-600 mb-12">At AdvanceEdge, your healthcare marketing agency in the USA, we connect strategy to execution and improve results week after week: clarify goals and markets; map SEO, PPC, social, content, automation; set budgets and metrics; build and QA pages, tracking, campaigns; test weekly, shift spend to winners, scale locations and service lines.</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {approaches.map((item, i) => (
-                        <div key={i} className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500">
+                        <div key={i} className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:border-blue-600">
                             <div className="flex justify-center mb-4">{item.icon}</div>
                             <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
                             <p className="text-gray-600 text-sm">{item.description}</p>
@@ -471,17 +485,17 @@ const TestimonialsSection = () => {
         { 
             name: "Antoine Benton", 
             text: "AdvanceEdge's AI-driven support and acquisition tools transformed our process. Their virtual agents are responsive, and deliver measurable results.",
-            image: 'src/assets/home_1.webp'
+            image: home_1
         },
         { 
             name: "Karol Mcnally", 
             text: "Their team helped us redefine client outreach—smart, strategic, and remarkably effective. Our conversion rates have never been stronger.",
-            image: 'src/assets/home_2.webp'
+            image: home_2
         },
         { 
             name: "Bianka Hilton", 
             text: "AdvanceEdge gave us a competitive edge with proactive digital marketing that is responsive to law firms. Fast, professional, and result-oriented.",
-            image: 'src/assets/home_3.webp'
+            image: home_3
         },
     ];
 
@@ -550,18 +564,18 @@ const Footer = () => (
                  <div>
                     <h3 className="text-white text-lg font-semibold mb-4">Newsletter</h3>
                     <form className="flex">
-                        <input type="email" placeholder="Email" className="bg-gray-800 text-white px-3 py-2 rounded-l-md focus:outline-none w-full text-sm"/>
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 rounded-r-md">&rarr;</button>
+                        <input type="email" placeholder="Email" className="bg-gray-800 text-white px-3 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-600 w-full text-sm transition-colors duration-200"/>
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 rounded-r-md transition-transform duration-200 transform hover:scale-105">&rarr;</button>
                     </form>
                 </div>
             </div>
              <div className="mt-12 border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
                 <p>&copy; 2025. All Rights reserved. AdvanceedgeDigital.</p>
                 <div className="flex space-x-4 mt-4 sm:mt-0">
-                    <a href="#" className="hover:text-white">FB</a>
-                    <a href="#" className="hover:text-white">IN</a>
-                    <a href="#" className="hover:text-white">TW</a>
-                    <a href="#" className="hover:text-white">YT</a>
+                    <a href="#" className="transition-colors duration-200 hover:text-white">FB</a>
+                    <a href="#" className="transition-colors duration-200 hover:text-white">IN</a>
+                    <a href="#" className="transition-colors duration-200 hover:text-white">TW</a>
+                    <a href="#" className="transition-colors duration-200 hover:text-white">YT</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import contact from "../assets/contact_bg.jpg";
+import businessmanSmall from "@/assets/Businessman_small.png";
+import contactTeam from "@/assets/contact.jpg";
 
 // Helper component for SVG icons to keep the main component cleaner
 const Icon = ({ path, className = "w-6 h-6" }) => (
@@ -66,7 +68,7 @@ const App = () => {
 
                         {/* Right Side: Contact Form & Image */}
                         <div className="relative">
-                            <img src="src/assets/Businessman_small.png" alt="Business Professional" className="rounded-lg object-cover w-full h-full" style={{minHeight: '500px'}}/>
+                            <img src={businessmanSmall} alt="Business Professional" className="rounded-lg object-cover w-full h-full" style={{minHeight: '500px'}}/>
                             <div className="absolute -bottom-8 right-0 lg:-right-8 bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
                                 <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
                                 
@@ -151,7 +153,7 @@ const App = () => {
                 {/* Growth Brief Section */}
                 <section className="py-20 px-4 sm:px-8 lg:px-16">
                     <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-                        <img src="src/assets/contact.jpg" alt="Team meeting" className="rounded-lg shadow-lg w-full"/>
+                        <img src={contactTeam} alt="Team meeting" className="rounded-lg shadow-lg w-full"/>
                         <div className="bg-gray-50 p-12 rounded-lg relative -mt-12 lg:mt-0 lg:-ml-12">
                             <h2 className="text-3xl font-bold text-[#0a101e] mb-4">Healthcare Marketing Growth Brief - Trends, Strategies & Insights for U.S. Healthcare Practices</h2>
                             <p className="text-gray-600">

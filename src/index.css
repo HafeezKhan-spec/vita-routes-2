@@ -161,3 +161,8 @@ html {
 .shadow-3xl {
   box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
 }
+
+.text-glow {
+  /* This creates a subtle white glow around the text */
+  text-shadow: 0 0 5px rgba(255, 255, 255), 0 0 10px rgba(255, 255, 255, 0.3);
+}

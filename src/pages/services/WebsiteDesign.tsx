@@ -235,7 +235,7 @@ const BenefitsSection: React.FC = () => {
                 {/* Final CTA Button */}
                 <div className="mt-12 text-center">
                     <PrimaryButton onClick={() => console.log('Book a Call clicked from Benefits')}>
-                        BOOK A CALL
+                        Book a Call
                     </PrimaryButton>
                 </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutUs from '@/assets/About_us.webp';
 
 // SVG Icon Components
 const MailIcon = ({ className = "h-4 w-4 mr-2" }) => (
@@ -33,10 +34,7 @@ const AboutSection = () => (
         <div className="container mx-auto px-4 md:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    {/* For the image to display correctly, you'll need to place 'About_us.webp' 
-                        inside the 'public' folder of your React project. Web pages can't directly 
-                        access local file paths like the one you provided for security reasons. */}
-                    <img src="src/assets/About_us.webp" alt="About AdvanceEdge" className="rounded-lg shadow-2xl w-full" />
+                    <img src={aboutUs} alt="About AdvanceEdge" className="rounded-lg shadow-2xl w-full" />
                 </div>
                 <div>
                     <h2 className="text-4xl font-bold text-gray-800 mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-600">About Us</h2>

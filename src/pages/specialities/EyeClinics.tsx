@@ -1,4 +1,11 @@
 import React from "react";
+// Local CTA button restored
+const BookACallButton = () => (
+    <Link to="/contact" className="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 ml-80">
+      <Plus className="w-4 h-4" />
+      BOOK A CALL
+    </Link>
+);
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Plus,Search,Rocket, FileText, BarChart3, CircleCheckBigIcon, CheckCircle, } from "lucide-react";
@@ -21,14 +28,7 @@ const fadeInUp = {
 };
 
 // --- Reusable Button Component ---
-const BookACallButton = () => (
-    <Link to="/contact" className="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow-md 
-                        hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 
-                        flex items-center justify-center gap-2">
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+// Using shared BookCallButton for consistent header-style CTA across pages.
 
 // --- Component 1: Header/Hero Section ---
 const HeaderSection = () => (
@@ -42,7 +42,7 @@ const HeaderSection = () => (
 
             {/* Content (Original text preserved, centering applied for consistent UI) */}
             <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
-                <h1 className="text-3xl md:text-4xl font-bold leading-sung">
+                <h1 className="text-3xl sm:text-5xl font-bold leading-sung">
                     Marketing Playbooks for Eye<br />
                     <span className="block"> Care Marketing </span>
                 </h1>

@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from 'react';
+// Local CTA button restored
+const BookACallButton = () => (
+    <Link to="/contact" className="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+      <Plus className="w-4 h-4" />
+      BOOK A CALL
+    </Link>
+);
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
@@ -21,14 +28,7 @@ const fadeInUp = {
 };
 
 // --- Reusable Button Component (Consistent with AddictionCenters.tsx) ---
-const BookACallButton = ({ className = "" }) => (
-    <Link to="/contact" className={`bg-indigo-600 text-white px-8 py-3 rounded-xl shadow-md 
-                        hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 
-                        flex items-center justify-center gap-2 ${className}`}>
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+// Using shared BookCallButton for consistent header-style CTA across pages.
 
 // --- Component 1: Header/Hero Section (Preserves original animation logic) ---
 const HeaderSection = () => {
