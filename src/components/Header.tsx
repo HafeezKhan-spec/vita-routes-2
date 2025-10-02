@@ -36,6 +36,9 @@ const Header = () => {
   }, [isContactModalOpen, isMobileMenuOpen]);
   const location = useLocation();
   const navigate = useNavigate();
+  // Show back arrow only when this is NOT the initial entry in the app
+  // React Router sets initial location.key to 'default' for first load
+  const canGoBack = location.key !== 'default';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -128,21 +131,19 @@ const Header = () => {
         <div className="flex items-center justify-between h-20 md:h-28 transition-all duration-700 ease-out">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            {/* Mobile-only back button */}
-            <button
-              className="md:hidden rounded-full p-1 transition-all duration-200 hover:bg-gray-100"
-              aria-label="Go back"
-              title="Go back"
-              onClick={() => {
-                if (window.history.length > 1) {
+            {/* Mobile-only back button, only shown when we can navigate back */}
+            {canGoBack && (
+              <button
+                className="md:hidden rounded-full p-1 transition-all duration-200 hover:bg-gray-100"
+                aria-label="Go back"
+                title="Go back"
+                onClick={() => {
                   navigate(-1);
-                } else {
-                  navigate('/');
-                }
-              }}
-            >
-              <ArrowLeft className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
-            </button>
+                }}
+              >
+                <ArrowLeft className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+              </button>
+            )}
 
             <Link to="/" className="flex items-center space-x-2">
               <img
