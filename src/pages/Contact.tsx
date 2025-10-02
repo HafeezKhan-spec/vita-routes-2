@@ -42,7 +42,7 @@ const App = () => {
                     className="py-16 px-4 sm:px-8 lg:px-16 bg-cover bg-center" 
                     style={{ backgroundImage: `url(${contact})` }}
                 >
-                    <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="container mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                         {/* Left Side: Contact Info */}
                         <div>
                             <span className="text-white font-semibold text-sm">GET IN TOUCH</span>
@@ -68,8 +68,12 @@ const App = () => {
 
                         {/* Right Side: Contact Form & Image */}
                         <div className="relative">
-                            <img src={businessmanSmall} alt="Business Professional" className="rounded-lg object-cover w-full h-full" style={{minHeight: '500px'}}/>
-                            <div className="absolute -bottom-8 right-0 lg:-right-8 bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
+                            <img
+                                src={businessmanSmall}
+                                alt="Business Professional"
+                                className="rounded-lg object-cover w-full h-full min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]"
+                            />
+                            <div className="mt-4 lg:mt-0 lg:absolute lg:-bottom-8 lg:right-0 lg:-right-8 bg-white p-6 sm:p-8 rounded-lg shadow-2xl w-full max-w-md">
                                 <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
                                 
                                 {/* NETLIFY FORM INTEGRATION HERE */}
@@ -151,10 +155,10 @@ const App = () => {
                 </section>
 
                 {/* Growth Brief Section */}
-                <section className="py-20 px-4 sm:px-8 lg:px-16">
-                    <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-16">
+                    <div className="container mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                         <img src={contactTeam} alt="Team meeting" className="rounded-lg shadow-lg w-full"/>
-                        <div className="bg-gray-50 p-12 rounded-lg relative -mt-12 lg:mt-0 lg:-ml-12">
+                        <div className="bg-gray-50 p-6 sm:p-10 lg:p-12 rounded-lg relative lg:-ml-12">
                             <h2 className="text-3xl font-bold text-[#0a101e] mb-4">Healthcare Marketing Growth Brief - Trends, Strategies & Insights for U.S. Healthcare Practices</h2>
                             <p className="text-gray-600">
                                 Stay ahead with practical playbooks from a healthcare marketing agency USA. Each issue distills what works now in patient acquisition, SEO, PPC, social, content, websites, and analytics, direct from our healthcare digital marketing agency team.

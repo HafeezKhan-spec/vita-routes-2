@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ChevronDown, X, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.webp';
 import bgvid from '@/assets/bgvid.mp4'; 
@@ -34,6 +35,7 @@ const Header = () => {
     };
   }, [isContactModalOpen, isMobileMenuOpen]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -91,7 +93,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-500 relative ${
+      className={`sticky top-0 ${isMobileMenuOpen ? 'z-[1000]' : 'z-50'} transition-all duration-500 relative ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl shadow-blue-500/10'
           : 'bg-transparent'
@@ -123,17 +125,35 @@ const Header = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex items-center justify-between h-28 transition-all duration-700 ease-out">
+        <div className="flex items-center justify-between h-20 md:h-28 transition-all duration-700 ease-out">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img
-              src={logo}
-              alt="Advance Edge"
-              className={`h-20 w-auto transition-all duration-700 ease-out hover:scale-105 ${
-                isScrolled ? 'scale-110 drop-shadow-lg' : 'scale-100'
-              } translate-x-[100px]`}
-            />
-          </Link>
+          <div className="flex items-center space-x-2">
+            {/* Mobile-only back button */}
+            <button
+              className="md:hidden rounded-full p-1 transition-all duration-200 hover:bg-gray-100"
+              aria-label="Go back"
+              title="Go back"
+              onClick={() => {
+                if (window.history.length > 1) {
+                  navigate(-1);
+                } else {
+                  navigate('/');
+                }
+              }}
+            >
+              <ArrowLeft className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+            </button>
+
+            <Link to="/" className="flex items-center space-x-2">
+              <img
+                src={logo}
+                alt="Advance Edge"
+                className={`h-12 md:h-20 w-auto transition-all duration-700 ease-out hover:scale-105 ${
+                  isScrolled ? 'md:scale-110 drop-shadow-lg' : 'scale-100'
+                } md:translate-x-[100px]`}
+              />
+            </Link>
+          </div>
 
           {/* Horizontal Lines: show only before scrolling */}
           {!isScrolled && (
@@ -303,25 +323,26 @@ const Header = () => {
 
       {/* Mobile Menu Panel */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          <div className="absolute right-0 top-0 h-full w-80 bg-white/95 backdrop-blur-xl border-l border-gray-200/60 shadow-2xl shadow-blue-500/20 animate-in slide-in-from-right duration-300 overflow-y-auto scroll-smooth overscroll-contain">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-4 sticky top-0 bg-white/95 backdrop-blur-xl z-10 pb-3 border-b border-gray-200">
-                <span className="text-xl font-bold text-gray-900">Menu</span>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-500 hover:text-gray-700 hover:scale-110 transition-all duration-200 rounded-full p-1 hover:bg-gray-100"
-                  aria-label="Close menu"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
+        createPortal(
+          <div className="fixed inset-0 z-[1100] md:hidden">
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <div className="absolute right-0 top-0 h-full w-11/12 sm:w-80 bg-white/95 backdrop-blur-xl border-l border-gray-200/60 shadow-2xl shadow-blue-500/20 animate-in slide-in-from-right duration-300 overflow-y-auto scroll-smooth overscroll-contain">
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-4 sticky top-0 bg-white/95 backdrop-blur-xl z-10 pb-3 border-b border-gray-200">
+                  <span className="text-xl font-bold text-gray-900">Menu</span>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-gray-500 hover:text-gray-700 hover:scale-110 transition-all duration-200 rounded-full p-1 hover:bg-gray-100"
+                    aria-label="Close menu"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
+                </div>
 
-              <nav className="space-y-2">
+                <nav className="space-y-2">
                 <Link
                   to="/"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -413,10 +434,12 @@ const Header = () => {
                     BOOK A CALL
                   </Button>
                 </div>
-              </nav>
+                </nav>
+              </div>
             </div>
-          </div>
-        </div>
+          </div>,
+          document.body
+        )
       )}
 
       {/* Contact Modal */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import home from '@/assets/Home.webp';
 import image_12 from '@/assets/image_12.webp';
 import stepImg from '@/assets/step.webp';
@@ -173,25 +174,25 @@ const ContactForm = () => (
 
 // --- Page Section Components ---
 
-const HeroSection = ({ onBookCallClick }) => {
+const HeroSection = () => {
     return (
   <div
       className="relative py-20 sm:py-28 lg:py-36 bg-cover bg-center"
       style={{ backgroundImage: `url(${home})`, minHeight: '480px' }}
       >
        <div className="absolute inset-0 bg-black/10"></div>
-       <div className="relative z-10 container mx-auto px-8 text-center">
+       <div className="relative z-10 container mx-auto px-6 sm:px-8 text-center">
          <div className="max-w-5xl mx-auto">
-           <h1 className="text-5xl md:text-5xl font-bold text-black mb-8 leading-tight -ml-80">
+           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 md:mb-8 leading-tight">
              Top Healthcare Marketing Agency
            </h1>
-           <p className="text-xl md:text-2xl text-black mb-12 leading-relaxed max-w-4xl mx-auto -ml-20">
+           <p className="text-base sm:text-lg md:text-2xl text-black mb-8 md:mb-12 leading-relaxed max-w-4xl mx-auto">
              From Click to Appointment, HIPAA-Aware Patient Growth for Clinics and Hospitals.
            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#" className="bg-black text-white px-8 py-3 rounded-md font-bold text-lg transition-all duration-300 transform hover:scale-[1.05] hover:shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black -ml-60">
-               BOOK A CALL
-             </a>
+              <Link to="/contact" className="w-full sm:w-auto bg-black text-white px-8 py-3 rounded-md font-bold text-lg transition-all duration-300 transform hover:scale-[1.05] hover:shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                BOOK A CALL
+              </Link>
             </div>
          </div>
        </div>
@@ -330,7 +331,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     );
 };
 
-function HomeInternal({ onBookCallClick }) {
+function HomeInternal() {
     const [isGridHovered, setGridHovered] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -346,12 +347,12 @@ function HomeInternal({ onBookCallClick }) {
                         <h2 className="text-sm font-bold uppercase text-teal-500 tracking-widest mb-2">OUR EXPERTISE</h2>
                         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Healthcare Industries We Serve in USA</h1>
                         <p className="text-lg text-gray-600 mb-8">Our medical marketing agency partners with US hospitals, clinics and telehealth brands, providing tailored digital marketing services for each line.</p>
-                        <button 
-                            onClick={onBookCallClick}
-                            className="bg-gray-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                        <Link 
+                            to="/contact"
+                            className="inline-block bg-gray-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                         >
                             BOOK A CALL
-                        </button>
+                        </Link>
                     </header>
                     <div className="lg:w-1/3">
                         <div className="bg-white p-6 rounded-lg border border-gray-200 h-full shadow-sm">
@@ -393,12 +394,12 @@ const MainView = () => (
           Acquisition In Changing <br />
           Market?
         </h1>
-        <a
-          href="#"
-          className="mt-12 bg-black border border-black text-white py-3 px-8 w-max text-sm font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+        <Link
+          to="/contact"
+          className="mt-12 inline-block bg-black border border-black text-white py-3 px-8 w-max text-sm font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
         >
           BOOK A CALL
-        </a>
+        </Link>
       </div>
       <div className="group relative overflow-hidden rounded-2xl shadow-xl">
         <img
@@ -586,18 +587,13 @@ const Footer = () => (
 // --- Main App Component ---
 
 export default function App() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
     return (
         <div className="bg-white font-sans">
             <main>
-                <HeroSection onBookCallClick={openModal} />
+                <HeroSection />
                 <AboutSection />
                 <ServicesSection />
-                <HomeInternal onBookCallClick={openModal} />
+                <HomeInternal />
                 <MainView />
                 <WhyChooseUsSection />
                 <OurApproachSection />
@@ -605,7 +601,6 @@ export default function App() {
                 <FinalCTASection />
             </main>
             <Footer />
-            <ContactModal isOpen={isModalOpen} onClose={closeModal} />
         </div>
     );
 }

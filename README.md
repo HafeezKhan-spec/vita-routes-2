@@ -1,3 +1,45 @@
+# Advance Edge Website (Vite + React + Tailwind)
+
+This repository contains the Advance Edge website built with Vite, React, TypeScript, Tailwind CSS, and shadcn-ui.
+
+## Quick Start
+
+Requirements: Node.js and npm.
+
+```sh
+npm i
+npm run dev
+```
+
+- Local preview: `http://localhost:8080/`
+- If you see `net::ERR_CONNECTION_REFUSED` on `8081`, use `8080` instead.
+
+## Recent Updates
+
+- Mobile header back arrow on small screens to navigate back (fallback to `/`).
+- Mobile menu stability: overlay rendered via portal (`document.body`) and corrected stacking context to prevent clipping after scroll.
+- "Book a Call" CTAs on Home now route directly to `/contact` using `Link`.
+
+## Key Files
+
+- `src/components/Header.tsx`: Mobile menu, back arrow, header behavior on scroll.
+- `src/pages/Home.tsx`: Home page hero and CTAs linking to Contact.
+
+## How to Test
+
+- Open `http://localhost:8080/`.
+- On mobile view:
+  - Scroll down ≥25% and open the hamburger menu; the overlay should fully cover the screen.
+  - Tap the back arrow to navigate back; if no history, it goes to `/`.
+  - Tap any "Book a Call" CTA on Home; it should route to `/contact`.
+
+## Troubleshooting
+
+- If assets momentarily show `ERR_ABORTED` during hot reload, wait a moment; these are transient during dependency optimization.
+- Ensure the dev server is running (`npm run dev`) and that you are visiting `http://localhost:8080/`.
+
+---
+ 
 # Welcome to your Lovable project
 
 ## Project info

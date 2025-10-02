@@ -20,11 +20,11 @@ const PaperPlaneIcon = () => (
 
 // Page Section Components
 const HeroSection = () => (
-    <div className="relative bg-cover bg-center text-white py-32 md:py-48" style={{ backgroundImage: "url('https://placehold.co/1920x800/0f172a/e0e7ff?text=.')" }}>
+    <div className="relative bg-cover bg-center text-white py-24 sm:py-32 md:py-48" style={{ backgroundImage: "url('https://placehold.co/1920x800/0f172a/e0e7ff?text=.')" }}>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="container mx-auto text-center relative z-10 px-4">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Award-Winning Healthcare Marketing Firm</h1>
-            <p className="text-2xl md:text-4xl mt-4 font-light">Serving all the 50 States in the USA</p>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">Award-Winning Healthcare Marketing Firm</h1>
+            <p className="text-lg sm:text-xl md:text-4xl mt-4 font-light">Serving all the 50 States in the USA</p>
         </div>
     </div>
 );
@@ -32,12 +32,12 @@ const HeroSection = () => (
 const AboutSection = () => (
     <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div>
-                    <img src={aboutUs} alt="About AdvanceEdge" className="rounded-lg shadow-2xl w-full" />
+                    <img src={aboutUs} alt="About AdvanceEdge" className="rounded-lg shadow-2xl w-full h-auto" />
                 </div>
                 <div>
-                    <h2 className="text-4xl font-bold text-gray-800 mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-600">About Us</h2>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-600">About Us</h2>
                     <p className="text-gray-600 leading-relaxed mb-4">
                         Rated as one of the best healthcare marketing firm and medical marketing company, AdvanceEdge is your trusted digital partner for remarkable patient growth. We plan clearly, execute precisely, and report what matters!
                     </p>
