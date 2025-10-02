@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import img6 from '@/assets/image_1.webp';
-import img5 from '@/assets/image_5.webp';
-import img4 from '@/assets/image_4.webp';
-import img3 from '@/assets/image_3.webp';
-import img2 from '@/assets/image_2.webp';
-import img1 from '@/assets/image_1.webp';
+import img6 from '@/assets/Image_6.webp';
+import img5 from '@/assets/Image_5.webp';
+import img4 from '@/assets/Image_4.webp';
+import img3 from '@/assets/Image_3.webp';
+import img2 from '@/assets/Image_2.webp';
+import img1 from '@/assets/Image_1.webp';
 
 // --- Data for Blog Posts ---
 // Now includes full 'content' and real image URLs.
