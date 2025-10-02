@@ -158,10 +158,9 @@ const App = () => {
                                 {submitted && (
                                     <div className="fixed inset-0 z-[1200] flex items-center justify-center bg-black/50">
                                         <div className="bg-white rounded-lg shadow-xl p-6 w-[90%] max-w-md text-center">
-                                            <h3 className="text-xl font-bold mb-2">Submitted Successfully</h3>
-                                            <p className="text-gray-600 mb-4">Thanks for reaching out! We will get back to you soon.</p>
+                                            <h3 className="text-xl font-bold">Submitted successfully</h3>
                                             <button
-                                                className="bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700"
+                                                className="mt-4 bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700"
                                                 onClick={() => setSubmitted(false)}
                                             >
                                                 Close
