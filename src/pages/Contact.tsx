@@ -14,6 +14,8 @@ const Icon = ({ path, className = "w-6 h-6" }) => (
 const App = () => {
     // State to show the success message after the form has been submitted
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     
     // Handler for a successful submission. Netlify will redirect to a success page
     // but in a single-page React app, we often use a hidden input and history push.
@@ -21,13 +23,30 @@ const App = () => {
     // For this example, we'll use a simple onSubmit handler that will be overridden by Netlify.
     // Note: Netlify's standard redirect handles the submission, 
     // so this is a simplified approach for demonstration.
-    const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
-        // We let Netlify handle the submission first, 
-        // but can update local state for a better UX after a successful redirect.
-        // For simple integration, Netlify's built-in redirect is often used.
-        // In a complex React setup, you'd use Netlify's AJAX submission.
-        // For the easiest setup, we rely on the attributes.
-        setSubmitted(true);
+    const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setError(null);
+        try {
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+            // Ensure form-name is set for Netlify
+            if (!formData.get('form-name')) formData.set('form-name', 'contact');
+
+            const body = new URLSearchParams(formData as any).toString();
+            const resp = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body,
+            });
+            if (!resp.ok) throw new Error(`Submission failed: ${resp.status}`);
+            setSubmitted(true);
+            form.reset();
+        } catch (err: any) {
+            setError(err?.message || 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     }, []);
 
 
@@ -124,16 +143,32 @@ const App = () => {
                                     
                                     <button 
                                         type="submit" 
-                                        className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md hover:bg-blue-700 transition-colors"
+                                        disabled={isSubmitting}
+                                        className={`w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-md transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-blue-700'}`}
                                     >
-                                        SEND NOW
+                                        {isSubmitting ? 'Submitting...' : 'SEND NOW'}
                                     </button>
 
-                                    {/* Submission Success Message (Client-side) */}
-                                    {submitted && (
-                                        <p className="text-green-600 font-bold mt-2">Message submitted! Netlify will send you an email confirmation.</p>
+                                    {/* Error Message */}
+                                    {error && (
+                                        <p className="text-red-600 font-semibold mt-2">{error}</p>
                                     )}
                                 </form>
+                                {/* Success Popup */}
+                                {submitted && (
+                                    <div className="fixed inset-0 z-[1200] flex items-center justify-center bg-black/50">
+                                        <div className="bg-white rounded-lg shadow-xl p-6 w-[90%] max-w-md text-center">
+                                            <h3 className="text-xl font-bold mb-2">Submitted Successfully</h3>
+                                            <p className="text-gray-600 mb-4">Thanks for reaching out! We will get back to you soon.</p>
+                                            <button
+                                                className="bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700"
+                                                onClick={() => setSubmitted(false)}
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

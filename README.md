@@ -20,6 +20,29 @@ npm run dev
 - Mobile menu stability: overlay rendered via portal (`document.body`) and corrected stacking context to prevent clipping after scroll.
 - "Book a Call" CTAs on Home now route directly to `/contact` using `Link`.
 
+## Netlify Forms (Contact Page)
+
+This project uses Netlify Forms for the Contact page, with a hidden static form to ensure detection in SPAs and an AJAX submit for better UX.
+
+What’s implemented:
+- Hidden registration form in `index.html` so Netlify detects the form at build time.
+- Contact page form includes `name="contact"`, `data-netlify="true"`, `netlify-honeypot`, and hidden `form-name` input.
+- AJAX submission posting to `/` (`application/x-www-form-urlencoded`) to avoid full page reload and show a success popup.
+
+Files to review:
+- `index.html`: hidden `<form name="contact" netlify data-netlify="true" ... hidden>` (registration).
+- `src/pages/Contact.tsx`: visible form + submission handler and success popup.
+
+Deploying to Netlify:
+- Push to GitHub and connect the repo in Netlify.
+- Netlify build detects the hidden form in `index.html` and provisions submissions.
+- After deployment, test by submitting the Contact form on the live site (local dev doesn’t send submissions to Netlify).
+- View submissions in Netlify Dashboard: `Site > Forms`.
+
+Notes:
+- If you prefer redirect instead of popup, set a form `action` to a thank-you page and remove the AJAX handler.
+- Add more fields by updating both `Contact.tsx` (visible form) and `index.html` (hidden form registration).
+
 ## Key Files
 
 - `src/components/Header.tsx`: Mobile menu, back arrow, header behavior on scroll.
