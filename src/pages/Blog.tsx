@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import img6 from '@/assets/image_6.webp';
+import img6 from '@/assets/image_1.webp';
 import img5 from '@/assets/image_5.webp';
 import img4 from '@/assets/image_4.webp';
 import img3 from '@/assets/image_3.webp';
