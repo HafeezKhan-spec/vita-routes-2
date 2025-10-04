@@ -289,9 +289,9 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* CTA Button */}
-          <Button
-            onClick={() => setIsContactModalOpen(true)}
+          {/* CTA Button (Desktop) */}
+          <Link
+            to="/contact"
             className="hidden md:inline-flex bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 
                        px-6 py-3 rounded-xl 
                        transition-all duration-300 ease-out
@@ -299,7 +299,7 @@ const Header = () => {
                        -ml-[100px]"
           >
             BOOK A CALL
-          </Button>
+          </Link>
 
 
           {/* Mobile menu button */}
@@ -425,15 +425,13 @@ const Header = () => {
                 </Link>
 
                 <div className="pt-2">
-                  <Button
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      setIsContactModalOpen(true);
-                    }}
+                  <Link
+                    to="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="w-full bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 px-4 py-3 rounded-xl transition-all hover:text-orange-500 hover:bg-gradient-to-r hover:from-gray-900 hover:to-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.4)]"
                   >
                     BOOK A CALL
-                  </Button>
+                  </Link>
                 </div>
                 </nav>
               </div>
