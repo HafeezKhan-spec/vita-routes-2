@@ -110,8 +110,7 @@ const HeroSection: React.FC = () => {
             <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
               <Link
                 to="/contact"
-                className={`flex items-center justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-                style={{ backgroundColor: PRIMARY_TEAL }}
+                className={`inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
               >
                 <Plus className="w-5 h-5 mr-2" />
                 BOOK A CALL
@@ -226,8 +225,7 @@ const BenefitsSection: React.FC = () => {
         <div className="mt-12 text-center">
             <Link
                 to="/contact"
-                className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-                style={{ backgroundColor: PRIMARY_TEAL }}
+                className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
             >
                 <Plus className="w-5 h-5 mr-2" />
                 BOOK A CALL
@@ -569,13 +567,12 @@ const WhyChooseSection: React.FC = () => {
 
                 {/* Final CTA Button - Added hover animation: scale and deeper shadow */}
                 <div className="mt-20 text-center">
-                    <Link
-                        to="/contact"
-                        className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-                        style={{ backgroundColor: PRIMARY_TEAL }}
+                   <Link
+                     to="/contact"
+                     className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
                     >
-                        <Plus className="w-5 h-5 mr-2" />
-                        BOOK A CALL
+                    <Plus className="w-5 h-5 mr-2" />
+                       BOOK A CALL
                     </Link>
                 </div>
 
@@ -634,101 +631,7 @@ export default function App() {
 
       </main>
 
-      {/* Footer is also scroll animated */}
-      <AnimatedSection>
-          <footer className="bg-gray-800 text-white">
-            <div className="container mx-auto px-8 py-16">
-              <div className="text-center mb-16">
-                <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready to Transform Your Digital Future?
-                </h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
-                </p>
-              </div>
-
-              <div className="border-t border-gray-700 pt-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                  {/* Company Info */}
-                  <div>
-                    <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
-                    </p>
-                    {/* Social Links: Added transform/scale on hover */}
-                    <div className="flex space-x-4">
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📘</a>
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">🐦</a>
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📷</a>
-                    </div>
-                  </div>
-
-                  {/* Quick Links */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Quick Links</h4>
-                    <ul className="space-y-4">
-                      {/* Links hover animation: slight X translation and color change */}
-                      <li><a href="#hero" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Home</a></li>
-                      <li><a href="#about" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">About</a></li>
-                      <li><a href="#services" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Services</a></li>
-                      <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Portfolio</a></li>
-                      <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Testimonials</a></li>
-                      <li><a href="#contact" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Contact</a></li>
-                    </ul>
-                  </div>
-
-                  {/* Contact Info */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Contact Info</h4>
-                    <div className="space-y-4 text-gray-300">
-                      {/* Contact details hover: background color shift for touch targets */}
-                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">📞</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">(555) 123-4567</span>
-                      </div>
-                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">✉️</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">info@advanceedgedigital.com</span>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">📍</span>
-                        <span>
-                          456 Innovation Drive<br />
-                          Tech District<br />
-                          San Francisco, CA 94105
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Office Hours */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Office Hours</h4>
-                    <div className="space-y-3 text-gray-300">
-                      {/* Subtle opacity shift on hover */}
-                      <div className="p-1 -m-1 rounded transition duration-200 hover:opacity-80">
-                        <div className="font-medium">Monday - Friday</div>
-                        <div>8:00 AM - 6:00 PM EST</div>
-                      </div>
-                      <div className="p-1 -m-1 rounded transition duration-200 hover:opacity-80">
-                        <div className="font-medium">Saturday</div>
-                        <div>9:00 AM - 2:00 PM EST</div>
-                      </div>
-                      <div className="p-1 -m-1 rounded transition duration-200 hover:opacity-80">
-                        <div className="font-medium">Sunday</div>
-                        <div>Emergency Support Only</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                  <p>&copy; 2024 Advance Edge Digital. All rights reserved. | <a href="#" className="hover:text-white transition-colors">Privacy Policy</a> | <a href="#" className="hover:text-white transition-colors">Terms of Service</a></p>
-                </div>
-              </div>
-            </div>
-          </footer>
-      </AnimatedSection>
+      
     </div>
   );
 }

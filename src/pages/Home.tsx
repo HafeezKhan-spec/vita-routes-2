@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import home from '@/assets/Home.webp';
+import homeBgHeader from '@/assets/Home_Bg_Header.mp4';
 import image_12 from '@/assets/image_12.webp';
 import stepImg from '@/assets/step.webp';
 import homeImage from '@/assets/home_image.png';
@@ -175,29 +175,94 @@ const ContactForm = () => (
 // --- Page Section Components ---
 
 const HeroSection = () => {
-    return (
-  <div
-      className="relative py-20 sm:py-28 lg:py-36 bg-cover bg-center"
-      style={{ backgroundImage: `url(${home})`, minHeight: '480px' }}
-      >
-       <div className="absolute inset-0 bg-black/10"></div>
-       <div className="relative z-10 container mx-auto px-6 sm:px-8 text-center">
-         <div className="max-w-5xl mx-auto">
-           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 md:mb-8 leading-tight">
-             Top Healthcare Marketing Agency
-           </h1>
-           <p className="text-base sm:text-lg md:text-2xl text-black mb-8 md:mb-12 leading-relaxed max-w-4xl mx-auto">
-             From Click to Appointment, HIPAA-Aware Patient Growth for Clinics and Hospitals.
-           </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/contact" className="w-full sm:w-auto bg-black text-white px-8 py-3 rounded-md font-bold text-lg transition-all duration-300 transform hover:scale-[1.05] hover:shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
-                BOOK A CALL
-              </Link>
-            </div>
-         </div>
-       </div>
-     </div>
-   );
+  const [videoEnded, setVideoEnded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Attempt to start with audio enabled on load
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v) {
+      v.muted = false;
+      try {
+        const p = v.play();
+        if (p && typeof p.then === 'function') p.catch(() => {});
+      } catch {}
+    }
+  }, []);
+  return (
+    <div className="relative min-h-screen">
+      {/* Background video (no loop) */}
+      <video
+        ref={videoRef}
+        src={homeBgHeader}
+        autoPlay
+        playsInline
+        muted={false}
+        controls={false}
+        onPlay={() => { setIsPlaying(true); }}
+        onPause={() => { setIsPlaying(false); }}
+        onEnded={() => { setVideoEnded(true); setIsPlaying(false); }}
+        className={"absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"}
+      />
+
+      {/* Play/Pause control overlay (persists after end) */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+        <button
+          onClick={() => {
+            const v = videoRef.current;
+            if (!v) return;
+            if (isPlaying) {
+              v.pause();
+            } else {
+              setVideoEnded(false);
+              try { v.play(); } catch {}
+            }
+          }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 text-white border border-white/30 backdrop-blur-sm hover:bg-black/60 transition"
+          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+        >
+          {isPlaying ? (
+            <>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+              </svg>
+              <span className="text-sm font-semibold">Pause</span>
+            </>
+          ) : (
+            <>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                <path d="M8 5v14l11-7-11-7z" />
+              </svg>
+              <span className="text-sm font-semibold">Play</span>
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* Subtle overlay while video is playing */}
+      {!videoEnded && <div className="absolute inset-0 bg-black/10"></div>}
+
+      {/* Audio plays by default; no toggle shown */}
+
+      <div className="relative z-10 container mx-auto px-6 sm:px-8 h-full flex flex-col justify-center md:justify-end items-center text-center pb-12 md:pb-20">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl mt-60 md:mt-60 font-bold text-black mb-6 md:mb-8 leading-tight">
+            Data-Backed Healthcare Marketing for Real Patient Growth.
+          </h1>
+          <p className="text-base sm:text-lg md:text-2xl text-black mb-8 md:mb-12 leading-relaxed max-w-4xl mx-auto">
+            From Click to Appointment, We Build HIPAA-Compliant Campaigns That Scale Clinics and Hospitals.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200">
+              BOOK A CALL
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const AboutSection = () => (
@@ -208,13 +273,19 @@ const AboutSection = () => (
                     <img src={image_12} alt="Doctor" className="rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-[1.03]" />
                 </div>
                 <div className="md:w-1/2">
-                    <p className="text-red-500 font-semibold tracking-widest mb-2">ABOUT ADVANCEEDGE</p>
-                    <h2 className="text-4xl font-bold text-gray-800 mb-6">Advancing Patient Growth with Digital Solutions in USA</h2>
+                    <p className="text-red-500 font-semibold tracking-widest mb-2">ABOUT ADVANCEEDGE DIGITAL</p>
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6">Advancing Patient Growth with Smarter Digital Marketing</h2>
                     <p className="text-gray-600 mb-4 leading-relaxed">
-                        AdvanceEdge Health is a healthcare digital marketing agency serving hospitals, specialty clinics, multisite groups, and telehealth brands across the U.S. We provide end-to-end healthcare marketing services. These include SEO, PPC, social media, content marketing, and marketing automation.
+                        AdvanceEdge Health is a full-service healthcare marketing agency helping hospitals, specialty clinics, multi-location groups, and telehealth providers grow patient volume across the U.S.
+                    </p>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                        We deliver end-to-end marketing solutions including SEO, PPC, social media, content marketing, and marketing automation, all tailored to the healthcare industry’s unique compliance and performance needs.
+                    </p>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                        Our approach is simple: clear strategies, reliable execution, and transparent reporting. You’ll see exactly how every channel, campaign, and keyword drives qualified patient inquiries through calls, forms, and bookings.
                     </p>
                     <p className="text-gray-600 leading-relaxed">
-                        Expect clear marketing plans and dependable execution. Reporting shows results across channels, campaigns, keywords and pages drive qualified leads in the form of calls, forms and cuts. Get actionable steps for SEO, AI automation, ads, budget, social, content and landing pages, all built for measurable growth that respects your brand.
+                        From SEO to AI-powered automation, ads to content, we turn marketing data into measurable, HIPAA-compliant growth that strengthens your brand and fills your schedule.
                     </p>
                 </div>
             </div>
@@ -224,11 +295,11 @@ const AboutSection = () => (
 
 const ServicesSection = () => {
     const servicesList = [
-        { title: "SEO", description: "Strategy; on-page & technical fixes; local SEO (GBP, citations); off-page PR/links; GA4/GSC tracking." },
-        { title: "Social Media", description: "Strategy; organic paid social (Facebook, Instagram, LinkedIn, YouTube, TikTok, X/Twitter, Pinterest...); compliant targeting..." },
-        { title: "Content Marketing", description: "Website/Blog (WordPress), YouTube/Vimeo, LinkedIn Articles, podcasts (Apple/Spotify); editorial calendar..." },
-        { title: "Paid Marketing (PPC)", description: "Google Ads (Search, Performance Max, YouTube) and Microsoft Ads (Bing); geo/radius targeting, negatives, landing tests..." },
-        { title: "Marketing Automation", description: "Email/SMS platforms (HIPAA-aware options); chatbots/forms; CRM/EMR-safe handoffs; segmentation, dashboards/alerts..." },
+        { title: "SEO", description: "Comprehensive SEO strategies focused on growth and compliance.Includes keyword strategy, on-page and technical optimization, local SEO (GBP and citations), backlink development, and detailed GA4/GSC performance tracking." },
+        { title: "Social Media", description: "Engage patients where they spend their time.We manage organic and paid social campaigns across Facebook, Instagram, LinkedIn, YouTube, TikTok, and more, with precise audience targeting and compliant ad execution." },
+        { title: "Content Marketing", description: "Build trust through expert, patient-focused content.From websites and blogs to video, podcasts, and LinkedIn articles, our editorial process ensures every piece supports SEO, education, and brand credibility." },
+        { title: "Paid Marketing (PPC)", description: "Generate immediate patient inquiries through high-performing ad campaigns.We manage Google Ads (Search, Performance Max, YouTube) and Microsoft Ads (Bing) with advanced geo-targeting, negative keyword optimization, and landing page testing." },
+        { title: "Marketing Automation", description: "Streamline engagement and retention.We set up HIPAA-aware email and SMS platforms, chatbots, and CRM/EMR-safe integrations to nurture leads, reduce no-shows, and increase reappointments." },
     ];
 
     return (
@@ -242,10 +313,12 @@ const ServicesSection = () => {
                         </div>
                     ))}
                      <div className="flex flex-col justify-center gap-4 p-6 md:p-0">
-                         <p className="text-red-500 font-semibold text-xs tracking-widest">HEALTHCARE MARKETING IN USA</p>
+                         <p className="text-orange-500 font-semibold text-xs tracking-widest">HEALTHCARE MARKETING</p>
                          <h2 className="text-4xl font-bold text-white">Services We Offer</h2>
                          <p className="text-gray-400 leading-relaxed">
-                             Our marketing agency delivers outcome-focused healthcare marketing services for hospitals, specialty clinics, multisite groups, and telehealth practices in all the 50 states in the USA.
+                             AdvanceEdge Health delivers performance-driven digital marketing solutions for hospitals, specialty clinics, multi-location groups, and telehealth practices.
+                             Our services are designed to increase visibility, attract qualified patients, and grow your practice with measurable, HIPAA-compliant results.
+
                          </p>
                      </div>
                       {servicesList.slice(2).map((service, index) => (
@@ -344,12 +417,12 @@ function HomeInternal() {
              <div className="container mx-auto px-4 py-16 md:py-24">
                 <div className={`lg:flex lg:gap-8 mb-16 items-stretch ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
                     <header className="lg:w-2/3 mb-8 lg:mb-0">
-                        <h2 className="text-sm font-bold uppercase text-teal-500 tracking-widest mb-2">OUR EXPERTISE</h2>
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Healthcare Industries We Serve in USA</h1>
+                        <h2 className="text-sm font-bold uppercase text-orange-500 tracking-widest mb-2">OUR EXPERTISE</h2>
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Healthcare Industries We Serve</h1>
                         <p className="text-lg text-gray-600 mb-8">Our medical marketing agency partners with US hospitals, clinics and telehealth brands, providing tailored digital marketing services for each line.</p>
                         <Link 
                             to="/contact"
-                            className="inline-block bg-gray-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                            className="inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200"
                         >
                             BOOK A CALL
                         </Link>
@@ -388,15 +461,15 @@ function HomeInternal() {
 const MainView = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 items-center h-full p-8 md:p-16 lg:p-24 bg-[#001F3F] text-white gap-10">
       <div className="flex flex-col justify-center">
-        <p className="text-blue-600 font-semibold tracking-widest text-sm mb-4">Healthcare Marketing in USA</p>
+        <p className="text-orange-500 font-semibold tracking-widest text-sm mb-4">Healthcare Marketing That Scales Patient Acquisition</p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          Want To Scale Patient <br />
-          Acquisition In Changing <br />
+          Ready to grow your practice in <br />
+          today’s competitive healthcare  <br />
           Market?
         </h1>
         <Link
           to="/contact"
-          className="mt-12 inline-block bg-black border border-black text-white py-3 px-8 w-max text-sm font-semibold transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
+          className="mt-12 inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 w-max shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200"
         >
           BOOK A CALL
         </Link>
@@ -429,9 +502,9 @@ const WhyChooseUsSection = () => {
                     <div className="lg:w-2/3 flex flex-col xl:flex-row gap-8">
                         <div className="bg-slate-800 text-white p-8 rounded-2xl shadow-2xl space-y-6 flex-1">
                             <h3 className="text-2xl font-bold">Healthcare Expertise That Delivers Results</h3>
-                            <p className="text-gray-300">We're a healthcare marketing agency built for the U.S. market. Our playbooks help hospitals, multi-location healthcare groups, and specialty clinics grow patient inquiries, without guesswork.</p>
+                            <p className="text-gray-300">We’re a healthcare marketing agency built to help hospitals, multi-location healthcare groups, and specialty clinics grow patient inquiries and booked appointments — without guesswork.</p>
                             <div className="border-t border-gray-600 pt-6">
-                                <p className="font-bold">Our Best Skilled Attorneys, Trust Score</p>
+                                <p className="font-bold">Also, why does it say attorneys?</p>
                                 <div className="flex items-center gap-4 mt-2">
                                     <p className="text-3xl font-bold">4.5</p>
                                     <div className="flex">{[...Array(5)].map((_, i) => <StarIcon key={i} filled={i<4} />)}</div>
@@ -545,43 +618,6 @@ const FinalCTASection = () => (
     </section>
 );
 
-const Footer = () => (
-    <footer className="bg-black text-gray-400">
-        <div className="container mx-auto px-6 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div>
-                    <h3 className="text-white text-lg font-semibold mb-4">AdvanceEdge Digital</h3>
-                    <p className="text-sm">Driving patient growth for healthcare practices across the USA.</p>
-                </div>
-                <div>
-                    <h3 className="text-white text-lg font-semibold mb-4">Our Address</h3>
-                    <p className="text-sm">123 Main St, Immokalee, FL</p>
-                </div>
-                <div>
-                    <h3 className="text-white text-lg font-semibold mb-4">Contact Us</h3>
-                    <p className="text-sm">info@advancedgedigital.com</p>
-                    <p className="text-sm">832-937-7738</p>
-                </div>
-                 <div>
-                    <h3 className="text-white text-lg font-semibold mb-4">Newsletter</h3>
-                    <form className="flex">
-                        <input type="email" placeholder="Email" className="bg-gray-800 text-white px-3 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-600 w-full text-sm transition-colors duration-200"/>
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 rounded-r-md transition-transform duration-200 transform hover:scale-105">&rarr;</button>
-                    </form>
-                </div>
-            </div>
-             <div className="mt-12 border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
-                <p>&copy; 2025. All Rights reserved. AdvanceedgeDigital.</p>
-                <div className="flex space-x-4 mt-4 sm:mt-0">
-                    <a href="#" className="transition-colors duration-200 hover:text-white">FB</a>
-                    <a href="#" className="transition-colors duration-200 hover:text-white">IN</a>
-                    <a href="#" className="transition-colors duration-200 hover:text-white">TW</a>
-                    <a href="#" className="transition-colors duration-200 hover:text-white">YT</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-);
 
 
 // --- Main App Component ---
@@ -600,8 +636,8 @@ export default function App() {
                 <TestimonialsSection />
                 <FinalCTASection />
             </main>
-            <Footer />
         </div>
     );
 }
+
 

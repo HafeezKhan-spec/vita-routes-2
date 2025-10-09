@@ -17,6 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 20% 20%;
 
+    /* Revert primary to medical blue */
     --primary: 210 85% 45%;
     --primary-foreground: 0 0% 100%;
 
@@ -133,6 +134,14 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Global font pairing */
+  html {
+    font-family: 'Crimson Pro', serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
   }
 }
 

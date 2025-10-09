@@ -22,8 +22,9 @@ const fadeInUp = {
 
 // --- Reusable Button Component ---
 const BookACallButton = () => (
-    <button className="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow-md 
-                        hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 
+    <button className="bg-black text-white px-8 py-3 border-2 border-orange-500 rounded-none 
+                        transition-all duration-300 ease-out hover:bg-white hover:text-black 
+                        hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 
                         flex items-center justify-center gap-2">
       <Plus className="w-4 h-4" />
       BOOK A CALL
@@ -443,97 +444,7 @@ const WhyChooseSection = () => {
     );
 };
 
-// --- Component 7: Footer Section (Reused content/structure) ---
-const FooterSection = () => (
-    <footer className="bg-gray-800 text-white">
-        <div className="container mx-auto px-8 py-16">
-            <div className="text-center mb-16">
-                <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                    Ready to Transform Your Digital Future?
-                </h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
-                </p>
-            </div>
 
-            <div className="border-t border-gray-700 pt-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                    {/* Company Info */}
-                    <div>
-                        <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
-                        <p className="text-gray-300 mb-6 leading-relaxed">
-                            Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
-                        </p>
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">📘</a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">🐦</a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">📷</a>
-                        </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-xl font-bold mb-6">Quick Links</h4>
-                        <ul className="space-y-4">
-                            <li><a href="#hero" className="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                            <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
-                            <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">Services</a></li>
-                            <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
-                            <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
-                            <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="text-xl font-bold mb-6">Contact Info</h4>
-                        <div className="space-y-4 text-gray-300">
-                            <div className="flex items-center space-x-3">
-                                <span>📞</span>
-                                <span>(555) 123-4567</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <span>✉️</span>
-                                <span>info@advanceedgedigital.com</span>
-                            </div>
-                            <div className="flex items-start space-x-3">
-                                <span>📍</span>
-                                <span>
-                                    456 Innovation Drive<br />
-                                    Tech District<br />
-                                    San Francisco, CA 94105
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Office Hours */}
-                    <div>
-                        <h4 className="text-xl font-bold mb-6">Office Hours</h4>
-                        <div className="space-y-3 text-gray-300">
-                            <div>
-                                <div className="font-medium">Monday - Friday</div>
-                                <div>8:00 AM - 6:00 PM EST</div>
-                            </div>
-                            <div>
-                                <div className="font-medium">Saturday</div>
-                                <div>9:00 AM - 2:00 PM EST</div>
-                            </div>
-                            <div>
-                                <div className="font-medium">Sunday</div>
-                                <div>Emergency Support Only</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                    <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-);
 
 // --- Main App Component (Kept as default export) ---
 const Chiropractors = () => {
@@ -546,7 +457,7 @@ const Chiropractors = () => {
           <ChallengesSection />
           <ApproachSection />
           <WhyChooseSection />
-          <FooterSection />
+          
         </div>
       </div>
   );

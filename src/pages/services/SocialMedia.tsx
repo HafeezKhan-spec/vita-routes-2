@@ -88,7 +88,7 @@ const AnimatedSection: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // --- Hero Section Component ---
 
 const HeroSection: React.FC = () => {
-  const heroText = "Across the USA, we execute healthcare social media marketing on Facebook, Instagram, TikTok, X, LinkedIn, YouTube, Snapchat, Pinterest, Reddit, and WhatsApp. The purpose is to educate, address FAQs, showcase physicians, and strengthen community reputation, without PHI risk. Our medical social media marketing reaches the right patients and measures results by service line and location.";
+  const heroText = "At AdvanceEdge Health, we manage compliant social media marketing for healthcare organizations across Facebook, Instagram, LinkedIn, YouTube, TikTok, X, Pinterest, Reddit, Snapchat, and WhatsApp. Our campaigns educate patients, highlight physicians, answer common healthcare questions, and build trusted community presence while protecting patient privacy.";
 
   return (
     // Updated background to a gentle gradient and increased vertical padding for visual appeal
@@ -104,23 +104,28 @@ const HeroSection: React.FC = () => {
           {/* Content Area (Text and Button) - Updated to match the structure of PaidMarketing.tsx (removed small header text) */}
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
-             Social Media Marketing for Healthcare in the USA
+             Social Media Marketing for Healthcare
             </h1>
+            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+              Engage, educate, and convert through strategic healthcare social media campaigns.
+            </p>
             <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
               {heroText}
             </p>
+            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+              We target the right audiences by service line and location, track performance by platform, and deliver measurable growth in engagement, reputation, and patient inquiries.
+            </p>
 
             {/* Main CTA Button */}
-            <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
-              <Link
-                to="/contact"
-                className={`flex items-center justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-                style={{ backgroundColor: PRIMARY_TEAL }}
-              >
-                <Plus className="w-5 h-5 mr-2" />
-                BOOK A CALL
-              </Link>
-            </div>
+           <div className="mt-20 text-center">
+          <Link
+            to="/contact"
+            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
+          >
+            <Plus className="w-5 h-5 mr-2" />
+            BOOK A CALL
+          </Link>
+        </div>
           </div>
         </div>
       </div>
@@ -132,13 +137,14 @@ const HeroSection: React.FC = () => {
 
 const BenefitsSection: React.FC = () => {
   const benefits = [
-    "Increased patient engagement, interaction, communication and satisfaction.",
-    "Patient education and awareness.",
-    "Health promotion that supports better patient care.",
-    "Enhanced brand awareness, brand building and community building.",
-    "Builds patient trust and credibility",
-    "Comply with HIPAA, enables crisis communication, combats misinformation.",
-    "Cost-effective marketing through targeted advertising.",
+    "Increased patient engagement and two-way communication that builds stronger relationships.",
+    "Improved patient education with clear, accessible healthcare content that answers real questions.",
+    "Consistent brand visibility across platforms, increasing recognition and local trust.",
+    "Data-driven audience targeting that reaches the right patients by service line and location.",
+    "HIPAA-compliant content strategy that prevents PHI exposure and supports responsible communication.",
+    "Enhanced community reputation through authentic storytelling and physician visibility.",
+    "Cost-efficient campaigns that outperform traditional advertising in reach and ROI.",
+    "Real-time analytics and performance tracking for continuous campaign optimization.",
   ];
 
   const col1 = benefits.slice(0, 5);
@@ -150,7 +156,7 @@ const BenefitsSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+          <p className="text-sm font-bold uppercase tracking-widest text-orange-500  mb-2">
             Proven Engagement and Acquisition Formula
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
@@ -176,7 +182,7 @@ const BenefitsSection: React.FC = () => {
               />
             </div>
             <p className="text-lg text-gray-600">
-             We execute medical social media marketing with documented playbooks, clinical approvals, state-level localization, and privacy-safe tracking, built to drive qualified inquiries.
+             We execute medical social media marketing using documented playbooks, clinical approvals, localized strategies, and privacy-safe tracking. Every campaign is built to strengthen reputation, increase engagement, and generate qualified patient inquiries.
             </p>
           </div>
 
@@ -219,11 +225,10 @@ const BenefitsSection: React.FC = () => {
         </p>
 
         {/* Final CTA Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-20 text-center">
           <Link
             to="/contact"
-            className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-            style={{ backgroundColor: PRIMARY_TEAL }}
+            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
           >
             <Plus className="w-5 h-5 mr-2" />
             BOOK A CALL
@@ -370,46 +375,130 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
 };
 
 
-// --- Services We Offer Section ---
+const CheckCircle: React.FC<{ className?: string }> = ({ className = '' }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+    <polyline points="22 4 12 14.01 9 11.01" />
+  </svg>
+);
 
+
+// --- Services We Offer Section ---
 const ServicesSection: React.FC = () => {
+  const tabs = [
+    {
+      key: 'facebook',
+      label: 'Facebook & Instagram Ads',
+      title: 'Facebook & Instagram Ads',
+      points: [
+        'Custom audience building',
+        'Custom ad graphics',
+        'Custom ad copywriting',
+        'Conversion tracking',
+        'Ad campaign optimization',
+        'Reporting and analytics',
+      ],
+    },
+    {
+      key: 'tiktok',
+      label: 'TikTok Ads',
+      title: 'TikTok Ads',
+      points: [
+        'Creator-style short-form creative',
+        'Interest and behavior targeting',
+        'Conversion tracking',
+        'Ad optimization and testing',
+        'Reporting and analytics',
+      ],
+    },
+    {
+      key: 'linkedin',
+      label: 'LinkedIn Ads',
+      title: 'LinkedIn Ads',
+      points: [
+        'Audience targeting by role and specialty',
+        'Sponsored content creatives',
+        'Conversion tracking',
+        'Optimization and A/B tests',
+        'Reporting and analytics',
+      ],
+    },
+    {
+      key: 'social',
+      label: 'Social Media Marketing',
+      title: 'Social Media Marketing',
+      points: [
+        'Content planning and calendars',
+        'Creative design and copywriting',
+        'Community engagement',
+        'Performance tracking',
+        'Optimization and reporting',
+      ],
+    },
+  ];
+
+  const [active, setActive] = useState('facebook');
+  const activeTab = tabs.find((t) => t.key === active)!;
 
   return (
-    <div className="py-16 sm:py-24 lg:py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Header Block */}
-        <div className="max-w-3xl mb-16">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
-            WHAT ALL WE PROVIDE?
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
-            Healthcare SEO Services
-          </h2>
+    <section className="py-16 sm:py-24 lg:py-32 bg-black text-white font-sans">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Services We Offer</h2>
+            <p className="mt-4 text-lg text-gray-400">Tailored strategies for every platform to grow your brand.</p>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
+          {/* Left vertical tabs */}
+          <div className="flex flex-col gap-4">
+            {tabs.map((t) => (
+              <button
+                key={t.key}
+                onClick={() => setActive(t.key)}
+                className={`w-full text-left rounded-full px-5 py-4 transition border ${
+                    active === t.key 
+                    ? 'bg-orange-500 border-orange-500 text-white font-semibold' 
+                    : 'border-white/20 hover:bg-white/5'
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
 
-        {/* Service Cards Grid (Updated to 3-column grid to match PaidMarketing.tsx) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {servicesData.map((service, index) => (
-            // Note: The original file had a 5-column grid on XL, now consistent with PaidMarketing's 3-column max.
-            <ServiceCard key={index} service={service} />
-          ))}
+          {/* Right content panel */}
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+            <h3 className="text-2xl md:text-3xl font-extrabold">{activeTab.title}</h3>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {activeTab.points.map((pt) => (
+                <div key={pt} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" />
+                  <span className="text-sm md:text-base text-gray-300">{pt}</span>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#" // Changed from Link to a standard anchor tag
+              className="mt-8 inline-block font-semibold text-orange-500 underline underline-offset-4 hover:text-white transition"
+            >
+              Learn more
+            </a>
+          </div>
         </div>
-
-
-        {/* Section Footer - Years of Expertise (Added subtle shadow/lift) */}
-        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
-          {/* Note: Updated text to reflect the Reputation Management context better */}
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
-           10+ Years of Legal Expertise, 100% Commitment to Your Success
-          </h3>
-        </div>
-
       </div>
-    </div>
+    </section>
   );
 };
-
 // --- Why Choose Advance Edge Section ---
 
 interface TabContent {
@@ -581,8 +670,7 @@ const WhyChooseSection: React.FC = () => {
         <div className="mt-20 text-center">
           <Link
             to="/contact"
-            className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-            style={{ backgroundColor: PRIMARY_TEAL }}
+            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
           >
             <Plus className="w-5 h-5 mr-2" />
             BOOK A CALL
@@ -640,98 +728,7 @@ export default function App() {
         </AnimatedSection>
       </main>
 
-      {/* Footer (Matches PaidMarketing.tsx) */}
-      <AnimatedSection>
-          <footer className="bg-gray-800 text-white">
-            <div className="container mx-auto px-8 py-16">
-              <div className="text-center mb-16">
-                <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready to Transform Your Digital Future?
-                </h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
-                </p>
-              </div>
-
-              <div className="border-t border-gray-700 pt-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                  {/* Company Info */}
-                  <div>
-                    <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
-                    </p>
-                    {/* Social Links: Updated to use consistent emojis */}
-                    <div className="flex space-x-4">
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📘</a>
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">🐦</a>
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📷</a>
-                    </div>
-                  </div>
-
-                  {/* Quick Links */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Quick Links</h4>
-                    <ul className="space-y-4">
-                      <li><a href="#hero" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Home</a></li>
-                      <li><a href="#about" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">About</a></li>
-                      <li><a href="#services" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Services</a></li>
-                      <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Portfolio</a></li>
-                      <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Testimonials</a></li>
-                      <li><a href="#contact" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Contact</a></li>
-                    </ul>
-                  </div>
-
-                  {/* Contact Info */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Contact Info</h4>
-                    <div className="space-y-4 text-gray-300">
-                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">📞</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">(555) 123-4567</span>
-                      </div>
-                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">✉️</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">info@advanceedgedigital.com</span>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">📍</span>
-                        <span>
-                          456 Innovation Drive<br />
-                          Tech District<br />
-                          San Francisco, CA 94105
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Office Hours */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Office Hours</h4>
-                    <div className="space-y-3 text-gray-300">
-                      <div>
-                        <div className="font-medium">Monday - Friday</div>
-                        <div>8:00 AM - 6:00 PM EST</div>
-                      </div>
-                      <div>
-                        <div className="font-medium">Saturday</div>
-                        <div>9:00 AM - 2:00 PM EST</div>
-                      </div>
-                      <div>
-                        <div className="font-medium">Sunday</div>
-                        <div>Emergency Support Only</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                  <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
-                </div>
-              </div>
-            </div>
-          </footer>
-      </AnimatedSection>
+      
     </div>
   );
 }

@@ -77,7 +77,7 @@ const AnimatedSection: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // --- Hero Section Component ---
 
 const HeroSection: React.FC = () => {
-  const heroText = "Win high-intent searches and grow qualified inquiries. Our medical SEO Programs align content, UX and analytics for providers nationwide. As a healthcare SEO company serving California, Texas, New York, Florida and all the other states, we focus on durable growth and clear reporting.";
+  const heroText = "AdvanceEdge Health provides medical SEO services that help healthcare providers dominate high-intent searches and convert clicks into appointments. Our healthcare SEO programs combine keyword strategy, on-page optimization, user experience, and analytics to deliver measurable, long-term growth.";
 
   return (
     // Updated background to a gentle gradient and increased vertical padding for visual appeal
@@ -93,22 +93,27 @@ const HeroSection: React.FC = () => {
           {/* Content Area (Text and Button) - Updated to match the structure of PaidMarketing.tsx (removed small header text) */}
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
-              Medical SEO Services in the USA
+              Medical SEO Services
             </h1>
             <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+              Rank higher. Attract patients. Grow your practice.
+            </p>
+            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
               {heroText}
+            </p>
+            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+              We work with hospitals, specialty clinics, and multi-location healthcare groups across California, Texas, New York, Florida, and beyond — providing clear reporting, HIPAA-compliant optimization, and consistent visibility across every service line and location.
             </p>
 
             {/* Main CTA Button */}
             <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
               <Link
-                to="/contact"
-                className={`flex items-center justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-                style={{ backgroundColor: PRIMARY_TEAL }}
-              >
-                <Plus className="w-5 h-5 mr-2" />
-                BOOK A CALL
-              </Link>
+            to="/contact"
+            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
+          >
+            <Plus className="w-5 h-5 mr-2" />
+            BOOK A CALL
+          </Link>
             </div>
           </div>
         </div>
@@ -121,17 +126,16 @@ const HeroSection: React.FC = () => {
 
 const BenefitsSection: React.FC = () => {
   const benefits = [
-    "Higher rankings for priority service lines with expert medical SEO.",
-    "More qualified calls, forms, and chats from healthcare SEO.",
-    "Pay only for clicks: daily/monthly budget caps for control.",
-    "Stronger authority with physician SEO: bios, schema, condition/treatment pages.",
-    "Multi-facility visibility via hospital SEO: service-line hubs and location pages.",
-    "Local wins for groups with medical practice SEO: GBP, reviews, location pages.",
-    "Faster, clearer pages that meet Core Web Vitals and convert.",
-    "Reduced reliance on paid ads; organic becomes a reliable growth channel.",
-    "Transparent dashboards to track keywords, pages, and inquiry sources monthly.",
-    "Privacy-safe measurement with HIPAA SEO (no PHI in ad platforms).",
-    "Delivered by a seasoned medical SEO agency with US healthcare expertise.",
+    "Higher rankings for key treatments and specialties through targeted medical SEO.",
+    "Increased patient calls, form fills, and chats from high-intent healthcare searches.",
+    "Stronger local visibility with optimized Google Business Profiles, reviews, and location pages.",
+    "Improved page experience that meets Core Web Vitals and converts more visitors.",
+    "Reduced dependence on paid ads by building a sustainable organic growth channel.",
+    "Enhanced authority for physicians with optimized bios, schema, and condition pages.",
+    "Clear reporting dashboards to track keywords, rankings, and patient inquiries.",
+    "Scalable SEO programs for hospitals, DSOs, and multi-location healthcare networks.",
+    "Privacy-safe measurement with HIPAA-compliant tracking and analytics.",
+    
   ];
 
   const col1 = benefits.slice(0, 5);
@@ -168,8 +172,11 @@ const BenefitsSection: React.FC = () => {
                 }}
               />
             </div>
+            <p className="text-lg text-gray-900">
+             Your Proven Formula for Healthcare SEO and Patient Growth
+            </p>
             <p className="text-lg text-gray-600">
-              The right medical SEO program makes you findable when patients search. Our healthcare SEO services, delivered by seasoned healthcare SEO agency USA turn intent into qualified inquiries without risking compliance.
+              The right medical SEO program makes your practice visible when patients search for care.Our healthcare SEO experts help hospitals, specialty clinics, and multi-location practices rank higher, attract qualified inquiries, and grow patient volume — all with HIPAA-compliant optimization and transparent reporting.
             </p>
           </div>
 
@@ -208,15 +215,14 @@ const BenefitsSection: React.FC = () => {
 
         {/* Footnote/Disclaimer */}
         <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
-         Win high-intent searches and grow qualified inquiries. Our medical SEO Programs align content, UX and analytics for providers nationwide. As a healthcare SEO company serving California, Texas, New York, Florida and all the other states, we focus on durable growth and clear reporting.
+        Win high-intent searches and convert them into qualified patient inquiries.Our medical SEO programs align content, user experience, and analytics to help healthcare providers achieve consistent, measurable growth. As a healthcare SEO company serving clinics and hospitals nationwide, we focus on sustainable results and transparent reporting.
         </p>
 
         {/* Final CTA Button */}
         <div className="mt-12 text-center">
           <Link
             to="/contact"
-            className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-            style={{ backgroundColor: PRIMARY_TEAL }}
+            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
           >
             <Plus className="w-5 h-5 mr-2" />
             BOOK A CALL
@@ -250,7 +256,7 @@ const servicesData: Service[] = [
     {
         title: "Data Analysis & Reporting",
         subtitle: "Make decisions with evidence.",
-        description: "Dashboards tie keywords, pages, and sources to qualified inquiries using GA4, GSC, and call tracking, no PHI in platforms. We trend CPL/CPA, SERP share, and conversions, flag anomalies, and present clear next steps. As a healthcare SEO agency USA, we report plainly and often.",
+        description: "Our analytics dashboards connect keywords, pages, and channels directly to qualified patient inquiries using GA4, GSC, and call tracking with no PHI stored in platforms. We monitor cost per lead (CPL), conversion rates, and SERP share to identify trends, flag anomalies, and recommend actionable next steps. Reporting is transparent, frequent, and focused on ROI.",
         icon: Zap,
         color: 'text-purple-600',
         imagePlaceholder: Image_3,
@@ -258,7 +264,7 @@ const servicesData: Service[] = [
     {
         title: "Off-Page Optimization",
         subtitle: "Earn authority without risk.",
-        description: "We secure healthcare-relevant backlinks via digital PR, journals, associations, and high-quality directories; build local citations; accelerate reviews; reclaim unlinked mentions; and pursue partner features. As a healthcare SEO company, we avoid spammy tactics, prioritize topical relevance, and strengthen signals that improve rankings and trust.",
+        description: "We build high-authority, healthcare-relevant backlinks through digital PR, medical journals, professional associations, and quality directories. Our team manages local citations, accelerates review acquisition, and reclaims unlinked mentions, always avoiding spammy tactics. Every backlink strengthens domain authority, trust, and rankings across your key service lines.",
         icon: Phone,
         color: 'text-red-600',
         imagePlaceholder: Image_4,
@@ -266,7 +272,7 @@ const servicesData: Service[] = [
     {
         title: "UI & UX Design",
         subtitle: "Design for trust and action:",
-        description: "ADA-conscious, mobile-first layouts; fast pages; scannable sections; and friction-light forms, calls, and chats. Information architecture highlights service lines and physicians. We test headlines, CTAs, and layouts to lift conversion, translating medical SEO traffic into measurable, patient-friendly engagement.",
+        description: "We create ADA-conscious, mobile-first layouts that load fast and guide users effortlessly. Clear architecture highlights service lines and physicians, while conversion-optimized forms and CTAs reduce friction. We continuously test headlines, CTAs, and layouts to increase engagement and translate SEO traffic into measurable patient actions.",
         icon: ShoppingBag,
         color: 'text-green-600',
         imagePlaceholder: Image_3,
@@ -274,7 +280,7 @@ const servicesData: Service[] = [
     {
         title: "Technical SEO Optimization",
         subtitle: "Fix what search engines see first:",
-        description: "Core Web Vitals, mobile performance, HTTPS, crawl/indexation, canonicals, robots/XML, and redirect hygiene. We optimize multi-location architecture for hospital SEO, reduce duplication for medical practice SEO, validate structured data, and resolve render issues, so bots and patients find fast, error-free pages.",
+        description: "We enhance site performance and structure through Core Web Vitals, HTTPS security, crawlability, and indexation improvements. Our team optimizes multi-location site architecture for hospital and medical practice SEO, validates structured data, and resolves technical errors — ensuring both search engines and patients find your pages quickly and reliably.",
         icon: TrendingUp,
         color: 'text-yellow-600',
         imagePlaceholder: Image_2,
@@ -282,7 +288,7 @@ const servicesData: Service[] = [
     {
         title: "Competitor Analysis",
         subtitle: "See the battlefield clearly.",
-        description: "We profile SERP competitors, map keyword gaps, analyze backlink quality, compare local pack signals, and assess reviews, schema, and content depth. Findings translate into prioritized actions by state and service line, so your healthcare SEO strategy wins where it matters most.",
+        description: "We identify keyword gaps, backlink opportunities, local pack strengths, and review signals by analyzing top-performing healthcare competitors. Insights guide tactical actions across states and service lines, ensuring your SEO strategy outperforms in the markets that matter most.",
         icon: Users,
         color: 'text-pink-600',
         imagePlaceholder: Image_3,
@@ -290,7 +296,7 @@ const servicesData: Service[] = [
     {
         title: "Content Creation",
         subtitle: "Create patient-friendly, accurate content:",
-        description: "condition/treatment hubs, service-line pages, physician bios, blogs, and explainer videos. We apply medical review, schema, and clear CTAs, tuned to state nuances and physician SEO needs. Our HIPAA SEO approach uses privacy-safe research and measurement, ensuring credibility without exposing sensitive information.",
+        description: "We produce SEO-optimized healthcare content including condition hubs, service-line pages, physician bios, blogs, and videos. Each asset is medically reviewed, schema-optimized, and privacy-safe under HIPAA guidelines. Our content attracts patients, supports credibility, and enhances physician and clinic visibility in search results.",
         icon: Youtube,
         color: 'text-red-700',
         imagePlaceholder: Image_4,
@@ -298,7 +304,7 @@ const servicesData: Service[] = [
     {
         title: "Google Business Profile (GMB) Optimization",
         subtitle: "Optimize every location:",
-        description: " correct NAP, primary/secondary categories, services, attributes, photos, and Posts; questions/answers; review generation and responses. Tie profiles to location pages with UTMs, maintain hours/holiday updates, fight spam, and expand citations. For hospitals with departments, we structure GBPs to support hospital SEO at scale.",
+        description: "We optimize every element of your Google Business Profile, from NAP consistency and categories to photos, attributes, and posts. Our local SEO team manages reviews, questions, and spam prevention, linking each GBP to its corresponding location page with proper UTM tracking. For hospitals, we structure multiple department profiles to maximize location-based visibility.",
         icon: MapPin,
         color: 'text-orange-600',
         imagePlaceholder: Image_3,
@@ -357,11 +363,11 @@ const ServicesSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="max-w-3xl mb-16">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+          <p className="text-sm font-bold uppercase tracking-widest text-orange-500 mb-2">
             WHAT ALL WE PROVIDE?
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
-            Healthcare SEO Services
+            Comprehensive Healthcare SEO Services
           </h2>
         </div>
 
@@ -400,18 +406,18 @@ interface TabContent {
 const tabData: Record<string, TabContent> = {
   inquiries: {
     title: "Pre-Qualified Patient Inquiries",
-    description: "We focus on high-intent audiences and filter out noise. Campaigns are targeted by service line, location, and keywords, then validated with event-level tracking and quality controls.",
+    description: "We focus on high-intent audiences and filter out low-quality traffic. Campaigns are segmented by service line, location, and search intent, validated with event-level tracking and quality control.",
     imageAlt: "Hand holding stars representing quality and reviews",
     imageSrc: Image_5,
     details: [
       "Targeted & Verified Intent",
-      "Location/Service-Line Targeting",
+      "Location & Service-Line Precision",
       "Spam & Bot Filtering",
       "Call/Form/Chat Tracking"
     ],
   },
   performance: {
-    title: "Performance-Driven Models",
+    title: "Performance-Driven Campaign Models",
     description: "Plans start with KPIs (CPL, qualified rate) and acceptance criteria. We test weekly, shift budget to winners, and report what to do next, plainly.",
     imageAlt: "Laptop displaying charts and performance graphs",
     imageSrc: Image_6,
@@ -434,7 +440,7 @@ const tabData: Record<string, TabContent> = {
     ],
   },
   compliance: {
-    title: "Compliance & Security",
+    title: "Compliance & Security Focus",
     description: "Healthcare first. HIPAA-aware workflows, BAA available, data minimization, and no PHI in ad platforms. ADA-conscious experiences and brands safe.",
     imageAlt: "Clipboard checklist representing compliance",
     imageSrc: Image_8,
@@ -446,7 +452,7 @@ const tabData: Record<string, TabContent> = {
     ],
   },
   scale: {
-    title: "Built to Scale",
+    title: "Scalable, Multi-Location Growth",
     description: "From single clinics to health systems, our frameworks standardize launches, approvals, and reporting, so you can expand confidently.",
     imageAlt: "Digital calendar/board with dates and numbers",
     imageSrc: Image_9,
@@ -494,8 +500,11 @@ const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Why Choose Advance Edge?
           </h2>
+          <p className="mt-4 text-lg text-gray-900 max-w-3xl mx-auto">
+            Proven Expertise. Scalable Growth. Transparent Results.
+          </p>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            We go beyond basic lead generation. Our data-driven approach ensures you receive verified, high-intent claimants that match the specific requirements of mass tort and personal injury cases.
+            With over a decade of digital marketing experience, AdvanceEdge Health goes beyond lead generation to deliver verified, high-intent patient inquiries. Our data-driven healthcare marketing model ensures measurable ROI while maintaining HIPAA compliance and brand trust.
           </p>
         </div>
 
@@ -554,12 +563,17 @@ const WhyChooseSection: React.FC = () => {
           </div>
         </div>
 
+        <h3 className="text-lg font-extrabold text-black mb-8">
+              Ready to Transform Your Digital Future?
+            </h3>
+        <p className="text-lg text-gray-700 mb-8">
+              Join hundreds of businesses that trust AdvanceEdge Digital to grow visibility, attract patients, and scale with confidence.
+            </p>
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
           <Link
             to="/contact"
-            className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-            style={{ backgroundColor: PRIMARY_TEAL }}
+            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
           >
             <Plus className="w-5 h-5 mr-2" />
             BOOK A CALL
@@ -617,98 +631,7 @@ export default function App() {
         </AnimatedSection>
       </main>
 
-      {/* Footer (Matches PaidMarketing.tsx) */}
-      <AnimatedSection>
-          <footer className="bg-gray-800 text-white">
-            <div className="container mx-auto px-8 py-16">
-              <div className="text-center mb-16">
-                <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready to Transform Your Digital Future?
-                </h3>
-                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
-                </p>
-              </div>
-
-              <div className="border-t border-gray-700 pt-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                  {/* Company Info */}
-                  <div>
-                    <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
-                    </p>
-                    {/* Social Links: Updated to use consistent emojis */}
-                    <div className="flex space-x-4">
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📘</a>
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">🐦</a>
-                      <a href="#" className="text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-125">📷</a>
-                    </div>
-                  </div>
-
-                  {/* Quick Links */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Quick Links</h4>
-                    <ul className="space-y-4">
-                      <li><a href="#hero" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Home</a></li>
-                      <li><a href="#about" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">About</a></li>
-                      <li><a href="#services" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Services</a></li>
-                      <li><a href="#portfolio" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Portfolio</a></li>
-                      <li><a href="#testimonials" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Testimonials</a></li>
-                      <li><a href="#contact" className="text-gray-300 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block">Contact</a></li>
-                    </ul>
-                  </div>
-
-                  {/* Contact Info */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Contact Info</h4>
-                    <div className="space-y-4 text-gray-300">
-                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">📞</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">(555) 123-4567</span>
-                      </div>
-                      <div className="flex items-center space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">✉️</span>
-                        <span className="hover:text-white transition-colors cursor-pointer">info@advanceedgedigital.com</span>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 -m-2 rounded-lg transition duration-200 hover:bg-gray-700/50 cursor-pointer">
-                        <span className="text-blue-400">📍</span>
-                        <span>
-                          456 Innovation Drive<br />
-                          Tech District<br />
-                          San Francisco, CA 94105
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Office Hours */}
-                  <div>
-                    <h4 className="text-xl font-bold mb-6">Office Hours</h4>
-                    <div className="space-y-3 text-gray-300">
-                      <div>
-                        <div className="font-medium">Monday - Friday</div>
-                        <div>8:00 AM - 6:00 PM EST</div>
-                      </div>
-                      <div>
-                        <div className="font-medium">Saturday</div>
-                        <div>9:00 AM - 2:00 PM EST</div>
-                      </div>
-                      <div>
-                        <div className="font-medium">Sunday</div>
-                        <div>Emergency Support Only</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                  <p>&copy; 2024 Advance Edge Digital. All rights reserved. | Privacy Policy | Terms of Service</p>
-                </div>
-              </div>
-            </div>
-          </footer>
-      </AnimatedSection>
+      
     </div>
   );
 }

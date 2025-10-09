@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, X, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.webp';
-import bgvid from '@/assets/bgvid.mp4'; 
+// Header is transparent before scroll and becomes solid after scroll
 
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -90,45 +90,23 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
   
   // Define the base text color based on scroll state
-  const textColorClass = isScrolled ? 'text-foreground' : 'text-orange-500 text-glow';
+  // Pre-scroll: overlay on hero with white text; After-scroll: switch to foreground theme
+  const textColorClass = isScrolled ? 'text-foreground' : 'text-white';
   // Define the hover color to always be primary
   const hoverColorClass = 'hover:text-primary';
 
   return (
     <header
-      className={`sticky top-0 ${isMobileMenuOpen ? 'z-[1000]' : 'z-50'} transition-all duration-500 relative ${
+      className={`fixed top-0 left-0 right-0 ${isMobileMenuOpen ? 'z-[1000]' : 'z-50'} transition-all duration-500 ease-in-out ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl shadow-blue-500/10'
-          : 'bg-transparent'
+          : 'bg-white/40 backdrop-blur-xl'
       }`}
     >
-      {/* Video Background Container */}
-      <div 
-        className="absolute inset-0 z-0 overflow-hidden opacity-82"
-      >
-        {/* Video: Only render when not scrolled for better performance/behavior */}
-        {!isScrolled && (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out" 
-            src={bgvid}
-          />
-        )}
-
-        {/* White Overlay: This smoothly transitions from transparent to white */}
-        <div 
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                isScrolled ? 'opacity-100' : 'opacity-0'
-            }`} 
-            style={{ backgroundColor: 'white' }}
-        ></div>
-      </div>
+      {/* Pre-scroll: subtle white translucent background for 40% transparency */}
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex items-center justify-between h-20 md:h-28 transition-all duration-700 ease-out">
+        <div className="flex items-center justify-between h-20 md:h-28 transition-all duration-700 ease-in-out">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             {/* Mobile-only back button, only shown when we can navigate back */}
@@ -156,13 +134,7 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Horizontal Lines: show only before scrolling */}
-          {!isScrolled && (
-            <>
-              <div className="hidden md:block w-px h-16 absolute left-[calc(50%-300px)] transition-colors duration-500 bg-white/60"></div>
-              <div className="hidden md:block w-80 h-px absolute left-[calc(50%-620px)] top-[100px] transition-colors duration-500 bg-white/60"></div>
-            </>
-          )}
+          
 
 
 
@@ -292,11 +264,7 @@ const Header = () => {
           {/* CTA Button (Desktop) */}
           <Link
             to="/contact"
-            className="hidden md:inline-flex bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 
-                       px-6 py-3 rounded-xl 
-                       transition-all duration-300 ease-out
-                       hover:text-orange-500 hover:bg-gradient-to-r hover:from-gray-900 hover:to-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.4)] hover:scale-105 hover:-translate-y-0.5
-                       -ml-[100px]"
+            className="hidden md:inline-flex bg-black text-white font-semibold border-2 border-orange-500 px-6 py-3 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 hover:-translate-y-0.5 -ml-[100px]"
           >
             BOOK A CALL
           </Link>
@@ -428,7 +396,7 @@ const Header = () => {
                   <Link
                     to="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 px-4 py-3 rounded-xl transition-all hover:text-orange-500 hover:bg-gradient-to-r hover:from-gray-900 hover:to-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.4)]"
+                    className="w-full bg-black text-white font-semibold border-2 border-orange-500 px-4 py-3 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105"
                   >
                     BOOK A CALL
                   </Link>

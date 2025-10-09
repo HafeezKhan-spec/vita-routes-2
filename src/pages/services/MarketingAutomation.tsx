@@ -261,8 +261,7 @@ const PrimaryButton: React.FC<{ children: React.ReactNode, onClick?: () => void 
     <Link
         to="/contact"
         onClick={onClick}
-        className={`flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold text-white rounded-xl shadow-2xl transition duration-500 transform hover:scale-[1.05] hover:shadow-2xl focus:ring-4 focus:ring-offset-2 focus:ring-blue-500`}
-        style={{ backgroundColor: PRIMARY_TEAL }}
+        className={`inline-flex items-center mx-auto justify-center bg-black text-white font-semibold border-2 border-orange-500 px-6 py-3 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 hover:-translate-y-0.5`}
     >
         <Plus className="w-5 h-5 mr-2" />
         {children}
@@ -762,9 +761,6 @@ const App: React.FC = () => {
         </AnimatedSection>
       </main>
       
-      <AnimatedSection>
-        <FooterSection />
-      </AnimatedSection>
     </div>
   );
 };

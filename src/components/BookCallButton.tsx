@@ -9,10 +9,10 @@ type Props = {
   children?: React.ReactNode;
 };
 
-// Shared "BOOK A CALL" button matching Header styling and hover effects.
+// Shared "BOOK A CALL" button with black/white/orange theme and boxy style.
 // If `onClick` is provided, renders a Button; otherwise renders a Link to `to` (default `/contact`).
 const baseClasses =
-  'inline-flex items-center justify-center bg-gradient-to-r from-black to-gray-800 text-white font-semibold border-2 border-orange-500 px-6 py-3 rounded-xl transition-all duration-300 ease-out hover:text-orange-500 hover:bg-gradient-to-r hover:from-gray-900 hover:to-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.4)] hover:scale-105 hover:-translate-y-0.5';
+  'inline-flex items-center justify-center bg-black text-white font-semibold border-2 border-orange-500 px-6 py-3 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 hover:-translate-y-0.5';
 
 const BookCallButton: React.FC<Props> = ({ className = '', to = '/contact', onClick, children }) => {
   const label = children ?? 'BOOK A CALL';

@@ -165,7 +165,6 @@ const App = () => {
                 <StrategySection />
                 <CtaSection />
             </main>
-            <Footer />
         </div>
     );
 };
