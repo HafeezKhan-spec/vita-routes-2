@@ -1,11 +1,5 @@
 import React from 'react';
-// Local CTA button restored
-const BookACallButton = () => (
-    <Link to="/contact" className="bg-black text-white px-8 py-3 border-2 border-orange-500 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 flex items-center justify-center gap-2">
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+import BookCallButton from '@/components/BookCallButton';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
@@ -49,12 +43,12 @@ const HeaderSection = () => {
                     <p className="mt-4 text-2xl font-bold text-white-400">
                         Proven Playbooks for Service Line Marketing
                     </p>
-                    <p className="mt-2 text-md text-gray-300 font-medium">
+                    <p className="mt-2 text-md text-white font-medium">
                         By U.S. Hospital Marketing Agency
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-                            <BookACallButton />
+ <BookCallButton />
                         </motion.div>
                     </div>
                 </div>
@@ -92,22 +86,22 @@ const WhoBenefitsSection = () => {
                         {/* Benefit 1: Community & Regional Hospitals */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Community & Regional Hospitals</h3>
-                            <p className="mt-2 text-gray-600">Primary Care, ED/Urgent Care, Surgery, Imaging, Rehab, Cardiology, Orthopedics, Maternity, Pediatrics, Behavioral Health - Accurate GBP/Maps, Access Lines, Payer Details, Same-Day Scheduling, Mobile Appointment Flows.</p>
+                            <p className="mt-2 text-gray-700">Primary Care, ED/Urgent Care, Surgery, Imaging, Rehab, Cardiology, Orthopedics, Maternity, Pediatrics, Behavioral Health - Accurate GBP/Maps, Access Lines, Payer Details, Same-Day Scheduling, Mobile Appointment Flows.</p>
                         </motion.div>
                          {/* Benefit 2: Academic Centers & Centers of Excellence */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Academic Centers & Centers of Excellence</h3>
-                            <p className="mt-2 text-gray-600">Oncology, Cardiovascular, Neuroscience, Transplant, Trauma, Women’s Health – Research Highlights, Physician Profiles, Referral Pathways, Compliant Hospital Advertising, Local-to-National Targeting, Brand Governance, Executive Reporting.</p>
+                            <p className="mt-2 text-gray-700">Oncology, Cardiovascular, Neuroscience, Transplant, Trauma, Women’s Health – Research Highlights, Physician Profiles, Referral Pathways, Compliant Hospital Advertising, Local-to-National Targeting, Brand Governance, Executive Reporting.</p>
                         </motion.div>
                          {/* Benefit 3: Ambulatory & Outpatient Networks */}
                          <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Ambulatory & Outpatient Networks</h3>
-                            <p className="mt-2 text-gray-600">ASCs, Imaging, Therapy, Urgent Care, Telehealth – Location Pages, Schedule Links, Insurance Transparency, Geo-Targeted SEM/Retargeting, Chatbots, Call Tracking to Lift Conversion Rate and Booked Appointments.</p>
+                            <p className="mt-2 text-gray-700">ASCs, Imaging, Therapy, Urgent Care, Telehealth – Location Pages, Schedule Links, Insurance Transparency, Geo-Targeted SEM/Retargeting, Chatbots, Call Tracking to Lift Conversion Rate and Booked Appointments.</p>
                         </motion.div>
                         {/* Benefit 4: Women's & Children's Service Providers */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Women's & Children's Service Providers</h3>
-                            <p className="mt-2 text-gray-600">OB/GYN (Obstetrician or Gynaecologist), High-Risk, Pediatrics – NICU, Education Content, FAQs, Social Video, Strong CTAs, Conversion-Ready Landing Pages, Review Playbooks, Streamlined Appointment Paths to Scale Patient Acquisition.</p>
+                            <p className="mt-2 text-gray-700">OB/GYN (Obstetrician or Gynaecologist), High-Risk, Pediatrics – NICU, Education Content, FAQs, Social Video, Strong CTAs, Conversion-Ready Landing Pages, Review Playbooks, Streamlined Appointment Paths to Scale Patient Acquisition.</p>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -221,7 +215,7 @@ const ChallengesSection = () => {
                     <h3 className="text-3xl font-extrabold text-gray-900">
                         Hospital Growth Challenges We Solve
                     </h3>
-                    <p className="mt-4 text-lg text-gray-600">US-Focused Hospital Marketing Agency to Accelerate Patient Acquisition.</p>
+                    <p className="mt-4 text-lg text-gray-700">US-Focused Hospital Marketing Agency to Accelerate Patient Acquisition.</p>
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
                         {challenges.map((challenge, index) => {
                              const parts = challenge.split('–');
@@ -234,7 +228,7 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-500 italic">Multi-specialty hospitals and health systems across California, Texas, New York, Florida, Illinois, New Jersey, plus Massachusetts, Pennsylvania, Ohio, Georgia, North Carolina, Washington, Michigan, Arizona, Colorado, and every other U.S. state partner with our hospital marketing agency. We deliver hospital digital marketing, healthcare system marketing, service line marketing, and compliant hospital advertising that drive patient acquisition.</p>
+                     <p className="text-sm text-gray-700 italic">Multi-specialty hospitals and health systems across California, Texas, New York, Florida, Illinois, New Jersey, plus Massachusetts, Pennsylvania, Ohio, Georgia, North Carolina, Washington, Michigan, Arizona, Colorado, and every other U.S. state partner with our hospital marketing agency. We deliver hospital digital marketing, healthcare system marketing, service line marketing, and compliant hospital advertising that drive patient acquisition.</p>
                 </motion.div>
                 {/* Image */}
                 <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInUp}>
@@ -251,7 +245,7 @@ const ChallengesSection = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
-                <BookACallButton />
+ <BookCallButton />
             </motion.div>
         </motion.section>
     );
@@ -403,7 +397,7 @@ const WhyChooseSection = () => {
                     whileHover={{ scale: 1.08 }}
                 >
                     <div className="flex justify-center">
-                        <BookACallButton />
+ <BookCallButton />
                     </div>
                 </motion.div>
             </div>
@@ -427,3 +421,7 @@ const MultispecialtyHospitals = () => {
 };
 
 export default MultispecialtyHospitals;
+
+
+
+

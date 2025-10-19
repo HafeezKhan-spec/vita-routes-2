@@ -1,5 +1,6 @@
 import React , {useState, useRef, useEffect} from 'react';
 import { Link } from "react-router-dom";
+import BookCallButton from '@/components/BookCallButton';
 import { Plus, Check, MapPin, Target, Shield, Truck, Clock, Calendar, ChevronDown, List, Users, Briefcase, FileText, CheckCircle, Mail, Globe, Phone, BookOpen, Cpu } from 'lucide-react';
 import Image_1 from "../../assets/Image_1.webp";
 import Image_2 from "../../assets/Image_2.webp";
@@ -358,19 +359,13 @@ const HeroSection: React.FC = () => {
             >
               Healthcare Marketing Automation in the USA
             </h1>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
             </p>
 
             {/* Main CTA Button */}
             <div className="mt-10 flex justify-center">
-              <PrimaryButton
-                onClick={() =>
-                  console.log("Book a Call clicked from Hero")
-                }
-              >
-                BOOK A CALL
-              </PrimaryButton>
+              <BookCallButton />
             </div>
           </div>
         </div>
@@ -430,7 +425,7 @@ const BenefitsSection: React.FC = () => {
                     alt="Automated Flow Chart" 
                 />
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
                 Our healthcare automation marketing experts allow practices to turn inquiries into appointments with automated processes, no manual intervention needed. Automated follow-up, patients welcome for confirmed first click to visit integrated.
             </p>
           </div>
@@ -469,15 +464,13 @@ const BenefitsSection: React.FC = () => {
         </div>
         
         {/* Footnote/Disclaimer */}
-        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto italic">
+        <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto italic">
             {footnote}
         </p>
 
         {/* Final CTA Button */}
         <div className="mt-12 text-center">
-            <PrimaryButton onClick={() => console.log('Book a Call clicked from Benefits')}>
-                BOOK A CALL
-            </PrimaryButton>
+            <BookCallButton />
         </div>
 
       </div>
@@ -560,7 +553,7 @@ const WhyChooseSection: React.FC = () => {
                     <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
                         Why Choose Advance Edge LLC?
                     </h2>
-                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
                         We go beyond simple automation. Our approach ensures your patient journeys are HIPAA-compliant, conversion-focused, and built for measurable lift.
                     </p>
                 </div>
@@ -582,7 +575,7 @@ const WhyChooseSection: React.FC = () => {
                         <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
                             {activeTab.title}
                         </h3>
-                        <p className="text-lg text-gray-600 mb-8">
+                        <p className="text-lg text-gray-700 mb-8">
                             {activeTab.description}
                         </p>
 
@@ -609,9 +602,7 @@ const WhyChooseSection: React.FC = () => {
 
                 {/* Final CTA Button */}
                 <div className="mt-20 text-center">
-                    <PrimaryButton onClick={() => console.log('Book a Call clicked from Why Choose Section')}>
-                        BOOK A CALL
-                    </PrimaryButton>
+                    <BookCallButton />
                 </div>
 
             </div>
@@ -629,7 +620,7 @@ const FooterSection: React.FC = () => (
         <h3 className="text-3xl md:text-4xl font-bold mb-6">
           Ready to Transform Your Digital Future?
         </h3>
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
           Join hundreds of businesses that trust Advance Edge Digital for their digital transformation journey.
         </p>
       </div>
@@ -639,7 +630,7 @@ const FooterSection: React.FC = () => (
           {/* Company Info */}
           <div>
             <h4 className="text-2xl font-bold mb-6">Advance Edge Digital</h4>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-6 leading-relaxed">
               Empowering businesses with cutting-edge digital solutions and innovative strategies for sustainable growth.
             </p>
             {/* Social Links */}
@@ -722,9 +713,7 @@ const App: React.FC = () => {
       {/* Global Tailwind Setup for font and styling consistency */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-          .font-inter { font-family: 'Inter', sans-serif; }
-          body { font-family: 'Inter', sans-serif; }
+          
           
           /* ADDED: Custom Keyframes for smooth fade-in and slight slide up transition (from PaidMarketing.tsx) */
           @keyframes fadeInUp {
@@ -766,3 +755,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
+
+

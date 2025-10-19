@@ -138,7 +138,7 @@ const BlogView = ({ onPostSelect }) => {
                 <div className="container mx-auto px-6 text-center z-10">
                     <p className="text-blue-300 font-semibold tracking-wider mb-2">HEALTHCARE INSIGHTS</p>
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">The Pulse of Healthcare Marketing</h1>
-                    <p className="max-w-3xl mx-auto text-gray-200 text-lg">Actionable strategies for patient acquisition and practice growth. We cover SEO, digital advertising, patient engagement, and the latest in health-tech.</p>
+                    <p className="max-w-3xl mx-auto text-white text-lg">Actionable strategies for patient acquisition and practice growth. We cover SEO, digital advertising, patient engagement, and the latest in health-tech.</p>
                 </div>
             </section>
 
@@ -147,7 +147,7 @@ const BlogView = ({ onPostSelect }) => {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Latest Articles & Playbooks</h2>
-                        <p className="text-gray-600 mt-2">Insights grounded in data to help you grow.</p>
+                        <p className="text-gray-700 mt-2">Insights grounded in data to help you grow.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -165,7 +165,7 @@ const BlogView = ({ onPostSelect }) => {
                                         </div>
                                     </div>
                                     <h3 className="text-xl font-bold text-gray-900 mb-2 flex-grow">{post.title}</h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                                    <p className="text-gray-700 text-sm leading-relaxed mb-4">{post.excerpt}</p>
                                     <div className="mt-auto">
                                         <button onClick={() => onPostSelect(post)} className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group">
                                             Read Article
@@ -214,4 +214,8 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
 

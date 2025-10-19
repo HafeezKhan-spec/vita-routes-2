@@ -4,6 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, X, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.webp';
+import AnimatedButton from '@/components/AnimatedButton';
+import { useContactModal } from '@/components/ContactModalProvider';
+
+// Use the shared AnimatedButton component to keep the original animation
 // Header is transparent before scroll and becomes solid after scroll
 
 const Header = () => {
@@ -13,27 +17,19 @@ const Header = () => {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileSpecialitiesOpen, setIsMobileSpecialitiesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+  const { openContactModal } = useContactModal();
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
-    if (isContactModalOpen || isMobileMenuOpen) {
+    if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-    
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isContactModalOpen, isMobileMenuOpen]);
+  }, [isMobileMenuOpen]);
   const location = useLocation();
   const navigate = useNavigate();
   // Show back arrow only when this is NOT the initial entry in the app
@@ -262,12 +258,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button (Desktop) */}
-          <Link
-            to="/contact"
-            className="hidden md:inline-flex bg-black text-white font-semibold border-2 border-orange-500 px-6 py-3 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 hover:-translate-y-0.5 -ml-[100px]"
-          >
-            BOOK A CALL
-          </Link>
+          <AnimatedButton onClick={openContactModal} className="hidden md:inline-flex -ml-[100px]" />
 
 
           {/* Mobile menu button */}
@@ -393,13 +384,13 @@ const Header = () => {
                 </Link>
 
                 <div className="pt-2">
-                  <Link
-                    to="/contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full bg-black text-white font-semibold border-2 border-orange-500 px-4 py-3 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105"
-                  >
-                    BOOK A CALL
-                  </Link>
+                  <AnimatedButton
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      openContactModal();
+                    }}
+                    className="w-full"
+                  />
                 </div>
                 </nav>
               </div>
@@ -409,104 +400,11 @@ const Header = () => {
         )
       )}
 
-      {/* Contact Modal */}
-        {isContactModalOpen && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 overflow-y-auto animate-in fade-in duration-300">
-            <div className="bg-white/95 backdrop-blur-xl rounded-2xl max-w-md w-full mx-4 relative my-8 max-h-[90vh] overflow-y-auto shadow-2xl shadow-blue-500/20 animate-in zoom-in-95 duration-300">
-              <div className="p-8">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">CONTACT US</h2>
-                <button
-                  onClick={() => setIsContactModalOpen(false)}
-                  className="text-gray-500 hover:text-gray-700 hover:scale-110 transition-all duration-200 rounded-full p-1 hover:bg-gray-100"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-
-              <form onSubmit={(e) => {
-                e.preventDefault();
-                console.log('Form submitted:', formData);
-                alert('Thank you for your message! We will get back to you soon.');
-                setFormData({ name: '', email: '', phone: '', message: '' });
-                setIsContactModalOpen(false);
-              }} className="space-y-4">
-                <div>
-                  <label htmlFor="modal-name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name
-                  </label>
-                  <input
-                    id="modal-name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400"
-                    placeholder="Name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="modal-email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input
-                    id="modal-email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400"
-                    placeholder="Email"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="modal-phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone
-                  </label>
-                  <input
-                    id="modal-phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 hover:border-gray-400"
-                    placeholder="Phone"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="modal-message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="modal-message"
-                    required
-                    value={formData.message}
-                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-vertical transition-all duration-200 hover:border-gray-400"
-                    rows={4}
-                    placeholder="Message"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium hover:scale-[1.02] hover:shadow-lg"
-                >
-                  SUBMIT
-                </button>
-              </form>
-
-              <p className="text-sm text-gray-600 text-center mt-4">
-                Fill out the form below, and we will be in touch shortly.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Contact modal is globally provided via ContactModalProvider */}
     </header>
   );
 };
 
 export default Header;
+
+

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import BookCallButton from '@/components/BookCallButton';
 import { Plus, CheckCircle, Smartphone, User, MapPin, TrendingUp, Briefcase, FileText, BarChart2, Shield, Search, BookOpen } from 'lucide-react';
 import Image_1 from "../../assets/Image_1.webp";
 import Image_2 from "../../assets/Image_2.webp";
@@ -95,19 +96,13 @@ const HeroSection: React.FC = () => {
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
               Healthcare Reputation Management Services in the USA
             </h1>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
             </p>
 
             {/* Main CTA Button */}
             <div className="mt-20 text-center">
-              <Link
-              to="/contact"
-              className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-              >
-              <Plus className="w-5 h-5 mr-2" />
-                BOOK A CALL
-              </Link>
+              <BookCallButton />
             </div>
           </div>
         </div>
@@ -166,7 +161,7 @@ const BenefitsSection: React.FC = () => {
                 }}
               />
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               A well-run reputation program makes you credible right when it counts. Our healthcare reputation management in the USA pairs medical reputation management services with buttoned-up workflows so great moments become public reviews while risk stays low.
             </p>
           </div>
@@ -205,19 +200,13 @@ const BenefitsSection: React.FC = () => {
         </div>
 
         {/* Footnote/Disclaimer */}
-        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
+        <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
           **Proven programs** across Arizona, California, Texas, New York, Florida, Illinois, Pennsylvania, Ohio, Georgia, North Carolina, Michigan and others, scalable to all 50 states.
         </p>
 
         {/* Final CTA Button */}
         <div className="mt-12 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -496,7 +485,7 @@ const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Why Choose Advance Edge?
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
             We go beyond basic reputation management. Our data-driven approach ensures your brand's digital presence reflects the highest standards of patient care and security.
           </p>
         </div>
@@ -519,7 +508,7 @@ const WhyChooseSection: React.FC = () => {
             <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
               {content.title}
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-700 mb-8">
               {content.description}
             </p>
 
@@ -558,13 +547,7 @@ const WhyChooseSection: React.FC = () => {
 
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -580,8 +563,7 @@ export default function App() {
       {/* Load Inter font only */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-          body { font-family: 'Inter', sans-serif; }
+          
           
           /* Custom Keyframes for smooth fade-in and slight slide up transition */
           @keyframes fadeInUp {
@@ -622,3 +604,6 @@ export default function App() {
     </div>
   );
 }
+
+
+

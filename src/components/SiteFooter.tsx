@@ -6,16 +6,16 @@ const SiteFooter: React.FC = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">AdvanceEdge Digital</h3>
-          <p className="text-sm">Driving patient growth for healthcare practices across the USA.</p>
+          <p className="text-sm text-white">Driving patient growth for healthcare practices across the USA.</p>
         </div>
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Our Address</h3>
-          <p className="text-sm">123 Main St, Immokalee, FL</p>
+          <p className="text-sm text-white">123 Main St, Immokalee, FL</p>
         </div>
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Contact Us</h3>
-          <p className="text-sm">info@advancedgedigital.com</p>
-          <p className="text-sm">832-937-7738</p>
+          <p className="text-sm text-white">info@advancedgedigital.com</p>
+          <p className="text-sm text-white">832-937-7738</p>
         </div>
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Newsletter</h3>
@@ -33,7 +33,7 @@ const SiteFooter: React.FC = () => (
       </div>
 
       <div className="mt-12 border-t border-[#141b2d] pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
-        <p>&copy; 2025. All Rights reserved. AdvanceedgeDigital.</p>
+        <p className="text-white">&copy; 2025. All Rights reserved. AdvanceedgeDigital.</p>
         <div className="flex items-center gap-6 mt-4 sm:mt-0 text-[#f5b17a]">
           {/* LinkedIn */}
           <a

@@ -1,11 +1,5 @@
 import React from 'react';
-// Local CTA button restored
-const BookACallButton = () => (
-    <Link to="/contact" className="bg-black text-white px-8 py-3 border-2 border-orange-500 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 flex items-center justify-center gap-2">
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+import BookCallButton from '@/components/BookCallButton';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
@@ -51,7 +45,7 @@ const HeaderSection = () => {
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-                            <BookACallButton />
+                            <BookCallButton />
                         </motion.div>
                     </div>
                 </div>
@@ -89,22 +83,22 @@ const WhoBenefitsSection = () => {
                         {/* Benefit 1: General & Family Dentistry */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">General & Family Dentistry</h3>
-                            <p className="mt-2 text-gray-600">Cleanings, Exams, Fillings, Crowns/Bridges, Root Canals, Extractions, Dentures, Periodontal Therapy, Sealants/Fluoride, Night Guards, Emergency Care, TMJ, CBCT/Scans–Mobile-Friendly Education & Clear Appointment Pathways.</p>
+                            <p className="mt-2 text-gray-700">Cleanings, Exams, Fillings, Crowns/Bridges, Root Canals, Extractions, Dentures, Periodontal Therapy, Sealants/Fluoride, Night Guards, Emergency Care, TMJ, CBCT/Scans–Mobile-Friendly Education & Clear Appointment Pathways.</p>
                         </motion.div>
                          {/* Benefit 2: Cosmetic & Implants */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Cosmetic & Implants</h3>
-                            <p className="mt-2 text-gray-600">Veneers, Bonding, Whitening, Smile Design, Gum Contouring, Dental Implants (Single-/Full-Arch), Implant Dentures, Bone Grafts, Sinus Lifts, Soft-Tissue Grafts–Offer-Led Funnels, Optimized Landing Pages, Measurable Consults.</p>
+                            <p className="mt-2 text-gray-700">Veneers, Bonding, Whitening, Smile Design, Gum Contouring, Dental Implants (Single-/Full-Arch), Implant Dentures, Bone Grafts, Sinus Lifts, Soft-Tissue Grafts–Offer-Led Funnels, Optimized Landing Pages, Measurable Consults.</p>
                         </motion.div>
                          {/* Benefit 3: Orthodontists & Pediatric */}
                          <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Orthodontists & Pediatric</h3>
-                            <p className="mt-2 text-gray-600">Invisalign/Clear Aligners, Braces, Retainers, Expanders, Interceptive Ortho, Habit Appliances, Pediatric Sealants/Fluoride, Stainless-Steel Crowns, Pulp Therapy, Frenectomy, Space Maintainers–Parent-Friendly UX, Strong Calls-To-Action, Easy Scheduling.</p>
+                            <p className="mt-2 text-gray-700">Invisalign/Clear Aligners, Braces, Retainers, Expanders, Interceptive Ortho, Habit Appliances, Pediatric Sealants/Fluoride, Stainless-Steel Crowns, Pulp Therapy, Frenectomy, Space Maintainers–Parent-Friendly UX, Strong Calls-To-Action, Easy Scheduling.</p>
                         </motion.div>
                         {/* Benefit 4: DSO & Multi-Location Groups */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">DSO & Multi-Location Groups</h3>
-                            <p className="mt-2 text-gray-600">General, Cosmetic, Implants, Ortho, Pedo, Perio, Endo, Oral Surgery, Prosthodontics, Sleep Apnea/TMJ, Same-Day/Emergency, Teledentistry–Centralized Campaign Management, Call Tracking, Analytics Rollups, Governance For National/Local Growth.</p>
+                            <p className="mt-2 text-gray-700">General, Cosmetic, Implants, Ortho, Pedo, Perio, Endo, Oral Surgery, Prosthodontics, Sleep Apnea/TMJ, Same-Day/Emergency, Teledentistry–Centralized Campaign Management, Call Tracking, Analytics Rollups, Governance For National/Local Growth.</p>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -218,7 +212,7 @@ const ChallengesSection = () => {
                     <h3 className="text-3xl font-extrabold text-gray-900">
                         Dentistry Growth Challenges We Solve
                     </h3>
-                    <p className="text-lg text-gray-600">
+                    <p className="text-lg text-gray-700">
                         US-Focused Dental Marketing Agency to Accelerate Patient Acquisition.
                     </p>
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
@@ -233,7 +227,7 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-500 italic">
+                     <p className="text-sm text-gray-700 italic">
                         Dental practices across California, Texas, New York, Florida, Illinois, New Jersey, plus Massachusetts, Pennsylvania, Ohio, Georgia, North Carolina, Washington, Michigan, Arizona, Colorado, and every other U.S. state benefit from our scalable, multi-location programs, built for patient acquisition and Local SEO practices.
                     </p>
                 </motion.div>
@@ -252,7 +246,7 @@ const ChallengesSection = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
-                <BookACallButton />
+                <BookCallButton />
             </motion.div>
         </motion.section>
     );
@@ -416,3 +410,7 @@ const DentalClinics = () => {
 };
 
 export default DentalClinics;
+
+
+
+

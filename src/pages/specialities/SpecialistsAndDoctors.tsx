@@ -1,11 +1,5 @@
 import React from 'react';
-// Local CTA button restored
-const BookACallButton = () => (
-    <Link to="/contact" className="bg-black text-white px-8 py-3 border-2 border-orange-500 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 flex items-center justify-center gap-2">
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+import BookCallButton from '@/components/BookCallButton';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
@@ -51,7 +45,7 @@ const HeaderSection = () => {
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-                            <BookACallButton />
+ <BookCallButton />
                         </motion.div>
                     </div>
                 </div>
@@ -89,22 +83,22 @@ const WhoBenefitsSection = () => {
                         {/* Benefit 1: Multi-Specialty Groups and Private Practices */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Multi-Specialty Groups and Private Practices</h3>
-                            <p className="mt-2 text-gray-600">Our physician marketing agency provides medical practice marketing services that drive patient acquisition for doctors and increase patient appointments. We run lead generation for doctors as a doctor marketing agency with clear reporting.</p>
+                            <p className="mt-2 text-gray-700">Our physician marketing agency provides medical practice marketing services that drive patient acquisition for doctors and increase patient appointments. We run lead generation for doctors as a doctor marketing agency with clear reporting.</p>
                         </motion.div>
                          {/* Benefit 2: Surgical Specialists */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Surgical Specialists</h3>
-                            <p className="mt-2 text-gray-600">Orthopedics, ENT, urology, general surgery, spine, neurosurgery. Specialist marketing services pair targeted PPC, SEO, reviews, and multi location physician marketing to secure scheduled consults.</p>
+                            <p className="mt-2 text-gray-700">Orthopedics, ENT, urology, general surgery, spine, neurosurgery. Specialist marketing services pair targeted PPC, SEO, reviews, and multi location physician marketing to secure scheduled consults.</p>
                         </motion.div>
                          {/* Benefit 3: Medical Subspecialties */}
                          <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Medical Subspecialties</h3>
-                            <p className="mt-2 text-gray-600">Cardiology, pulmonology, nephrology, endocrinology, rheumatology, oncology, pain, rehab. Healthcare marketing for doctors in the USA aligns content, offers, and forms to real appointments.</p>
+                            <p className="mt-2 text-gray-700">Cardiology, pulmonology, nephrology, endocrinology, rheumatology, oncology, pain, rehab. Healthcare marketing for doctors in the USA aligns content, offers, and forms to real appointments.</p>
                         </motion.div>
                         {/* Benefit 4: Telehealth and Virtual Care */}
                         <motion.div variants={fadeInUp}>
                            <h3 className="text-xl font-semibold text-gray-800">Telehealth and Virtual Care</h3>
-                            <p className="mt-2 text-gray-600">Telehealth marketing for doctors powers statewide growth with compliant ads, online scheduling, secure follow ups, and referral paths that book more patients across all 50 states.</p>
+                            <p className="mt-2 text-gray-700">Telehealth marketing for doctors powers statewide growth with compliant ads, online scheduling, secure follow ups, and referral paths that book more patients across all 50 states.</p>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -218,7 +212,7 @@ const ChallengesSection = () => {
                     <h3 className="text-3xl font-extrabold text-gray-900">
                         Marketing Challenges We Solve for Specialists and Doctors
                     </h3>
-                    <p className="text-lg text-gray-600">US-Focused Physician Marketing Agency to Accelerate Patient Acquisition.</p>
+                    <p className="text-lg text-gray-700">US-Focused Physician Marketing Agency to Accelerate Patient Acquisition.</p>
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
                         {challengesList.map((challenge, index) => {
                              const parts = challenge.split('–');
@@ -247,7 +241,7 @@ const ChallengesSection = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
-                <BookACallButton />
+ <BookCallButton />
             </motion.div>
         </motion.section>
     );
@@ -408,3 +402,7 @@ const SpecialistsAndDoctors = () => {
 };
 
 export default SpecialistsAndDoctors;
+
+
+
+

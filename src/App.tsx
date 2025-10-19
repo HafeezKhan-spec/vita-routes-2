@@ -1,34 +1,35 @@
-import { Toaster } from "/src/components/ui/toaster";
-import { Toaster as Sonner } from "/src/components/ui/sonner";
-import { TooltipProvider } from "/src/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import Layout from "/src/components/Layout";
-import Home from "/src/pages/Home";
-import About from "/src/pages/About";
-import Contact from "/src/pages/Contact";
-import NotFound from "/src/pages/NotFound";
-import Blog from "/src/pages/Blog";
+import Layout from "@/components/Layout";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
+import NotFound from "@/pages/NotFound";
+import Blog from "@/pages/Blog";
+import ContactModalProvider from "@/components/ContactModalProvider";
 
 // Services
-import MedicalSEO from "/src/pages/services/MedicalSEO";
-import SocialMedia from "/src/pages/services/SocialMedia";
-import ContentMarketing from "/src/pages/services/ContentMarketing";
-import PaidMarketing from "/src/pages/services/PaidMarketing";
-import ReputationManagement from "/src/pages/services/ReputationManagement";
-import WebsiteDesign from "/src/pages/services/WebsiteDesign";
-import MarketingAutomation from "/src/pages/services/MarketingAutomation";
+import MedicalSEO from "@/pages/services/MedicalSEO";
+import SocialMedia from "@/pages/services/SocialMedia";
+import ContentMarketing from "@/pages/services/ContentMarketing";
+import PaidMarketing from "@/pages/services/PaidMarketing";
+import ReputationManagement from "@/pages/services/ReputationManagement";
+import WebsiteDesign from "@/pages/services/WebsiteDesign";
+import MarketingAutomation from "@/pages/services/MarketingAutomation";
 
 // Specialities
-import AddictionCenters from "/src/pages/specialities/AddictionCenters";
-import Chiropractors from "/src/pages/specialities/Chiropractors";
-import EyeClinics from "/src/pages/specialities/EyeClinics";
-import FertilityClinics from "/src/pages/specialities/FertilityClinics";
-import MultispecialtyHospitals from "/src/pages/specialities/MultispecialtyHospitals";
-import DentalClinics from "/src/pages/specialities/DentalClinics";
-import SkinClinics from "/src/pages/specialities/SkinClinics";
-import SpecialistsAndDoctors from "/src/pages/specialities/SpecialistsAndDoctors";
+import AddictionCenters from "@/pages/specialities/AddictionCenters";
+import Chiropractors from "@/pages/specialities/Chiropractors";
+import EyeClinics from "@/pages/specialities/EyeClinics";
+import FertilityClinics from "@/pages/specialities/FertilityClinics";
+import MultispecialtyHospitals from "@/pages/specialities/MultispecialtyHospitals";
+import DentalClinics from "@/pages/specialities/DentalClinics";
+import SkinClinics from "@/pages/specialities/SkinClinics";
+import SpecialistsAndDoctors from "@/pages/specialities/SpecialistsAndDoctors";
 
 const queryClient = new QueryClient();
 
@@ -46,9 +47,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
+      <ContactModalProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
@@ -78,7 +80,8 @@ const App = () => (
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
+      </ContactModalProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

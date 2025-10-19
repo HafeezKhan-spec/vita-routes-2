@@ -11,6 +11,7 @@ import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
 import Background from "../../assets/Background.jpg";
+import BookCallButton from '@/components/BookCallButton';
 
 
 // --- Color Constants (Standardized to PaidMarketing.tsx) ---
@@ -123,15 +124,13 @@ const HeroSection: React.FC = () => {
                 <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
                     Healthcare Website Design Services in the USA
                 </h1>
-                <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+                <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
                     {heroText}
                 </p>
 
                 {/* Main CTA Button */}
                 <div className="mt-10 flex justify-center">
-                    <PrimaryButton onClick={() => console.log('Book a Call clicked from Hero')}>
-                        BOOK A CALL
-                    </PrimaryButton>
+                    <BookCallButton />
                 </div>
             </div>
         </div>
@@ -188,7 +187,7 @@ const BenefitsSection: React.FC = () => {
                         <div className="w-full h-72 rounded-xl overflow-hidden mb-6">
                             <MockImageCard src={Image_1} alt="Physicians collaborating" />
                         </div>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-lg text-gray-700">
                             {BENEFITS_DATA.description}
                         </p>
                     </div>
@@ -227,15 +226,13 @@ const BenefitsSection: React.FC = () => {
                 </div>
                 
                 {/* Footnote/Disclaimer */}
-                <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
+                <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
                     {BENEFITS_DATA.footerText}
                 </p>
 
                 {/* Final CTA Button */}
                 <div className="mt-12 text-center">
-                    <PrimaryButton onClick={() => console.log('Book a Call clicked from Benefits')}>
-                        Book a Call
-                    </PrimaryButton>
+                    <BookCallButton />
                 </div>
 
             </div>
@@ -493,7 +490,7 @@ const WhyChooseSection: React.FC = () => {
                     <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
                         {WHY_CHOOSE_US_DATA.title}
                     </h2>
-                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
                         {WHY_CHOOSE_US_DATA.subtitle}
                     </p>
                 </div>
@@ -515,7 +512,7 @@ const WhyChooseSection: React.FC = () => {
                         <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
                             {content.contentTitle}
                         </h3>
-                        <p className="text-lg text-gray-600 mb-8">
+                        <p className="text-lg text-gray-700 mb-8">
                             {content.description}
                         </p>
 
@@ -545,9 +542,7 @@ const WhyChooseSection: React.FC = () => {
 
                 {/* Final CTA Button */}
                 <div className="mt-20 text-center">
-                    <PrimaryButton onClick={() => console.log('Book a Call clicked from Why Choose Section')}>
-                        BOOK A CALL
-                    </PrimaryButton>
+                    <BookCallButton />
                 </div>
 
             </div>
@@ -561,13 +556,12 @@ const App: React.FC = () => (
   <div className="min-h-screen font-sans antialiased bg-white">
     
     {/* Load Inter font from Google Fonts */}
-    <style>
-      {`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Custom Keyframes for smooth fade-in and slight slide up transition */
-        @keyframes fadeInUp {
+      <style>
+        {`
+          
+          
+          /* Custom Keyframes for smooth fade-in and slight slide up transition */
+          @keyframes fadeInUp {
             from {
               opacity: 0;
               transform: translateY(10px);
@@ -606,3 +600,6 @@ const App: React.FC = () => (
 );
 
 export default App;
+
+
+

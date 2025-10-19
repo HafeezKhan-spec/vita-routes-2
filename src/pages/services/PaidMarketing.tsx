@@ -1,5 +1,6 @@
 import React , {useState, useRef, useEffect} from 'react';
 import { Link } from "react-router-dom";
+import BookCallButton from '@/components/BookCallButton';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Plus, CheckCircle, Search, Zap, Phone, ShoppingBag, TrendingUp, Users, Youtube, MapPin } from 'lucide-react';
@@ -82,7 +83,7 @@ const AnimatedSection: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // --- Hero Section Component ---
 
 const HeroSection: React.FC = () => {
-  const heroText = "Turn search intent into qualified inquiries with healthcare PPC and healthcare Google Ads—optimized, built, and planned by industry experts at AdvanceEdge. We deploy precise geo/service-line targeting, robust negatives, compliant tracking, and conversion-focused landing pages to drive measurable calls, forms, and chats for hospitals, clinics, and multi-location groups.";
+  const heroText = "Turn search intent into qualified inquiries with healthcare PPC and healthcare Google Ads—optimized, built, and planned by industry experts at AdvanceEdge.";
 
   return (
     // Updated background to a gentle gradient and increased vertical padding for visual appeal
@@ -99,22 +100,19 @@ const HeroSection: React.FC = () => {
           {/* Content Area (Text and Button) - Removed grid classes and added a max-width for better readability */}
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
-              Healthcare PPC and Google Ads in the USA
+              Healthcare PPC and Google Ads
             </h1>
             {/* Added mx-auto to center the max-width paragraph */}
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
             </p>
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
+              Our medical Google Ads strategies combine precise geo-targeting, compliant tracking, and conversion-driven landing pages to help hospitals, clinics, and multi-location healthcare groups reach high-intent patients exactly when they’re ready to book.
+            </p>
 
-            {/* Main CTA Button - Added hover animation: scale and deeper shadow */}
+            {/* Main CTA Button - Updated to shared BookCallButton */}
             <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
-              <Link
-                to="/contact"
-                className={`inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-              >
-                <Plus className="w-5 h-5 mr-2" />
-                BOOK A CALL
-              </Link>
+              <BookCallButton />
             </div>
           </div>
         </div>
@@ -127,31 +125,26 @@ const HeroSection: React.FC = () => {
 
 const BenefitsSection: React.FC = () => {
   const benefits = [
-    "Reach high-intent patients instantly at search.",
-    "Precise geo/dayparting and intent segments for patient acquisition ads.",
-    "Pay only for clicks: daily/monthly budget caps for control.",
-    "Clear ROI by campaign, keyword, conversion.",
-    "Build brand visibility and trust fast.",
-    "Competitive edge even before SEO matures.",
-    "Promote specialized services by service line.",
-    "Adapt messaging quickly to market shifts.",
-    "Complement SEO: healthcare google ads share winning data.",
-    "Capture urgent demand with call-only ads.",
-    "Improve conversions with focused landing pages.",
-    "HIPAA-safe tracking: no PHI in platforms.",
+    "High-intent targeting that reaches patients at the moment of need.",
+    "Smart geo, device, and schedule controls for efficient patient acquisition.",
+    "Conversion-optimized landing pages built for calls, forms, and chats.",
+    "Transparent ROI tracking by campaign, keyword, and conversion type.",
+    "Fast visibility and brand trust while SEO strategies mature.",
+    "HIPAA-safe tracking with zero PHI in any ad platform.",
+    "Scalable performance across locations, service lines, and regions.",
   ];
 
-  const col1 = benefits.slice(0, 6);
-  const col2 = benefits.slice(6, 12);
+  const col1 = benefits.slice(0, 7);
+  const col2 = benefits.slice(7, 12);
 
   return (
     <div className="py-16 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Block */}
-        <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
-                Proven Filtered Patient Acquisition Formula
+        <div className="sm:text-5xl mx-auto text-center">
+            <p className="text-sm font-bold uppercase tracking-widest text-orange-500 mb-2">
+                The AdvanceEdge PPC Formula
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
                 Benefits of Medical Content Marketing
@@ -176,8 +169,11 @@ const BenefitsSection: React.FC = () => {
                     }}
                 />
             </div>
-            <p className="text-lg text-gray-600">
-                Our healthcare paid media agency in the USA runs medical PPC and healthcare PPC ads with tight targeting, rigorous negatives, HIPAA-safe tracking and conversion-focused pages, all built for **measurable outcomes**.
+            <p className="text-lg text-gray-700">
+                We don’t chase clicks. We drive qualified patient actions.
+            </p>
+            <p className="text-lg text-gray-700">
+                Our healthcare PPC programs deliver measurable outcomes through:
             </p>
           </div>
 
@@ -217,19 +213,13 @@ const BenefitsSection: React.FC = () => {
         </div>
 
         {/* Footnote/Disclaimer - No direct hover needed, but surrounding elements are animated */}
-        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
-            From Washington to West Virginia, including Oregon, Idaho, Montana, Wyoming, Vermont, New Hampshire, Maine, Rhode Island, and Delaware, our healthcare PPC / healthcare Google Ads programs—Search, Performance Max, YouTube, Microsoft Ads (Bing), call-only, and remarketing patient acquisition ads, localize targeting, copy, and scheduling, then scale state by state.
+        <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
+            Whether you’re a single clinic or a multi-state healthcare network, AdvanceEdge localizes copy, scheduling, and targeting to meet patient intent in every market.
         </p>
 
-        {/* Final CTA Button - Added hover animation: scale and deeper shadow */}
+        {/* Final CTA Button - Updated to shared BookCallButton */}
         <div className="mt-12 text-center">
-            <Link
-                to="/contact"
-                className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-            >
-                <Plus className="w-5 h-5 mr-2" />
-                BOOK A CALL
-            </Link>
+            <BookCallButton />
         </div>
 
       </div>
@@ -249,12 +239,44 @@ interface Service {
 
 const servicesData: Service[] = [
     {
-        title: "Google Ads Search (Healthcare PPC)",
+        title: "Google Ads Search Campaigns",
         subtitle: "Brand protection; high-intent nonbrand...",
-        description: "Brand protection; high-intent nonbrand (“near me,” symptom, condition, treatment); service-line terms (e.g. bariatric surgery, IVF); emergency/urgent-care queries; optional competitor contexts (policy-safe). Structured with exact/phrase themes and robust negatives.",
+        description: "We capture intent with precise keyword structures, from high-intent non-brand terms (“near me,” condition, treatment) to urgent care and service-line queries. Every campaign includes robust negatives, ad extensions, and policy-safe competitor targeting to maximize efficiency.",
         icon: Search,
         color: 'text-blue-600',
         imagePlaceholder: IMAGE_2_URL, // Using original import variable
+    },
+    {
+        title: "Performance Max & Microsoft Ads",
+        subtitle: "Asset groups per service line and location...",
+        description: "We extend your reach through Google Performance Max and Microsoft Ads (Bing) for broader coverage and incremental conversions. Asset groups are customized by service line and location, supported by data feeds and audience tests that refine performance weekly.",
+        icon: TrendingUp,
+        color: 'text-yellow-600',
+        imagePlaceholder: IMAGE_2_URL, // Using original import variable
+    },
+    {
+        title: "Call-Based Patient Acquisition Ads",
+        subtitle: "Phone-first ads for urgent lines...",
+        description: "Urgent care, ER, or same-day appointment campaigns use phone-first formats with dayparted schedules and compliant call tracking. Our focus: real-time patient intent that converts to booked visits.",
+        icon: Phone,
+        color: 'text-red-600',
+        imagePlaceholder: IMAGE_4_URL, // Using original import variable
+    },
+    {
+        title: "Remarketing & Audience Campaigns",
+        subtitle: "RLSA (site visitors), YouTube viewers...",
+        description: "We re-engage warm audiences with remarketing lists, YouTube viewers, and consent-based Customer Match audiences. No sensitive interests, no guesswork. Just sequenced creative designed to move patients from awareness to action.",
+        icon: Users,
+        color: 'text-pink-600',
+        imagePlaceholder: IMAGE_3_URL, // Using original import variable
+    },
+    {
+        title: "YouTube & Video Advertising",
+        subtitle: "Skippable In-Stream and In-Feed...",
+        description: "Build trust through visual storytelling. We target health-related intent on YouTube with skippable and in-feed formats, remarketing sequences, and compliance-approved messaging that educate and convert.",
+        icon: Youtube,
+        color: 'text-red-700',
+        imagePlaceholder: IMAGE_4_URL, // Using original import variable
     },
     {
         title: "Demand Gen (Formerly Discovery)",
@@ -264,14 +286,7 @@ const servicesData: Service[] = [
         color: 'text-purple-600',
         imagePlaceholder: IMAGE_3_URL, // Using original import variable
     },
-    {
-        title: "Patient Acquisition Ads (Call-Only & Call-Extension)",
-        subtitle: "Phone-first ads for urgent lines...",
-        description: "Phone-first ads for urgent lines (ER/urgent care, same-day, after-hours). Dayparted to operating hours; call reporting and recordings (where allowed) for quality checks.",
-        icon: Phone,
-        color: 'text-red-600',
-        imagePlaceholder: IMAGE_4_URL, // Using original import variable
-    },
+    
     {
         title: "Microsoft Ads (Bing) Search",
         subtitle: "Mirror top search campaigns...",
@@ -279,30 +294,6 @@ const servicesData: Service[] = [
         icon: ShoppingBag,
         color: 'text-green-600',
         imagePlaceholder: IMAGE_3_URL, // Using original import variable
-    },
-    {
-        title: "Performance Max (P-Max Ads)",
-        subtitle: "Asset groups per service line and location...",
-        description: "Asset groups per service line and location, brand exclusions, page feeds (service-line URLs), and linked Google Business Profile. Used for incremental reach + local signals; weekly asset and audience tests.",
-        icon: TrendingUp,
-        color: 'text-yellow-600',
-        imagePlaceholder: IMAGE_2_URL, // Using original import variable
-    },
-    {
-        title: "Remarketing and Audiences",
-        subtitle: "RLSA (site visitors), YouTube viewers...",
-        description: "RLSA (site visitors), YouTube viewers, Customer Match (consented lists only). No sensitive interest targeting. Sequenced creatives by funnel stage with strict frequency controls.",
-        icon: Users,
-        color: 'text-pink-600',
-        imagePlaceholder: IMAGE_3_URL, // Using original import variable
-    },
-    {
-        title: "YouTube Ads (Medical Google Ads)",
-        subtitle: "Skippable In-Stream and In-Feed...",
-        description: "Skippable In-Stream and In-Feed around high-intent topics and geos; sequence awareness → consideration → action. Viewer and site-based remarketing where policy permits; clear disclaimers.",
-        icon: Youtube,
-        color: 'text-red-700',
-        imagePlaceholder: IMAGE_4_URL, // Using original import variable
     },
     {
         title: "Local Ads Elements",
@@ -365,10 +356,10 @@ const ServicesSection: React.FC = () => {
 
                 {/* Header Block */}
                 <div className="max-w-3xl mb-16">
-                    <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
-                        SERVICES WE OFFER
+                    <p className="text-5xl font-bold uppercase tracking-widest text-orange-500 mb-2">
+                        Our Healthcare PPC Services
                     </p>
-                    <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+                    <h2 className="text-3xl sm:text-3xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
                         Healthcare Google Ads & Medical PPC
                     </h2>
                 </div>
@@ -503,7 +494,7 @@ const WhyChooseSection: React.FC = () => {
                     <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
                         Why Choose Advance Edge?
                     </h2>
-                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
                         We go beyond basic lead generation. Our data-driven approach ensures you receive verified, high-intent claimants that match the specific requirements of mass tort and personal injury cases.
                     </p>
                 </div>
@@ -527,7 +518,7 @@ const WhyChooseSection: React.FC = () => {
                         <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
                             {content.title}
                         </h3>
-                        <p className="text-lg text-gray-600 mb-8">
+                        <p className="text-lg text-gray-700 mb-8">
                             {content.description}
                         </p>
 
@@ -565,15 +556,9 @@ const WhyChooseSection: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Final CTA Button - Added hover animation: scale and deeper shadow */}
+                {/* Final CTA Button - Updated to shared BookCallButton */}
                 <div className="mt-20 text-center">
-                   <Link
-                     to="/contact"
-                     className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-                    >
-                    <Plus className="w-5 h-5 mr-2" />
-                       BOOK A CALL
-                    </Link>
+                   <BookCallButton />
                 </div>
 
             </div>
@@ -589,8 +574,7 @@ export default function App() {
       {/* Load Inter font and ADD animation keyframes */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-          body { font-family: 'Inter', sans-serif; }
+          
           
           /* Custom Keyframes for smooth fade-in and slight slide up transition (used only for tab switching) */
           @keyframes fadeInUp {
@@ -635,3 +619,7 @@ export default function App() {
     </div>
   );
 }
+
+
+
+

@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// Local CTA button restored
-const BookACallButton = () => (
-    <Link to="/contact" className="bg-black text-white px-8 py-3 border-2 border-orange-500 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 flex items-center justify-center gap-2">
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+import BookCallButton from '@/components/BookCallButton';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
@@ -67,7 +61,7 @@ const HeaderSection = () => {
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-                            <BookACallButton />
+                            <BookCallButton />
                         </motion.div>
                     </div>
                 </div>
@@ -101,22 +95,22 @@ const WhoBenefitsSection = () => {
               {/* Benefit 1: Medical Dermatology */}
               <motion.div variants={fadeInUp}>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Medical Dermatology</h3>
-                <p className="text-gray-600">Acne treatment, eczema/dermatitis, psoriasis, rosacea, rashes/allergies, fungal infections, warts, pediatric dermatology, trichology/hair-loss, nail disorders, phototherapy, biologics.</p>
+                <p className="text-gray-700">Acne treatment, eczema/dermatitis, psoriasis, rosacea, rashes/allergies, fungal infections, warts, pediatric dermatology, trichology/hair-loss, nail disorders, phototherapy, biologics.</p>
               </motion.div>
               {/* Benefit 2: Cosmetic & Aesthetic */}
               <motion.div variants={fadeInUp}>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Cosmetic & Aesthetic</h3>
-                <p className="text-gray-600">Botox, fillers, chemical peels, microneedling/RF, PRP/PRF, laser resurfacing/laser treatments, IPL, hair removal, skin tightening, pigmentation/melasma, acne scar revision, anti-aging skin care.</p>
+                <p className="text-gray-700">Botox, fillers, chemical peels, microneedling/RF, PRP/PRF, laser resurfacing/laser treatments, IPL, hair removal, skin tightening, pigmentation/melasma, acne scar revision, anti-aging skin care.</p>
               </motion.div>
               {/* Benefit 3: Mohs & Skin Cancer */}
               <motion.div variants={fadeInUp}>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Mohs & Skin Cancer</h3>
-                <p className="text-gray-600">Full-body skin exams, dermoscopy, biopsies, Mohs micrographic surgery, excisions, reconstruction, melanoma management, actinic keratoses, post-operative care.</p>
+                <p className="text-gray-700">Full-body skin exams, dermoscopy, biopsies, Mohs micrographic surgery, excisions, reconstruction, melanoma management, actinic keratoses, post-operative care.</p>
               </motion.div>
               {/* Benefit 4: Teledermatology */}
               <motion.div variants={fadeInUp}>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Teledermatology</h3>
-                <p className="text-gray-600">Virtual consults, asynchronous photo visits, second opinions, follow-ups, prescription refills, pre/post-procedure guidance, urgent triage workflows.</p>
+                <p className="text-gray-700">Virtual consults, asynchronous photo visits, second opinions, follow-ups, prescription refills, pre/post-procedure guidance, urgent triage workflows.</p>
               </motion.div>
             </div>
         </motion.div>
@@ -231,7 +225,7 @@ const ChallengesSection = () => {
                     <h3 className="text-3xl font-extrabold text-gray-900">
                         Dermatology Growth Challenges We Solve
                     </h3>
-                    <p className="mt-4 text-lg text-gray-600">US-Focused Skin Clinic Marketing to Accelerate Patient Acquisition.</p>
+                    <p className="mt-4 text-lg text-gray-700">US-Focused Skin Clinic Marketing to Accelerate Patient Acquisition.</p>
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
                         {challenges.map((challenge, index) => {
                              const parts = challenge.split(':');
@@ -244,7 +238,7 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-500 italic">
+                     <p className="text-sm text-gray-700 italic">
                         Our healthcare marketing experts build scalable, multi-location programs, focused on patient acquisition and Local SEO, for clinics across California, Texas, New York, Florida, Illinois, New Jersey, and every other U.S. state.
                     </p>
                 </motion.div>
@@ -263,7 +257,7 @@ const ChallengesSection = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
-                <BookACallButton />
+ <BookCallButton />
             </motion.div>
         </motion.section>
     );
@@ -428,3 +422,7 @@ export default function SkinClinics() {
     </div>
   )
 }
+
+
+
+

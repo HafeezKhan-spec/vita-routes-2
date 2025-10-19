@@ -17,10 +17,10 @@
     <meta name="twitter:site" content="@advance_edge" />
     <meta name="twitter:image" content="/placeholder.svg" />
 
-    <!-- Fonts: Crimson Text (headers) & Crimson Pro (body) -->
+    <!-- Fonts: Marcellus (headings) & DM Sans (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Crimson+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Marcellus&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -28,13 +28,37 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Netlify Forms registration: hidden static form so Netlify detects it at build time -->
-    <form name="contact" netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
+    <form name="book-call" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="book-call" />
+      <p hidden>
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="fullName" />
+      <input type="text" name="company" />
       <input type="tel" name="phone" />
-      <textarea name="message"></textarea>
-      <input name="bot-field" />
+      <input type="email" name="email" />
+      <select name="lookingFor">
+        <option value="SEO">SEO</option>
+        <option value="Paid Ads">Paid Ads</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Website Design">Website Design</option>
+      </select>
+    </form>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden>
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="fullName" />
+      <input type="text" name="company" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <select name="lookingFor">
+        <option value="SEO">SEO</option>
+        <option value="Paid Ads">Paid Ads</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Website Design">Website Design</option>
+      </select>
     </form>
   </body>
 </html>

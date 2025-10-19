@@ -38,13 +38,13 @@ const AboutSection = () => (
                 </div>
                 <div>
                     <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-600">About Us</h2>
-                    <p className="text-gray-600 leading-relaxed mb-4">
+                    <p className="text-black leading-relaxed mb-4">
                         Rated as one of the best healthcare marketing firm and medical marketing company, AdvanceEdge is your trusted digital partner for remarkable patient growth. We plan clearly, execute precisely, and report what matters!
                     </p>
-                    <p className="text-gray-600 leading-relaxed mb-4">
+                    <p className="text-gray-700 leading-relaxed mb-4">
                         Our healthcare marketing experts build SEO, PPC, Social Media, Content Marketing and Marketing Automation programs that respect HIPAA and your hospitals, clinics, or brand's standards.
                     </p>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                        From California to Texas, Florida, Alaska, Virginia and all the other 45 states, AdvanceEdge healthcare marketing delivers data-driven growth and qualified patient enquiries. Partner with a team that understands service lines, multi-location operations and the realities of U.S healthcare.
                     </p>
                 </div>
@@ -59,20 +59,20 @@ const ValuesSection = () => (
             <div className="grid md:grid-cols-2 gap-16 mb-16">
                  <div className="text-left">
                     <h3 className="text-3xl font-bold text-gray-800 mb-3">Vision</h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                         Aiming to be the most trusted healthcare marketing firm in the USA for measurable, compliant patient growth.
                     </p>
                 </div>
                 <div className="text-left">
                     <h3 className="text-3xl font-bold text-gray-800 mb-3">Mission</h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                         Help U.S. hospitals, clinics and telehealth brands grow qualified inquiries through data-driven SEO, PPC, Social Media, Content and Marketing Automation.
                     </p>
                 </div>
             </div>
             <div className="max-w-3xl mx-auto">
                 <h3 className="text-3xl font-bold text-gray-800 mb-3">Core Values</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                     Patient-first outcomes, compliance by default (HIPAA, BAA, ADA), evidence-led decisions, advanced edge with automation, security and data minimization to build and protect trust.
                 </p>
             </div>
@@ -170,4 +170,8 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
 

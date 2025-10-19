@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import homeBgHeader from '@/assets/Home_Bg_Header.mp4';
+import BookCallButton from '@/components/BookCallButton';
+import homeBgHeader from '@/assets/Home_Bg_Header (1).webm';
 import image_12 from '@/assets/image_12.webp';
 import stepImg from '@/assets/step.webp';
 import homeImage from '@/assets/home_image.png';
@@ -80,9 +81,15 @@ import Image_6 from "@/assets/Image_6.webp";
 const services = [
     {
         icon: DentalIcon,
+        title: 'Skin Clinics / Dermatologists',
+        description: 'Medical & cosmetic dermatology, MOHS surgery, physician-led medspas, pediatric dermatology, and hair-loss clinics.',
+        imageUrl: Image_1,
+    },
+    {
+        icon: DentalIcon,
         title: 'Dental Clinics / DSOs',
         description: 'General dentistry, DSOs/MSOs, orthodontics, periodontics, oral surgery, endodontics, pediatric dentistry, and implant centers.',
-        imageUrl: Image_1,
+        imageUrl: Image_4,
     },
     {
         icon: HospitalIcon,
@@ -151,20 +158,30 @@ const PartnerLedIcon = () => <svg className="w-8 h-8 text-gray-700" fill="none" 
 const ContactForm = () => (
     <form className="space-y-4">
         <div>
-            <label htmlFor="name" className="sr-only">Name</label>
-            <input type="text" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <label htmlFor="fullName" className="sr-only">Full Name</label>
+            <input type="text" id="fullName" required placeholder="Full Name" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
-            <label htmlFor="email" className="sr-only">Email</label>
-            <input type="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <label htmlFor="company" className="sr-only">Company</label>
+            <input type="text" id="company" required placeholder="Company Name / Brand name / Business Name" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
             <label htmlFor="phone" className="sr-only">Phone</label>
-            <input type="tel" id="phone" placeholder="Phone" className="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <input type="tel" id="phone" required placeholder="10 Digit Call & WhatsApp Mobile Number" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
-            <label htmlFor="message" className="sr-only">Message</label>
-            <textarea id="message" placeholder="Message" rows={4} className="w-full px-4 py-3 rounded-md bg-gray-100 border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm"></textarea>
+            <label htmlFor="email" className="sr-only">Email</label>
+            <input type="email" id="email" required placeholder="Email" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+        </div>
+        <div>
+            <label htmlFor="lookingFor" className="sr-only">Looking For</label>
+            <select id="lookingFor" required defaultValue="" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm">
+                <option value="" disabled>Select the services you are looking for</option>
+                <option value="SEO">SEO</option>
+                <option value="Paid Ads">Paid Ads</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Website Design">Website Design</option>
+            </select>
         </div>
         <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition duration-300">
             SUBMIT
@@ -177,18 +194,35 @@ const ContactForm = () => (
 const HeroSection = () => {
   const [videoEnded, setVideoEnded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Attempt to start with audio enabled on load
+  // Autoplay once on load; no auto-replay on interaction
+  // Removed auto-unmute-and-play listeners to honor single initial playback.
   useEffect(() => {
     const v = videoRef.current;
-    if (v) {
-      v.muted = false;
+    if (!v) return;
+
+    const unmuteAndPlay = () => {
       try {
-        const p = v.play();
-        if (p && typeof p.then === 'function') p.catch(() => {});
-      } catch {}
-    }
+        v.muted = false;
+        setIsMuted(false);
+        v.play().catch(() => {});
+      } catch (e) {}
+    };
+
+    const opts = { once: true } as AddEventListenerOptions;
+    window.addEventListener('click', unmuteAndPlay, opts);
+    window.addEventListener('keydown', unmuteAndPlay, opts);
+    window.addEventListener('touchstart', unmuteAndPlay, opts);
+    window.addEventListener('scroll', unmuteAndPlay, opts);
+
+    return () => {
+      window.removeEventListener('click', unmuteAndPlay);
+      window.removeEventListener('keydown', unmuteAndPlay);
+      window.removeEventListener('touchstart', unmuteAndPlay);
+      window.removeEventListener('scroll', unmuteAndPlay);
+    };
   }, []);
   return (
     <div className="relative min-h-screen">
@@ -198,44 +232,85 @@ const HeroSection = () => {
         src={homeBgHeader}
         autoPlay
         playsInline
-        muted={false}
+        muted
+        preload="metadata"
+        poster={homeImage}
         controls={false}
         onPlay={() => { setIsPlaying(true); }}
         onPause={() => { setIsPlaying(false); }}
-        onEnded={() => { setVideoEnded(true); setIsPlaying(false); }}
+        onEnded={() => { const v = videoRef.current; try { if (v) v.currentTime = v.duration; } catch (e) {} setVideoEnded(true); setIsPlaying(false); }}
+        onCanPlay={() => { if (!videoEnded) { try { videoRef.current?.play(); } catch (e) {} } }}
+        onVolumeChange={() => { setIsMuted(videoRef.current?.muted ?? true); }}
         className={"absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"}
       />
 
       {/* Play/Pause control overlay (persists after end) */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+      <div className="absolute left-6 md:left-10 top-[calc(50%+20px)] -translate-y-1/2 z-20">
+      <button
+        onClick={() => {
+          const v = videoRef.current;
+          if (!v) return;
+          if (isPlaying) {
+            v.pause();
+          } else {
+            if (videoEnded) {
+              try { v.currentTime = 0; } catch (e) {}
+            }
+            setVideoEnded(false);
+            v.muted = false;
+            setIsMuted(false);
+            try { v.play(); } catch (e) { /* ignore play failures */ }
+          }
+        }}
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 text-white border border-white/30 backdrop-blur-sm hover:bg-black/60 transition"
+        aria-label={isPlaying ? 'Pause video' : 'Play video'}
+      >
+        {isPlaying ? (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-500">
+              <rect x="6" y="4" width="4" height="16" />
+              <rect x="14" y="4" width="4" height="16" />
+            </svg>
+            <span className="text-sm font-semibold">Pause</span>
+          </>
+        ) : (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-500">
+              <path d="M8 5v14l11-7-11-7z" />
+            </svg>
+            <span className="text-sm font-semibold">Play</span>
+          </>
+        )}
+      </button>
+      </div>
+
+      {/* Mute/Unmute control overlay */}
+      <div className="absolute bottom-6 right-6 z-20">
         <button
           onClick={() => {
             const v = videoRef.current;
             if (!v) return;
-            if (isPlaying) {
-              v.pause();
-            } else {
-              setVideoEnded(false);
-              try { v.play(); } catch {}
-            }
+            v.muted = !v.muted;
+            setIsMuted(v.muted);
           }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 text-white border border-white/30 backdrop-blur-sm hover:bg-black/60 transition"
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
         >
-          {isPlaying ? (
+          {isMuted ? (
             <>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <rect x="6" y="4" width="4" height="16" />
-                <rect x="14" y="4" width="4" height="16" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-500">
+                <path d="M5 9v6h4l5 4V5l-5 4H5z" />
+                <path d="M19 9l-4 4m0-4l4 4" />
               </svg>
-              <span className="text-sm font-semibold">Pause</span>
+              <span className="text-sm font-semibold">Unmute</span>
             </>
           ) : (
             <>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                <path d="M8 5v14l11-7-11-7z" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-orange-500">
+                <path d="M5 9v6h4l5 4V5l-5 4H5z" />
+                <path d="M16 8c1.5 1 2 2 2 4s-.5 3-2 4" />
               </svg>
-              <span className="text-sm font-semibold">Play</span>
+              <span className="text-sm font-semibold">Mute</span>
             </>
           )}
         </button>
@@ -246,18 +321,16 @@ const HeroSection = () => {
 
       {/* Audio plays by default; no toggle shown */}
 
-      <div className="relative z-10 container mx-auto px-6 sm:px-8 h-full flex flex-col justify-center md:justify-end items-center text-center pb-12 md:pb-20">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl mt-60 md:mt-60 font-bold text-black mb-6 md:mb-8 leading-tight">
+      <div className="absolute left-6 md:left-10 top-[calc(50%+20px)] -translate-y-1/2 z-20">
+        <div className="max-w-xl sm:max-w-2xl bg-black/40 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 leading-tight">
             Data-Backed Healthcare Marketing for Real Patient Growth.
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-black mb-8 md:mb-12 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg md:text-2xl text-gray-200 mb-8 md:mb-12 leading-relaxed">
             From Click to Appointment, We Build HIPAA-Compliant Campaigns That Scale Clinics and Hospitals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link to="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200">
-              BOOK A CALL
-            </Link>
+          <div className="flex flex-col ml-[200px] sm:flex-row gap-4">
+            <BookCallButton />
           </div>
         </div>
       </div>
@@ -309,13 +382,13 @@ const ServicesSection = () => {
                     {servicesList.slice(0, 2).map((service, index) => (
                         <div key={index} className="border border-blue-800/50 rounded-lg p-8 bg-slate-900/30 flex flex-col gap-4 transition-all duration-300 hover:border-blue-400/70 hover:bg-slate-800/40 hover:shadow-lg transform hover:-translate-y-1">
                             <h3 className="text-2xl font-semibold">{service.title}</h3>
-                            <p className="text-gray-400">{service.description}</p>
+                            <p className="text-white">{service.description}</p>
                         </div>
                     ))}
                      <div className="flex flex-col justify-center gap-4 p-6 md:p-0">
                          <p className="text-orange-500 font-semibold text-xs tracking-widest">HEALTHCARE MARKETING</p>
                          <h2 className="text-4xl font-bold text-white">Services We Offer</h2>
-                         <p className="text-gray-400 leading-relaxed">
+                         <p className="text-white leading-relaxed">
                              AdvanceEdge Health delivers performance-driven digital marketing solutions for hospitals, specialty clinics, multi-location groups, and telehealth practices.
                              Our services are designed to increase visibility, attract qualified patients, and grow your practice with measurable, HIPAA-compliant results.
 
@@ -324,7 +397,7 @@ const ServicesSection = () => {
                       {servicesList.slice(2).map((service, index) => (
                          <div key={index + 2} className="border border-blue-800/50 rounded-lg p-8 bg-slate-900/30 flex flex-col gap-4 transition-all duration-300 hover:border-blue-400/70 hover:bg-slate-800/40 hover:shadow-lg transform hover:-translate-y-1">
                              <h3 className="text-2xl font-semibold">{service.title}</h3>
-                             <p className="text-gray-400">{service.description}</p>
+                             <p className="text-white">{service.description}</p>
                          </div>
                      ))}
                 </div>
@@ -350,7 +423,7 @@ const ServiceCard = ({ icon: Icon, title, description, imageUrl, isGridHovered, 
 
             <div className="relative z-10 flex flex-col h-full">
                 <div className="mb-4">
-                    <Icon className={`w-8 h-8 transition-all duration-500 transform group-hover:scale-110 ${isCardHovered ? 'text-white' : 'text-teal-500'}`} />
+                    <Icon className={`w-8 h-8 transition-all duration-500 transform group-hover:scale-110 ${isCardHovered ? 'text-white' : 'text-orange-500'}`} />
                 </div>
                 <div className={`transition-all duration-500 ${isCardHovered ? 'text-white' : 'text-gray-800'}`}>
                     <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -379,14 +452,18 @@ const ContactModal = ({ isOpen, onClose }) => {
     return (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 animate-fade-in" onClick={onClose}>
             <div className="bg-white rounded-xl shadow-2xl p-8 max-w-lg w-full relative transform transition-all duration-300 ease-in-out scale-95 animate-modal-in" onClick={e => e.stopPropagation()}>
-                <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors">
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors"
+                    aria-label="Close"
+                >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
                 <div className="text-center">
                     <h2 className="text-3xl font-bold text-gray-800 mb-2">CONTACT US</h2>
-                    <p className="text-gray-500 mb-6">Fill out the form below, and we will be in touch shortly.</p>
+                    <p className="text-gray-600 mb-6">Fill out the form below, and we will be in touch shortly.</p>
                 </div>
                 <form>
                     <div className="space-y-4">
@@ -417,24 +494,14 @@ function HomeInternal() {
              <div className="container mx-auto px-4 py-16 md:py-24">
                 <div className={`lg:flex lg:gap-8 mb-16 items-stretch ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
                     <header className="lg:w-2/3 mb-8 lg:mb-0">
-                        <h2 className="text-sm font-bold uppercase text-orange-500 tracking-widest mb-2">OUR EXPERTISE</h2>
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">Healthcare Industries We Serve</h1>
-                        <p className="text-lg text-gray-600 mb-8">Our medical marketing agency partners with US hospitals, clinics and telehealth brands, providing tailored digital marketing services for each line.</p>
-                        <Link 
-                            to="/contact"
-                            className="inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200"
-                        >
-                            BOOK A CALL
-                        </Link>
-                    </header>
-                    <div className="lg:w-1/3">
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 h-full shadow-sm">
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">Skin Clinics / Dermatologists</h3>
-                            <p className="text-sm leading-relaxed text-gray-600">
-                                Medical & cosmetic dermatology, MOHS surgery, physician-led medspas, pediatric dermatology, and hair-loss clinics.
-                            </p>
+                        <h2 className="text-4xl font-bold uppercase text-orange-500 text-center ml-[300px] tracking-widest mb-2">OUR EXPERTISE</h2>
+                        <h1 className="text-4xl md:text-3xl font-bold text-center ml-[330px] text-gray-900 mb-4 leading-tight">Healthcare Verticals We Serve</h1>
+                        <p className="text-lg text-center ml-[300px] text-black mb-8">Our medical marketing agency partners with US hospitals, clinics and telehealth brands, providing tailored digital marketing services for each line.</p>
+                        <div className="ml-[500px]">
+                            <BookCallButton />
                         </div>
-                    </div>
+                    </header>
+                    
                 </div>
                 <main>
                     <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-500`}>
@@ -461,18 +528,15 @@ function HomeInternal() {
 const MainView = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 items-center h-full p-8 md:p-16 lg:p-24 bg-[#001F3F] text-white gap-10">
       <div className="flex flex-col justify-center">
-        <p className="text-orange-500 font-semibold tracking-widest text-sm mb-4">Healthcare Marketing That Scales Patient Acquisition</p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        <p className="text-orange-500 -top-[60px] font-semibold tracking-widest text-4xl mb-4">Healthcare Marketing That Scales Patient Acquisition</p>
+        <h1 className="text-2xl md:text-1xl lg:text-1xl  leading-tight">
           Ready to grow your practice in <br />
           today’s competitive healthcare  <br />
           Market?
         </h1>
-        <Link
-          to="/contact"
-          className="mt-12 inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 w-max shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200"
-        >
-          BOOK A CALL
-        </Link>
+        <div className="mt-12">
+          <BookCallButton />
+        </div>
       </div>
       <div className="group relative overflow-hidden rounded-2xl shadow-xl">
         <img
@@ -502,9 +566,9 @@ const WhyChooseUsSection = () => {
                     <div className="lg:w-2/3 flex flex-col xl:flex-row gap-8">
                         <div className="bg-slate-800 text-white p-8 rounded-2xl shadow-2xl space-y-6 flex-1">
                             <h3 className="text-2xl font-bold">Healthcare Expertise That Delivers Results</h3>
-                            <p className="text-gray-300">We’re a healthcare marketing agency built to help hospitals, multi-location healthcare groups, and specialty clinics grow patient inquiries and booked appointments — without guesswork.</p>
+                            <p className="text-white">We’re a healthcare marketing agency built to help hospitals, multi-location healthcare groups, and specialty clinics grow patient inquiries and booked appointments without guesswork.</p>
                             <div className="border-t border-gray-600 pt-6">
-                                <p className="font-bold">Also, why does it say attorneys?</p>
+                                <p className="font-bold">Our Best Skilled Attorneys, Trust Score</p>
                                 <div className="flex items-center gap-4 mt-2">
                                     <p className="text-3xl font-bold">4.5</p>
                                     <div className="flex">{[...Array(5)].map((_, i) => <StarIcon key={i} filled={i<4} />)}</div>
@@ -538,14 +602,14 @@ const OurApproachSection = () => {
     return (
         <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Approach: Precision, Performance and Partnership</h2>
-                <p className="max-w-3xl mx-auto text-gray-600 mb-12">At AdvanceEdge, your healthcare marketing agency in the USA, we connect strategy to execution and improve results week after week: clarify goals and markets; map SEO, PPC, social, content, automation; set budgets and metrics; build and QA pages, tracking, campaigns; test weekly, shift spend to winners, scale locations and service lines.</p>
+                <h2 className="text-4xl font-bold text-black mb-4">Our Approach: Precision, Performance and Partnership</h2>
+                <p className="max-w-3xl mx-auto text-black mb-12">At AdvanceEdge, your healthcare marketing agency in the USA, we connect strategy to execution and improve results week after week: clarify goals and markets; map SEO, PPC, social, content, automation; set budgets and metrics; build and QA pages, tracking, campaigns; test weekly, shift spend to winners, scale locations and service lines.</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {approaches.map((item, i) => (
                         <div key={i} className="bg-white p-8 rounded-lg shadow-lg text-center border-t-4 border-blue-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:border-blue-600">
                             <div className="flex justify-center mb-4">{item.icon}</div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                            <p className="text-gray-600 text-sm">{item.description}</p>
+                            <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
+                            <p className="text-black text-sm">{item.description}</p>
                         </div>
                     ))}
                 </div>
@@ -576,8 +640,8 @@ const TestimonialsSection = () => {
     return (
         <section className="py-20 bg-white">
             <div className="container mx-auto px-6 text-center">
-                <p className="text-red-500 font-semibold tracking-widest mb-2">OUR CLIENTS</p>
-                <h2 className="text-4xl font-bold text-gray-800 mb-12">Testimonials</h2>
+                <p className="text-red-500 text-3xl ml-[10px] font-semibold tracking-widest mb-2">OUR CLIENTS</p>
+                <h2 className="text-2xl font-bold text-gray-800 mb-12">Testimonials</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((t, i) => (
                         <div key={i} className="bg-gray-50 p-8 rounded-lg shadow-md text-left space-y-4">
@@ -606,11 +670,11 @@ const FinalCTASection = () => (
             <div className="flex flex-col lg:flex-row gap-12">
                 <div className="lg:w-1/2 space-y-6">
                     <h2 className="text-4xl font-bold">Our Commitment: Compliance, Confidentiality & Excellence</h2>
-                    <p className="text-gray-300 leading-relaxed">Healthcare is sensitive. Our HIPAA compliant marketing agency treats your data and brand with care. We work with HIPAA-aware workflows, sign BAAs when required, practice data minimization, and never place PHI in ad platforms. Every site and landing page follows ADA accessibility best practices. Secure access, reviews, and QA keep quality and confidentiality high, every time.</p>
+                    <p className="text-white leading-relaxed">Healthcare is sensitive. Our HIPAA compliant marketing agency treats your data and brand with care. We work with HIPAA-aware workflows, sign BAAs when required, practice data minimization, and never place PHI in ad platforms. Every site and landing page follows ADA accessibility best practices. Secure access, reviews, and QA keep quality and confidentiality high, every time.</p>
                 </div>
                 <div className="lg:w-1/2 bg-white p-8 rounded-lg">
                     <h3 className="text-2xl font-bold text-gray-800 mb-2">Ready to Elevate Your Practice?</h3>
-                    <p className="text-gray-500 mb-6">Partner with AdvanceEdge for a HIPAA-aware growth plan for your healthcare practice.</p>
+                    <p className="text-gray-600 mb-6">Partner with AdvanceEdge for a HIPAA-aware growth plan for your healthcare practice.</p>
                     <ContactForm />
                 </div>
             </div>
@@ -639,5 +703,7 @@ export default function App() {
         </div>
     );
 }
+
+
 
 

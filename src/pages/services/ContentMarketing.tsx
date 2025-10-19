@@ -14,6 +14,7 @@ import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
 import { URL } from 'url';
+import BookCallButton from '@/components/BookCallButton';
 
 // --- Color Constants ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
@@ -102,19 +103,13 @@ const HeroSection: React.FC = () => {
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
              Healthcare Content Marketing in the USA
             </h1>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
             </p>
 
             {/* Main CTA Button */}
-            <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
-              <Link
-                to="/contact"
-                className={`inline-flex items-center justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-              >
-                <Plus className="w-5 h-5 mr-2" />
-                BOOK A CALL
-              </Link>
+            <div className="mt-10 flex justify-center">
+              <BookCallButton />
             </div>
           </div>
         </div>
@@ -173,7 +168,7 @@ const BenefitsSection: React.FC = () => {
                 }}
               />
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
              Delivering editorial systems and governance that scale, our medical copywriting services translate clinical expertise to plain english, healthcare blogging services grow search visibility and internal linking and patient education content improves understanding and next steps.
             </p>
           </div>
@@ -212,7 +207,7 @@ const BenefitsSection: React.FC = () => {
         </div>
 
         {/* Footnote/Disclaimer */}
-        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
+        <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
           Whether you're in Kentucky, Alabama, Mississippi, New Mexico, Oklahoma, Kansas, Iowa, or Nebraska, our healthcare content marketing adapts to local rules and realities.
 
           Built on HIPAA compliant content marketing workflows, we localize copy by state, payer, and service line. Our medical content marketing then scales consistently across all 50 states.
@@ -220,13 +215,7 @@ const BenefitsSection: React.FC = () => {
 
         {/* Final CTA Button */}
         <div className="mt-12 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -496,7 +485,7 @@ const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Why Choose Advance Edge?
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
             We go beyond basic lead generation. Our data-driven approach ensures you receive verified, high-intent claimants that match the specific requirements of mass tort and personal injury cases.
           </p>
         </div>
@@ -519,7 +508,7 @@ const WhyChooseSection: React.FC = () => {
             <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
               {content.title}
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-700 mb-8">
               {content.description}
             </p>
 
@@ -557,11 +546,9 @@ const WhyChooseSection: React.FC = () => {
         </div>
 
         {/* Final CTA Button */}
-        <div className="flex flex-col sm:flex-row gap-10 justify-center items-center">
-              <Link to="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 text-base font-extrabold top-[10px] bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200 ">
-                BOOK A CALL
-              </Link>
-            </div>
+        <div className="flex justify-center items-center">
+          <BookCallButton />
+        </div>
 
       </div>
     </div>
@@ -576,8 +563,7 @@ export default function App() {
       {/* Load Inter font only */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-          body { font-family: 'Inter', sans-serif; }
+          
           
           /* Custom Keyframes for smooth fade-in and slight slide up transition */
           @keyframes fadeInUp {
@@ -618,3 +604,6 @@ export default function App() {
     </div>
   );
 }
+
+
+

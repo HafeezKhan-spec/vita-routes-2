@@ -11,6 +11,7 @@ import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
 import Background from "../../assets/Background.jpg";
+import BookCallButton from '@/components/BookCallButton';
 
 // --- Color Constants ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
@@ -95,25 +96,19 @@ const HeroSection: React.FC = () => {
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
               Medical SEO Services
             </h1>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               Rank higher. Attract patients. Grow your practice.
             </p>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
             </p>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               We work with hospitals, specialty clinics, and multi-location healthcare groups across California, Texas, New York, Florida, and beyond — providing clear reporting, HIPAA-compliant optimization, and consistent visibility across every service line and location.
             </p>
 
             {/* Main CTA Button */}
-            <div className="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center">
-              <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+            <div className="mt-10 flex justify-center">
+              <BookCallButton />
             </div>
           </div>
         </div>
@@ -172,10 +167,10 @@ const BenefitsSection: React.FC = () => {
                 }}
               />
             </div>
-            <p className="text-lg text-gray-900">
+            <p className="text-lg text-gray-700">
              Your Proven Formula for Healthcare SEO and Patient Growth
             </p>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               The right medical SEO program makes your practice visible when patients search for care.Our healthcare SEO experts help hospitals, specialty clinics, and multi-location practices rank higher, attract qualified inquiries, and grow patient volume — all with HIPAA-compliant optimization and transparent reporting.
             </p>
           </div>
@@ -214,19 +209,13 @@ const BenefitsSection: React.FC = () => {
         </div>
 
         {/* Footnote/Disclaimer */}
-        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
+        <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
         Win high-intent searches and convert them into qualified patient inquiries.Our medical SEO programs align content, user experience, and analytics to help healthcare providers achieve consistent, measurable growth. As a healthcare SEO company serving clinics and hospitals nationwide, we focus on sustainable results and transparent reporting.
         </p>
 
         {/* Final CTA Button */}
         <div className="mt-12 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -500,10 +489,10 @@ const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Why Choose Advance Edge?
           </h2>
-          <p className="mt-4 text-lg text-gray-900 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
             Proven Expertise. Scalable Growth. Transparent Results.
           </p>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
             With over a decade of digital marketing experience, AdvanceEdge Health goes beyond lead generation to deliver verified, high-intent patient inquiries. Our data-driven healthcare marketing model ensures measurable ROI while maintaining HIPAA compliance and brand trust.
           </p>
         </div>
@@ -526,7 +515,7 @@ const WhyChooseSection: React.FC = () => {
             <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
               {content.title}
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-700 mb-8">
               {content.description}
             </p>
 
@@ -571,13 +560,7 @@ const WhyChooseSection: React.FC = () => {
             </p>
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500 shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -593,8 +576,7 @@ export default function App() {
       {/* Load Inter font only */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-          body { font-family: 'Inter', sans-serif; }
+          
           
           /* Custom Keyframes for smooth fade-in and slight slide up transition */
           @keyframes fadeInUp {
@@ -635,3 +617,7 @@ export default function App() {
     </div>
   );
 }
+
+
+
+

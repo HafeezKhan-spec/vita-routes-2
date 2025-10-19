@@ -1,11 +1,5 @@
 import React from "react";
-// Local CTA button restored
-const BookACallButton = () => (
-    <Link to="/contact" className="bg-black text-white px-8 py-3 border-2 border-orange-500 rounded-none transition-all duration-300 ease-out hover:bg-white hover:text-black hover:shadow-[0_0_25px_5px_rgba(249,115,22,0.35)] hover:scale-105 flex items-center justify-center gap-2 ml-80">
-      <Plus className="w-4 h-4" />
-      BOOK A CALL
-    </Link>
-);
+import BookCallButton from '@/components/BookCallButton';
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Plus,Search,Rocket, FileText, BarChart3, CircleCheckBigIcon, CheckCircle, } from "lucide-react";
@@ -50,7 +44,7 @@ const HeaderSection = () => (
                 <p className="mt-4 text-2xl font-bold text-blue-400">
                     LASIK, Cataract, Glaucoma, Retina, Pediatric etc
                 </p> 
-                <p className="mt-4 text-base font-bold text-gray-200"> 
+                <p className="mt-4 text-base font-bold text-white"> 
                     Ophthalmology Marketing in the USA That Converts!
                 </p>
             </div>
@@ -117,7 +111,7 @@ const WhoBenefitsSection = () => {
                         whileHover={{ scale: 1.05 }}
                     >
                         <div className="flex justify-center">
-                            <BookACallButton />
+                            <BookCallButton />
                         </div>
                     </motion.div>
                 </motion.div>
@@ -130,7 +124,7 @@ const WhoBenefitsSection = () => {
                 whileHover={{ scale: 1.05 }}
             >
                 <div className="flex justify-center ml-8">
-                    <BookACallButton />
+                    <BookCallButton />
                 </div>
             </motion.div>
         </motion.section>
@@ -284,7 +278,7 @@ const ChallengesSection = () => {
                     className="mt-4 flex justify-center lg:justify-start ml-8"
                     whileHover={{ scale: 1.05 }}
                 >
-                    <BookACallButton />
+ <BookCallButton />
                 </motion.div>
             </motion.div>
         </motion.section>
@@ -437,7 +431,7 @@ const WhyChooseSection = () => {
                     whileHover={{ scale: 1.08 }}
                 >
                     <div className="flex justify-center">
-                        <BookACallButton />
+ <BookCallButton />
                     </div>
                 </motion.div>
             </div>
@@ -462,3 +456,7 @@ const EyeClinics = () => {
 };
 
 export default EyeClinics;
+
+
+
+

@@ -72,15 +72,15 @@ const App = () => {
                                         <Icon path="M12,2a8,8,0,0,0-8,8c0,5.4,7,11.5,7.35,11.8a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,11a3,3,0,1,1,3-3A3,3,0,0,1,12,13Z" className="w-8 h-8 text-blue-600"/>
                                     </div>
                                     <h3 className="font-bold text-xl mb-2">Location</h3>
-                                    <p className="text-sm text-gray-600">1008 Hamilton St, Immokalee, FL 34142.</p>
+                                    <p className="text-sm text-gray-700">1008 Hamilton St, Immokalee, FL 34142.</p>
                                 </div>
                                 <div className="bg-[#0a101e] text-white p-8 rounded-lg shadow-lg text-center">
                                     <div className="bg-gray-700 rounded-full p-4 inline-block mb-4">
                                        <Icon path="M17.3,21.8a1,1,0,0,1-.5-.1l-.1-.1-2-1.3a1,1,0,0,1-.6-1.5,10.1,10.1,0,0,0-3.6-3.6,1,1,0,0,1,1.5-.6l1.3,2,.1.1a1,1,0,0,1,0,1.4l-1,1a1,1,0,0,1-1.4,0,12.1,12.1,0,0,1-7-7,1,1,0,0,1,0-1.4l1-1a1,1,0,0,1,1.4,0l.1.1,2,1.3a1,1,0,0,1,.6,1.5,10.1,10.1,0,0,0,3.6,3.6,1,1,0,0,1,1.5.6l1.3,2,.1.1a1,1,0,0,1,.1.5A1,1,0,0,1,17.3,21.8Z" className="w-8 h-8 text-white"/>
                                     </div>
                                     <h3 className="font-bold text-xl mb-2">24/7 Support</h3>
-                                    <p className="text-sm text-gray-300">(832) 937-7738</p>
-                                    <p className="text-sm text-gray-300">info@advancedgellc.com</p>
+                                    <p className="text-sm text-gray-700">(832) 937-7738</p>
+                                    <p className="text-sm text-gray-700">info@advancedgellc.com</p>
                                 </div>
                             </div>
                         </div>
@@ -113,34 +113,45 @@ const App = () => {
                                     
                                     <input 
                                         type="text" 
-                                        name="name" // REQUIRED: Name attribute
-                                        placeholder="Name" 
+                                        name="fullName" // REQUIRED: Name attribute
+                                        placeholder="Full Name" 
                                         required
-                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
+                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-black"
+                                    />
+                                    <input 
+                                        type="text" 
+                                        name="company" // REQUIRED: Name attribute
+                                        placeholder="Company Name / Brand name / Business Name" 
+                                        required
+                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-black"
                                     />
                                     <div className="grid grid-cols-2 gap-4">
+                                        <input 
+                                            type="tel" 
+                                            name="phone" // REQUIRED: Name attribute
+                                            placeholder="10 Digit Call & WhatsApp Mobile Number" 
+                                            required
+                                            className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-black"
+                                        />
                                         <input 
                                             type="email" 
                                             name="email" // REQUIRED: Name attribute
                                             placeholder="Email" 
                                             required
-                                            className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
-                                        />
-                                        <input 
-                                            type="tel" 
-                                            name="phone" // REQUIRED: Name attribute
-                                            placeholder="Phone" 
-                                            className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
+                                            className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-black"
                                         />
                                     </div>
-                                    <textarea 
-                                        name="message" // REQUIRED: Name attribute
-                                        placeholder="Message" 
-                                        rows={4} 
+                                    <select 
+                                        name="lookingFor" // REQUIRED: Name attribute
                                         required
-                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50"
-                                    ></textarea>
-                                    
+                                        className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-black"
+                                    >
+                                        <option value="" disabled>Select the services you are looking for</option>
+                                        <option value="SEO">SEO</option>
+                                        <option value="Paid Ads">Paid Ads</option>
+                                        <option value="Social Media">Social Media</option>
+                                        <option value="Website Design">Website Design</option>
+                                    </select>
                                     <button 
                                         type="submit" 
                                         disabled={isSubmitting}
@@ -194,7 +205,7 @@ const App = () => {
                         <img src={contactTeam} alt="Team meeting" className="rounded-lg shadow-lg w-full"/>
                         <div className="bg-gray-50 p-6 sm:p-10 lg:p-12 rounded-lg relative lg:-ml-12">
                             <h2 className="text-3xl font-bold text-[#0a101e] mb-4">Healthcare Marketing Growth Brief - Trends, Strategies & Insights for U.S. Healthcare Practices</h2>
-                            <p className="text-gray-600">
+                            <p className="text-black">
                                 Stay ahead with practical playbooks from a healthcare marketing agency USA. Each issue distills what works now in patient acquisition, SEO, PPC, social, content, websites, and analytics, direct from our healthcare digital marketing agency team.
                             </p>
                         </div>
@@ -216,35 +227,20 @@ const App = () => {
                 </section>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-gray-100 text-gray-600 py-16 px-4 sm:px-8 lg:px-16">
-                <div className="container mx-auto grid md:grid-cols-3 gap-12">
-                    <div>
-                        <h4 className="font-bold text-lg text-[#0a101e] mb-4">Our Address</h4>
-                        <p className="text-sm">1008 Hamilton St, Immokalee, FL 34142.</p>
-                    </div>
-                     <div>
-                        <h4 className="font-bold text-lg text-[#0a101e] mb-4">Connect with us</h4>
-                        <a href="mailto:info@advancedgellc.com" className="block text-sm hover:text-blue-600" id='email'>info@advancedgellc.com</a>
-                        <a href="tel:8329377738" className="block text-sm hover:text-blue-600">832-937-7738</a>
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-lg text-[#0a101e] mb-4">Our Newsletter</h4>
-                        <p className="text-sm mb-4">Signup for our latest news & articles.</p>
-                        <form className="flex">
-                            <input type="email" placeholder="Email Address" className="w-full p-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                            <button type="submit" className="bg-[#0a101e] p-3 rounded-r-md">
-                               <Icon path="M21.61,11.23l-8-8a1,1,0,0,0-1.41,1.41L17.34,10H3a1,1,0,0,0,0,2H17.34l-5.14,5.14a1,1,0,0,0,1.41,1.41l8-8A1,1,0,0,0,21.61,11.23Z" className="w-6 h-6 text-white"/>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div className="container mx-auto text-center border-t border-gray-300 mt-12 pt-6">
-                    <p className="text-xs">&copy; Copyright 2025. All rights reserved. <span className="font-bold">AdvanceEdge.</span></p>
-                </div>
-            </footer>
+            <div>
+      {/* White Middle Section */}
+      <section style={{ backgroundColor: '#fff', color: '#000', padding: '40px 20px' }}>
+       <section style={{ backgroundColor: '#000', color: '#fff', padding: '4px 6px' }}> 
+        
+      </section>
+      </section>
+
+    </div>
         </div>
     );
 };
 
 export default App;
+
+
+

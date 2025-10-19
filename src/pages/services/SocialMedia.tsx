@@ -18,6 +18,7 @@ import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
 import { URL } from 'url';
+import BookCallButton from '@/components/BookCallButton';
 
 // --- Color Constants ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
@@ -106,26 +107,20 @@ const HeroSection: React.FC = () => {
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
              Social Media Marketing for Healthcare
             </h1>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               Engage, educate, and convert through strategic healthcare social media campaigns.
             </p>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
             </p>
-            <p className="mt-3 text-lg text-gray-200 max-w-2xl mx-auto">
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               We target the right audiences by service line and location, track performance by platform, and deliver measurable growth in engagement, reputation, and patient inquiries.
             </p>
 
             {/* Main CTA Button */}
-           <div className="mt-20 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
-        </div>
+            <div className="mt-20 text-center">
+              <BookCallButton />
+            </div>
           </div>
         </div>
       </div>
@@ -181,7 +176,7 @@ const BenefitsSection: React.FC = () => {
                 }}
               />
             </div>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
              We execute medical social media marketing using documented playbooks, clinical approvals, localized strategies, and privacy-safe tracking. Every campaign is built to strengthen reputation, increase engagement, and generate qualified patient inquiries.
             </p>
           </div>
@@ -220,19 +215,13 @@ const BenefitsSection: React.FC = () => {
         </div>
 
         {/* Footnote/Disclaimer */}
-        <p className="mt-16 text-sm text-center text-gray-500 max-w-4xl mx-auto">
+        <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
          Whether your healthcare brand is in Alaska, Massachusetts, Hawaii, New Jersey, Michigan, Indiana, Colorado, Arizona or any other US state, our medical social media marketing tailor content, compliance and targeting to each market and scale measurably across all 50 states. 
         </p>
 
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -456,7 +445,7 @@ const ServicesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Services We Offer</h2>
-            <p className="mt-4 text-lg text-gray-400">Tailored strategies for every platform to grow your brand.</p>
+            <p className="mt-4 text-lg text-gray-300">Tailored strategies for every platform to grow your brand.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
           {/* Left vertical tabs */}
@@ -606,7 +595,7 @@ const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Why Choose Advance Edge?
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
             We go beyond basic lead generation. Our data-driven approach ensures you receive verified, high-intent claimants that match the specific requirements of mass tort and personal injury cases.
           </p>
         </div>
@@ -629,7 +618,7 @@ const WhyChooseSection: React.FC = () => {
             <h3 className="text-3xl font-extrabold mb-4" style={{ color: PRIMARY_BLUE }}>
               {content.title}
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-700 mb-8">
               {content.description}
             </p>
 
@@ -668,13 +657,7 @@ const WhyChooseSection: React.FC = () => {
 
         {/* Final CTA Button */}
         <div className="mt-20 text-center">
-          <Link
-            to="/contact"
-            className={`inline-flex items-center mx-auto justify-center px-8 py-3 text-base font-extrabold bg-black text-white border-2 border-orange-500  shadow-lg hover:bg-white hover:text-black hover:shadow-xl hover:-translate-y-[1px] active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 transition-all duration-200`}
-          >
-            <Plus className="w-5 h-5 mr-2" />
-            BOOK A CALL
-          </Link>
+          <BookCallButton />
         </div>
 
       </div>
@@ -690,8 +673,7 @@ export default function App() {
       {/* Load Inter font only */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
-          body { font-family: 'Inter', sans-serif; }
+          
           
           /* Custom Keyframes for smooth fade-in and slight slide up transition */
           @keyframes fadeInUp {
@@ -732,3 +714,7 @@ export default function App() {
     </div>
   );
 }
+
+
+
+
