@@ -52,6 +52,9 @@ const HeaderSection = () => (
                 <p className="mt-4 text-base font-bold text-white">
                     HIPAA and 42 CFR Part 2 Safeguards; Policy-Safe Ads And Workflows.
                 </p>
+                <div className="mt-6 flex justify-center -top-[-20px]">
+                    <BookCallButton />
+                </div>  
             </div>
         </div>
     </header>
@@ -128,8 +131,8 @@ const WhoBenefitsSection = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
-                <div className="flex justify-center ml-8">
- <BookCallButton />
+                <div className="flex justify-center ml-8 ml-[700px]">
+                    <BookCallButton />
                 </div>
             </motion.div>
         </motion.section>

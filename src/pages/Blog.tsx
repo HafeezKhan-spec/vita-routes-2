@@ -136,7 +136,7 @@ const BlogView = ({ onPostSelect }) => {
                 style={{ backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.6)), url(${heroImageUrl})` }}
             >
                 <div className="container mx-auto px-6 text-center z-10">
-                    <p className="text-blue-300 font-semibold tracking-wider mb-2">HEALTHCARE INSIGHTS</p>
+                    <p className="text-orange-500 font-semibold tracking-wider mb-2">HEALTHCARE INSIGHTS</p>
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">The Pulse of Healthcare Marketing</h1>
                     <p className="max-w-3xl mx-auto text-white text-lg">Actionable strategies for patient acquisition and practice growth. We cover SEO, digital advertising, patient engagement, and the latest in health-tech.</p>
                 </div>
@@ -181,10 +181,10 @@ const BlogView = ({ onPostSelect }) => {
 
             {/* CTA Section */}
             <section className="py-20 bg-white border-t">
-                <div className="container mx-auto px-6 text-center bg-blue-600 rounded-2xl shadow-xl py-16">
+                <div className="container mx-auto px-6 text-center bg-black rounded-2xl shadow-xl py-16">
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">Ready to Accelerate Your Practice's Growth?</h3>
                     <p className="text-blue-100 max-w-2xl mx-auto mb-8">Let's build a custom marketing strategy that addresses your unique challenges and goals. Get a free, no-obligation consultation today.</p>
-                    <a href="#" className="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105 transform shadow-md">
+                    <a href="#" className="inline-block bg-white text-orange-500 font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105 transform shadow-md">
                         Schedule Your Free Strategy Call
                     </a>
                 </div>

@@ -101,10 +101,10 @@ const CtaSection = () => (
         <div className="container mx-auto px-4 md:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <p className="text-blue-600 font-semibold mb-2">GET IN TOUCH</p>
+                    <p className="text-orange-500 font-semibold mb-2">GET IN TOUCH</p>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Partner with AdvanceEdge and take your Firm to the next level.</h2>
                 </div>
-                <div className="bg-blue-600 text-white p-8 rounded-lg text-center shadow-lg">
+                <div className="bg-black text-white p-8 rounded-lg text-center shadow-lg">
                     <p className="text-4xl md:text-5xl font-extrabold tracking-wider">832-937-7738</p>
                     <p className="mt-2 text-blue-200">FEEL FREE TO CALL US</p>
                 </div>
@@ -138,7 +138,7 @@ const Footer = () => (
                     <p className="mb-4">Signup for our latest news & articles.</p>
                     <form className="flex">
                         <input type="email" placeholder="Email Address" className="bg-gray-700 text-white px-4 py-3 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full" />
-                        <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-r-md">
+                        <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-r-md" aria-label="Subscribe">
                            <PaperPlaneIcon />
                         </button>
                     </form>

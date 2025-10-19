@@ -37,7 +37,7 @@ const HeaderSection = () => (
 
             {/* Content (Original text preserved, centering applied for consistent UI) */}
             <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
-                <h1 className="text-3xl sm:text-5xl font-bold leading-sung">
+                <h1 className="text-3xl sm:text-5xl font-bold leading-tight">
                     Reach Your Patients<br />
                     <span className="block">From First Click to</span>
                     <span className="block mb-5">Comprehensive Care</span>
@@ -48,6 +48,9 @@ const HeaderSection = () => (
                 <p className="mt-4 text-base font-bold text-white"> 
                     With Fertility Clinics SEO, IVF Ads and Social Media 
                 </p>
+                <div className="mt-6 flex justify-center">
+                    <BookCallButton />
+                </div>
             </div>
         </div>
     </header>
@@ -124,7 +127,7 @@ const WhoBenefitsSection = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
-                <div className="flex justify-center ml-8">
+                <div className="flex justify-center ml-8 ml-[700px]">
                     <BookCallButton />
                 </div>
             </motion.div>
@@ -282,7 +285,9 @@ const ChallengesSection = () => {
                     className="mt-4 flex justify-center lg:justify-start ml-8"
                     whileHover={{ scale: 1.05 }}
                 >
- <BookCallButton />
+                 <div className="flex justify-center ml-8 ml-[400px]">
+                    <BookCallButton />
+                </div>   
                 </motion.div>
             </motion.div>
         </motion.section>
@@ -436,7 +441,7 @@ const WhyChooseSection = () => {
                     whileHover={{ scale: 1.08 }}
                 >
                     <div className="flex justify-center">
- <BookCallButton />
+                        <BookCallButton />
                     </div>
                 </motion.div>
             </div>
