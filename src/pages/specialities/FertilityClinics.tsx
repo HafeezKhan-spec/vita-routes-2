@@ -198,10 +198,8 @@ const ChallengesSection = () => {
         <p className="text-sm">
           AdvanceEdge simplifies digital growth for fertility providers, balancing ethical communication, privacy, and measurable performance.
         </p>
-        <motion.div className="mt-4 flex justify-center lg:justify-start ml-8" whileHover={{ scale: 1.05 }}>
-          <div className="flex justify-center ml-[400px]">
-            <BookCallButton />
-          </div>
+        <motion.div className="mt-4 flex justify-center" whileHover={{ scale: 1.05 }}>
+          <BookCallButton />
         </motion.div>
       </motion.div>
     </motion.section>

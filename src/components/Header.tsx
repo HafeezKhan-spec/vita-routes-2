@@ -75,8 +75,6 @@ const Header = () => {
 
   const specialities = [
     { name: 'Addiction Centers', path: '/specialities/addiction-centers' },
-    { name: 'Chiropractors', path: '/specialities/chiropractors' },
-    { name: 'Eye Clinics', path: '/specialities/eye-clinics' },
     { name: 'Fertility Clinics', path: '/specialities/fertility-clinics' },
     { name: 'Multispecialty Hospitals', path: '/specialities/multispecialty-hospitals' },
     { name: 'Dental Clinics', path: '/specialities/dental-clinics' },

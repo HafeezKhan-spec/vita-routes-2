@@ -23,8 +23,8 @@ import MarketingAutomation from "@/pages/services/MarketingAutomation";
 
 // Specialities
 import AddictionCenters from "@/pages/specialities/AddictionCenters";
-import Chiropractors from "@/pages/specialities/Chiropractors";
-import EyeClinics from "@/pages/specialities/EyeClinics";
+// import Chiropractors from "@/pages/specialities/Chiropractors"; // removed
+// import EyeClinics from "@/pages/specialities/EyeClinics"; // removed
 import FertilityClinics from "@/pages/specialities/FertilityClinics";
 import MultispecialtyHospitals from "@/pages/specialities/MultispecialtyHospitals";
 import DentalClinics from "@/pages/specialities/DentalClinics";
@@ -68,8 +68,8 @@ const App = () => (
 
             {/* Specialities Routes */}
             <Route path="specialities/addiction-centers" element={<AddictionCenters />} />
-            <Route path="specialities/chiropractors" element={<Chiropractors />} />
-            <Route path="specialities/eye-clinics" element={<EyeClinics />} />
+            {/* <Route path="specialities/chiropractors" element={<Chiropractors />} /> removed */}
+            {/* <Route path="specialities/eye-clinics" element={<EyeClinics />} /> removed */}
             <Route path="specialities/fertility-clinics" element={<FertilityClinics />} />
             <Route path="specialities/multispecialty-hospitals" element={<MultispecialtyHospitals />} />
             <Route path="specialities/dental-clinics" element={<DentalClinics />} />
