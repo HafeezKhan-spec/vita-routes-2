@@ -38,10 +38,13 @@ const HeaderSection = () => {
 
                 <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-                        From Search to Scheduled - Dental Marketing That Performs
+                        Smart Dental Marketing That Delivers New Patients
                     </h1>
                     <p className="mt-4 text-2xl font-bold text-white-400">
-                        DSO Marketing Playbooks for National and Local Growth
+                        Smart strategy. Real growth. Lasting trust.
+                    </p>
+                    <p className="mt-4 text-xl font-bold text-white">
+                        AdvanceEdge helps dental practices attract more patients, strengthen local and national visibility, and build a brand people trust. Our programs combine SEO, paid ads, and website optimization to fill chairs while keeping every campaign compliant and patient-safe. 
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
@@ -77,28 +80,28 @@ const WhoBenefitsSection = () => {
                 {/* Text/Benefits Content */}
                 <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
                     <motion.h3 className="text-3xl font-extrabold text-gray-900 mb-6" variants={fadeInUp}>
-                        Who Benefits from Dental Marketing in the USA?
+                        Who We Help
                     </motion.h3>
                     <div className="space-y-6">
                         {/* Benefit 1: General & Family Dentistry */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">General & Family Dentistry</h3>
-                            <p className="mt-2 text-gray-700">Cleanings, Exams, Fillings, Crowns/Bridges, Root Canals, Extractions, Dentures, Periodontal Therapy, Sealants/Fluoride, Night Guards, Emergency Care, TMJ, CBCT/Scans–Mobile-Friendly Education & Clear Appointment Pathways.</p>
+                            <p className="mt-2 text-gray-700">From cleanings and crowns to emergency care, we create mobile-friendly websites and campaigns that make education simple and appointment booking effortless.</p>
                         </motion.div>
                          {/* Benefit 2: Cosmetic & Implants */}
                         <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">Cosmetic & Implants</h3>
-                            <p className="mt-2 text-gray-700">Veneers, Bonding, Whitening, Smile Design, Gum Contouring, Dental Implants (Single-/Full-Arch), Implant Dentures, Bone Grafts, Sinus Lifts, Soft-Tissue Grafts–Offer-Led Funnels, Optimized Landing Pages, Measurable Consults.</p>
+                            <h3 className="text-xl font-semibold text-gray-800">Cosmetic & Implant Practices</h3>
+                            <p className="mt-2 text-gray-700">We design targeted funnels and landing pages for veneers, whitening, and implants, turning interest into consultations through clear offers and measurable results.</p>
                         </motion.div>
                          {/* Benefit 3: Orthodontists & Pediatric */}
                          <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">Orthodontists & Pediatric</h3>
-                            <p className="mt-2 text-gray-700">Invisalign/Clear Aligners, Braces, Retainers, Expanders, Interceptive Ortho, Habit Appliances, Pediatric Sealants/Fluoride, Stainless-Steel Crowns, Pulp Therapy, Frenectomy, Space Maintainers–Parent-Friendly UX, Strong Calls-To-Action, Easy Scheduling.</p>
+                            <h3 className="text-xl font-semibold text-gray-800">Orthodontists & Pediatric Dentists</h3>
+                            <p className="mt-2 text-gray-700">For family-focused practices, we build parent-friendly experiences with strong calls-to-action, easy scheduling, and content that earns long-term trust.</p>
                         </motion.div>
                         {/* Benefit 4: DSO & Multi-Location Groups */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">DSO & Multi-Location Groups</h3>
-                            <p className="mt-2 text-gray-700">General, Cosmetic, Implants, Ortho, Pedo, Perio, Endo, Oral Surgery, Prosthodontics, Sleep Apnea/TMJ, Same-Day/Emergency, Teledentistry–Centralized Campaign Management, Call Tracking, Analytics Rollups, Governance For National/Local Growth.</p>
+                            <p className="mt-2 text-gray-700">We centralize marketing for national or regional networks, managing campaigns, reviews, and reporting across every office to drive consistent growth and visibility.</p>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -113,25 +116,25 @@ const ProcessSection = () => {
         {
             step: "01.",
             title: "Discover & Plan",
-            desc: "Audit online presence (Google My Business/Maps, listings, UX/UI, speed). Run research, competitive analysis, and content audit. Map keywords by service line and city/ZIP; set demographics, geo-targeting, KPIs, budget, compliance, aligning dental SEO, dental PPC, content strategy.",
+            desc: "We audit your online presence, research competitors, and identify growth opportunities. Then we map out keywords, audiences, and budgets that align with your practice goals.",
             icon: <ClipboardCheck className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "02.",
             title: "Build & QA",
-            desc: "Design mobile-responsive pages and high-intent landing pages with clear calls-to-action. Implement schema, Google Analytics, call tracking, CRM, email/SMS automation, chatbots. Configure Google Ads/Bing Ads (Search, PMax, Display, Retargeting) and optimize Google My Business/Maps.",
+            desc: "We design fast, responsive websites and landing pages with clear calls-to-action. Tracking tools, call routing, and automation are built in for accurate performance data.",
             icon: <FileText className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "03.",
             title: "Launch & Learn",
-            desc: "Launch dentist marketing sprints: technical/on-page dental SEO, citations, internal links, link building. Activate SEM and social, Google/Bing, Facebook, Instagram, TikTok, YouTube. Tune bids, dayparts, geo-targets; test offers; monitor traffic, engagement, funnel integrity, conversion rate.",
+            desc: "We activate SEO, ads, and social campaigns, testing creative, timing, and offers to see what brings in the most qualified patients.",
             icon: <MessageSquare className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "04.",
             title: "Optimize & Scale",
-            desc: "Shift budget to winning keywords, ads, and locations; expand service lines (implants, Invisalign, emergency). Grow reviews; iterate content and video; deepen automation for lead nurturing. Roll up channel→keyword→appointment→revenue reporting to prove ROI and guide strategy.",
+            desc: "We expand on what works, growing new service lines, improving reviews, and refining automation to increase booked appointments and ROI.",
             icon: <BarChart3 className="w-5 h-5 text-indigo-600" />,
         },
     ];
@@ -148,11 +151,13 @@ const ProcessSection = () => {
                 {/* Title */}
                 <motion.div className="text-center mb-14" variants={fadeInUp}>
                     <h2 className="text-4xl font-extrabold tracking-wide">
-                        Our Dentist Marketing Process
-                    </h2>
-                    <p className="text-2xl text-indigo-400 mt-3">
-                        Discover &rarr; Build &rarr; Launch &rarr; Optimize
-                    </p>
+  Our Process:{" "}
+  <span className="text-2xl text-indigo-400 ml-3">
+    Discover &rarr; Build &rarr; Launch &rarr; Optimize
+  </span>
+</h2>
+
+                    
                 </motion.div>
 
                 {/* Cards */}
@@ -190,14 +195,12 @@ const ProcessSection = () => {
 // --- Component 4: Challenges Section (Consistent with AddictionCenters.tsx) ---
 const ChallengesSection = () => {
     const challengePoints = [
-        "Community Gaps – Low Patient Engagement, No Community Plan, Influencers, Or User Generated Content.",
-        "Low SERP Visibility – Not Ranking In Top 10 SERP, Weak Keyword Mapping, Backlinks, And Local Relevance Signals.",
-        "Local Visibility Gaps – Incomplete Google Business Profile, Mismatched NAP, Thin Photos, Inconsistent Citations And Listings.",
-        "Leaky Conversion Paths – Slow Mobile Site, Confusing UX, Buried CTAs, Long Forms, Unclear Scheduling.",
-        "Paid Waste Spend – Broad Match Sprawl, Missing Negatives, Sloppy Geo-Targeting, Weak Audiences, Rising CPL.",
-        "Reputation Volatility – Few Fresh Reviews; Slow Replies; No Playbook Or Response Standards.",
-        "Content Gaps – Sparse Education Assets; Inconsistent Blogging; No Video; Weak Brand Storytelling.",
-        "Measurement Issues – Events Unracked; No Call Attribution; Unclear Click To Consult Linkage & ROI."
+        "Low visibility in local search and inconsistent Google Business Profiles",
+        "High ad spend without clear ROI or patient tracking, And Local Relevance Signals.",
+        "Weak website conversion paths and slow mobile performance",
+        "Limited or outdated patient reviews and reputation gaps",
+        "Missed community opportunities and inconsistent branding",
+        "Poor attribution between marketing activity and actual appointments",
     ];
     return (
         <motion.section
@@ -210,11 +213,9 @@ const ChallengesSection = () => {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 items-start">
                 <motion.div className="lg:w-1/2 order-2 lg:order-1 space-y-6" variants={fadeInUp}>
                     <h3 className="text-3xl font-extrabold text-gray-900">
-                        Dentistry Growth Challenges We Solve
+                        Challenges We Solve
                     </h3>
-                    <p className="text-lg text-gray-700">
-                        US-Focused Dental Marketing Agency to Accelerate Patient Acquisition.
-                    </p>
+
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
                         {challengePoints.map((challenge, index) => {
                              const parts = challenge.split('–');
@@ -227,8 +228,8 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-700 italic">
-                        Dental practices across California, Texas, New York, Florida, Illinois, New Jersey, plus Massachusetts, Pennsylvania, Ohio, Georgia, North Carolina, Washington, Michigan, Arizona, Colorado, and every other U.S. state benefit from our scalable, multi-location programs, built for patient acquisition and Local SEO practices.
+                     <p className="text-lg text-bold text-black italic">
+                       AdvanceEdge builds complete marketing systems that fix these gaps and create predictable patient flow for every dental practice size.
                     </p>
                 </motion.div>
                 {/* Image */}
@@ -254,35 +255,28 @@ const ChallengesSection = () => {
 
 // --- Component 5: Approach Section (Consistent with AddictionCenters.tsx) ---
 const ApproachSection = () => {
-    const approachSteps = [
+    const approachColumns = [
         {
             title: "Attract",
-            points: [
-                { "label": "Dental SEO", "desc": "Keywords, Ranking, Schema, Link Building, Maps/Google My Business, Local Listings." },
-                { "label": "Dental PPC / SEM", "desc": "Google Ads/Bing Ads (Search, PMax), Display Ads, Retargeting." },
-                { "label": "Social Media", "desc": "Facebook, Instagram, TikTok, YouTube; Creators/Influencers, Storytelling, Video, Multi-Channel Outreach." },
-                { "label": "Strategy & Targeting", "desc": "Strategy Planning, Campaign Strategy, Audience/Demographics, Geo-Targeting." }
+            items: [
+                "We make your practice visible through local SEO, paid search, and engaging social media content. Educational videos, influencer collaborations, and community storytelling help new patients discover and trust your brand.",
+                
             ],
-            outcome: "Qualified Organic + Paid Traffic."
         },
         {
             title: "Convert",
-            points: [
-                { "label": "Website Design & CRO", "desc": "Mobile Responsive UX/UI, Focused Landing Pages, Strong Messaging/Copywriting." },
-                { "label": "Access Signals", "desc": "Transparent Pricing, Offers/Promotions, Trust (Reviews/Testimonial), Chatbots." },
-                { "label": "Funnel", "desc": "Streamlined Consultation/Appointment Paths With Clear CTAs." }
+            items: [
+                "We design websites and landing pages that highlight your expertise, simplify pricing and offers, and guide visitors straight to booking. Every ad, form, and chatbot supports one goal: more scheduled appointments.",
+                
             ],
-            outcome: "Higher Conversion Rate and Booked Visits."
         },
         {
             title: "Retain",
-            points: [
-                { "label": "Automation", "desc": "Email, SMS, Newsletter, CRM Journeys for Lead Nurturing and Patient Education." },
-                { "label": "Community", "desc": "Referrals, Community Outreach, Event/Webinar Promotion, Consistent Branding." },
-                { "label": "Analytics", "desc": "Channel → Campaign → Keyword → Inquiry Dashboards; Prove ROI and Guide Budget." },
+            items: [
+                "We help you stay connected through follow-up emails, reminders, and newsletters that encourage reviews, referrals, and ongoing care. Analytics show what’s working so your marketing keeps improving month after month.",
+                
             ],
-            outcome: "Stronger Retention and Lifetime Value."
-        }
+        },
     ];
 
     return (
@@ -304,17 +298,17 @@ const ApproachSection = () => {
                     className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
                     variants={fadeInUp}
                 >
-                    Our Dental Marketing Approach
+                  Our Approach to Dental Marketing 
                 </motion.h2>
                 <motion.p
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    Our dentist marketing playbooks at AdvanceEdge executes ROI-focused dental PPC and SEO to scale practices throughout the USA.
+                    AdvanceEdge uses a simple, proven model: Attract. Convert. Retain.
                 </motion.p>
 
                 <div className="row mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {approachSteps.map((col, idx) => (
+                    {approachColumns.map((col, idx) => (
                         <motion.div
                             key={idx}
                             className="bg-white shadow-xl rounded-2xl p-8 text-left hover:shadow-2xl hover:shadow-indigo-300 transition-all duration-300"
@@ -323,14 +317,14 @@ const ApproachSection = () => {
                             transition={{ duration: 0.25 }}
                         >
                             <h3 className="flex items-center text-2xl font-semibold mb-4 text-gray-800">
+                                {/* Using the correct icon from the original code */}
                                 <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
                                 {col.title}
                             </h3>
                             <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
-                                {col.points.map((point, i) => (
-                                    <li key={i}><span className="font-semibold">{point.label}:</span> {point.desc}</li>
+                                {col.items.map((text, i) => (
+                                    <li key={i}>{text}</li>
                                 ))}
-                                <li><span className="font-semibold">Outcome:</span> {col.outcome}</li>
                             </ul>
                         </motion.div>
                     ))}
@@ -343,14 +337,11 @@ const ApproachSection = () => {
 // --- Component 6: Why Choose Section (Consistent with AddictionCenters.tsx) ---
 const WhyChooseSection = () => {
     const reasons = [
-        "Dental SEO for Implants, Invisalign, Emergency.",
-        "Brand Consistency With Branding and Logo Standards.",
-        "Google Ads and Bing Ads for Implants, Braces, Emergency Dentistry.",
-        "Local SEO: GMB/Maps, Reviews, Map-Pack Wins.",
-        "Instagram/TikTok Education: Procedures, Aftercare, FAQs.",
-        "Conversion Landing Pages, Strong CTAs, Call Tracking.",
-        "Facebook and Instagram Insights Guide Optimization.",
-        "HIPAA-Aware Workflows for Forms, Reviews, Testimonials.",
+        "Launch targeted ad campaigns that attract real patients",
+        "Strengthen visibility with local SEO and map listings",
+        "Build brand trust with consistent visuals and clear messaging",
+        "Track results from first click to confirmed appointment",
+        "Keep patients engaged through reviews, social, and automation",
     ];
 
     return (
@@ -366,13 +357,19 @@ const WhyChooseSection = () => {
                     className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
                     variants={fadeInUp}
                 >
-                    Why Choose AdvanceEdge for Dental Marketing?
+                    Why Choose AdvanceEdge
                 </motion.h2>
                 <motion.p
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    AdvanceEdge delivers dental marketing built for the USA, measurable growth for clinics and DSOs.
+                   AdvanceEdge helps dentists, specialists grow with confidence. We combine creative marketing with measurable strategy to bring in patients and keep your brand consistent across every channel.
+                </motion.p>
+                <motion.p
+                    className="text-2xl max-w-3xl mx-auto text-black leading-relaxed"
+                    variants={fadeInUp}
+                >
+                   Our team helps you:
                 </motion.p>
 
                 <div className="row mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
@@ -390,6 +387,19 @@ const WhyChooseSection = () => {
                     ))}
                 </div>
             </div>
+             <motion.p
+                    className="text-2xl max-w-3xl mx-auto text-black leading-relaxed mt-12"
+                    variants={fadeInUp}
+                >
+                   We make dental marketing simple, scalable, and effective—so you can focus on care while we focus on growth.
+                </motion.p>
+                <motion.div
+                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+            >
+                <BookCallButton />
+            </motion.div>
         </motion.section>
     );
 };

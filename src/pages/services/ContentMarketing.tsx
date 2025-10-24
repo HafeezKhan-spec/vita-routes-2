@@ -85,7 +85,7 @@ const AnimatedSection: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // --- Hero Section Component ---
 
 const HeroSection: React.FC = () => {
-  const heroText = "Turn questions into qualified inquiries with healthcare content marketing that’s accurate, accessible, and measurable. Our medical content marketing builds service-line authority across websites, blogs, and video, reviewed for clinical accuracy and optimized for search.";
+  const heroText = "Turn patient questions into qualified inquiries with content that’s accurate, accessible, and built to convert.";
 
   return (
     // Updated background to a gentle gradient and increased vertical padding for visual appeal
@@ -101,10 +101,13 @@ const HeroSection: React.FC = () => {
           {/* Content Area (Text and Button) - Updated to match the structure of PaidMarketing.tsx (removed small header text) */}
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
-             Healthcare Content Marketing in the USA
+             Healthcare Content Marketing
             </h1>
             <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
+            </p>
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
+              AdvanceEdge creates healthcare content marketing that strengthens service-line authority through optimized websites, blogs, and videos — all clinically reviewed, SEO-driven, and designed for measurable growth.
             </p>
 
             {/* Main CTA Button */}
@@ -122,16 +125,14 @@ const HeroSection: React.FC = () => {
 
 const BenefitsSection: React.FC = () => {
   const benefits = [
-    "Better patient outcomes with patient education.",
-    "Increased patient loyalty and engagement.",
-    "Increased brand awareness.",
-    "Trust building with patient stories and testimonials.",
-    "Attract new patients and drive increased patient acquisition.",
-    "Delivers lasting competitive advantage.",
-    "Strengthen search engine optimization with blog content marketing.",
-    "Infographic content marketing boosting rankings.",
-    "Building engaging relationships with personalization.",
-    "Encourage patient feedback and interaction with refined content.",
+    "Improved patient education and outcomes.",
+    "Stronger patient loyalty and retention.",
+    "Increased brand visibility and awareness.",
+    "Trust built through authentic stories and testimonials.",
+    "Consistent new patient acquisition.",
+    "Long-term SEO authority and ranking growth.",
+    "Enhanced engagement through personalized content.",
+    "Valuable patient feedback and interaction.",
   ];
 
   const col1 = benefits.slice(0, 5);
@@ -143,7 +144,7 @@ const BenefitsSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+          <p className="text-sm font-bold uppercase tracking-widest text-orange-500 mb-2">
             Delivers Complete Content-to-Inquiry Formula
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
@@ -169,7 +170,7 @@ const BenefitsSection: React.FC = () => {
               />
             </div>
             <p className="text-lg text-gray-700">
-             Delivering editorial systems and governance that scale, our medical copywriting services translate clinical expertise to plain english, healthcare blogging services grow search visibility and internal linking and patient education content improves understanding and next steps.
+             We don’t just write content — we create systems that transform knowledge into patient engagement. Our medical copywriting services simplify complex clinical information into clear, relatable language that builds trust, drives action, and supports better patient understanding.
             </p>
           </div>
 
@@ -208,9 +209,7 @@ const BenefitsSection: React.FC = () => {
 
         {/* Footnote/Disclaimer */}
         <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
-          Whether you're in Kentucky, Alabama, Mississippi, New Mexico, Oklahoma, Kansas, Iowa, or Nebraska, our healthcare content marketing adapts to local rules and realities.
-
-          Built on HIPAA compliant content marketing workflows, we localize copy by state, payer, and service line. Our medical content marketing then scales consistently across all 50 states.
+          Whether your practice is in Kentucky, Alabama, Mississippi, New Mexico, or anywhere across the nation, our healthcare content adapts to local nuances and compliance requirements. HIPAA-safe workflows ensure every asset meets privacy, accessibility, and accuracy standards.
         </p>
 
         {/* Final CTA Button */}
@@ -236,63 +235,63 @@ const servicesData: Service[] = [
     {
         title: "Blogs & Articles",
         subtitle: "Editorial calendars convert patient questions into publishable topics.",
-        description: " We draft SEO briefs, interview subject-matter experts, add schema, and link to service-line hubs. Physicians review for accuracy. We publish on a set cadence and refresh winners. GA4 and UTMs prove impact. This is healthcare blogging services done for measurable growth.",
+        description: " We draft SEO-driven briefs, interview subject-matter experts, add schema, and link to relevant service-line hubs. Each article is reviewed by physicians for accuracy and refreshed regularly to maintain rankings. GA4 and UTM tracking show measurable results.",
         color: 'text-blue-600',
         imagePlaceholder: Image_2,
     },
     {
         title: "Local Search Content",
         subtitle: "We build city and neighborhood pages with services, insurance, directions, hours, parking, and provider details.",
-        description: " Google Business Profile gets accurate categories, services, photos, Q&A, and consistent NAP. Review responses use approved templates. Schema supports local discovery. This work anchors healthcare content marketing and drives calls and forms from nearby patients.",
+        description: " We optimize Google Business Profiles with accurate services, categories, photos, Q&A, and schema. Consistent NAP data and templated review responses enhance local discovery, driving calls and form submissions from nearby patients.",
         color: 'text-red-600',
         imagePlaceholder: Image_3,
     },
     {
         title: "Website & Landing Page Content",
         subtitle: "We write service-line pages, location pages, physician bios, FAQs, and clear calls to action.",
-        description: " Copy uses plain language, structured headings, and strong internal links. Accessibility and speed are baseline. Schema clarifies entities. A clear measurement plan closes the loop. Our medical copywriting services turn visitors into qualified inquiries.",
+        description: " We write clear, patient-friendly copy with structured headings, fast load times, and strong internal links. Schema defines key entities, and performance tracking measures what converts. Each page is designed to turn visits into appointments.",
         color: 'text-black-600',
         imagePlaceholder: Image_4,
     },
     {
         title: "White Papers & Downloadables",
         subtitle: "We produce research-backed white papers, checklists, and buyer guides for administrators, referrers, and patients.",
-        description: " Sources are reputable and cited. Disclaimers and approvals are standard. Forms capture consent and preferences. UTMs connect downloads to follow-up. These assets strengthen medical content marketing and generate qualified leads your team can nurture responsibly.",
+        description: " We create research-backed resources with proper citations, disclaimers, and consent forms. UTMs link downloads to follow-up actions, ensuring every lead is trackable and compliant.",
         color: 'text-yellow-600',
         imagePlaceholder: Image_3,
     },
     {
         title: "Patient Education Content",
         subtitle: "Guides, checklists, and explainer videos cover symptoms, diagnosis, treatment options, preparation, and recovery.",
-        description: " Every asset includes disclaimers and “when to call” guidance, then passes clinical review. Reading levels match the audience. Translations are available. With analytics, we track engagement and next steps. Patient education content reduces anxiety and improves adherence.",
+        description: " Every piece includes disclaimers and “when to call” guidance, reviewed for reading level and medical accuracy. Available in multiple languages, our educational content builds patient confidence and improves adherence.",
         color: 'text-black-600',
         imagePlaceholder: Image_2,
     },
     {
         title: "Content Audit & Refresh",
         subtitle: "We inventory your library and flag redundant, outdated, or trivial material. ",
-        description: " Prioritized actions include rewriting, merging, redirects, new sources, and improved internal links. Canonicals and 301s prevent duplication. Rankings and conversions recover. This maintenance preserves gains in healthcare content marketing and keeps clinical information accurate over time.",
+        description: " We analyze existing assets to identify what to rewrite, merge, or redirect. Canonicals and 301s preserve rankings while updates restore SEO performance and keep information current.",
         color: 'text-red-600',
         imagePlaceholder: Image_3,
     },
     {
         title: "Infographic Content Marketing",
         subtitle: "We convert complex timelines, risks, and care pathways into clear, mobile-first visuals. ",
-        description: "Files include captions, legends, and alt text for accessibility. Graphics embed on hub pages and spawn social derivatives. Links point to authoritative sources. As part of medical content marketing, these assets earn shares, links, and downstream inquiries.",
+        description: "Accessible, shareable visuals include alt text, captions, and references. Embedded on key hub pages, infographics increase dwell time, boost backlinks, and improve social visibility.",
         color: 'text-blue-700',
         imagePlaceholder: Image_4,
     },
     {
         title: "Customized Content Strategies",
         subtitle: "We develop state-aware strategies: personas, journey maps, funnel topics, editorial calendars, governance, and KPIs. ",
-        description: " Interviews surface real questions and objections. Distribution spans site, email, and social. Measurement defines success and iteration. When medical copywriting services shape voice and accuracy, content aligns with revenue goals and becomes a repeatable growth engine.",
+        description: " We interview your team to uncover real patient questions, tailor distribution across your site, email, and social, and define success metrics. This turns content into a repeatable engine for growth and revenue.",
         color: 'text-red-600',
         imagePlaceholder: Image_3,
     },
     {
         title: "Email Marketing & Newsletters",
         subtitle: "Lists are consent-based and segmented by service line and life stage. ",
-        description: " Automated sequences reuse approved content, with A/B tests on subject lines and CTAs. UTMs and GA4 attribute outcomes to messages. Unsubscribes are honored immediately. HIPAA compliant content marketing keeps data minimal and private while nurturing interest and retention.",
+        description: " We build automated sequences using approved, HIPAA-compliant content. Subject lines and CTAs are A/B tested, and UTMs connect engagement directly to results. Our content nurtures retention while protecting patient data.",
         color: 'text-blue-600',
         imagePlaceholder: Image_3,
     },
@@ -348,10 +347,10 @@ const ServicesSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="max-w-3xl mb-16">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
-            Services We Offer
+          <p className="text-2xl sm:text-3xl font-bold uppercase tracking-widest text-orange-500 mb-2">
+            Our Healthcare Content Marketing Services
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+          <h2 className="text-xl sm:text-3xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Healthcare Content Marketing
           </h2>
         </div>
@@ -366,7 +365,7 @@ const ServicesSection: React.FC = () => {
 
 
         {/* Section Footer - Years of Expertise (Added subtle shadow/lift) */}
-        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
+        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8  shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
           {/* Note: Updated text to reflect the Reputation Management context better */}
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
            10+ Years of Legal Expertise, 100% Commitment to Your Success
@@ -483,10 +482,10 @@ const WhyChooseSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
-            Why Choose Advance Edge?
+            Why AdvanceEdge?
           </h2>
           <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
-            We go beyond basic lead generation. Our data-driven approach ensures you receive verified, high-intent claimants that match the specific requirements of mass tort and personal injury cases.
+            With over a decade of healthcare and legal marketing experience, AdvanceEdge delivers data-backed strategies, clinical precision, and creative execution that help you turn visibility into measurable, compliant growth.
           </p>
         </div>
 

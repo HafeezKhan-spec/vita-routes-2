@@ -78,7 +78,7 @@ const AnimatedSection: React.FC<{ children: React.ReactNode }> = ({ children }) 
 // --- Hero Section Component ---
 
 const HeroSection: React.FC = () => {
-  const heroText = "Win trust where patients decide. Our medical reputation management services help hospitals, clinics and telehealth brands generate reviews, respond safely, and improve branded search results. Serving California, Arizona, Texas, New York and all the other 50 states. The services include Google Business Profile, Healthgrades, Vitals, RateMDs, WebMD, Zocdoc, Yelp, Facebook and Instagram.";
+  const heroText = "Earn trust at every patient touchpoint. ";
 
   return (
     // Updated background to a gentle gradient and increased vertical padding for visual appeal
@@ -94,10 +94,13 @@ const HeroSection: React.FC = () => {
           {/* Content Area (Text and Button) - Updated to match the structure of PaidMarketing.tsx (removed small header text) */}
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
-              Healthcare Reputation Management Services in the USA
+              Healthcare Reputation Management Services
             </h1>
             <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
               {heroText}
+            </p>
+            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
+              Advance Edge helps hospitals, clinics, and telehealth providers generate positive reviews, respond safely, and strengthen visibility across key healthcare platforms including Google Business Profile, Healthgrades, Vitals, WebMD, Zocdoc, Yelp, Facebook, and Instagram. We partner with healthcare organizations nationwide to build stronger, more trusted online reputations.
             </p>
 
             {/* Main CTA Button */}
@@ -136,11 +139,11 @@ const BenefitsSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+          <p className="text-sm sm:text-4xl font-bold uppercase tracking-widest text-orange-500 mb-2">
             YOUR TRUST BUILDING FORMULA
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
-            Benefits of Healthcare ORM Services
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
+            Key Benefits of Healthcare Reputation Management
           </h2>
         </div>
 
@@ -162,7 +165,7 @@ const BenefitsSection: React.FC = () => {
               />
             </div>
             <p className="text-lg text-gray-700">
-              A well-run reputation program makes you credible right when it counts. Our healthcare reputation management in the USA pairs medical reputation management services with buttoned-up workflows so great moments become public reviews while risk stays low.
+              A well-run reputation program makes you credible right when it counts. Our healthcare reputation management in pairs medical reputation management services with buttoned-up workflows so great moments become public reviews while risk stays low.
             </p>
           </div>
 
@@ -201,7 +204,7 @@ const BenefitsSection: React.FC = () => {
 
         {/* Footnote/Disclaimer */}
         <p className="mt-16 text-sm text-center text-gray-700 max-w-4xl mx-auto">
-          **Proven programs** across Arizona, California, Texas, New York, Florida, Illinois, Pennsylvania, Ohio, Georgia, North Carolina, Michigan and others, scalable to all 50 states.
+          **Proven programs trusted by healthcare organizations nationwide — scalable for single practices or multi-location networks.
         </p>
 
         {/* Final CTA Button */}
@@ -226,70 +229,70 @@ interface Service {
 const servicesData: Service[] = [
   {
     title: "Strategy and Monitoring",
-    description: "We align goals, service lines, markets, and policy into a clear plan for healthcare reputation management in the USA. Always-on listening, alerts, and dashboards guide priorities so online reputation management for healthcare stays proactive, not reactive.",
+    description: "We align goals, service lines, and policies into a clear reputation roadmap. Always-on monitoring, alerts, and dashboards keep your brand proactive, not reactive.",
     icon: Briefcase,
     color: 'text-blue-600',
     imagePlaceholder: Image_2,
   },
   {
     title: "Physician and Doctor Reputation",
-    description: "Doctor reputation management highlights credentials, locations, access, and specialties. We optimize provider profiles on Healthgrades, Vitals, RateMDs, WebMD Provider Directory, Zocdoc, Yelp, Facebook, and Instagram, then map them to the correct pages so patients land where they can book.",
+    description: "We optimize provider profiles across Healthgrades, WebMD, Zocdoc, Yelp, and other key platforms highlighting credentials, specialties, and locations so patients can easily find and book appointments.",
     icon: User,
     color: 'text-teal-600',
     imagePlaceholder: Image_3,
   },
   {
     title: "Listings and Google Business Profile",
-    description: "We audit and fix healthcare listings and citations, set the right categories and services, add attributes and photos, and keep current. Google Business Profile reviews for hospitals get tied to location pages with UTM tracking, Posts, and Q&A to lift local pack visibility across states.",
+    description: "We audit and maintain accurate listings, categories, and photos across every location. Reviews are tied to location pages with tracking, Posts, and Q&A to improve visibility in local search.",
     icon: MapPin,
     color: 'text-indigo-600',
     imagePlaceholder: Image_4,
   },
   {
     title: "Hospital and Clinic Programs",
-    description: "Hospital reputation management and clinic reputation management roll up into multi-location reputation management. We standardize templates, SLAs, and tone, support department-level reputation management, and aggregate reviews on location pages so each site reflects real, recent patient experience.",
+    description: "For multi-location systems, we standardize tone, templates, and SLAs. Each site reflects authentic, recent patient experiences, building consistency and credibility across your network.",
     icon: FileText,
     color: 'text-green-600',
     imagePlaceholder: Image_3,
   },
   {
     title: "Review Generation at Scale",
-    description: "We run platform-policy-compliant healthcare review generation via SMS, email, and QR codes, triggered post visit or post discharge. EMR and CRM integrated review requests plus first-party reviews with schema make it easy for patients to respond while giving your site fresh, structured proof.",
+    description: "Our compliant workflows trigger review requests via SMS, email, or QR codes after visits or discharges. EMR and CRM integrations plus first-party schema reviews boost credibility and SEO.",
     icon: Smartphone,
     color: 'text-yellow-600',
     imagePlaceholder: Image_2,
   },
   {
     title: "Surveys and Patient Experience",
-    description: "Post-visit survey automation feeds NPS for healthcare and CSAT for clinics, with drill-downs by service line and site. Insights route to managers for coaching and service recovery, closing the loop so star ratings rise for the right reasons.",
+    description: "Automated post-visit surveys capture NPS and CSAT by location and service line. Insights flow to managers for coaching and service recovery, raising ratings for the right reasons.",
     icon: TrendingUp,
     color: 'text-pink-600',
     imagePlaceholder: Image_3,
   },
   {
     title: "HIPAA-Safe Review Response",
-    description: "HIPAA compliant reputation management means no PHI in public replies. We provide response templates for healthcare, after-hours monitoring, and clear escalation paths. Negative feedback routing and service recovery workflows resolve issues fast and protect healthcare brand reputation.",
+    description: "All responses stay PHI-free and policy-compliant. We provide templates, after-hours monitoring, and escalation workflows to resolve feedback quickly and protect your brand.",
     icon: Shield,
     color: 'text-red-600',
     imagePlaceholder: Image_4,
   },
   {
     title: "Analytics and Reporting",
-    description: "Reputation dashboards and alerts connect ratings, volume, and sources to calls, forms, and chats. We track attribution in GA4 and CRM, keep data minimization in place, and report plain next steps so teams know what to publish, where to respond, and which locations to prioritize.",
+    description: "Dashboards connect ratings and sentiment to real outcomes like calls and form fills. Integrated with GA4 and your CRM, reports show what to prioritize and where to act.",
     icon: BarChart2,
     color: 'text-gray-600',
     imagePlaceholder: Image_3,
   },
   {
     title: "Reputation SEO and Branded SERP Control",
-    description: "We improve branded search results with reputation SEO for healthcare, structured FAQs, and FAQ schema for brand queries. Knowledge panel optimization, sitelinks, and People Also Ask coverage help patients find accurate information while pushing outdated or irrelevant content down.",
+    description: "We enhance branded visibility through structured data, FAQ schema, and optimized knowledge panels ensuring patients find accurate, positive information first.",
     icon: Search,
     color: 'text-purple-600',
     imagePlaceholder: Image_2,
   },
   {
     title: "Governance, Policy, and Training",
-    description: "Programs follow FTC endorsement guidelines for healthcare, allow review gating, and document privacy policy for review collection. We set BAAs for review vendors when required, deliver manager training, and maintain playbooks so medical reputation management services scale safely across states.",
+    description: "Programs follow FTC and HIPAA guidelines, with documented policies and BAAs where needed. We train managers and maintain playbooks so your reputation strategy scales safely.",
     icon: BookOpen,
     color: 'text-orange-600',
     imagePlaceholder: Image_3,
@@ -348,10 +351,10 @@ const ServicesSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="max-w-3xl mb-16">
-          <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+          <p className="text-2xl sm:text-4xl font-bold uppercase tracking-widest text-orange-500 mb-2">
             WHAT ALL WE PROVIDE?
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+          <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
             Healthcare Reputation Management Services
           </h2>
         </div>
@@ -366,7 +369,7 @@ const ServicesSection: React.FC = () => {
 
 
         {/* Section Footer - Years of Expertise (Added subtle shadow/lift) */}
-        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
+        <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8  shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
           {/* Note: Updated text to reflect the Reputation Management context better */}
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
             10+ Years of Medical Marketing Expertise, 100% Commitment to Your Success

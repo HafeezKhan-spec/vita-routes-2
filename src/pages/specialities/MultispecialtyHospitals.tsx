@@ -38,13 +38,13 @@ const HeaderSection = () => {
 
                 <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-                        From First Click to Comprehensive Care
+                        Hospital Marketing That Connects Patients to Care
                     </h1>
                     <p className="mt-4 text-2xl font-bold text-white-400">
-                        Proven Playbooks for Service Line Marketing
+                        From first click to appointment confirmed.
                     </p>
                     <p className="mt-2 text-md text-white font-medium">
-                        By U.S. Hospital Marketing Agency
+                        AdvanceEdge helps hospitals and health systems attract, convert, and retain patients across every service line. We create coordinated marketing programs that unite SEO, paid media, and web strategy helping your organization grow responsibly while maintaining full brand, policy, and compliance standards.
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
@@ -80,28 +80,28 @@ const WhoBenefitsSection = () => {
                 {/* Text/Benefits Content */}
                 <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
                     <motion.h3 className="text-3xl font-extrabold text-gray-900 mb-6" variants={fadeInUp}>
-                        Who Benefits from Hospital Digital Marketing in the USA?
+                        Who We Help
                     </motion.h3>
                     <div className="space-y-6">
                         {/* Benefit 1: Community & Regional Hospitals */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Community & Regional Hospitals</h3>
-                            <p className="mt-2 text-gray-700">Primary Care, ED/Urgent Care, Surgery, Imaging, Rehab, Cardiology, Orthopedics, Maternity, Pediatrics, Behavioral Health - Accurate GBP/Maps, Access Lines, Payer Details, Same-Day Scheduling, Mobile Appointment Flows.</p>
+                            <p className="mt-2 text-gray-700">Drive awareness and access for essential services with optimized listings, same-day scheduling, and mobile appointment flows.</p>
                         </motion.div>
                          {/* Benefit 2: Academic Centers & Centers of Excellence */}
                         <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Academic Centers & Centers of Excellence</h3>
-                            <p className="mt-2 text-gray-700">Oncology, Cardiovascular, Neuroscience, Transplant, Trauma, Women’s Health – Research Highlights, Physician Profiles, Referral Pathways, Compliant Hospital Advertising, Local-to-National Targeting, Brand Governance, Executive Reporting.</p>
+                            <p className="mt-2 text-gray-700">Showcase innovation and outcomes in key areas like oncology, cardiovascular, and women’s health with content, physician stories, and compliant campaigns that build trust locally and nationally.</p>
                         </motion.div>
                          {/* Benefit 3: Ambulatory & Outpatient Networks */}
                          <motion.div variants={fadeInUp}>
                             <h3 className="text-xl font-semibold text-gray-800">Ambulatory & Outpatient Networks</h3>
-                            <p className="mt-2 text-gray-700">ASCs, Imaging, Therapy, Urgent Care, Telehealth – Location Pages, Schedule Links, Insurance Transparency, Geo-Targeted SEM/Retargeting, Chatbots, Call Tracking to Lift Conversion Rate and Booked Appointments.</p>
+                            <p className="mt-2 text-gray-700">Strengthen visibility for ASCs, imaging, therapy, and urgent care centers through geo-targeted ads, local SEO, and location-based appointment paths that convert.</p>
                         </motion.div>
                         {/* Benefit 4: Women's & Children's Service Providers */}
                         <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">Women's & Children's Service Providers</h3>
-                            <p className="mt-2 text-gray-700">OB/GYN (Obstetrician or Gynaecologist), High-Risk, Pediatrics – NICU, Education Content, FAQs, Social Video, Strong CTAs, Conversion-Ready Landing Pages, Review Playbooks, Streamlined Appointment Paths to Scale Patient Acquisition.</p>
+                            <h3 className="text-xl font-semibold text-gray-800">Women’s & Children’s Hospitals</h3>
+                            <p className="mt-2 text-gray-700">Engage families with compassionate, educational campaigns that highlight specialized care in OB/GYN, pediatrics, and NICU programs.</p>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -116,25 +116,25 @@ const ProcessSection = () => {
         {
             step: "01.",
             title: "Discover & Plan",
-            description: "Audit multi-specialty presence: campus/department GBP/Maps architecture, local listings, physician directories, site UX/UI. Run market research, competitive analysis, content audit, Map service-line keywords and service areas, set demographics, geo-targeting, KPIs, budget, governance, aligning hospital digital marketing.",
+            description: "We assess your hospital’s digital presence, research competitors, and identify growth opportunities for each service line.",
             icon: <ClipboardCheck className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "02.",
             title: "Build & QA",
-            description: "Design IA for departments, locations, physicians; responsive pages and conversion landing pages per service line. Implement GA4, call tracking, analytics, CRM, email/SMS automation, chatbots. Configure Google/Bing Ads and campus/department GBPs; ADA and scheduling integrations.",
+            description: "We develop fast, accessible websites, landing pages, and local listings that make care easy to find and book.",
             icon: <FileText className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "03.",
             title: "Launch & Learn",
-            description: "Activate SEO sprints by department; technical fixes, on-page, internal linking, link building. Launch SEM/hospital advertising and social across Google, Bing, Facebook, Instagram, LinkedIn, YouTube. Tune bids, geo-targets; test messaging. Track conversion rate by service line.",
+            description: "Search, social, and advertising campaigns go live with clear goals and compliant messaging that drives real inquiries.",
             icon: <MessageSquare className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "04.",
             title: "Optimize & Scale",
-            description: "Shift budget to winning channels; expand service line marketing and markets. Grow reviews and reputation. Iterate video storytelling. Deepen automation for lead nurturing. Dashboards tie spend to ROI by hospital, campus, department; scalable healthcare system marketing-appointment–revenue reporting to prove ROI and guide strategy.",
+            description: "We refine what works, expand visibility across departments, and unify analytics for clear systemwide reporting.",
             icon: <BarChart3 className="w-5 h-5 text-indigo-600" />,
         },
     ];
@@ -151,7 +151,7 @@ const ProcessSection = () => {
                 {/* Title */}
                 <motion.div className="text-center mb-14" variants={fadeInUp}>
                     <h2 className="text-4xl font-extrabold tracking-wide">
-                        Our Multi-Speciality Hospital Marketing Process
+                        Our Process:
                     </h2>
                     <p className="text-2xl text-indigo-400 mt-3">
                         Discover &rarr; Build &rarr; Launch &rarr; Optimize
@@ -193,14 +193,13 @@ const ProcessSection = () => {
 // --- Component 4: Challenges Section (Consistent with AddictionCenters.tsx) ---
 const ChallengesSection = () => {
     const challenges = [
-        "Fragmented Enterprise SEO – Departments compete; keywords split; weak internal links depress rankings.",
-        "Maps & GBP Complexity – Campuses, departments, clinics misconfigured; inconsistent listings hide locations.",
-        "Referral & Access Friction – Physician directories outdated; unclear routes, insurance info, scheduling steps.",
-        "Leaky Conversion Paths – Slow mobile UX, buried CTAs, multi-step appointments, poor confirmation.",
-        "Paid Media Waste – Broad SEM/display; weak geo-targeting; budgets drift from service lines.",
-        "Reputation Inconsistency – Few recent reviews; slow responses; no systemwide playbook or SLAs.",
-        "Siloed Measurement – Missing call tracking; unclear attribution by hospital, campus, department, service.",
-        "Brand Drift – Inconsistent messaging, visuals, and governance across hospitals, campuses, departments."
+        "Department-level competition and fragmented SEO",
+        "Confusing hospital map listings and access points",
+        "Outdated physician directories and referral paths",
+        "Weak mobile booking experiences and low conversion rates",
+        "Inconsistent brand presence across hospitals or campuses",
+        "Limited visibility into ROI and campaign performance",
+        
     ];
     return (
         <motion.section
@@ -213,9 +212,9 @@ const ChallengesSection = () => {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 items-start">
                 <motion.div className="lg:w-1/2 order-2 lg:order-1 space-y-6" variants={fadeInUp}>
                     <h3 className="text-3xl font-extrabold text-gray-900">
-                        Hospital Growth Challenges We Solve
+                        Challenges We Solve
                     </h3>
-                    <p className="mt-4 text-lg text-gray-700">US-Focused Hospital Marketing Agency to Accelerate Patient Acquisition.</p>
+                    
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
                         {challenges.map((challenge, index) => {
                              const parts = challenge.split('–');
@@ -228,7 +227,7 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-700 italic">Multi-specialty hospitals and health systems across California, Texas, New York, Florida, Illinois, New Jersey, plus Massachusetts, Pennsylvania, Ohio, Georgia, North Carolina, Washington, Michigan, Arizona, Colorado, and every other U.S. state partner with our hospital marketing agency. We deliver hospital digital marketing, healthcare system marketing, service line marketing, and compliant hospital advertising that drive patient acquisition.</p>
+                     <p className="text-sm text-gray-700 italic">AdvanceEdge delivers connected marketing systems that solve fragmentation, strengthen brand cohesion, and make care easier to access for every patient.</p>
                 </motion.div>
                 {/* Image */}
                 <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInUp}>
@@ -271,14 +270,14 @@ const ApproachSection = () => {
                 <motion.h2
                     className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
                     variants={fadeInUp}
-                >
-                    Our Healthcare Digital Marketing Approach
+                >Our Approach to Hospital Marketing
+                    
                 </motion.h2>
                 <motion.p
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    AdvanceEdge align marketing channels to service line marketing for multi-speciality hospitals in the USA.
+                    We align marketing efforts to your service lines, helping patients find the right care, in the right place, at the right time.
                 </motion.p>
 
                 <div className="row mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -294,10 +293,8 @@ const ApproachSection = () => {
                             Attract
                         </h3>
                         <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
-                            <li><span className="font-semibold">SEO:</span> Enterprise IA for campuses/departments; service-line keywords, schema, link building, content hubs; GBP/Maps architecture and local listings.</li>
-                            <li><span className="font-semibold">SEM / Hospital Advertising:</span> Google Ads/Bing Ads (Search, PMax), display ads, retargeting with guardrails by department/location.</li>
-                             <li><span className="font-semibold">Social Media:</span> Facebook, Instagram, LinkedIn, X, YouTube; physician stories, service-line video, behavioral targeting, geo-targeting, demographics.</li>
-                            <li><span className="font-semibold">Outcome:</span> Qualified organic and paid traffic to priority lines.</li>
+                            <li><span className="font-semibold"></span> We align marketing efforts to your service lines, helping patients find the right care, in the right place, at the right time.</li>
+                            
                         </ul>
                     </motion.div>
                     {/* Column 2: Convert */}
@@ -312,9 +309,8 @@ const ApproachSection = () => {
                             Convert
                         </h3>
                         <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
-                             <li><span className="font-semibold">Website Design & CRO:</span> Mobile-responsive UX/UI, ADA; focused landing pages, physician/location finders, persuasive copywriting and calls-to-action.</li>
-                             <li><span className="font-semibold">Access & Routing:</span> Insurance/payer info, clear route-to-care across departments, chatbots, call routing/call tracking; EMR-linked appointment flows.</li>
-                            <li><span className="font-semibold">Outcome:</span> Higher conversion rate and more scheduled visits.</li>
+                             <li><span className="font-semibold"></span> We simplify access to care through intuitive landing pages, provider finders, and clear scheduling flows that reduce drop-offs and increase booked visits.</li>
+                             
                         </ul>
                     </motion.div>
                     {/* Column 3: Retain */}
@@ -329,10 +325,8 @@ const ApproachSection = () => {
                             Retain
                         </h3>
                         <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
-                            <li><span className="font-semibold">Automation:</span> CRM, email/SMS, newsletter journeys—pre-op/post-op, reactivation, and lead nurturing by service line.</li>
-                            <li><span className="font-semibold">Community & Brand:</span> Reviews/testimonials, systemwide reputation playbooks, events/webinars, consistent branding strategy.</li>
-                            <li><span className="font-semibold">Analytics:</span> Channel → campaign → keyword → inquiry roll-ups by hospital/campus/department; client reporting, ROI pacing and budget guidance.</li>
-                            <li><span className="font-semibold">Outcome:</span> Stronger retention, lifetime value, and systemwide clarity.</li>
+                            <li><span className="font-semibold"></span> We keep patients engaged through post-care follow-ups, newsletters, reviews, and event campaigns that build loyalty and strengthen long-term relationships.</li>
+                           
                         </ul>
                     </motion.div>
                 </div>
@@ -344,14 +338,11 @@ const ApproachSection = () => {
 // --- Component 6: Why Choose Section (Consistent with AddictionCenters.tsx) ---
 const WhyChooseSection = () => {
     const reasons = [
-        "Service-Line SEO for Cardiology, Oncology, Women's Health, Transplant, and More.",
-        "Brand Consistency With Systemwide Branding, Visuals, And Messaging Standards.",
-        "Google Ads and Bing Ads for service lines, ER, and specialty programs.",
-        "Local SEO: GBP/Maps Architecture, Reviews, Citations, And Map-Pack Wins.",
-        "Social & Video Education: Procedures, Care Pathways, Patient FAQs, and Discharge Guidance.",
-        "Conversion Landing Pages, Clear CTAs, Chatbots, Call Tracking, And Appointment Flows.",
-        "Facebook, Instagram, LinkedIn Insights and Executive Dashboards Guide Optimization.",
-        "HIPAA-Aware Workflows, BAA Available, ADA-Conscious Pages, And Secure CRM Integrations.",
+        "Improve visibility through coordinated hospital and service-line SEO",
+        "Launch targeted ad campaigns that drive patient appointments",
+        "Strengthen brand consistency across hospitals and departments",
+        "Build trust through storytelling, reviews, and community programs",
+        "Connect every marketing effort to real ROI through clear analytics",
     ];
 
     return (
@@ -367,14 +358,20 @@ const WhyChooseSection = () => {
                     className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
                     variants={fadeInUp}
                 >
-                    Why Choose AdvanceEdge for Dermatology Marketing?
+                    Why Choose AdvanceEdge
                 </motion.h2>
                 <motion.p
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    AdvanceEdge delivers hospital marketing built for the USA, measurable growth for multi-specialty systems and health networks.
+                    AdvanceEdge partners with hospitals and health systems to deliver measurable, compliant growth across all service lines.
                 </motion.p>
+                <motion.h2
+                    className="text-xl font-extrabold mb-6 text-gray-800 tracking-wide"
+                    variants={fadeInUp}
+                >
+                    Our team helps you:
+                </motion.h2>
 
                 <div className="row mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                     {reasons.map((item, idx) => (
@@ -390,6 +387,12 @@ const WhyChooseSection = () => {
                         </motion.div>
                     ))}
                 </div>
+                <motion.p
+                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed mt-[20px]"
+                    variants={fadeInUp}
+                >
+                    We make enterprise healthcare marketing clear, compliant, and scalable — so you can focus on delivering exceptional care.
+                </motion.p>
                 {/* CTA Button */}
                 <motion.div
                     className="mt-10"

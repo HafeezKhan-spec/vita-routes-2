@@ -156,26 +156,33 @@ const PartnerLedIcon = () => <svg className="w-8 h-8 text-gray-700" fill="none" 
 // --- Reusable UI Components ---
 
 const ContactForm = () => (
-    <form className="space-y-4">
+    <form name="book-call" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-4">
+        {/* Netlify hidden fields */}
+        <input type="hidden" name="form-name" value="book-call" />
+        <p className="hidden">
+            <label>
+                Don’t fill this out: <input name="bot-field" />
+            </label>
+        </p>
         <div>
             <label htmlFor="fullName" className="sr-only">Full Name</label>
-            <input type="text" id="fullName" required placeholder="Full Name" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <input type="text" id="fullName" name="fullName" required placeholder="Full Name" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
             <label htmlFor="company" className="sr-only">Company</label>
-            <input type="text" id="company" required placeholder="Company Name / Brand name / Business Name" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <input type="text" id="company" name="company" required placeholder="Company Name / Brand name / Business Name" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
             <label htmlFor="phone" className="sr-only">Phone</label>
-            <input type="tel" id="phone" required placeholder="10 Digit Call & WhatsApp Mobile Number" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <input type="tel" id="phone" name="phone" required placeholder="10 Digit Call & WhatsApp Mobile Number" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
             <label htmlFor="email" className="sr-only">Email</label>
-            <input type="email" id="email" required placeholder="Email" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
+            <input type="email" id="email" name="email" required placeholder="Email" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm" />
         </div>
         <div>
             <label htmlFor="lookingFor" className="sr-only">Looking For</label>
-            <select id="lookingFor" required defaultValue="" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm">
+            <select id="lookingFor" name="lookingFor" required defaultValue="" className="w-full px-4 py-3 rounded-md bg-gray-100 text-black border-transparent focus:border-blue-500 focus:bg-white focus:ring-0 text-sm">
                 <option value="" disabled>Select the services you are looking for</option>
                 <option value="SEO">SEO</option>
                 <option value="Paid Ads">Paid Ads</option>
@@ -208,7 +215,7 @@ const HeroSection = () => {
         v.muted = false;
         setIsMuted(false);
         v.play().catch(() => {});
-      } catch (e) {}
+      } catch (e) { /* ignore play failures */ }
     };
 
     const opts = { once: true } as AddEventListenerOptions;
@@ -238,8 +245,15 @@ const HeroSection = () => {
         controls={false}
         onPlay={() => { setIsPlaying(true); }}
         onPause={() => { setIsPlaying(false); }}
-        onEnded={() => { const v = videoRef.current; try { if (v) v.currentTime = v.duration; } catch (e) {} setVideoEnded(true); setIsPlaying(false); }}
-        onCanPlay={() => { if (!videoEnded) { try { videoRef.current?.play(); } catch (e) {} } }}
+        onEnded={() => {
+          const v = videoRef.current;
+          if (v) {
+            try { v.currentTime = v.duration; } catch (e) { /* ignore seek failures */ }
+          }
+          setVideoEnded(true);
+          setIsPlaying(false);
+        }}
+        onCanPlay={() => { if (!videoEnded) { try { videoRef.current?.play(); } catch (e) { /* ignore play failures */ } } }}
         onVolumeChange={() => { setIsMuted(videoRef.current?.muted ?? true); }}
         className={"absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"}
       />
@@ -254,7 +268,7 @@ const HeroSection = () => {
             v.pause();
           } else {
             if (videoEnded) {
-              try { v.currentTime = 0; } catch (e) {}
+              try { v.currentTime = 0; } catch (e) { /* ignore seek failures */ }
             }
             setVideoEnded(false);
             v.muted = false;
@@ -644,15 +658,15 @@ const TestimonialsSection = () => {
                 <h2 className="text-2xl font-bold text-gray-800 mb-12">Testimonials</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="bg-gray-50 p-8 rounded-lg shadow-md text-left space-y-4">
+                        <div key={i} className="bg-gray-50 p-8 rounded-lg shadow-md text-left space-y-4 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group">
                             <div className="flex items-center gap-4">
                                 <img 
                                     src={t.image} 
                                     alt={t.name} 
-                                    className="w-16 h-16 rounded-full object-cover" 
+                                    className="w-16 h-16 rounded-full object-cover transition-transform duration-300 ease-out group-hover:scale-110" 
                                 />
                                 <div>
-                                    <h4 className="font-bold text-lg text-gray-800">{t.name}</h4>
+                                    <h4 className="font-bold text-lg text-gray-800 transition-colors group-hover:text-blue-600">{t.name}</h4>
                                     <div className="flex mt-1">{[...Array(5)].map((_, i) => <StarIcon key={i} />)}</div>
                                 </div>
                             </div>

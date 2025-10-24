@@ -53,11 +53,14 @@ const HeaderSection = () => {
                 {/* Content */}
                 <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
-                        Result-Driven Dermatology Marketing for U.S Skin Clinics & Dermatologists
+                        Dermatology Marketing That Builds Visibility and Trust
                         <span className="text-indigo-400 ml-2">{currentWord}</span>
                     </h1>
-                    <p className="mt-4 text-2xl font-bold text-white-400">
-                       Searches to Booked Appointments
+                    <p className="mt-4 text-lg font-bold  text-white-400">
+                       Help patients see results—starting online.
+                    </p>
+                    <p className="mt-4 text-lg  text-white-400">
+                       AdvanceEdge helps dermatologists and skin-care clinics attract more cosmetic and medical patients through search, social, and web campaigns that showcase expertise and results. We blend performance marketing with a patient-friendly tone to boost bookings and strengthen your reputation.
                     </p>
                     <div className="mt-8 flex justify-center">
                         <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
@@ -89,28 +92,28 @@ const WhoBenefitsSection = () => {
         </motion.div>
         <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
             <motion.h3 className="text-3xl font-extrabold text-gray-900 mb-6" variants={fadeInUp}>
-                Who Benefits from Dermatology Marketing in the USA?
+                Who We Help
             </motion.h3>
             <div className="space-y-6">
               {/* Benefit 1: Medical Dermatology */}
               <motion.div variants={fadeInUp}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Medical Dermatology</h3>
-                <p className="text-gray-700">Acne treatment, eczema/dermatitis, psoriasis, rosacea, rashes/allergies, fungal infections, warts, pediatric dermatology, trichology/hair-loss, nail disorders, phototherapy, biologics.</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Medical Dermatology Practices</h3>
+                <p className="text-gray-700">Reach more patients for acne, eczema, psoriasis, and other conditions with clear education, strong SEO, and easy appointment flows.</p>
               </motion.div>
               {/* Benefit 2: Cosmetic & Aesthetic */}
               <motion.div variants={fadeInUp}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Cosmetic & Aesthetic</h3>
-                <p className="text-gray-700">Botox, fillers, chemical peels, microneedling/RF, PRP/PRF, laser resurfacing/laser treatments, IPL, hair removal, skin tightening, pigmentation/melasma, acne scar revision, anti-aging skin care.</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Cosmetic & Aesthetic Clinics</h3>
+                <p className="text-gray-700">Promote high-value procedures like Botox, fillers, and laser treatments with visual storytelling, special-offer funnels, and social proof that converts.</p>
               </motion.div>
               {/* Benefit 3: Mohs & Skin Cancer */}
               <motion.div variants={fadeInUp}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Mohs & Skin Cancer</h3>
-                <p className="text-gray-700">Full-body skin exams, dermoscopy, biopsies, Mohs micrographic surgery, excisions, reconstruction, melanoma management, actinic keratoses, post-operative care.</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Mohs & Skin-Cancer Centers</h3>
+                <p className="text-gray-700">Highlight your expertise and outcomes with trust-driven content and local search visibility that guide patients to the right care.</p>
               </motion.div>
               {/* Benefit 4: Teledermatology */}
               <motion.div variants={fadeInUp}>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Teledermatology</h3>
-                <p className="text-gray-700">Virtual consults, asynchronous photo visits, second opinions, follow-ups, prescription refills, pre/post-procedure guidance, urgent triage workflows.</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Teledermatology Providers</h3>
+                <p className="text-gray-700">Show patients how simple virtual skin-care can be with optimized scheduling and digital campaigns built for accessibility.</p>
               </motion.div>
             </div>
         </motion.div>
@@ -125,27 +128,22 @@ const ProcessSection = () => {
         {
             step: "01.",
             title: "Discover & Plan",
-            desc: "Market research, competitor analysis, and keyword research for dermatology marketing/skin clinic marketing. Define audiences (demographics, geographic targeting), KPIs, budgeting, and compliance. Roadmap covers dermatology SEO, dermatology advertising (PPC), and dermatology social media marketing.",
+            desc: "We identify where your patients search and design a growth plan to match.",
             icon: <ClipboardCheck className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "02.",
-            title: "Build & QA",
-            desc: "Pages and landing pages (UX, mobile optimization, clear call to action); tracking (Google Analytics, UTMs, call tracking); CRM hooks. Local SEO setup: Google My Business + local listings. Ad accounts/creatives for Google Ads, Facebook Ads, Instagram/TikTok/YouTube. Accessibility, policy, and data checks.",
+            title: "Build & Launch",
+            desc: "We create fast, mobile-friendly websites and campaigns with clean visuals, strong calls to action, and booking built in.",
             icon: <FileText className="w-5 h-5 text-indigo-600" />,
         },
         {
             step: "03.",
-            title: "Launch & Learn",
-            desc: "Activate SEO tasks (blogging, schema, backlinks), paid search/paid ads (Search, PMAX, video), and social campaigns. Verify events, pacing, and funnel integrity. Monitor traffic, engagement, and early conversion rate signals; tighten negatives and audiences.",
+            title: "Learn & Optimize",
+            desc: "We track what drives clicks, calls, and consultations, then refine creative and targeting to scale what works.",
             icon: <MessageSquare className="w-5 h-5 text-indigo-600" />,
         },
-        {
-            step: "04.",
-            title: "Optimize & Scale",
-            desc: "Shift budget to winners; expand locations/service lines (acne, Botox, laser treatments, skin cancer). Improve copy, creative, and automation. Iterate offers/promotions. Strengthen organic search and reputation (reviews). Roll up, compliant growth across the USA, appointment revenue reporting to prove ROI and guide strategy.",
-            icon: <BarChart3 className="w-5 h-5 text-indigo-600" />,
-        },
+        
     ];
 
     return (
@@ -160,11 +158,13 @@ const ProcessSection = () => {
                 {/* Title */}
                 <motion.div className="text-center mb-14" variants={fadeInUp}>
                     <h2 className="text-4xl font-extrabold tracking-wide">
-                        Our Dermatologist Marketing Process
-                    </h2>
-                    <p className="text-2xl text-indigo-400 mt-3">
-                        Discover &rarr; Build &rarr; Launch &rarr; Optimize
-                    </p>
+  Our Process:{" "}
+  <span className="text-2xl text-indigo-400 ml-3">
+    Discover &rarr; Build &rarr; Launch &rarr; Optimize
+  </span>
+</h2>
+
+                    
                 </motion.div>
 
                 {/* Cards */}
@@ -202,14 +202,11 @@ const ProcessSection = () => {
 // --- Component 4: Challenges Section (Consistent with AddictionCenters.tsx) ---
 const ChallengesSection = () => {
     const challenges = [
-        "Community Gaps: Limited patient engagement, weak community building, no creator or influencers strategy.",
-        "Low SERP Visibility: Not ranking in the top 10 SERP Results.",
-        "Local Visibility Gaps: Weak Local SEO, Incomplete Google My Business (GMB) Profile, Inconsistent Local Listings.",
-        "Leaky Conversion Paths: Slow Mobile Website Design, Unclear Call-to-Action, Complex Appointment Booking, Poor User Experience.",
-        "Paid Waste Spend: Broad PPC in Google Ads/Facebook Ads without Targeting Research, Negatives, or Geographic Targeting.",
-        "Reputation Volatility: Few Online Reviews, Slow Responses, No Reputation Management Playbook.",
-        "Content Gaps: Least or No Patient Education, Thin Blogging, No Video Marketing, Weak Brand Awareness.",
-        "Measurement Issues: Traffic But No Clarity, Missing Analytics, Call Tracking, Conversion Mapping to Booked Visits.",
+        "Improve local rankings and visibility for high-intent treatments",
+        "Fill cosmetic consult calendars without overspending on ads",
+        "Simplify online booking and patient communication",
+        "Strengthen brand trust through reviews and consistent visuals",
+        "Maintain HIPAA-safe workflows and content approvals",
     ];
 
     return (
@@ -223,9 +220,9 @@ const ChallengesSection = () => {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 items-start">
                 <motion.div className="lg:w-1/2 order-2 lg:order-1 space-y-6" variants={fadeInUp}>
                     <h3 className="text-3xl font-extrabold text-gray-900">
-                        Dermatology Growth Challenges We Solve
+                        How We Help Clinics Grow
                     </h3>
-                    <p className="mt-4 text-lg text-gray-700">US-Focused Skin Clinic Marketing to Accelerate Patient Acquisition.</p>
+                    
                     <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
                         {challenges.map((challenge, index) => {
                              const parts = challenge.split(':');
@@ -238,8 +235,8 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-700 italic">
-                        Our healthcare marketing experts build scalable, multi-location programs, focused on patient acquisition and Local SEO, for clinics across California, Texas, New York, Florida, Illinois, New Jersey, and every other U.S. state.
+                     <p className="text-xl text-black italic">
+                        AdvanceEdge turns your online presence into a steady flow of real, ready-to-book patients.
                     </p>
                 </motion.div>
                 {/* Image */}
@@ -378,13 +375,22 @@ const WhyChooseSection = () => {
                     className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
                     variants={fadeInUp}
                 >
-                    Why Choose AdvanceEdge for Dermatology Marketing?
+                   Why Clinics Choose AdvanceEdge
                 </motion.h2>
                 <motion.p
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    Providing scalable dermatology marketing solutions for U.S. skin clinics, partner with us for measurable digital growth.
+                    We understand how patients choose a dermatologist—by proof, presence, and professionalism.Our team builds campaigns that highlight real results, clear expertise, and the experience of care your practice delivers.
+
+                </motion.p>
+
+                <motion.p
+                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
+                    variants={fadeInUp}
+                >
+                    With AdvanceEdge, you get marketing that feels human, looks polished, and performs consistently.
+
                 </motion.p>
 
                 <div className="row mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
@@ -402,6 +408,13 @@ const WhyChooseSection = () => {
                     ))}
                 </div>
             </div>
+            <motion.div
+                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start mt-6"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+            >
+ <BookCallButton />
+            </motion.div>
         </motion.section>
     );
 };

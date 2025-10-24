@@ -181,7 +181,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Strategy & Journey Architecture',
     subtitle: 'SERVICES WE OFFER',
-    description: 'We blueprint triggers, segments, and cadences per service line and state. Journeys map inquiry → education → conversion → retention. We define KPIs, acceptance criteria, and governance so teams approve quickly. This is healthcare marketing automation built for repeatability: fast launches now, easy scale later, and clear ownership at each step.',
+    description: 'We design triggers, segments, and cadences by service line and region. Journeys map inquiry to education, conversion, and retention. Clear KPIs, approval criteria, and ownership keep launches fast, scalable, and repeatable.',
     image: Image_2,
     isImageRight: false,
     icon: Briefcase, 
@@ -190,7 +190,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Lead Nurture & Reactivation',
     subtitle: 'SERVICES WE OFFER',
-    description: 'Not ready today? We keep value flowing. Sequences deliver FAQs, prep checklists, coverage notes, and testimonials. Branching adapts to clicks and replies. Reactivation targets inactive lists with safety disclaimers and fresh offers. Outcome: more inquiries from audiences you already paid to reach, with lower incremental cost than net-new media.',
+    description: 'Not every lead is ready today. We deliver FAQs, checklists, coverage notes, and testimonials that keep value flowing. Branching adapts to engagement, while reactivation campaigns target inactive lists with compliant messaging and fresh offers. The result is more inquiries from audiences you’ve already paid to reach.',
     image: Image_3,
     isImageRight: true,
     icon: Users, 
@@ -199,7 +199,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Email Programs Automation',
     subtitle: 'SERVICES WE OFFER',
-    description: 'Welcome, nurture, education series, reactivation, and win-back campaigns—each with plain-English copy, accessible templates, and UTMs. Clinical review where needed. We manage deliverability, warmups, and bounce/complaint controls. Why it matters: more qualified actions from the inbox, not just ads. This is healthcare email marketing that proves lift in GA4.',
+    description: 'We build welcome, nurture, education, and win-back sequences with clear copy, accessible templates, and UTM tracking. Deliverability, list health, and clinical review are managed end to end for measurable results in GA4.',
     image: Image_4,
     isImageRight: false,
     icon: Mail, 
@@ -208,7 +208,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Medical CRM Marketing & Integrations',
     subtitle: 'SERVICES WE OFFER',
-    description: 'We connect forms, call tracking, and site events to CRMs/EMRs via secure APIs or webhooks. Fields are minimized; consent flows are logged. Dashboards join source → campaign → step → outcome. Result: cleaner pipeline and better routing. This is medical CRM marketing that makes sales and operations easier.',
+    description: 'We connect forms, calls, and site events to CRMs or EMRs through secure APIs or webhooks. Data fields are minimized, consent is logged, and dashboards tie campaign activity to outcomes for a cleaner, more efficient pipeline.',
     image: Image_3,
     isImageRight: true,
     icon: Globe, 
@@ -217,7 +217,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'SMS Programs Automation',
     subtitle: 'SERVICES WE OFFER',
-    description: 'Opt-in SMS for reminders, follow-ups, and time-sensitive updates. Quiet-hour rules by state, easy opt-out, and content guardrails come standard. We use short codes/alphas as allowed and log consent events. Why it matters: timely nudges drive response. This is healthcare sms marketing that’s respectful, measurable, and built for scale.',
+    description: 'We manage opt-in SMS programs for reminders, follow-ups, and urgent updates. Quiet-hour rules, consent tracking, and easy opt-outs are built in. Short codes or alphanumeric senders comply with carrier standards while driving timely responses.',
     image: Image_2,
     isImageRight: true,
     icon: Phone, 
@@ -226,7 +226,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Consent, Compliance and Deliverability',
     subtitle: 'SERVICES WE OFFER',
-    description: 'We document consent, honor opt-outs immediately, and maintain suppression lists. Sender domains, DKIM/DMARC, and list hygiene protect inbox placement. Content avoids PHI and prohibited claims. Approvals are logged. In short: HIPAA compliant email marketing principles by default, with audit trails that satisfy policy and keep programs safe.',
+    description: 'We document consent, maintain suppression lists, and ensure immediate opt-outs. Strong sender authentication, list hygiene, and PHI-safe content protect deliverability and compliance, with audit trails that keep programs secure.',
     image: Image_3,
     isImageRight: true,
     icon: Target, 
@@ -235,7 +235,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Appointment Reminder Automation',
     subtitle: 'SERVICES WE OFFER',
-    description: 'Multi-touch reminders via email/SMS reduce no-shows. We confirm intent, provide prep links, and route to self-service pages where applicable, no scheduling handled by us. Cadence varies by specialty and risk of missed visits. Reporting shows confirmations, reschedules, and gaps. This is appointment reminder automation built to protect revenue and patient experience.',
+    description: 'Multi-touch email and SMS reminders reduce no-shows and improve patient experience. Each reminder confirms intent, provides prep details, and routes to self-service pages where appropriate. Reports track confirmations, reschedules, and missed visits.',
     image: Image_4,
     isImageRight: true,
     icon: BookOpen, 
@@ -244,7 +244,7 @@ const contentData: ContentBlock[] = [
   {
     title: 'Data Testing and Reporting',
     subtitle: 'SERVICES WE OFFER',
-    description: 'Every journey ships with UTMs, GA4 events, and call attribution. Dashboards show channel → sequence → step → inquiry, plus retention and reactivation. We run controlled tests on cadence, subject lines, creative, and CTAs. Insight leads to iteration the following sprint, so performance improves week after week.',
+    description: 'Every journey includes UTMs, GA4 events, and call attribution. Dashboards connect channels to inquiries and retention. Ongoing A/B testing on cadence, messaging, and CTAs drives continuous improvement each sprint.',
     image: Image_3,
     isImageRight: true,
     icon: Cpu, 
@@ -340,7 +340,7 @@ const AutomationServiceCard: React.FC<{ block: ContentBlock }> = ({ block }) => 
 
 const HeroSection: React.FC = () => {
   const heroText =
-    "Turn interest into qualified inquiries with healthcare marketing automation, planned, built, and optimized by automation experts at AdvanceEdge. We design healthcare email marketing and healthcare SMS marketing that respect consent, protect privacy, and move patients from discovery to action with measurable next steps.";
+    "Turn patient interest into measurable growth.";
 
   return (
     <div
@@ -357,10 +357,13 @@ const HeroSection: React.FC = () => {
               className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight"
               style={{ color: '#ffffff' }}
             >
-              Healthcare Marketing Automation in the USA
+              Healthcare Marketing Automation
             </h1>
-            <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
+            <p className="mt-3 text-lg  font-extrabold text-white max-w-2xl mx-auto ">
               {heroText}
+            </p>
+            <p className="mt-3 text-lg  text-white max-w-2xl mx-auto">
+              Advance Edge designs and manages healthcare marketing automation that connects every step of the patient journey from discovery to appointment. Our email and SMS programs respect consent, protect privacy, and drive qualified inquiries through targeted, data-backed campaigns.
             </p>
 
             {/* Main CTA Button */}
@@ -391,7 +394,7 @@ const BenefitsSection: React.FC = () => {
     "HIPAA compliant email marketing protects privacy and consent.",
     "Education drips improve understanding and adherence.",
     "No PHI in ad platforms, logs, or reports.",
-    "From South Carolina and Tennessee to North Dakota, South Dakota, Arkansas, and Maryland, we localize quiet hours, consent language, and carrier rules, then scale programs nationwide across all 50 states.", // Keeping the footnote content as a descriptive line
+    "**Proven website design programs trusted by healthcare organizations nationwide, scalable for single practices or multi-location networks.", // Keeping the footnote content as a descriptive line
   ];
 
   // Split the list for two columns, adjusting for the extra descriptive line
@@ -406,10 +409,10 @@ const BenefitsSection: React.FC = () => {
         
         {/* Header Block */}
         <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+            <p className="text-2xl sm:text-4xl font-bold uppercase tracking-widest text-orange-500 mb-2">
                 AUTOMATIC ENGAGEMENT TO INQUIRY FORMULA
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
                 Benefits of Healthcare Marketing Automation
             </h2>
         </div>
@@ -488,10 +491,10 @@ const ServicesSection: React.FC = () => {
             
             {/* Header Block */}
             <div className="max-w-3xl mb-16">
-                <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+                <p className="text-2xl font-bold sm:text-4xl uppercase tracking-widest text-orange-500 mb-2">
                     SERVICES WE OFFER
                 </p>
-                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+                <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
                     Automation Program Services
                 </h2>
             </div>
@@ -504,7 +507,7 @@ const ServicesSection: React.FC = () => {
             </div>
 
             {/* Section Footer - Value Prop Banner (Standardized style) */}
-            <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
+            <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8  shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
                     10+ Years of Healthcare Marketing Expertise, 100% Commitment to Your Success
                 </h3>

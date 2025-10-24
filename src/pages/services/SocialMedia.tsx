@@ -104,7 +104,7 @@ const HeroSection: React.FC = () => {
 
           {/* Content Area (Text and Button) - Updated to match the structure of PaidMarketing.tsx (removed small header text) */}
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">
              Social Media Marketing for Healthcare
             </h1>
             <p className="mt-3 text-lg text-white max-w-2xl mx-auto">

@@ -2,7 +2,13 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./index.html",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,17 +20,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: [
-          "DM Sans",
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
-        ],
-        serif: ["Marcellus", "Georgia", "Times New Roman", "serif"],
+        // Crimson Pro for body (font-sans), Crimson Text for headings (font-serif)
+        sans: ["Crimson Pro", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+        serif: ["Crimson Text", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -89,8 +87,8 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
       },
       boxShadow: {
-        "soft": "var(--shadow-soft)",
-        "dropdown": "var(--shadow-dropdown)",
+        soft: "var(--shadow-soft)",
+        dropdown: "var(--shadow-dropdown)",
       },
       keyframes: {
         "accordion-down": {

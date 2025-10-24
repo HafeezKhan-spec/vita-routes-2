@@ -143,10 +143,10 @@ const BenefitsSection: React.FC = () => {
 
         {/* Header Block */}
         <div className="sm:text-5xl mx-auto text-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-orange-500 mb-2">
+            <p className="text-sm sm:text-5xl font-bold uppercase tracking-widest text-orange-500 mb-2">
                 The AdvanceEdge PPC Formula
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
                 Benefits of Medical Content Marketing
             </h2>
         </div>
@@ -278,31 +278,7 @@ const servicesData: Service[] = [
         color: 'text-red-700',
         imagePlaceholder: IMAGE_4_URL, // Using original import variable
     },
-    {
-        title: "Demand Gen (Formerly Discovery)",
-        subtitle: "Visual placements for warm audiences...",
-        description: "Visual placements for warm audiences and cart-abandon-style journeys (policy-safe). Used sparingly for retargeting and content promotion; frequency-capped.",
-        icon: Zap,
-        color: 'text-purple-600',
-        imagePlaceholder: IMAGE_3_URL, // Using original import variable
-    },
     
-    {
-        title: "Microsoft Ads (Bing) Search",
-        subtitle: "Mirror top search campaigns...",
-        description: "Mirror top search campaigns for additional coverage; call extensions; location targeting; negatives and sitelinks matched to Google winners.",
-        icon: ShoppingBag,
-        color: 'text-green-600',
-        imagePlaceholder: IMAGE_3_URL, // Using original import variable
-    },
-    {
-        title: "Local Ads Elements",
-        subtitle: "Location extensions, directions...",
-        description: "Location extensions, directions, and local copy variants; radius/city/state targeting; ad schedules tuned to staffing. Supports hospital advertising across multi-location networks.",
-        icon: MapPin,
-        color: 'text-orange-600',
-        imagePlaceholder: IMAGE_3_URL, // Using original import variable
-    },
 ];
 
 // --- New Service Card Component for Integrated Image and Text ---

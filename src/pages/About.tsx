@@ -37,15 +37,21 @@ const AboutSection = () => (
                     <img src={aboutUs} alt="About AdvanceEdge" className="rounded-lg shadow-2xl w-full h-auto" />
                 </div>
                 <div>
-                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-600">About Us</h2>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-600">About AdvanceEdge Digital</h2>
+                    <h1 className="text-xl sm:text-xl font-bold text-gray-800 mb-6 relative pb-2 ">
+                        Your Healthcare Marketing Partner for Growth With Integrity
+                    </h1>
                     <p className="text-black leading-relaxed mb-4">
-                        Rated as one of the best healthcare marketing firm and medical marketing company, AdvanceEdge is your trusted digital partner for remarkable patient growth. We plan clearly, execute precisely, and report what matters!
+                        AdvanceEdge is a results-driven healthcare marketing agency that helps hospitals, clinics, and telehealth brands attract more patients and grow responsibly. We combine deep healthcare knowledge with proven digital expertise—turning strategy into measurable, compliant results.
                     </p>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                        Our healthcare marketing experts build SEO, PPC, Social Media, Content Marketing and Marketing Automation programs that respect HIPAA and your hospitals, clinics, or brand's standards.
+                       Our team plans with clarity, executes with precision, and reports on what truly matters: real patient growth, trusted visibility, and lasting impact.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
-                       From California to Texas, Florida, Alaska, Virginia and all the other 45 states, AdvanceEdge healthcare marketing delivers data-driven growth and qualified patient enquiries. Partner with a team that understands service lines, multi-location operations and the realities of U.S healthcare.
+                       We specialize in SEO, paid advertising, social media, content marketing, and automation—built on HIPAA-aware systems and workflows that respect every organization’s brand, data, and compliance standards.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                       Partner with a team that understands service lines, multi-location operations, and the realities of modern healthcare marketing.
                     </p>
                 </div>
             </div>
@@ -53,64 +59,154 @@ const AboutSection = () => (
     </section>
 );
 
-const ValuesSection = () => (
-    <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-            <div className="grid md:grid-cols-2 gap-16 mb-16">
-                 <div className="text-left">
-                    <h3 className="text-3xl font-bold text-gray-800 mb-3">Vision</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                        Aiming to be the most trusted healthcare marketing firm in the USA for measurable, compliant patient growth.
-                    </p>
-                </div>
-                <div className="text-left">
-                    <h3 className="text-3xl font-bold text-gray-800 mb-3">Mission</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                        Help U.S. hospitals, clinics and telehealth brands grow qualified inquiries through data-driven SEO, PPC, Social Media, Content and Marketing Automation.
-                    </p>
-                </div>
+const ValuesSection = () => {
+  const coreValues = [
+    {
+      title: "Patient First",
+      desc: "Marketing built around trust, empathy, and outcomes.",
+    },
+    {
+      title: "Compliance by Default",
+      desc: "HIPAA, BAA, and ADA standards woven into every workflow.",
+    },
+    {
+      title: "Evidence-Led Decisions",
+      desc: "Data drives every insight, every recommendation.",
+    },
+    {
+      title: "Innovation with Integrity",
+      desc: "Using automation, AI, and advanced analytics responsibly.",
+    },
+    {
+      title: "Transparency",
+      desc: "Clear communication, clear reporting, clear results.",
+    },
+  ];
+
+  const commitments = [
+    "Campaigns tailored by audience, state, and specialty.",
+    "SEO, PPC, and social aligned to real local demand.",
+    "Measurable performance by call, form, or chat.",
+    "Regional compliance and budget planning baked in.",
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        {/* Vision & Mission */}
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+          {[
+            {
+              title: "Our Vision",
+              desc: "To be the most trusted healthcare marketing partner for measurable, compliant growth across every channel and every state.",
+            },
+            {
+              title: "Our Mission",
+              desc: "Helping healthcare organizations attract qualified patient inquiries through strategy, creativity, and ethical performance marketing.",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl shadow-md p-8 text-left transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-200 hover:bg-gradient-to-br from-white via-indigo-50 to-white"
+            >
+              <h3 className="text-3xl font-bold text-indigo-700 mb-4 transition-colors duration-300 hover:text-indigo-800">
+                {item.title}
+              </h3>
+              <p className="text-gray-700 leading-relaxed">{item.desc}</p>
             </div>
-            <div className="max-w-3xl mx-auto">
-                <h3 className="text-3xl font-bold text-gray-800 mb-3">Core Values</h3>
-                <p className="text-gray-700 leading-relaxed">
-                    Patient-first outcomes, compliance by default (HIPAA, BAA, ADA), evidence-led decisions, advanced edge with automation, security and data minimization to build and protect trust.
-                </p>
-            </div>
+          ))}
         </div>
+
+        {/* Core Values */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-gray-800 mb-10">Our Core Values</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {coreValues.map((value, idx) => (
+              <div
+                key={idx}
+                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-indigo-300 hover:bg-gradient-to-br from-white via-indigo-50 to-white"
+              >
+                <h4 className="text-xl font-semibold text-indigo-700 mb-2 transition-colors duration-300 group-hover:text-indigo-800">
+                  {value.title}
+                </h4>
+                <p className="text-gray-700 leading-relaxed">{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Commitment */}
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-800 mb-8">Our Commitment</h3>
+          <div className="bg-white rounded-2xl shadow-md p-8 text-left transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 hover:shadow-indigo-200 hover:bg-gradient-to-br from-white via-indigo-50 to-white">
+            <ul className="space-y-4">
+              {commitments.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start transition-all duration-300 hover:translate-x-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-indigo-600 mr-3 mt-1 flex-shrink-0 transition-transform duration-500 group-hover:rotate-12 hover:text-indigo-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
-);
+  );
+};
 
 const StrategySection = () => (
-    <div className="relative bg-cover bg-center text-white py-20 md:py-32" style={{ backgroundImage: "url('https://placehold.co/1920x600/1e293b/e0e7ff?text=.')" }}>
-        <div className="absolute inset-0 bg-gray-900 opacity-80"></div>
-        <div className="container mx-auto relative z-10 px-4 md:px-8 text-center md:text-left">
-             <div className="max-w-2xl">
-                 <ul className="space-y-6 text-xl">
-                    <li><strong className="text-blue-400 font-bold">State-By-State USP Strategy –</strong> Audience, Keywords, Offers Tuned to Each Market</li>
-                    <li><strong className="text-blue-400 font-bold">ROI-Focused Campaign Execution –</strong> SEO, PPC, Social Media Aligned to Local Demand.</li>
-                    <li><strong className="text-blue-400 font-bold">Measurement & Reporting by Location –</strong> Calls, Forms, Chats Per State/City.</li>
-                    <li><strong className="text-blue-400 font-bold">Local Market Planning & Compliance –</strong> Budgets, Approvals, Guidelines for Each State.</li>
-                </ul>
-             </div>
-        </div>
-    </div>
-);
+  <section className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50">
+    <div className="container mx-auto px-6 md:px-12">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
 
-const CtaSection = () => (
-    <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <p className="text-orange-500 font-semibold mb-2">GET IN TOUCH</p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Partner with AdvanceEdge and take your Firm to the next level.</h2>
-                </div>
-                <div className="bg-black text-white p-8 rounded-lg text-center shadow-lg">
-                    <p className="text-4xl md:text-5xl font-extrabold tracking-wider">832-937-7738</p>
-                    <p className="mt-2 text-blue-200">FEEL FREE TO CALL US</p>
-                </div>
-            </div>
+        {/* Left Content */}
+        <div className="space-y-6 transition-all duration-700 hover:translate-y-1">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+            AdvanceEdge Digital builds growth you can trust — 
+            <span className="text-orange-500"> measurable, ethical,</span> and
+            built for the long run.
+          </h2>
+
+          <div className="flex items-center gap-3 group cursor-pointer w-fit">
+            <p className="text-orange-600 text-2xl font-semibold tracking-wide group-hover:text-orange-700 transition-colors">
+              Let’s Talk About Growth
+            </p>
+            <span className="text-orange-600 group-hover:translate-x-2 transition-transform duration-300 text-2xl">
+              →
+            </span>
+          </div>
+
+          
         </div>
-    </section>
+
+        {/* Right Contact Box */}
+        <div className="bg-black text-white p-10 rounded-2xl text-center shadow-2xl relative overflow-hidden group">
+          {/* Background Glow on Hover */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-pink-500 opacity-0 group-hover:opacity-10 transition duration-500"></div>
+
+          <div className="relative z-10 space-y-4">
+            <p className="text-sm tracking-widest text-gray-300 uppercase">
+              Get in Touch
+            </p>
+
+            <div className="flex items-center justify-center gap-3 text-4xl md:text-5xl font-extrabold">
+              <span className="text-orange-500 animate-pulse">📞</span>
+              <p>832-937-7738</p>
+            </div>
+
+            <p className="text-gray-400 text-sm mt-2">
+              Call us today for a free consultation
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
 
@@ -163,7 +259,7 @@ const App = () => {
                 <AboutSection />
                 <ValuesSection />
                 <StrategySection />
-                <CtaSection />
+                
             </main>
         </div>
     );

@@ -41,16 +41,11 @@ const HeaderSection = () => (
             {/* Content: text-white, text-center, and mx-auto added/retained as requested */}
             <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
                 <h1 className="text-3xl md:text-4xl font-bold leading-sung">
-                    Rehab Marketing That Converts <br />
-                    <span className="block">Calls into Qualified Admissions</span>
+                    Connecting Patients to Care Through Compliant Marketing
                 </h1>
-                {/* Subheading: Retaining font-semibold (bold) and white color (inherited from parent) */}
-                <p className="mt-4 text-2xl font-bold text-white-400">
-                    PPC/Ads, Social, Web/CRO, SEO
-                </p>
-                {/* Retaining white color and bold for the body text for maximum visibility */}
+                
                 <p className="mt-4 text-base font-bold text-white">
-                    HIPAA and 42 CFR Part 2 Safeguards; Policy-Safe Ads And Workflows.
+                    We partner with addiction treatment and behavioral health organizations to reach those seeking help — safely and responsibly. Our data-driven strategies blend privacy-focused advertising, optimized websites, and follow-up systems that turn intent into admissions while honoring every safeguard. 
                 </p>
                 <div className="mt-6 flex justify-center -top-[-20px]">
                     <BookCallButton />
@@ -64,20 +59,20 @@ const HeaderSection = () => (
 const WhoBenefitsSection = () => {
     const benefitItems = [
         {
-            title: "Residential Rehab and Detox Centers",
-            content: "Medical Detox, Inpatient Rehab, Dual Diagnosis Stabilization. Our substance abuse marketing builds LegitScript-vetted funnels, insurance verification, withdrawal triage, compliant admission routing, that convert screened assessments into admissions.",
+            title: "Residential Rehab & Detox Centers",
+            content: "Medical detox, inpatient rehab, and dual diagnosis stabilization programs rely on our LegitScript-approved funnels, insurance verification tools, and compliant routing workflows that convert screened assessments into admissions.",
         },
         {
             title: "IOP/PHP & Outpatient Clinics",
-            content: "CBT, DBT, Medication Management, MAT Support, Telehealth. Behavioral health SEO, rehab marketing, referral paths, and online scheduling convert searches into IOP/PHP assessments and outpatient care.",
+            content: "Programs offering CBT, DBT, medication management, or MAT support use our behavioral health SEO and paid media to drive high-intent searches toward qualified IOP/PHP assessments and scheduled sessions.",
         },
         {
-            title: "Medical Practices & Teletherapy",
-            content: "Psychiatry and Therapy Practices with Virtual Consultations and Crisis Resources. Mental health marketing delivers ads and landing pages that turn high-intent searches into scheduled sessions.",
+            title: "Teletherapy & Psychiatry Practices",
+            content: "For virtual consultations and hybrid care models, we create mental health campaigns that drive inquiries through compliant ads and optimized landing pages designed for conversion.",
         },
         {
-            title: "MAT, Aftercare and Alumni Programs",
-            content: "MAT Clinics And Recovery Programs: Buprenorphine/Naltrexone, Relapse Prevention, Family Therapy, Alumni Support. Addiction treatment marketing adds email/SMS nurture and reviews to improve completion, retention, referrals.",
+            title: "MAT, Aftercare & Alumni Programs",
+            content: "Our addiction treatment marketing adds automated email and SMS nurture to keep patients engaged, improve completion rates, and encourage alumni referrals and reviews.",
         },
     ];
 
@@ -102,7 +97,7 @@ const WhoBenefitsSection = () => {
                 {/* Text */}
                 <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
                     <motion.h3 className="text-2xl font-semibold" variants={fadeInUp}>
-                        Who Benefits from Behavioral Health Marketing in the USA?
+                        Who We Help
                     </motion.h3>
 
                     {benefitItems.map((item, index) => (
@@ -145,25 +140,25 @@ const ProcessSection = () => {
         {
             step: "01.",
             title: "Discover & Plan",
-            desc: "Audit GBP/Maps, listings, UX, consent; review policies, 42 CFR Part 2, LegitScript. Map keywords by rehab program and geography. Set KPIs, budgets, geo targets, governance, and clinical approvals.",
+            desc: "We audit your digital presence, policies, and consent flows. Then we map keywords, budgets, and governance to each program and geography for a clear launch plan.",
             icon: <ClipboardCheck className="w-5 h-5 text-blue-600" />,
         },
         {
             step: "02.",
             title: "Build & QA",
-            desc: "Publish program pages, clinician bios, insurance/financing, admission FAQs. Implement GA4, UTMs, call tracking, CRM, consent forms. Improve accessibility and speed; fix schema and local SEO.",
+            desc: "We develop program pages, clinician bios, insurance and financing content, and compliant forms. GA4, UTMs, and call tracking connect every inquiry to its source.",
             icon: <FileText className="w-5 h-5 text-blue-600" />,
         },
         {
             step: "03.",
             title: "Launch & Learn",
-            desc: "Activate SEO, backlinks, and compliant search ads. Test forms, screeners, CTAs. Monitor leads, CPA, and admission rate—proving traction for addiction treatment marketing.",
+            desc: "We activate SEO, content, and compliant PPC campaigns. Every form, CTA, and funnel is tested to track real admissions and prove ROI.",
             icon: <MessageSquare className="w-5 h-5 text-blue-600" />,
         },
         {
             step: "04.",
             title: "Optimize & Scale",
-            desc: "Shift budget to winners; expand programs. Deepen automation from screening→admission. Strengthen review velocity and reporting dashboards for quarterly decisions.",
+            desc: "We double down on top-performing channels, automate screening-to-admission follow-ups, and strengthen review velocity and reporting dashboards to drive steady growth.",
             icon: <BarChart3 className="w-5 h-5 text-blue-600" />,
         },
     ];
@@ -180,11 +175,11 @@ const ProcessSection = () => {
                 {/* Title */}
                 <motion.div className="text-center mb-14" variants={fadeInUp}>
                     <h2 className="text-4xl font-extrabold tracking-wide">
-                        Our Rehab Marketing Process
-                    </h2>
-                    <p className="text-2xl text-blue-400 mt-3">
+                        Our Process:<p className="text-2xl text-blue-400 mt-3">
                         Discover → Build → Launch → Optimize
                     </p>
+                    </h2>
+                    
                 </motion.div>
 
                 {/* Cards */}
@@ -222,14 +217,14 @@ const ProcessSection = () => {
 // --- Component 4: Challenges Section (Section 3) ---
 const ChallengesSection = () => {
     const challenges = [
-        "Platform policies and LegitScript block addiction ads without compliant creatives and screening.",
-        "HIPAA and 42 CFR Part 2 require strict consent and data minimization.",
-        "High-CPC rehab terms underperform without CRO and qualification gates.",
-        "Crisis language risks disapprovals; stigma-safe wording and disclaimers required.",
-        "Thin clinical content lowers conversions.",
-        "Local SEO gaps from weak GBP and inconsistent listings.",
-        "Tracking blindspots without call tracking or attribution.",
-        "Reputation volatility from lack of reviews and poor responses.",
+        "LegitScript and platform policy barriers blocking addiction treatment ads",
+        "Strict HIPAA and 42 CFR Part 2 compliance requirements for consent and data handling",
+        "High-CPC rehab terms that underperform without conversion optimization",
+        "Disapproved copy due to crisis or stigma language",
+        "Weak local SEO and inconsistent Google Business Profiles",
+        "Gaps in attribution, call tracking, and CRM integration",
+        "Poor review management and inconsistent brand reputation",
+        
     ];
 
     return (
@@ -251,14 +246,11 @@ const ChallengesSection = () => {
                 </motion.div>
 
                 <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
-                    <h3 className="text-2xl font-semibold">
-                        Rehab Marketing Challenges We Solve
+                    <h3 className="text-3xl font-semibold">
+                        Challenges We Solve
                     </h3>
-                    <h3 className="text-xl font-medium">
-                        US-Focused Addiction Treatment Marketing Agency to Accelerate Patient
-                        Acquisition.
-                    </h3>
-                    <ul className="list-disc pl-6 space-y-2 text-sm">
+                    
+                    <ul className="list-disc pl-6 space-y-2 text-xl">
                         {challenges.map((challenge, index) => {
                             const parts = challenge.split(':');
                             const boldPart = parts[0];
@@ -278,9 +270,7 @@ const ChallengesSection = () => {
                 variants={fadeInUp}
             >
                 <p className="text-sm">
-                    Rehab centers across California, Florida, Texas, New York, Arizona, and more
-                    benefit from our scalable programs built for screened assessments, admissions,
-                    and local SEO.
+                   Our programs help rehab and behavioral health providers convert more qualified admissions through compliant, transparent, and scalable marketing systems.
                 </p>
                 <motion.div
                     className="mt-4 flex justify-center lg:justify-start"
@@ -299,28 +289,22 @@ const ApproachSection = () => {
         {
             title: "Attract",
             items: [
-                "Behavioral Health SEO: Program/condition hubs, clinician bios, schema, FAQs, catchment pages, backlinks.",
-                "Compliant PPC & Ads: High-intent search, vetted copy, LegitScript, limited retargeting.",
-                "Content & Community: Stigma-safe guides, videos, webinars, outreach.",
-                "Outcome: More qualified inquiries.",
+                "We help your programs show up where people are searching for help. Through ethical advertising, strong SEO, and meaningful storytelling, we connect your brand with patients ready to take the next step.",
+                
             ],
         },
         {
             title: "Convert",
             items: [
-                "Website & CRO: Mobile UX, insurance checks, forms, crisis resources, telehealth.",
-                "Proof & Access: Credentials, evidence-based treatment, testimonials, CTAs.",
-                "Measurement: GA4, UTMs, CRM routing.",
-                "Outcome: Higher admissions at target CPA.",
+                "We make it easy for people to choose your center with websites and messaging built on clarity, compassion, and trust. Every click, call, or form leads to a smoother path to admission.",
+                
             ],
         },
         {
             title: "Retain",
             items: [
-                "Automation: Email/SMS, intake, aftercare, relapse-prevention.",
-                "Reputation: Reviews, referrals, engagement.",
-                "Analytics: Cohort dashboards, budget optimization.",
-                "Outcome: Better completion rates & referrals.",
+                "We help you stay connected with patients after care begins. Automated follow-ups, thoughtful communication, and reputation programs strengthen relationships and inspire referrals.",
+                
             ],
         },
     ];
@@ -344,16 +328,13 @@ const ApproachSection = () => {
                     className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
                     variants={fadeInUp}
                 >
-                    Our Behavioral Health Marketing Approach
+                  Our Approach to Behavioral Health Marketing  
                 </motion.h2>
                 <motion.p
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    AdvanceEdge delivers mental health marketing programs that turn screened
-                    assessments into admissions. We combine rehab marketing, behavioral
-                    health SEO and substance abuse marketing with HIPAA/42 CFR Part 2
-                    compliance.
+                    AdvanceEdge helps treatment centers and behavioral health providers grow responsibly, attracting the right patients, turning inquiries into admissions, and building lasting trust.
                 </motion.p>
 
                 <div className="row mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -386,14 +367,12 @@ const ApproachSection = () => {
 // --- Component 6: Why Choose Section (Section 5) ---
 const WhyChooseSection = () => {
     const whyChooseItems = [
-        "LegitScript setup & safe ads",
-        "Program-level SEO (detox, IOP, MAT, telehealth)",
-        "Insurance verification & CRO",
-        "Call tracking & CRM dashboards",
-        "HIPAA & 42 CFR Part 2 compliance",
-        "Stigma-safe messaging w/ crisis protocols",
-        "Review governance & alumni care",
-        "Local SEO & referral networks",
+        "Launch safe, LegitScript-approved ad campaigns that drive real inquiries",
+        "Strengthen visibility through program-level SEO and local search optimization",
+        "Build trust with stigma-safe messaging and crisis-aware communication",
+        "Track every lead with clear dashboards, from first click to confirmed admission",
+        "Support retention through alumni engagement and review programs",
+        
     ];
 
     return (
@@ -415,10 +394,10 @@ const WhyChooseSection = () => {
                     className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
                     variants={fadeInUp}
                 >
-                    AdvanceEdge is rated among the top behavioral health marketing agencies in the USA,
-                    driving compliant growth for mental health and addiction centers.
+                   AdvanceEdge partners with behavioral health and addiction treatment providers to grow responsibly and with integrity. We understand the unique challenges of this space — from strict ad policies to patient privacy requirements — and we’ve built proven strategies to help you navigate them with confidence.
                 </motion.p>
-
+                
+                
                 <div className="row mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                     {whyChooseItems.map((item, idx) => (
                         <motion.div
@@ -434,6 +413,13 @@ const WhyChooseSection = () => {
                     ))}
                 </div>
 
+
+                <motion.p
+                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed mt-[40px]"
+                    variants={fadeInUp}
+                >
+                        We combine compliance, creativity, and compassion to help you reach more people who need care — safely and effectively.
+                </motion.p>
                 {/* CTA Button */}
                 <motion.div
                     className="mt-10"

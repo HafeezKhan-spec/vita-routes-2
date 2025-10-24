@@ -109,7 +109,7 @@ const MockImageCard: React.FC<{ src: string, alt: string }> = ({ src, alt }) => 
 
 // --- Hero Section Component (Styled to match PaidMarketing) ---
 const HeroSection: React.FC = () => {
-  const heroText = "Convert patients with high-intent healthcare website design in the USA. Our medical website design services build HIPAA-aware, ADA-conscious websites that load fast, meet Core Web Vitals, and convert effortlessly. Serving Arizona, California, Texas and other states, our services drive durable growth with clear reporting.";
+  const heroText = "Turn patient searches into scheduled appointments.Our healthcare website design services create HIPAA-compliant, ADA-accessible sites that load fast, meet Core Web Vitals, and convert effortlessly. From hospitals to private clinics and telehealth brands, Advance Edge builds secure, high-performing websites that attract, engage, and convert patients — with transparent reporting every step of the way.";
 
   return (
     // Apply gradient background and centered content
@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col items-center text-center">
             <div className="max-w-4xl">
                 <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 leading-tight" style={{ color: '#ffffff' }}>
-                    Healthcare Website Design Services in the USA
+                    Healthcare Website Design Services 
                 </h1>
                 <p className="mt-3 text-lg text-white max-w-2xl mx-auto">
                     {heroText}
@@ -144,7 +144,7 @@ const HeroSection: React.FC = () => {
 const BENEFITS_DATA = {
     mainTitle: "Benefits of Healthcare Website Design Services",
     subTitle: "YOUR CONVERSION READY BUILD FORMULA",
-    description: "A strategically designed healthcare website design makes you findable when patients browse. Our medical website design agency in the USA builds ADA conscious, HIPAA-aware sites to persuade the visitor, turning visits into qualified inquiries, for sure.",
+    description: "A strategically designed healthcare website makes you visible where patients search and credible when they decide. Our medical web design team builds ADA-compliant, HIPAA-aware sites that engage visitors and turn clicks into qualified patient inquiries.",
     features: [
         "Fast loads that meet Core Web Vitals.",
         "Clear paths to call, form, and chat across pages.",
@@ -157,7 +157,7 @@ const BENEFITS_DATA = {
         "SEO ready structure: clean IA, internal links, and structured data.",
         "Lower reliance on paid ads as organic and direct conversions improve.",
     ],
-    footerText: "Proven website design programs across California, Texas, New York, Florida, Illinois, Pennsylvania, Ohio, Georgia, North Carolina, and Michigan, scalable to all 50 states.",
+    footerText: "**Proven website design programs trusted by healthcare organizations nationwide, scalable for single practices or multi-location networks.",
 };
 
 // --- Benefits Section Component (Styled to match PaidMarketing) ---
@@ -171,10 +171,10 @@ const BenefitsSection: React.FC = () => {
                 
                 {/* Header Block */}
                 <div className="max-w-3xl mx-auto text-center">
-                    <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+                    <p className="text-2xl sm:text-4xl  font-bold uppercase tracking-widest text-orange-500 mb-2">
                         {BENEFITS_DATA.subTitle}
                     </p>
-                    <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
+                    <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight mb-8" style={{ color: PRIMARY_BLUE }}>
                         {BENEFITS_DATA.mainTitle}
                     </h2>
                 </div>
@@ -247,70 +247,70 @@ interface ServiceBlock { title: string, description: string, imageUrl: string, i
 const SERVICES_DATA: ServiceBlock[] = [
     { 
         title: "Discovery & Strategy", 
-        description: "We align goals, audiences, service lines, markets, and compliance needs into a clear plan for healthcare website design in the USA. You get a prioritized roadmap, KPIs, budgets, and sprint timelines that tie creative, engineering, and approvals to measurable outcomes.", 
+        description: "We align goals, audiences, and compliance needs into a focused web strategy. You get a clear roadmap, KPIs, and sprint timelines that tie creative, engineering, and approvals to measurable outcomes.", 
         imageUrl: Image_2, 
         icon: Target, 
         color: 'text-red-600' 
     },
     { 
         title: "Performance & Core Web Vitals", 
-        description: "We optimize code, media, and delivery for fast LCP, stable CLS, and responsive INP on real devices. Techniques include image optimization, caching, CDN, code splitting, and responsive media, with monitoring in GA4, Search Console, and privacy safe RUM dashboards.", 
+        description: "We optimize every element, including code, media, and delivery, for fast and stable performance. Image compression, caching, and responsive design ensure top Core Web Vitals across real devices.", 
         imageUrl: Image_3, 
         icon: Zap, 
         color: 'text-yellow-600' 
     },
     { 
         title: "Information Architecture", 
-        description: "We design sitemaps, navigation, and page templates that make care paths obvious for patients and search engines. Service line hubs, physician bios, and location pages use plain language, internal links, and structured patterns that improve findability and set a strong SEO foundation.", 
+        description: "We design intuitive navigation and page structures that guide patients and improve search visibility. Service line hubs, provider bios, and location pages build a strong SEO foundation.", 
         imageUrl: Image_4, 
         icon: Layout, 
         color: 'text-green-600' 
     },
     { 
         title: "Content & Medical Review", 
-        description: "We produce patient friendly pages for services, conditions, treatments, physicians, and FAQs that match brand and regulatory context. Editorial guides, medical review workflows, and schema support accuracy and trust, while CTAs and proof improve conversion on key journeys.", 
+        description: "We create patient-friendly, medically reviewed content that’s accurate, compliant, and persuasive. Editorial workflows and schema markup boost trust and conversions.", 
         imageUrl: Image_3, 
         icon: BookOpen, 
         color: 'text-indigo-600' 
     },
     { 
         title: "UX & UI Design", 
-        description: "We create conversion focused layouts with clear hierarchy, readable typography, intuitive controls, and persistent CTAs. Microscopy guides users to call, form, or chat, while visual systems and component libraries keep hospital and clinic website design consistent across brands and states.", 
+        description: "We design clean, conversion-focused layouts with accessible typography, clear CTAs, and consistent visual systems, ensuring a seamless experience across all brands and locations.", 
         imageUrl: Image_2, 
         icon: Cpu, 
         color: 'text-purple-600' 
     },
     { 
         title: "Analytics & Privacy", 
-        description: "We configure events, funnels, and dashboards that link pages and campaigns to qualified inquiries without PHI in platforms. Consent banners, IP anonymization, retention measurement, and access controls support HIPAA aware policies, with plain monthly reporting and next step actions.", 
+        description: "We configure tracking and dashboards that link web activity to real inquiries, without exposing PHI. HIPAA-compliant analytics, consent banners, and access controls protect data integrity.", 
         imageUrl: Image_3, 
         icon: Lock, 
         color: 'text-pink-600' 
     },
     { 
         title: "ADA-Conscious Accessibility (WCAG 2.2 AA)", 
-        description: "We implement semantic HTML, headings, labels, alt text, keyboard navigation, focus states, and error hints. Color contrast, target sizes, captions, and accessible PDFs are documented in checklists, so your medical website design agency work is inclusive and auditable.", 
+        description: "We implement accessibility best practices including semantic HTML, alt text, keyboard navigation, color contrast, and captioned media so every visitor can use your site confidently.", 
         imageUrl: Image_4, 
         icon: Target, 
         color: 'text-blue-600' 
     },
     { 
         title: "Integrations (EMR, CRM, Scheduling, GBP)", 
-        description: "We connect secure forms, call tracking, and scheduling tools to EMR or CRM systems through HIPAA aware handoffs. Google Business Profile embeds, maps, and UTMs link location pages to local search journeys, improving data quality and patient experience.", 
+        description: "We connect secure forms, scheduling tools, and call tracking to EMR or CRM systems with HIPAA-safe handoffs. Integrated Google Business Profile and map embeds enhance local visibility.", 
         imageUrl: Image_3, 
         icon: Zap, 
         color: 'text-orange-600' 
     },
     { 
         title: "CMS Development (WordPress or Headless)", 
-        description: "We build secure, modular sites with roles, approvals, and reusable blocks for multi location growth. WordPress speeds time to market, and headless supports complex apps and integrations, while versioning, staging, and CI pipelines protect quality during releases.", 
+        description: "We build modular, secure sites with roles, approvals, and reusable components. WordPress accelerates launch speed; headless CMS options support advanced functionality and integrations.", 
         imageUrl: Image_2, 
         icon: Layout, 
         color: 'text-brown-600' 
     },
     { 
         title: "Security, Hosting & Governance", 
-        description: "We implement TLS, WAF, backups, uptime monitoring, and patching on approved hosts, with BAAs when required. Role based governance, release calendars, QA checklists, and training keep multi site, multi state programs safe, consistent, and ready to scale.", 
+        description: "We implement TLS, WAF, backups, and monitoring on approved hosts with BAAs where needed. Structured governance, QA, and training keep every site secure, consistent, and scalable.", 
         imageUrl: Image_3, 
         icon: Lock, 
         color: 'text-black-600' 
@@ -362,10 +362,10 @@ const ServicesSection: React.FC = () => {
                 
                 {/* Header Block */}
                 <div className="max-w-3xl mb-16">
-                    <p className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-2">
+                    <p className="text-2xl sm:text-4xl  font-bold uppercase tracking-widest text-orange-500 mb-2">
                         SERVICES WE OFFER
                     </p>
-                    <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
+                    <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight" style={{ color: PRIMARY_BLUE }}>
                         Healthcare Website Design Services
                     </h2>
                 </div>
@@ -378,7 +378,7 @@ const ServicesSection: React.FC = () => {
                 </div>
 
                 {/* Section Footer - Years of Expertise (Standardized style) */}
-                <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 rounded-2xl shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
+                <div className="mt-20 flex flex-col sm:flex-row items-center justify-between p-8 shadow-2xl transition duration-500 hover:shadow-2xl hover:scale-[1.005] cursor-pointer" style={{ backgroundColor: PRIMARY_TEAL }}>
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white text-center sm:text-left">
                         10+ Years of Legal Expertise, 100% Commitment to Your Success
                     </h3>
