@@ -506,8 +506,8 @@ function HomeInternal() {
     return (
         <div className="bg-slate-50 font-sans text-gray-800">
              <div className="container mx-auto px-4 py-16 md:py-24">
-                <div className={`lg:flex lg:gap-8 mb-16 items-stretch ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                    <header className="w-full lg:w-2/3 mb-8 lg:mb-0">
+                <div className={`lg:flex lg:justify-center lg:gap-8 mb-16 items-stretch ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                    <header className="w-full max-w-5xl mx-auto mb-8 lg:mb-0">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-orange-500 text-center tracking-widest mb-2">OUR EXPERTISE</h2>
                         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4 leading-tight">Healthcare Verticals We Serve</h1>
                         <p className="text-base sm:text-lg text-center text-black mb-8 max-w-3xl mx-auto">Our medical marketing agency partners with US hospitals, clinics and telehealth brands, providing tailored digital marketing services for each line.</p>
