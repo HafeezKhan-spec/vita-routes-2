@@ -215,7 +215,7 @@ const ChallengesSection = () => {
                         Challenges We Solve
                     </h3>
                     
-                    <ul className="mt-8 space-y-4 list-disc pl-6 text-sm">
+                    <ul className="mt-8 space-y-4 list-disc pl-6 text-ml">
                         {challenges.map((challenge, index) => {
                              const parts = challenge.split('–');
                              const boldPart = parts[0];
@@ -227,7 +227,7 @@ const ChallengesSection = () => {
                             );
                         })}
                     </ul>
-                     <p className="text-sm text-gray-700 italic">AdvanceEdge delivers connected marketing systems that solve fragmentation, strengthen brand cohesion, and make care easier to access for every patient.</p>
+                     <p className="text-xl text-black italic">AdvanceEdge delivers connected marketing systems that solve fragmentation, strengthen brand cohesion, and make care easier to access for every patient.</p>
                 </motion.div>
                 {/* Image */}
                 <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInUp}>
@@ -274,7 +274,7 @@ const ApproachSection = () => {
                     
                 </motion.h2>
                 <motion.p
-                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
+                    className="text-lg max-w-3xl mx-auto text-black leading-relaxed"
                     variants={fadeInUp}
                 >
                     We align marketing efforts to your service lines, helping patients find the right care, in the right place, at the right time.
@@ -292,7 +292,7 @@ const ApproachSection = () => {
                             <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
                             Attract
                         </h3>
-                        <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+                        <ul className="list-disc list-inside space-y-2 text-black text-sm leading-relaxed">
                             <li><span className="font-semibold"></span> We align marketing efforts to your service lines, helping patients find the right care, in the right place, at the right time.</li>
                             
                         </ul>
@@ -308,7 +308,7 @@ const ApproachSection = () => {
                             <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
                             Convert
                         </h3>
-                        <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+                        <ul className="list-disc list-inside space-y-2 text-black text-sm leading-relaxed">
                              <li><span className="font-semibold"></span> We simplify access to care through intuitive landing pages, provider finders, and clear scheduling flows that reduce drop-offs and increase booked visits.</li>
                              
                         </ul>
@@ -324,7 +324,7 @@ const ApproachSection = () => {
                             <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
                             Retain
                         </h3>
-                        <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+                        <ul className="list-disc list-inside space-y-2 text-black text-sm leading-relaxed">
                             <li><span className="font-semibold"></span> We keep patients engaged through post-care follow-ups, newsletters, reviews, and event campaigns that build loyalty and strengthen long-term relationships.</li>
                            
                         </ul>

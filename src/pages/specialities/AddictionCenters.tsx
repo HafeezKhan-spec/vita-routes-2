@@ -84,7 +84,7 @@ const WhoBenefitsSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
         >
-            <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row gap-8">
+            <div className="max-w-6xl mx-auto px-4 flex text-black flex-col lg:flex-row gap-8">
                 {/* Image: Using the new CONTENT_IMAGE_URL constant */}
                 <motion.div className="lg:w-1/2" variants={fadeInUp}>
                     <img
@@ -187,7 +187,7 @@ const ProcessSection = () => {
                     {processSteps.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            className="relative bg-white text-gray-900 rounded-2xl p-8 
+                            className="relative bg-white text-black rounded-2xl p-8 
                      shadow-lg hover:shadow-2xl transition-all duration-300"
                             variants={fadeInUp}
                             whileHover={{ y: -10, scale: 1.03 }}
@@ -250,7 +250,7 @@ const ChallengesSection = () => {
                         Challenges We Solve
                     </h3>
                     
-                    <ul className="list-disc pl-6 space-y-2 text-xl">
+                    <ul className="list-disc pl-6 space-y-2 text-10xl">
                         {challenges.map((challenge, index) => {
                             const parts = challenge.split(':');
                             const boldPart = parts[0];
@@ -266,10 +266,10 @@ const ChallengesSection = () => {
             </div>
 
             <motion.div
-                className="max-w-6xl mx-auto px-4 mt-8"
+                className="max-w-6xl mx-auto px-6 mt-8"
                 variants={fadeInUp}
             >
-                <p className="text-sm">
+                <p className="text-xl">
                    Our programs help rehab and behavioral health providers convert more qualified admissions through compliant, transparent, and scalable marketing systems.
                 </p>
                 <motion.div
@@ -325,13 +325,13 @@ const ApproachSection = () => {
 
             <div className="relative container mx-auto px-4">
                 <motion.h2
-                    className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
+                    className="text-4xl font-extrabold mb-6 text-black tracking-wide"
                     variants={fadeInUp}
                 >
                   Our Approach to Behavioral Health Marketing  
                 </motion.h2>
                 <motion.p
-                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
+                    className="text-lg max-w-3xl mx-auto text-black leading-relaxed"
                     variants={fadeInUp}
                 >
                     AdvanceEdge helps treatment centers and behavioral health providers grow responsibly, attracting the right patients, turning inquiries into admissions, and building lasting trust.

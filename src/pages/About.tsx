@@ -44,13 +44,13 @@ const AboutSection = () => (
                     <p className="text-black leading-relaxed mb-4">
                         AdvanceEdge is a results-driven healthcare marketing agency that helps hospitals, clinics, and telehealth brands attract more patients and grow responsibly. We combine deep healthcare knowledge with proven digital expertise—turning strategy into measurable, compliant results.
                     </p>
-                    <p className="text-gray-700 leading-relaxed mb-4">
+                    <p className="text-black leading-relaxed mb-4">
                        Our team plans with clarity, executes with precision, and reports on what truly matters: real patient growth, trusted visibility, and lasting impact.
                     </p>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-black leading-relaxed">
                        We specialize in SEO, paid advertising, social media, content marketing, and automation—built on HIPAA-aware systems and workflows that respect every organization’s brand, data, and compliance standards.
                     </p>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-black leading-relaxed">
                        Partner with a team that understands service lines, multi-location operations, and the realities of modern healthcare marketing.
                     </p>
                 </div>
@@ -112,14 +112,14 @@ const ValuesSection = () => {
               <h3 className="text-3xl font-bold text-indigo-700 mb-4 transition-colors duration-300 hover:text-indigo-800">
                 {item.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+              <p className="text-black leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Core Values */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-gray-800 mb-10">Our Core Values</h3>
+          <h3 className="text-3xl font-bold text-black mb-10">Our Core Values</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {coreValues.map((value, idx) => (
               <div
@@ -129,7 +129,7 @@ const ValuesSection = () => {
                 <h4 className="text-xl font-semibold text-indigo-700 mb-2 transition-colors duration-300 group-hover:text-indigo-800">
                   {value.title}
                 </h4>
-                <p className="text-gray-700 leading-relaxed">{value.desc}</p>
+                <p className="text-black leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -148,7 +148,7 @@ const ValuesSection = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-indigo-600 mr-3 mt-1 flex-shrink-0 transition-transform duration-500 group-hover:rotate-12 hover:text-indigo-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                  <p className="text-black leading-relaxed">{item}</p>
                 </li>
               ))}
             </ul>

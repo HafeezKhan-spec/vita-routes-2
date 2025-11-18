@@ -33,7 +33,7 @@ const App = () => {
             // Ensure form-name is set for Netlify
             if (!formData.get('form-name')) formData.set('form-name', 'contact');
 
-            const body = new URLSearchParams(formData as any).toString();
+            const body = new URLSearchParams(formData as unknown as Record<string, string>).toString();
             const resp = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -42,8 +42,8 @@ const App = () => {
             if (!resp.ok) throw new Error(`Submission failed: ${resp.status}`);
             setSubmitted(true);
             form.reset();
-        } catch (err: any) {
-            setError(err?.message || 'Something went wrong. Please try again.');
+        } catch (err: unknown) {
+            setError((err as { message?: string }).message || 'Something went wrong. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -142,6 +142,7 @@ const App = () => {
                                         />
                                     </div>
                                     <select 
+                                        aria-label="Services you are looking for"
                                         name="lookingFor" // REQUIRED: Name attribute
                                         required
                                         className="w-full p-3 border border-gray-200 rounded-md bg-gray-50 text-black"

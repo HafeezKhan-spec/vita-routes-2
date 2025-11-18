@@ -85,22 +85,22 @@ const WhoBenefitsSection = () => {
                     <div className="space-y-6">
                         {/* Benefit 1: General & Family Dentistry */}
                         <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">General & Family Dentistry</h3>
+                            <h3 className="text-xl font-semibold text-black">General & Family Dentistry</h3>
                             <p className="mt-2 text-gray-700">From cleanings and crowns to emergency care, we create mobile-friendly websites and campaigns that make education simple and appointment booking effortless.</p>
                         </motion.div>
                          {/* Benefit 2: Cosmetic & Implants */}
                         <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">Cosmetic & Implant Practices</h3>
+                            <h3 className="text-xl font-semibold text-black">Cosmetic & Implant Practices</h3>
                             <p className="mt-2 text-gray-700">We design targeted funnels and landing pages for veneers, whitening, and implants, turning interest into consultations through clear offers and measurable results.</p>
                         </motion.div>
                          {/* Benefit 3: Orthodontists & Pediatric */}
                          <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">Orthodontists & Pediatric Dentists</h3>
+                            <h3 className="text-xl font-semibold text-black">Orthodontists & Pediatric Dentists</h3>
                             <p className="mt-2 text-gray-700">For family-focused practices, we build parent-friendly experiences with strong calls-to-action, easy scheduling, and content that earns long-term trust.</p>
                         </motion.div>
                         {/* Benefit 4: DSO & Multi-Location Groups */}
                         <motion.div variants={fadeInUp}>
-                            <h3 className="text-xl font-semibold text-gray-800">DSO & Multi-Location Groups</h3>
+                            <h3 className="text-xl font-semibold text-black">DSO & Multi-Location Groups</h3>
                             <p className="mt-2 text-gray-700">We centralize marketing for national or regional networks, managing campaigns, reviews, and reporting across every office to drive consistent growth and visibility.</p>
                         </motion.div>
                     </div>
@@ -149,7 +149,7 @@ const ProcessSection = () => {
         >
             <div className="max-w-7xl mx-auto px-4 relative z-10">
                 {/* Title */}
-                <motion.div className="text-center mb-14" variants={fadeInUp}>
+                <motion.div className="text-center text-black mb-14" variants={fadeInUp}>
                     <h2 className="text-4xl font-extrabold tracking-wide">
   Our Process:{" "}
   <span className="text-2xl text-indigo-400 ml-3">
@@ -295,13 +295,13 @@ const ApproachSection = () => {
 
             <div className="relative container mx-auto px-4">
                 <motion.h2
-                    className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
+                    className="text-4xl font-extrabold mb-6 text-black tracking-wide"
                     variants={fadeInUp}
                 >
                   Our Approach to Dental Marketing 
                 </motion.h2>
                 <motion.p
-                    className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed"
+                    className="text-lg max-w-3xl mx-auto text-black leading-relaxed"
                     variants={fadeInUp}
                 >
                     AdvanceEdge uses a simple, proven model: Attract. Convert. Retain.
@@ -394,7 +394,7 @@ const WhyChooseSection = () => {
                    We make dental marketing simple, scalable, and effective—so you can focus on care while we focus on growth.
                 </motion.p>
                 <motion.div
-                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start"
+                className="max-w-6xl mx-auto px-4 mt-8 ml-[650px] flex justify-center lg:justify-start"
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >

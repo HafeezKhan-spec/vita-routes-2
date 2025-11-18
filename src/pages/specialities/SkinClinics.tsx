@@ -250,7 +250,7 @@ const ChallengesSection = () => {
             </div>
             {/* CTA Button */}
             <motion.div
-                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start"
+                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start ml-[200px]"
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
@@ -409,7 +409,7 @@ const WhyChooseSection = () => {
                 </div>
             </div>
             <motion.div
-                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start mt-6"
+                className="max-w-6xl mx-auto px-4 mt-8 ml-[650px] flex justify-center lg:justify-start mt-6"
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >

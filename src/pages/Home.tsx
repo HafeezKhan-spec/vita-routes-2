@@ -362,16 +362,16 @@ const AboutSection = () => (
                 <div className="md:w-1/2">
                     <p className="text-red-500 font-semibold tracking-widest mb-2">ABOUT ADVANCEEDGE DIGITAL</p>
                     <h2 className="text-4xl font-bold text-gray-800 mb-6">Advancing Patient Growth with Smarter Digital Marketing</h2>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-black mb-4 leading-relaxed">
                         AdvanceEdge Health is a full-service healthcare marketing agency helping hospitals, specialty clinics, multi-location groups, and telehealth providers grow patient volume across the U.S.
                     </p>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-black mb-4 leading-relaxed">
                         We deliver end-to-end marketing solutions including SEO, PPC, social media, content marketing, and marketing automation, all tailored to the healthcare industry’s unique compliance and performance needs.
                     </p>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-black mb-4 leading-relaxed">
                         Our approach is simple: clear strategies, reliable execution, and transparent reporting. You’ll see exactly how every channel, campaign, and keyword drives qualified patient inquiries through calls, forms, and bookings.
                     </p>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-black leading-relaxed">
                         From SEO to AI-powered automation, ads to content, we turn marketing data into measurable, HIPAA-compliant growth that strengthens your brand and fills your schedule.
                     </p>
                 </div>
@@ -670,7 +670,7 @@ const TestimonialsSection = () => {
                                     <div className="flex mt-1">{[...Array(5)].map((_, i) => <StarIcon key={i} />)}</div>
                                 </div>
                             </div>
-                            <p className="text-gray-600 italic">"{t.text}"</p>
+                            <p className="text-black italic">"{t.text}"</p>
                         </div>
                     ))}
                 </div>

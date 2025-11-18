@@ -242,12 +242,12 @@ const ChallengesSection = () => {
                     />
                 </motion.div>
             </div>
-            <p className="text-lg text-black mt-8">
+            <p className="text-lg text-black mt-8 ml-60">
                 AdvanceEdge builds connected systems that eliminate friction, grow visibility, and fill appointment calendars—ethically and efficiently.
             </p>
             {/* CTA Button - Replaces the original FloatingCta and ContactCTA */}
             <motion.div
-                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start"
+                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start ml-[650px]"
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
             >
@@ -362,7 +362,7 @@ const WhyChooseSection = () => {
       >
         <div className="relative container mx-auto px-4">
           <motion.h2
-              className="text-4xl font-extrabold mb-6 text-gray-800 tracking-wide"
+              className="text-4xl font-extrabold mb-6 text-black tracking-wide"
               variants={fadeInUp}
           >
               Why Choose AdvanceEdge
@@ -401,7 +401,7 @@ const WhyChooseSection = () => {
             With AdvanceEdge, you get marketing that’s intelligent, ethical, and effective — designed to help your practice grow with confidence.
           </motion.p>
           <motion.div
-                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start"
+                className="max-w-6xl mx-auto px-4 mt-8 flex justify-center lg:justify-start ml-[650px]"
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
           >

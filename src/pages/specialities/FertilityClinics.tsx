@@ -187,7 +187,7 @@ const ChallengesSection = () => {
         </motion.div>
         <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
           <h3 className="text-2xl font-semibold">Challenges We Solve</h3>
-          <ul className="list-disc pl-6 space-y-2 text-sm">
+          <ul className="list-disc pl-6 space-y-2 text-xl">
             {challenges.map((challenge, index) => (
               <li key={index}>{challenge}</li>
             ))}
@@ -195,7 +195,7 @@ const ChallengesSection = () => {
         </motion.div>
       </div>
       <motion.div className="max-w-6xl mx-auto px-4 mt-8" variants={fadeInUp}>
-        <p className="text-sm">
+        <p className="text-xl">
           AdvanceEdge simplifies digital growth for fertility providers, balancing ethical communication, privacy, and measurable performance.
         </p>
         <motion.div className="mt-4 flex justify-center" whileHover={{ scale: 1.05 }}>
@@ -247,7 +247,7 @@ const ApproachSection = () => {
         <motion.p className="text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed" variants={fadeInUp}>
           Each stage is designed to help fertility clinics build visibility, trust, and patient relationships that last.
         </motion.p>
-        <div className="row mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="row mt-12 grid grid-cols-1 text-black lg:grid-cols-3 gap-8">
           {approachColumns.map((col, idx) => (
             <motion.div
               key={idx}
@@ -260,7 +260,7 @@ const ApproachSection = () => {
                 <CircleCheckBigIcon className="text-indigo-600 mr-3 text-3xl bg-indigo-100 p-2 rounded-full" />
                 {col.title}
               </h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-600 text-sm leading-relaxed">
+              <ul className="list-disc list-inside space-y-2 text-black text-sm leading-relaxed">
                 {col.items.map((text, i) => (
                   <li key={i}>{text}</li>
                 ))}
@@ -305,7 +305,7 @@ const WhyChooseSection = () => {
               transition={{ duration: 0.25 }}
             >
               <CheckCircle className="text-indigo-600 mr-4 text-2xl hover:text-indigo-700 transition-colors duration-300" />
-              <p className="text-gray-700">{item}</p>
+              <p className="text-black">{item}</p>
             </motion.div>
           ))}
         </div>
