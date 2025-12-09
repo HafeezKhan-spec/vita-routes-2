@@ -2,7 +2,7 @@ import React , {useState, useRef, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import BookCallButton from '@/components/BookCallButton';
 import { Plus, Check, MapPin, Target, Shield, Truck, Clock, Calendar, ChevronDown, List, Users, Briefcase, FileText, CheckCircle, Mail, Globe, Phone, BookOpen, Cpu } from 'lucide-react';
-import Image_1 from "../../assets/Image_1.webp";
+import Image_1 from "../../assets/service-auto-1.webp";
 import Image_2 from "../../assets/Image_2.webp";
 import Image_3 from "../../assets/Image_3.webp";
 import Image_4 from "../../assets/Image_4.webp";
@@ -11,6 +11,17 @@ import Image_6 from "../../assets/Image_6.webp";
 import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
+
+import Image_10 from "../../assets/service-auto-2.webp";
+import Image_11 from "../../assets/service-auto-3.webp";
+import Image_12 from "../../assets/service-auto-4.webp";
+import Image_13 from "../../assets/service-auto-5.webp";
+import Image_14 from "../../assets/service-auto-6.webp";
+import Image_15 from "../../assets/service-auto-7.webp";
+import Image_16 from "../../assets/service-auto-8.webp";
+
+
+
 import Background from "../../assets/Background.jpg";
 // --- Color Constants (Standardized to PaidMarketing.tsx) ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
@@ -182,7 +193,7 @@ const contentData: ContentBlock[] = [
     title: 'Strategy & Journey Architecture',
     subtitle: 'SERVICES WE OFFER',
     description: 'We design triggers, segments, and cadences by service line and region. Journeys map inquiry to education, conversion, and retention. Clear KPIs, approval criteria, and ownership keep launches fast, scalable, and repeatable.',
-    image: Image_2,
+    image: Image_10,
     isImageRight: false,
     icon: Briefcase, 
     color: 'text-blue-600',
@@ -191,7 +202,7 @@ const contentData: ContentBlock[] = [
     title: 'Lead Nurture & Reactivation',
     subtitle: 'SERVICES WE OFFER',
     description: 'Not every lead is ready today. We deliver FAQs, checklists, coverage notes, and testimonials that keep value flowing. Branching adapts to engagement, while reactivation campaigns target inactive lists with compliant messaging and fresh offers. The result is more inquiries from audiences you’ve already paid to reach.',
-    image: Image_3,
+    image: Image_11,
     isImageRight: true,
     icon: Users, 
     color: 'text-purple-600',
@@ -200,7 +211,7 @@ const contentData: ContentBlock[] = [
     title: 'Email Programs Automation',
     subtitle: 'SERVICES WE OFFER',
     description: 'We build welcome, nurture, education, and win-back sequences with clear copy, accessible templates, and UTM tracking. Deliverability, list health, and clinical review are managed end to end for measurable results in GA4.',
-    image: Image_4,
+    image: Image_12,
     isImageRight: false,
     icon: Mail, 
     color: 'text-red-600',
@@ -209,7 +220,7 @@ const contentData: ContentBlock[] = [
     title: 'Medical CRM Marketing & Integrations',
     subtitle: 'SERVICES WE OFFER',
     description: 'We connect forms, calls, and site events to CRMs or EMRs through secure APIs or webhooks. Data fields are minimized, consent is logged, and dashboards tie campaign activity to outcomes for a cleaner, more efficient pipeline.',
-    image: Image_3,
+    image: Image_13,
     isImageRight: true,
     icon: Globe, 
     color: 'text-green-600',
@@ -218,7 +229,7 @@ const contentData: ContentBlock[] = [
     title: 'SMS Programs Automation',
     subtitle: 'SERVICES WE OFFER',
     description: 'We manage opt-in SMS programs for reminders, follow-ups, and urgent updates. Quiet-hour rules, consent tracking, and easy opt-outs are built in. Short codes or alphanumeric senders comply with carrier standards while driving timely responses.',
-    image: Image_2,
+    image: Image_14,
     isImageRight: true,
     icon: Phone, 
     color: 'text-green-600',
@@ -227,7 +238,7 @@ const contentData: ContentBlock[] = [
     title: 'Consent, Compliance and Deliverability',
     subtitle: 'SERVICES WE OFFER',
     description: 'We document consent, maintain suppression lists, and ensure immediate opt-outs. Strong sender authentication, list hygiene, and PHI-safe content protect deliverability and compliance, with audit trails that keep programs secure.',
-    image: Image_3,
+    image: Image_15,
     isImageRight: true,
     icon: Target, 
     color: 'text-green-600',
@@ -236,7 +247,7 @@ const contentData: ContentBlock[] = [
     title: 'Appointment Reminder Automation',
     subtitle: 'SERVICES WE OFFER',
     description: 'Multi-touch email and SMS reminders reduce no-shows and improve patient experience. Each reminder confirms intent, provides prep details, and routes to self-service pages where appropriate. Reports track confirmations, reschedules, and missed visits.',
-    image: Image_4,
+    image: Image_16,
     isImageRight: true,
     icon: BookOpen, 
     color: 'text-green-600',
@@ -245,7 +256,7 @@ const contentData: ContentBlock[] = [
     title: 'Data Testing and Reporting',
     subtitle: 'SERVICES WE OFFER',
     description: 'Every journey includes UTMs, GA4 events, and call attribution. Dashboards connect channels to inquiries and retention. Ongoing A/B testing on cadence, messaging, and CTAs drives continuous improvement each sprint.',
-    image: Image_3,
+    image: Image_1,
     isImageRight: true,
     icon: Cpu, 
     color: 'text-green-600',

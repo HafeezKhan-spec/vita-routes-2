@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import { Plus, CheckCircle, Search, Zap, Phone, ShoppingBag, TrendingUp, Users, Youtube, MapPin,Instagram} from 'lucide-react';
 import Background from "../../assets/Background.jpg"; 
-import Image_1 from "../../assets/Image_1.webp";
+import Image_1 from "../../assets/service-social.webp";
 import Image_2 from "../../assets/Image_2.webp";
 import Image_3 from "../../assets/Image_3.webp";
 import Image_4 from "../../assets/Image_4.webp";

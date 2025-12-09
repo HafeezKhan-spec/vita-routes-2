@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { Search, FileText, Rocket, BarChart3, CircleCheckBigIcon, CheckCircle } from "lucide-react";
 
 import BACKGROUND_IMAGE_URL from '../../assets/Background.jpg';
-import CONTENT_IMAGE_URL from '../../assets/Image_10.webp';
-
+import CONTENT_IMAGE_URL from '../../assets/spec-fertlity2.webp';
+import CONTENT_IMAGE_URL2 from '../../assets/spec-fertility3.webp';
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -183,7 +183,7 @@ const ChallengesSection = () => {
     <motion.section className="py-16" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row gap-8">
         <motion.div className="lg:w-1/2" variants={fadeInUp}>
-          <img src={CONTENT_IMAGE_URL} alt="Meeting" className="rounded-lg shadow w-full" />
+          <img src={CONTENT_IMAGE_URL2} alt="Meeting" className="rounded-lg shadow w-full" />
         </motion.div>
         <motion.div className="lg:w-1/2 space-y-6" variants={fadeInUp}>
           <h3 className="text-2xl font-semibold">Challenges We Solve</h3>

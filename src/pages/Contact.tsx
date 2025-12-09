@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import contact from "../assets/contact_bg.jpg";
 import businessmanSmall from "@/assets/Businessman_small.png";
-import contactTeam from "@/assets/contact.jpg";
+import contactTeam from "@/assets/contact.webp";
 
 // Helper component for SVG icons to keep the main component cleaner
 const Icon = ({ path, className = "w-6 h-6" }) => (

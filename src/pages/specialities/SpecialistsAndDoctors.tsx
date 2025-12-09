@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
 
 import BACKGROUND_IMAGE_URL from '../../assets/Background.jpg'
-import CONTENT_IMAGE_URL from '../../assets/Image_10.webp'
-
+import CONTENT_IMAGE_URL from '../../assets/spec-doc2.webp'
+import CONTENT_IMAGE_URL2 from '../../assets/spec-doc.webp'
 // --- Animation Variants (Consistent with AddictionCenters.tsx) ---
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -236,7 +236,7 @@ const ChallengesSection = () => {
                 {/* Image */}
                 <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInUp}>
                     <img
-                        src={CONTENT_IMAGE_URL}
+                        src={CONTENT_IMAGE_URL2}
                         alt="Marketing Challenges"
                         className="rounded-xl shadow-2xl w-full object-cover transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-2xl"
                     />

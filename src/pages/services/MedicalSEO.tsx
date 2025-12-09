@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Plus, CheckCircle, Smartphone, User, MapPin, TrendingUp, Briefcase, FileText, BarChart2, Shield, Search, BookOpen, Zap, Phone,ShoppingBag,Users,Youtube } from 'lucide-react';
-import Image_1 from "../../assets/Image_1.webp";
+import Image_1 from "../../assets/service-seo.webp";
 import Image_2 from "../../assets/Image_2.webp";
-import Image_3 from "../../assets/Image_3.webp";
-import Image_4 from "../../assets/Image_4.webp";
-import Image_5 from "../../assets/Image_5.webp";
-import Image_6 from "../../assets/Image_6.webp";
-import Image_7 from "../../assets/Image_7.webp";
-import Image_8 from "../../assets/Image_8.webp";
-import Image_9 from "../../assets/Image_9.webp";
+import Image_3 from "../../assets/service-seo1.webp";
+import Image_4 from "../../assets/service-seo2.webp";
+import Image_5 from "../../assets/service-seo3.webp";
+import Image_6 from "../../assets/service-seo4.webp";
+import Image_7 from "../../assets/service-seo5.webp";
+import Image_8 from "../../assets/service-seo6.webp";
+import Image_9 from "../../assets/service-seo7.webp";
 import Background from "../../assets/Background.jpg";
 import BookCallButton from '@/components/BookCallButton';
 
@@ -264,7 +264,7 @@ const servicesData: Service[] = [
         description: "We create ADA-conscious, mobile-first layouts that load fast and guide users effortlessly. Clear architecture highlights service lines and physicians, while conversion-optimized forms and CTAs reduce friction. We continuously test headlines, CTAs, and layouts to increase engagement and translate SEO traffic into measurable patient actions.",
         icon: ShoppingBag,
         color: 'text-green-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_5,
     },
     {
         title: "Technical SEO Optimization",
@@ -272,7 +272,7 @@ const servicesData: Service[] = [
         description: "We enhance site performance and structure through Core Web Vitals, HTTPS security, crawlability, and indexation improvements. Our team optimizes multi-location site architecture for hospital and medical practice SEO, validates structured data, and resolves technical errors — ensuring both search engines and patients find your pages quickly and reliably.",
         icon: TrendingUp,
         color: 'text-yellow-600',
-        imagePlaceholder: Image_2,
+        imagePlaceholder: Image_6,
     },
     {
         title: "Competitor Analysis",
@@ -280,7 +280,7 @@ const servicesData: Service[] = [
         description: "We identify keyword gaps, backlink opportunities, local pack strengths, and review signals by analyzing top-performing healthcare competitors. Insights guide tactical actions across states and service lines, ensuring your SEO strategy outperforms in the markets that matter most.",
         icon: Users,
         color: 'text-pink-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_7,
     },
     {
         title: "Content Creation",
@@ -288,7 +288,7 @@ const servicesData: Service[] = [
         description: "We produce SEO-optimized healthcare content including condition hubs, service-line pages, physician bios, blogs, and videos. Each asset is medically reviewed, schema-optimized, and privacy-safe under HIPAA guidelines. Our content attracts patients, supports credibility, and enhances physician and clinic visibility in search results.",
         icon: Youtube,
         color: 'text-red-700',
-        imagePlaceholder: Image_4,
+        imagePlaceholder: Image_8,
     },
     {
         title: "Google Business Profile (GMB) Optimization",
@@ -296,7 +296,7 @@ const servicesData: Service[] = [
         description: "We optimize every element of your Google Business Profile, from NAP consistency and categories to photos, attributes, and posts. Our local SEO team manages reviews, questions, and spam prevention, linking each GBP to its corresponding location page with proper UTM tracking. For hospitals, we structure multiple department profiles to maximize location-based visibility.",
         icon: MapPin,
         color: 'text-orange-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_9,
     },
 ];
 

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Plus, CheckCircle, Search, Zap, Phone, ShoppingBag, TrendingUp, Users, Youtube, MapPin } from 'lucide-react';
 
-import IMAGE_1_URL from "../../assets/Image_1.webp";
+import IMAGE_1_URL from "../../assets/service-paid1.webp";
 import IMAGE_2_URL from "../../assets/Image_2.webp";
 import IMAGE_3_URL from "../../assets/Image_3.webp";
 import IMAGE_4_URL from "../../assets/Image_4.webp";
@@ -15,6 +15,11 @@ import IMAGE_7_URL from "../../assets/Image_7.webp";
 import IMAGE_8_URL from "../../assets/Image_8.webp";
 import IMAGE_9_URL from "../../assets/Image_9.webp";
 import BACKGROUND_URL from "../../assets/Background.jpg";
+import IMAGE_10_URL from "../../assets/service-paid2.webp";
+import IMAGE_11_URL from "../../assets/service-paid3.webp";
+import IMAGE_12_URL from "../../assets/service-paid4.webp";
+import IMAGE_13_URL from "../../assets/service-paid5.webp";
+import IMAGE_14_URL from "../../assets/service-paid6.webp";
 
 
 // --- Color Constants ---
@@ -244,7 +249,7 @@ const servicesData: Service[] = [
         description: "We capture intent with precise keyword structures, from high-intent non-brand terms (“near me,” condition, treatment) to urgent care and service-line queries. Every campaign includes robust negatives, ad extensions, and policy-safe competitor targeting to maximize efficiency.",
         icon: Search,
         color: 'text-blue-600',
-        imagePlaceholder: IMAGE_2_URL, // Using original import variable
+        imagePlaceholder: IMAGE_10_URL, // Using original import variable
     },
     {
         title: "Performance Max & Microsoft Ads",
@@ -252,7 +257,7 @@ const servicesData: Service[] = [
         description: "We extend your reach through Google Performance Max and Microsoft Ads (Bing) for broader coverage and incremental conversions. Asset groups are customized by service line and location, supported by data feeds and audience tests that refine performance weekly.",
         icon: TrendingUp,
         color: 'text-yellow-600',
-        imagePlaceholder: IMAGE_2_URL, // Using original import variable
+        imagePlaceholder: IMAGE_11_URL, // Using original import variable
     },
     {
         title: "Call-Based Patient Acquisition Ads",
@@ -260,7 +265,7 @@ const servicesData: Service[] = [
         description: "Urgent care, ER, or same-day appointment campaigns use phone-first formats with dayparted schedules and compliant call tracking. Our focus: real-time patient intent that converts to booked visits.",
         icon: Phone,
         color: 'text-red-600',
-        imagePlaceholder: IMAGE_4_URL, // Using original import variable
+        imagePlaceholder: IMAGE_12_URL, // Using original import variable
     },
     {
         title: "Remarketing & Audience Campaigns",
@@ -268,7 +273,7 @@ const servicesData: Service[] = [
         description: "We re-engage warm audiences with remarketing lists, YouTube viewers, and consent-based Customer Match audiences. No sensitive interests, no guesswork. Just sequenced creative designed to move patients from awareness to action.",
         icon: Users,
         color: 'text-pink-600',
-        imagePlaceholder: IMAGE_3_URL, // Using original import variable
+        imagePlaceholder: IMAGE_13_URL, // Using original import variable
     },
     {
         title: "YouTube & Video Advertising",
@@ -276,7 +281,7 @@ const servicesData: Service[] = [
         description: "Build trust through visual storytelling. We target health-related intent on YouTube with skippable and in-feed formats, remarketing sequences, and compliance-approved messaging that educate and convert.",
         icon: Youtube,
         color: 'text-red-700',
-        imagePlaceholder: IMAGE_4_URL, // Using original import variable
+        imagePlaceholder: IMAGE_14_URL, // Using original import variable
     },
     
 ];

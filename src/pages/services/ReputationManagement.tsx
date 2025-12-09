@@ -13,6 +13,15 @@ import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
 import Background from "../../assets/Background.jpg";
 
+import Image_10 from "../../assets/service-rep-1.webp";
+import Image_11 from "../../assets/service-rep-2.webp";
+import Image_12 from "../../assets/service-rep-3.webp";
+import Image_13 from "../../assets/service-rep-4.webp";
+import Image_14 from "../../assets/service-rep-5.webp";
+import Image_15 from "../../assets/service-rep-6.webp";
+import Image_16 from "../../assets/service-rep-7.webp";
+import Image_17 from "../../assets/service-rep-8.webp";
+import Image_18 from "../../assets/service-rep-9.webp";
 // --- Color Constants ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
 const PRIMARY_TEAL = '#0e7490'; // Dark Teal/Cyan for main CTA
@@ -232,63 +241,63 @@ const servicesData: Service[] = [
     description: "We align goals, service lines, and policies into a clear reputation roadmap. Always-on monitoring, alerts, and dashboards keep your brand proactive, not reactive.",
     icon: Briefcase,
     color: 'text-blue-600',
-    imagePlaceholder: Image_2,
+    imagePlaceholder: Image_10,
   },
   {
     title: "Physician and Doctor Reputation",
     description: "We optimize provider profiles across Healthgrades, WebMD, Zocdoc, Yelp, and other key platforms highlighting credentials, specialties, and locations so patients can easily find and book appointments.",
     icon: User,
     color: 'text-teal-600',
-    imagePlaceholder: Image_3,
+    imagePlaceholder: Image_11,
   },
   {
     title: "Listings and Google Business Profile",
     description: "We audit and maintain accurate listings, categories, and photos across every location. Reviews are tied to location pages with tracking, Posts, and Q&A to improve visibility in local search.",
     icon: MapPin,
     color: 'text-indigo-600',
-    imagePlaceholder: Image_4,
+    imagePlaceholder: Image_12,
   },
   {
     title: "Hospital and Clinic Programs",
     description: "For multi-location systems, we standardize tone, templates, and SLAs. Each site reflects authentic, recent patient experiences, building consistency and credibility across your network.",
     icon: FileText,
     color: 'text-green-600',
-    imagePlaceholder: Image_3,
+    imagePlaceholder: Image_13,
   },
   {
     title: "Review Generation at Scale",
     description: "Our compliant workflows trigger review requests via SMS, email, or QR codes after visits or discharges. EMR and CRM integrations plus first-party schema reviews boost credibility and SEO.",
     icon: Smartphone,
     color: 'text-yellow-600',
-    imagePlaceholder: Image_2,
+    imagePlaceholder: Image_14,
   },
   {
     title: "Surveys and Patient Experience",
     description: "Automated post-visit surveys capture NPS and CSAT by location and service line. Insights flow to managers for coaching and service recovery, raising ratings for the right reasons.",
     icon: TrendingUp,
     color: 'text-pink-600',
-    imagePlaceholder: Image_3,
+    imagePlaceholder: Image_15,
   },
   {
     title: "HIPAA-Safe Review Response",
     description: "All responses stay PHI-free and policy-compliant. We provide templates, after-hours monitoring, and escalation workflows to resolve feedback quickly and protect your brand.",
     icon: Shield,
     color: 'text-red-600',
-    imagePlaceholder: Image_4,
+    imagePlaceholder: Image_16,
   },
   {
     title: "Analytics and Reporting",
     description: "Dashboards connect ratings and sentiment to real outcomes like calls and form fills. Integrated with GA4 and your CRM, reports show what to prioritize and where to act.",
     icon: BarChart2,
     color: 'text-gray-600',
-    imagePlaceholder: Image_3,
+    imagePlaceholder: Image_17,
   },
   {
     title: "Reputation SEO and Branded SERP Control",
     description: "We enhance branded visibility through structured data, FAQ schema, and optimized knowledge panels ensuring patients find accurate, positive information first.",
     icon: Search,
     color: 'text-purple-600',
-    imagePlaceholder: Image_2,
+    imagePlaceholder: Image_18,
   },
   {
     title: "Governance, Policy, and Training",

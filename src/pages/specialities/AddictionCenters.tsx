@@ -8,8 +8,8 @@ import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, 
 // Placeholder for the background image (dark abstract background)
 import BACKGROUND_IMAGE_URL from '../../assets/Background.jpg'
 // Placeholder for the content image (light subject)
-import CONTENT_IMAGE_URL from '../../assets/Image_10.webp'
-
+import CONTENT_IMAGE_URL from '../../assets/spec-addition2.webp'
+import CONTENT_IMAGE_URL2 from '../../assets/spec-addiction.webp'
 
 // --- Animation Variants (Kept untouched) ---
 const staggerContainer = {
@@ -239,7 +239,7 @@ const ChallengesSection = () => {
                 {/* Image: Using the new CONTENT_IMAGE_URL constant */}
                 <motion.div className="lg:w-1/2" variants={fadeInUp}>
                     <img
-                        src={CONTENT_IMAGE_URL}
+                        src={CONTENT_IMAGE_URL2}
                         alt="Meeting"
                         className="rounded-lg shadow w-full"
                     />

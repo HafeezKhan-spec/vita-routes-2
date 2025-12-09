@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Plus, CheckCircle, ClipboardCheck, FileText, MessageSquare, BarChart3, CircleCheckBigIcon } from 'lucide-react';
 
-import BACKGROUND_IMAGE_URL from '../../assets/Background.jpg'
-import CONTENT_IMAGE_URL from '../../assets/Image_10.webp'
-
+import BACKGROUND_IMAGE_URL from '../../assets/spec-skin-bg.webp'
+import CONTENT_IMAGE_URL from '../../assets/spe-skin.webp'
+import CONTENT_IMAGE_URL2 from '../../assets/spec-skin2.webp'
 // --- Animation Variants (Consistent with AddictionCenters.tsx) ---
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -48,7 +48,7 @@ const HeaderSection = () => {
                 style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
             >
                 {/* Dark overlay consistent with AddictionCenters.tsx */}
-                <div className="absolute inset-0 bg-blue-950 bg-opacity-80"></div>
+                <div className="absolute inset-0 bg-gray-600 bg-opacity-80"></div>
 
                 {/* Content */}
                 <div className="relative z-10 max-w-4xl px-4 lg:px-8 text-white text-center mx-auto">
@@ -242,7 +242,7 @@ const ChallengesSection = () => {
                 {/* Image */}
                 <motion.div className="lg:w-1/2 order-1 lg:order-2" variants={fadeInUp}>
                     <img
-                        src={CONTENT_IMAGE_URL}
+                        src={CONTENT_IMAGE_URL2}
                         alt="Dermatology marketing team working"
                         className="rounded-xl shadow-2xl w-full object-cover transition-all duration-500 ease-in-out hover:scale-[1.02] hover:shadow-2xl"
                     />

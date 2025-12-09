@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Plus, CheckCircle, Search, Zap, Phone, ShoppingBag, TrendingUp, Users, Youtube, MapPin,Instagram} from 'lucide-react';
 import Background from "../../assets/Background.jpg"; 
-import Image_1 from "../../assets/Image_1.webp";
+import Image_1 from "../../assets/service-market.webp";
 import Image_2 from "../../assets/Image_2.webp";
 import Image_3 from "../../assets/Image_3.webp";
 import Image_4 from "../../assets/Image_4.webp";
@@ -13,6 +13,18 @@ import Image_6 from "../../assets/Image_6.webp";
 import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
+import Image_10 from "../../assets/service-market1.webp";
+import Image_11 from "../../assets/service-market2.webp";
+import Image_12 from "../../assets/service-market3.webp";
+import Image_13 from "../../assets/service-market4.webp";
+import Image_14 from "../../assets/service-market5.webp";
+import Image_15 from "../../assets/service-market6.webp";
+import Image_16 from "../../assets/service-market7.webp";
+import Image_17 from "../../assets/service-market8.webp";
+import Image_18 from "../../assets/service-market9.webp";
+
+
+
 import { URL } from 'url';
 import BookCallButton from '@/components/BookCallButton';
 
@@ -237,63 +249,63 @@ const servicesData: Service[] = [
         subtitle: "Editorial calendars convert patient questions into publishable topics.",
         description: " We draft SEO-driven briefs, interview subject-matter experts, add schema, and link to relevant service-line hubs. Each article is reviewed by physicians for accuracy and refreshed regularly to maintain rankings. GA4 and UTM tracking show measurable results.",
         color: 'text-blue-600',
-        imagePlaceholder: Image_2,
+        imagePlaceholder: Image_10,
     },
     {
         title: "Local Search Content",
         subtitle: "We build city and neighborhood pages with services, insurance, directions, hours, parking, and provider details.",
         description: " We optimize Google Business Profiles with accurate services, categories, photos, Q&A, and schema. Consistent NAP data and templated review responses enhance local discovery, driving calls and form submissions from nearby patients.",
         color: 'text-red-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_11,
     },
     {
         title: "Website & Landing Page Content",
         subtitle: "We write service-line pages, location pages, physician bios, FAQs, and clear calls to action.",
         description: " We write clear, patient-friendly copy with structured headings, fast load times, and strong internal links. Schema defines key entities, and performance tracking measures what converts. Each page is designed to turn visits into appointments.",
         color: 'text-black-600',
-        imagePlaceholder: Image_4,
+        imagePlaceholder: Image_12,
     },
     {
         title: "White Papers & Downloadables",
         subtitle: "We produce research-backed white papers, checklists, and buyer guides for administrators, referrers, and patients.",
         description: " We create research-backed resources with proper citations, disclaimers, and consent forms. UTMs link downloads to follow-up actions, ensuring every lead is trackable and compliant.",
         color: 'text-yellow-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_13,
     },
     {
         title: "Patient Education Content",
         subtitle: "Guides, checklists, and explainer videos cover symptoms, diagnosis, treatment options, preparation, and recovery.",
         description: " Every piece includes disclaimers and “when to call” guidance, reviewed for reading level and medical accuracy. Available in multiple languages, our educational content builds patient confidence and improves adherence.",
         color: 'text-black-600',
-        imagePlaceholder: Image_2,
+        imagePlaceholder: Image_14,
     },
     {
         title: "Content Audit & Refresh",
         subtitle: "We inventory your library and flag redundant, outdated, or trivial material. ",
         description: " We analyze existing assets to identify what to rewrite, merge, or redirect. Canonicals and 301s preserve rankings while updates restore SEO performance and keep information current.",
         color: 'text-red-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_15,
     },
     {
         title: "Infographic Content Marketing",
         subtitle: "We convert complex timelines, risks, and care pathways into clear, mobile-first visuals. ",
         description: "Accessible, shareable visuals include alt text, captions, and references. Embedded on key hub pages, infographics increase dwell time, boost backlinks, and improve social visibility.",
         color: 'text-blue-700',
-        imagePlaceholder: Image_4,
+        imagePlaceholder: Image_16,
     },
     {
         title: "Customized Content Strategies",
         subtitle: "We develop state-aware strategies: personas, journey maps, funnel topics, editorial calendars, governance, and KPIs. ",
         description: " We interview your team to uncover real patient questions, tailor distribution across your site, email, and social, and define success metrics. This turns content into a repeatable engine for growth and revenue.",
         color: 'text-red-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_17,
     },
     {
         title: "Email Marketing & Newsletters",
         subtitle: "Lists are consent-based and segmented by service line and life stage. ",
         description: " We build automated sequences using approved, HIPAA-compliant content. Subject lines and CTAs are A/B tested, and UTMs connect engagement directly to results. Our content nurtures retention while protecting patient data.",
         color: 'text-blue-600',
-        imagePlaceholder: Image_3,
+        imagePlaceholder: Image_18,
     },
 ];
 

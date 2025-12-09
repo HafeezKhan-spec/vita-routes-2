@@ -1,7 +1,7 @@
 import React , { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Plus, CheckCircle, Target, Code, Cpu, Layout, BookOpen, Lock, Zap, Aperture, Globe, TrendingUp } from 'lucide-react';
-import Image_1 from "../../assets/Image_1.webp";
+import Image_1 from "../../assets/service-design-1.webp";
 import Image_2 from "../../assets/Image_2.webp";
 import Image_3 from "../../assets/Image_3.webp";
 import Image_4 from "../../assets/Image_4.webp";
@@ -10,10 +10,19 @@ import Image_6 from "../../assets/Image_6.webp";
 import Image_7 from "../../assets/Image_7.webp";
 import Image_8 from "../../assets/Image_8.webp";
 import Image_9 from "../../assets/Image_9.webp";
+
+
+import Image_10 from "../../assets/service-design-2.webp";
+import Image_11 from "../../assets/service-design-3.webp";
+import Image_12 from "../../assets/service-design-4.webp";
+import Image_13 from "../../assets/service-design-5.webp";
+import Image_14 from "../../assets/service-design-6.webp";
+import Image_15 from "../../assets/service-design-7.webp";
+import Image_16 from "../../assets/service-design-8.webp";
+import Image_17 from "../../assets/service-design-9.webp";
+
 import Background from "../../assets/Background.jpg";
 import BookCallButton from '@/components/BookCallButton';
-
-
 // --- Color Constants (Standardized to PaidMarketing.tsx) ---
 const PRIMARY_BLUE = '#2a3e5c'; // Dark Blue/Navy for headings
 const PRIMARY_TEAL = '#0e7490'; // Dark Teal/Cyan for main CTA
@@ -248,63 +257,63 @@ const SERVICES_DATA: ServiceBlock[] = [
     { 
         title: "Discovery & Strategy", 
         description: "We align goals, audiences, and compliance needs into a focused web strategy. You get a clear roadmap, KPIs, and sprint timelines that tie creative, engineering, and approvals to measurable outcomes.", 
-        imageUrl: Image_2, 
+        imageUrl: Image_10, 
         icon: Target, 
         color: 'text-red-600' 
     },
     { 
         title: "Performance & Core Web Vitals", 
         description: "We optimize every element, including code, media, and delivery, for fast and stable performance. Image compression, caching, and responsive design ensure top Core Web Vitals across real devices.", 
-        imageUrl: Image_3, 
+        imageUrl: Image_11, 
         icon: Zap, 
         color: 'text-yellow-600' 
     },
     { 
         title: "Information Architecture", 
         description: "We design intuitive navigation and page structures that guide patients and improve search visibility. Service line hubs, provider bios, and location pages build a strong SEO foundation.", 
-        imageUrl: Image_4, 
+        imageUrl: Image_12, 
         icon: Layout, 
         color: 'text-green-600' 
     },
     { 
         title: "Content & Medical Review", 
         description: "We create patient-friendly, medically reviewed content that’s accurate, compliant, and persuasive. Editorial workflows and schema markup boost trust and conversions.", 
-        imageUrl: Image_3, 
+        imageUrl: Image_13, 
         icon: BookOpen, 
         color: 'text-indigo-600' 
     },
     { 
         title: "UX & UI Design", 
         description: "We design clean, conversion-focused layouts with accessible typography, clear CTAs, and consistent visual systems, ensuring a seamless experience across all brands and locations.", 
-        imageUrl: Image_2, 
+        imageUrl: Image_14, 
         icon: Cpu, 
         color: 'text-purple-600' 
     },
     { 
         title: "Analytics & Privacy", 
         description: "We configure tracking and dashboards that link web activity to real inquiries, without exposing PHI. HIPAA-compliant analytics, consent banners, and access controls protect data integrity.", 
-        imageUrl: Image_3, 
+        imageUrl: Image_15, 
         icon: Lock, 
         color: 'text-pink-600' 
     },
     { 
         title: "ADA-Conscious Accessibility (WCAG 2.2 AA)", 
         description: "We implement accessibility best practices including semantic HTML, alt text, keyboard navigation, color contrast, and captioned media so every visitor can use your site confidently.", 
-        imageUrl: Image_4, 
+        imageUrl: Image_16, 
         icon: Target, 
         color: 'text-blue-600' 
     },
     { 
         title: "Integrations (EMR, CRM, Scheduling, GBP)", 
         description: "We connect secure forms, scheduling tools, and call tracking to EMR or CRM systems with HIPAA-safe handoffs. Integrated Google Business Profile and map embeds enhance local visibility.", 
-        imageUrl: Image_3, 
+        imageUrl: Image_17, 
         icon: Zap, 
         color: 'text-orange-600' 
     },
     { 
         title: "CMS Development (WordPress or Headless)", 
         description: "We build modular, secure sites with roles, approvals, and reusable components. WordPress accelerates launch speed; headless CMS options support advanced functionality and integrations.", 
-        imageUrl: Image_2, 
+        imageUrl: Image_2,
         icon: Layout, 
         color: 'text-brown-600' 
     },
